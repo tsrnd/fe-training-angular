@@ -8,8 +8,11 @@
     * **Enum**
     * **Any**
     * **Void**
+
 2. Function
+
     * **Declare function**
+
     ```
       // Type 1
       function userInfo1(info: string): string {
@@ -25,7 +28,9 @@
           return `My name is ${name}, ${age} years old`;
         }
     ```
+
     * **Return**
+    
     ```
       function noReturn(): void {
         console.log('ok');
@@ -40,7 +45,9 @@
         return [2];
       }
     ```
+
     * **Parameter**
+
     ```
       // Full param
       function user1(name: string, age: number): string {
@@ -60,7 +67,9 @@
       }
 
     ```
+
     * **Overloads (use in case duplicate function name)**
+
     ```
     function overloadFunc(x: number): string;
     function overloadFunc(x: string): number;
@@ -76,4 +85,5 @@
       }
     }
     ```
+
 3. Class
