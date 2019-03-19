@@ -87,3 +87,129 @@
     ```
 
 3. Class
+    * **Normal Class**
+    ```
+    class Issue {
+      id: number;
+      name: string;
+      status: string;
+      constructor(id: number, name: string, status: string) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+      }
+
+      showJob() {
+        return `id: ${this.id} - name: ${this.name} - status: ${this.status}`;
+      }
+    }
+    var issue = new Issue(12, 'Fix sonthing', 'Done');
+    console.log(issue.showJob());
+    ```
+
+    * **Inheritance**
+    ```
+    class Person {
+      name: string;
+      age: number;
+
+      constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+      }
+
+      getInfo() {
+        return `Name: ${this.name} - age: ${this.age}`;
+      }
+    }
+
+    class Man extends Person {
+      skill: string;
+
+      constructor(name: string, age: number, skill: string) {
+        super(name, age);
+        this.skill = skill;
+      }
+
+      getInfoAndSkill() {
+        return `Name: ${this.name} - age: ${this.age} - skill: ${this.skill}`;
+      }  
+    }
+
+    const man = new Man('Dong', 12, 'Da bong');
+    console.log(man.getInfoAndSkill());
+    ```
+
+    * **Access modifier**
+    ```
+    /*
+                  Inside    outside   Child Class
+      Public      +         +         +
+      Private     +         -         -
+      Protected   +         -         +
+    */
+    
+    class Person {
+      private name: string;
+      age: number;
+
+      constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+      }
+
+      getInfo() {
+        return `Name: ${this.name} - age: ${this.age}`;
+      }
+    }
+    
+    class Man extends Person {
+      static skill: string;
+
+      constructor(name: string, age: number, skill: string) {
+        super(name, age);
+        Man.skill = skill;
+      }
+
+      getInfoAndSkill() {
+        return `Name: ${this.name} - age: ${this.age} - skill: ${Man.skill}`;
+      }
+
+      publicAccessChild() {
+        console.log(this.name);
+      }
+    }
+
+    const man = new Man('Dong', 12, 'Da bong');
+    man.publicAccessChild();
+
+    const person = new Person('asd', 12);
+    ```
+
+    * **Accessors (getter & setter)**
+    ```
+    class Person {
+      private name: string;
+      age: number;
+
+      constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+      }
+
+      getInfo() {
+        return `Name: ${this.name} - age: ${this.age}`;
+      }
+
+      get getName(): string {
+        return this.name;
+      }
+
+      set getName(v: string) {
+        this.name = v;
+      }
+    }
+    const person = new Person('Dong', 12);
+    person.getName = 'ho van dong';
+    console.log(person.getName);
+    ```
