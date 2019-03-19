@@ -9,11 +9,10 @@
     ];
     ```
 - **Yêu cầu**
-  
-  1. Tìm ra danh sách students có tuồi nhỏ hơn 24 trả về array
-  2. Tìm đến người có tên `Huynh Thi B` đổi tuổi thành `25`
-  3. Tính tổng tuổi của danh sách students trên
-  4. Tìm ra người có tuổi bằng `20` 
-  5. Tìm index của người có tuổi bằng `19`
-  6. Tìm xem trong students có người nào là `Le Van D` không, trả về `boolean`
-  7. Code bằng ES6 nhé.
+    1. Tìm ra danh sách students có tuồi nhỏ hơn 24 trả về array
+    2. Tìm đến người có tên `Huynh Thi B` đổi tuổi thành `25`
+    3. Tính tổng tuổi của danh sách students trên
+    4. Tìm ra người có tuổi bằng `20` 
+    5. Tìm index của người có tuổi bằng `19`
+    6. Tìm xem trong students có người nào là `Le Van D` không, trả về `boolean`
+    7. Code bằng ES6 nhé.
