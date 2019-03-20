@@ -1,0 +1,57 @@
+<html>
+
+  <head>
+    <title>Bt day 1</title>
+    <meta charset="UTF-8">
+    <style>
+      ul {
+        list-style-type: none;
+      }
+      li {
+        margin-left: -25px; 
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="text" placeholder="What needs to be done?" size="30" id="todos" autofocus>
+    <button id="btn-add" onclick="myFunction()">Add</button>
+    <ul id="output"></ul>
+    <script>
+      function deleteText(d) {
+        var r = confirm("Do you want to delete this?");
+        if (r == true) {
+          var parent = document.getElementById("output");
+          var child = document.getElementById(d);
+          parent.removeChild(child);
+        }
+      }
+
+      function myFunction() {
+        var text = document.getElementById('todos');
+        a = text.value;
+        var id = a + "-" + Math.floor((Math.random() * 1000) + 1);
+        if (a == "") {
+          alert("Write something!!!");
+        } else {
+          text.value = "";
+          setTimeout(function () {
+            var node = document.createElement("LI");
+            var textnode = document.createTextNode(a);
+            var att = node.setAttribute("id", id);
+            var button = document.createElement("BUTTON");
+            var textbtn = document.createTextNode("x");
+            var attbtn = button.setAttribute("data-id", id);
+            var attbtnd = button.setAttribute("onclick", "deleteText(this.getAttribute('data-id'))");
+            node.appendChild(textnode);
+            button.appendChild(textbtn);
+            node.appendChild(button);
+            document.getElementById("output").appendChild(node);
+          }, 2000);
+        }
+      }
+
+    </script>
+  </body>
+
+</html>
