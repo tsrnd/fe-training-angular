@@ -1,4 +1,4 @@
-var students = [
+var students: any[] = [
   {name: 'Nguyen Van A', age: 12},
   {name: 'Huynh Thi B', age: 20},
   {name: 'Ho Thi C', age: 19},
@@ -21,7 +21,7 @@ function search_student_and_change_age(name: string, age: number) : void {
 
 function total_age_students() : void {
   let initialValue = 0;
-  let sum = students.reduce(function (accumulator, currentValue) {
+  let sum = students.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.age;
   },initialValue);
 
