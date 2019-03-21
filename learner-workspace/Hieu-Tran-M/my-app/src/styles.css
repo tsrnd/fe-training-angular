@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  height: 100%;
+  margin: 0;
+  display: block;
+}
+
+.img-icon-angular {
+  height: 40px;
+  width: 150px;
+}
+
+.bg-navbar {
+  background-color: #1976d2;
+  background: linear-gradient(145deg,#0d47a1,#42a5f5);
+}
+
+.app-toolbar a {
+  font-size: 16px;
+  color: #fff;
+  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  text-transform: uppercase;
+}
+
+.main-body {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.main-body h1 {
+  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footer {
+  background: linear-gradient(145deg,#ecebeb,#eaf2f8);
+  margin-top: 17.5rem; 
+}
+
+.text-footer {
+  text-align: center;
+}
