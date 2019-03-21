@@ -24,7 +24,7 @@
 
 ## Angular Cli
   - Install @angular/cli 
-  - Read document in `https://cli.angular.io/`
+  - Read document on `https://cli.angular.io/`
 
 ## App structure
   ![image info](./angular-training.001.jpeg)
