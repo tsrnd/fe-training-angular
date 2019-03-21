@@ -46,3 +46,7 @@
 
 ## Data binding
   ![image info](./angular-training.007.jpeg)
+
+# Concepts
+1. Client side rendering & Server side rendering
+2. Framework & Library
