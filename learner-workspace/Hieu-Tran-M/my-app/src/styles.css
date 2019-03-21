@@ -41,3 +41,8 @@ body {
 .text-footer {
   text-align: center;
 }
+
+.login {
+  float: right;
+  margin-right: 5rem;
+}
