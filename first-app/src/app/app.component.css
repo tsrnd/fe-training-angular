@@ -24,14 +24,14 @@
   background-color: #F8F9FA;
   width: 100%;
 }
-.footer p {
-  padding: 15px 0;
-  font-size: 20px;
-}
-.color1 {
+.footer-content {
   width: 50%;
   margin: auto;
   text-align: center;
   color: black;
   background: linear-gradient(to top, #E8E9EA 31%, #F8F9FA 61%);
+}
+.footer p {
+  padding: 15px 0;
+  font-size: 20px;
 }
