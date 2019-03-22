@@ -1,4 +1,4 @@
-<div class="header">
+<header>
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
     <div class="navbar-collapse custom-navbar-content col-md-10 offset-md-1" id="navbarNav">
       <a class="navbar-brand" href="#">
@@ -18,15 +18,15 @@
       <a class="text-white" href="#">LOGIN</a>
     </div>
   </nav>
-</div>
-<div class="body">
+</header>
+<body>
   <div class="content-body col-md-10 offset-md-1">
     <div class="bd-callout bd-callout-info">
       <h4>{{listTab[index] | uppercase}}</h4>
     </div>
     <ul class="nav nav-tabs">
       <li class="nav-item" *ngFor="let tab of listTab; let i=index">
-        <a [class.active]="index==i" class="nav-link" id={{tab}} (click)="chooseTab($event)"
+        <a [class.active]="index==i" class="nav-link" id={{tab}} (click)="index=listTab.indexOf($event.target.id)"
           href="#">{{tab}}</a>
       </li>
     </ul>
@@ -34,7 +34,7 @@
       <app-child [tabIndex]=index></app-child>
     </div>
   </div>
-</div>
-<div class="footer">
+</body>
+<footer>
   <span class="center">Footer</span>
-</div>
+</footer>

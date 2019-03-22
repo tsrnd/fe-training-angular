@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'exercise-three';
 
   index: number;
@@ -14,16 +14,11 @@ export class AppComponent {
     'home',
     'info',
     'contact'
-  ]
+  ];
 
   ngOnInit(): void {
     if (!this.index) {
       this.index = 0;
     }
-  }
-
-  chooseTab(e) {
-    this.index = this.listTab.indexOf(e.target.id);
-    console.log(this.index);
   }
 }
