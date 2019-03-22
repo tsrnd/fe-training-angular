@@ -1,0 +1,20 @@
+<div class="card clearfix float-left">
+  <div class="img-product col-md-2 float-left">
+    <a [routerLink]="['/product', item.id]">
+      <img src="{{item.img}}" class="card-img-top" alt="...">
+    </a>
+  </div>
+  <div class="card-body col-md-10 float-left">
+    <a [routerLink]="['/product', item.id]" class="card-title">{{item.name | formatText:50}}</a>
+    <p class="card-text">provided by: <span class="brand">{{item.brand | formatText:20}}</span></p>
+    <div class="div-bot">
+      <div class="col-md-8">
+        <p class="card-title">{{item.price}}$</p>
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="delete_item()" class="btn btn-outline-danger btn-delete" data-toggle="modal" data-target="#modalcomponent">
+      Delete
+  </button>
+</div>
+

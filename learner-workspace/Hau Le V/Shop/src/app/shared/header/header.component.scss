@@ -1,0 +1,14 @@
+.btn-outline-secondary{
+  width: 80px;
+  margin: 2px;
+}
+.nav-item{
+  font-size: 24px;
+}
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0px;
+  background: linear-gradient(to right, rgba(0, 153, 255, 0.86) 0%, rgba(85, 202, 231, 0.86) 0%, rgba(46, 154, 255, 0.86) 0%, rgba(75, 160, 64, 0.92) 0%, #efeede 100%);
+}

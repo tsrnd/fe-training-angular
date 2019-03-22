@@ -1,0 +1,36 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" routerLink="/" RouterLinkActive="active">
+      <img src="../../../assets/image/shopping-bags.png" alt="Smiley face" height="42" width="42">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/" RouterLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/women" RouterLinkActive="active">Women</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/men" RouterLinkActive="active">Men</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/children" RouterLinkActive="active">Children</a>
+        </li>
+        <ng-container *ngIf="authService.isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/account/profile" RouterLinkActive="active">Profile</a>
+          </li>
+        </ng-container>
+        
+      </ul>
+      <div class="my-2 my-lg-0">
+        <ng-container *ngIf="!authService.isLoggedIn()">
+          <a class="btn btn-outline-secondary my-2 my-sm-0" routerLink="/register">register</a>
+          <a class="btn btn-outline-secondary my-2 my-sm-0" routerLink="/login">Login</a>
+        </ng-container>
+        <button class="btn btn-outline-secondary my-2 my-sm-0" (click)="logout()" *ngIf="authService.isLoggedIn()">Logout</button>
+      </div>
+    </div>
+  </nav>
+</header>

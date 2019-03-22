@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="img-product">
+    <a [routerLink]="['/product', item.id]">
+      <img src="{{item.img}}" class="card-img-top" alt="...">
+    </a>
+  </div>
+  <div class="card-body">
+    <a [routerLink]="['/product', item.id]" class="card-title">{{item.name | formatText:15}}</a>
+    <p class="card-text">{{item.description | formatText:100}}</p>
+    <div class="div-bot">
+      <div class="col-md-8">
+        <p class="card-title">{{item.price}}$</p>
+      </div>
+      <div class="col-md-4">
+        <ng-container *ngIf="authService.isLoggedIn()">
+          <ng-container *ngIf="localer.notFavProduct(this.item); else disLike">
+            <img (click)="onLike()" class="stt-icon" src="../../../assets/image/non.png">
+          </ng-container>
+          <ng-template #disLike>
+              <img (click)="onDisLike()" class="stt-icon" src="../../../assets/image/like.png">
+          </ng-template>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+

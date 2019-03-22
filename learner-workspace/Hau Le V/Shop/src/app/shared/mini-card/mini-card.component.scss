@@ -1,0 +1,21 @@
+.card{
+  flex-direction: row;
+  margin-bottom: 20px;
+  overflow: hidden;
+  height: 125px;
+  width: 100%;
+  position: relative;
+}
+.img-product img{
+  height: 80px;
+  width: 80px;
+  padding-top: 20px;
+}
+.brand{
+  color: rgb(163, 39, 39);
+}
+.btn-delete{
+  position: absolute;
+  right: 30px;
+  bottom: 15px;
+}

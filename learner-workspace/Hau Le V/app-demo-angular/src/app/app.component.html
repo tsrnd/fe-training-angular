@@ -1,0 +1,42 @@
+<!-- <div class="pdt20">
+  <nav>
+    <div class="nav nav-tabs">
+      <a (click)="changeTab(0)" [class.active]="isFlg[0]" class="nav-item nav-link" id="init_tab" data-toggle="tab" role="tab" >Home</a>
+      <a (click)="changeTab(1)" [class.active]="isFlg[1]" class="nav-item nav-link" data-toggle="tab" role="tab">Profile</a>
+      <a (click)="changeTab(2)" [class.active]="isFlg[2]" class="nav-item nav-link" data-toggle="tab" role="tab">Contact</a>
+    </div>
+  </nav>
+</div>
+<div class="tab-content pdt20" id="nav-tabContent">
+  <app-child [curentTab]='tab'></app-child>
+</div> -->
+<!-- 
+<div class="pdt20">
+  <div class="accordion">
+    <div class="list-group">
+      <app-lifecycle [listItem]="listItem"></app-lifecycle>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="pdt20">
+    <p appHighlight [hightLight]="'red'">Messi</p>
+    <p appHighlight [hightLight]="'blue'">Ronaldo</p>
+</div> -->
+<!-- <app-card [arrContentCard] = "arrContentCard"></app-card> -->
+<!-- <div class="pdt20">
+  User Name  <input #userName type="text">
+  Information   <input #infor type="text"><br><br>
+  {{dataStorage}}
+  <br>
+  <button class="btn btn-primary" (click)="saveLocal(userName, infor)">Save Local</button>---
+  <button class="btn btn-primary" (click)="getLocal(userName)">Get Local</button>---
+  <button class="btn btn-primary"(click)="saveSession(userName, infor)">Save Session</button>---
+  <button class="btn btn-primary"(click)="getSession(userName)">Get Session</button>
+</div> -->
+<!-- <app-register></app-register> -->
+<!-- <app-login></app-login> -->
+<app-header></app-header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

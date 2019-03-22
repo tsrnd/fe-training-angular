@@ -1,0 +1,27 @@
+<div class="col-md-8 cs-form">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+  <div *ngIf="!isSusscess">
+      <div class="alert alert-danger" role="alert">
+          Login fail!!!
+      </div>
+  </div>
+
+  <form #login="ngForm" (ngSubmit)="onLogin(login)">
+    <div class="form-group">
+      <input placeholder="Email" type="text" #validEmail="ngModel" class="form-control" [(ngModel)]="email" name="email" required maxlength="20">
+      <ng-container *ngIf="validEmail.invalid && (validEmail.dirty && validEmail.touched)">
+        <p *ngIf="validEmail.errors.required">Field is required</p>
+      </ng-container>
+    </div>
+    <div class="form-group">
+      <input placeholder="Password" type="password" class="form-control" [(ngModel)]="password" name="password">
+    </div>
+    <div class="checkbox mb-3">
+      <label>New user? <a routerLink="/register"> Sign up now!</a> </label>
+    </div>
+    <div class="buttons-set">
+      <button class="btn btn-lg btn-primary btn-block" [disabled]="login.invalid">Sign in</button>
+    </div>
+  </form>
+</div>

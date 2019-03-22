@@ -1,0 +1,11 @@
+<app-modal [itemDelete]="itemDelete" (opItemDelete)=DeleteItem($event)><span class="text-name">{{name}}</span></app-modal>
+<div class="container">
+  <div class="favorite-card col-8 float-left">
+    <ng-container *ngFor="let item of myProducts">
+      <app-mini-card (itemDelete)="passDataModal($event)" [item] = "item"></app-mini-card>
+    </ng-container>
+  </div>
+  <div class="total-products col-4 float-left">
+    bang tinh tien 
+  </div>
+</div>

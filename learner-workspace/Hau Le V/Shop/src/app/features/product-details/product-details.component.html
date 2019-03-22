@@ -1,0 +1,39 @@
+<div class="pt-3 clearfix container">
+  <div class="col-md-4 p-2 float-left">
+    <img src="{{img}}">
+  </div>
+  <div class="col-md-6 float-left info">
+    <div class="title">
+      <span class="name">{{name}}</span>
+    </div>
+    <div class="brand">
+        <span>Brand: </span><span class="name-brand">{{brand}}</span>
+    </div>
+    <div class="price">
+      <span>{{price}} $</span>
+    </div>
+    <ng-container *ngIf="authService.isLoggedIn()">
+      <div class="favorite">
+        <ng-container *ngIf="localer.notFavProduct(this.data); else deleteFav">
+          <button class="btn btn-primary form-control" (click)="AddMyFav()">Add to Favorite</button>
+        </ng-container>
+        <ng-template #deleteFav>
+          <button class="btn btn-primary form-control" (click)="DeleteMyFav()">Delete to Favorite</button>
+        </ng-template>
+      </div>
+    </ng-container>
+  </div>
+  <div class="float-left description">
+    <p>{{description}}</p>
+  </div>
+</div>
+<div class="container" *ngIf="!!products_related.length">
+  <span class="name">You may also like</span>
+  <div class="row">
+    <ng-container *ngFor="let item of products_related">
+      <div class="col-md-3">
+        <app-card [item] = "item"></app-card>
+      </div>
+    </ng-container>
+  </div>
+</div>

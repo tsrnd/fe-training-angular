@@ -1,0 +1,6 @@
+<app-modal (oIndex) ="DeleteLast($event)" [iIndex]="this.indexItem">{{name}}</app-modal>
+<ng-container *ngFor="let item of listItem; index as i">
+  <app-lifecycle-title (itemDelete)="passDataModal($event)" [item] = "item" [index] = "i">
+    {{item.name}}
+  </app-lifecycle-title>
+  <ng-container>
