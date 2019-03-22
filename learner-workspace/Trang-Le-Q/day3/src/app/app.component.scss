@@ -1,0 +1,30 @@
+header ul {
+  align-items: center;
+}
+.header-logo-li {
+  display: inline-block;
+  width: 22%;
+}
+.header-logo-li a{
+  display: block;
+}
+header ul li {
+  margin-right: 20px;
+}
+header ul li a {
+  font-size: x-large;
+  line-height: 1;
+}
+header ul li a img {
+  width: 100%;
+}
+main {
+  margin: 80px 0;
+}
+footer {
+  background-image: linear-gradient(#fff, #d2cfcf);
+}
+footer h6 {
+  margin-bottom: 0;
+  padding: 15px;
+}
