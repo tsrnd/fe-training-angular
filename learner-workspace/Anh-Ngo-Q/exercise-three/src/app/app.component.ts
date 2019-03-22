@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'exercise-three';
+
+  index: number;
+
+  listTab = [
+    'home',
+    'info',
+    'contact'
+  ]
+
+  ngOnInit(): void {
+    if (!this.index) {
+      this.index = 0;
+    }
+  }
+
+  chooseTab(e) {
+    this.index = this.listTab.indexOf(e.target.id);
+    console.log(this.index);
+  }
 }

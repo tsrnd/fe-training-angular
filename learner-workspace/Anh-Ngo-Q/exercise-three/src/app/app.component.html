@@ -20,9 +20,19 @@
   </nav>
 </div>
 <div class="body">
-  <div class="content-body">
-    <h2 class="text-body">ANGULAR TRAINING</h2>
-    <img src="assets/images/angular.png" alt="">
+  <div class="content-body col-md-10 offset-md-1">
+    <div class="bd-callout bd-callout-info">
+      <h4>{{listTab[index] | uppercase}}</h4>
+    </div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item" *ngFor="let tab of listTab; let i=index">
+        <a [class.active]="index==i" class="nav-link" id={{tab}} (click)="chooseTab($event)"
+          href="#">{{tab}}</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <app-child [tabIndex]=index></app-child>
+    </div>
   </div>
 </div>
 <div class="footer">
