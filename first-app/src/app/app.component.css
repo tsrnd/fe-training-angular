@@ -1,0 +1,37 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+.header {
+  margin-top: 10px;
+  background-color: #0275d8;
+  padding: 0 8%;
+}
+.header .active {
+  color: azure;
+  text-transform: uppercase;
+}
+.header a {
+  color: rgb(222, 228, 228);
+  text-transform: uppercase;
+}
+.section-content {
+  padding: 7% 0 10% 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.footer {
+  margin-bottom: 10px;
+  background-color: #F8F9FA;
+  width: 100%;
+}
+.footer-content {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  color: black;
+  background: linear-gradient(to top, #E8E9EA 31%, #F8F9FA 61%);
+}
+.footer p {
+  padding: 15px 0;
+  font-size: 20px;
+}
