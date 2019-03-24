@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-app';
+  title = 'ANGULAR TRAINING';
+  currentTab = 0;
+  onChangeTab(index: number) {
+    this.currentTab = index;
+  }
 }

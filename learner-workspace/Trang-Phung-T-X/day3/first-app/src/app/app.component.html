@@ -32,10 +32,25 @@
 <!-- MAIN -->
 <main>
   <section class="section-content">
-    <div class="content">
-      <h2>Angular traning</h2>
-      <img alt="Logo" height="400" src="https://angular.io/assets/images/logos/angular/angular.svg" title="Logo"
-        width="400" class="ng-star-inserted">
+    <div class="container">
+      <div class="bd-callout bd-callout-info">
+        <h6>Tab content</h6>
+      </div>
+      <div class="tabs">
+        <div class="container">
+          <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" [class.active]="currentTab === 0" data-toggle="index"
+                (click)="onChangeTab(0)">Home</a></li>
+            <li class="nav-item"><a class="nav-link" [class.active]="currentTab === 1" data-toggle="index"
+                (click)="onChangeTab(1)">Profile</a></li>
+            <li class="nav-item"><a class="nav-link" [class.active]="currentTab === 2" data-toggle="index"
+                (click)="onChangeTab(2)">Contact</a></li>
+          </ul>
+        </div>
+        <div class="tab-contents">
+          <app-child [currentTab]="currentTab"></app-child>
+        </div>
+      </div>
     </div>
   </section>
 </main>
