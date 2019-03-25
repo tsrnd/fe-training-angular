@@ -30,25 +30,23 @@ header main footer {
   margin: 0% 10%;
 }
 
-.main-body h2 {
+/* .main-body h2 {
   font-size: 24px;
-  border: 0.5rem;
   padding: 1rem 0.5rem;
   background-color: #e7eaec;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-}
+} */
 
 .footer {
-  background: linear-gradient(45deg,#eeeded,#e7e0e0);
+  background-color: #e7eaec;
   margin-top: 30.5%;
 }
 
 .text-footer {
-  padding: 10px;
-  background: linear-gradient(45deg,#8f6b6b,#e6e4e4);
+  padding: 1rem 0px;
+  background-color: #e1e7eb;
   text-align: center;
-  border: 1rem;
 }
 
 .login {
@@ -57,4 +55,22 @@ header main footer {
 
 .color-tab-link a{
   color: #495057;
+}
+
+#home, #contact, #profile {
+  padding: 10px 0px;
+}
+
+.bd-callout {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+  background-color: #e7eaec;
+}
+
+.bd-callout-danger {
+  border-left-color: #5f77e0;
 }
