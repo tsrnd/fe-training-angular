@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header class="header">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
-    <div class="collapse navbar-collapse col-9" id="navbarText">
+    <div class="collapse navbar-collapse col-10" id="navbarText">
       <a class="nav-link" href="#">
         <img src="assets/images/logo-nav@2x.png" alt="Home" title="Home" class="ng-star-inserted" id="img-logo">
       </a>
@@ -25,12 +25,22 @@
   </nav>
 </header>
 
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
+<main class="main container">
+  <nav class="navbar navbar-light bg-light" id="intro-tab-content">
+    <a class="navbar-brand" href="#">Tab content</a>
+  </nav>
+  <nav id="tab-content">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <div *ngFor="let tab of listTab; let i=index">
+        <a [class.active]="index==i" class="nav-item nav-link" id={{i}} data-toggle="tab" href="#nav-home" role="tab"
+          aria-controls="nav-home" aria-selected="true" (click)="index=$event.target.id">{{tab | uppercase}}</a>
+      </div>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <app-child [tabIndex]=index></app-child>
+  </div>
+</main>
 <footer class="footer bg-light text-dark">
   <p class="footer-text">Footer</p>
 </footer>
