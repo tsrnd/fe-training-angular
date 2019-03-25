@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'project-angular';
-  index: number;
+  index = 0;
   listTab = [
     'Home',
     'Profile',
@@ -15,13 +15,9 @@ export class AppComponent {
   ];
 
   ngOnInit(): void {
-    if (!this.index) {
-      this.index = 0;
-    }
   }
 
   moveTab(event) {
     this.index = this.listTab.indexOf(event.target.id);
   }
 }
-

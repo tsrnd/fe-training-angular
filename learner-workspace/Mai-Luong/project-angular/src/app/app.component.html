@@ -29,7 +29,7 @@
     <div>
       <ul class="nav nav-tabs">
         <li class="nav-item" *ngFor="let tabName of listTab; let i=index">
-          <a class="nav-link" [class.active]="index==i" id="{{tabName}}" (click)="moveTab($event)" href="#">{{tabName}}</a>
+          <a class="nav-link" [class.active]="index===i" id="{{tabName}}" (click)="moveTab($event)" href="#">{{tabName}}</a>
         </li>
      </ul>
     <div class="content-child">
