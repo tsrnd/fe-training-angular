@@ -7,5 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-angular';
-  logo = 'HELLO ANGULAR';
+  index: number;
+  listTab = [
+    'Home',
+    'Profile',
+    'Contact'
+  ];
+
+  ngOnInit(): void {
+    if (!this.index) {
+      this.index = 0;
+    }
+  }
+
+  moveTab(event) {
+    this.index = this.listTab.indexOf(event.target.id);
+  }
 }
+
