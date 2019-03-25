@@ -1,0 +1,43 @@
+header ul {
+  align-items: center;
+}
+.header-logo-li {
+  display: inline-block;
+  width: 22%;
+}
+.header-logo-li a{
+  display: block;
+}
+header ul li {
+  margin-right: 20px;
+}
+header ul li a,
+.login {
+  font-size: x-large;
+  line-height: 1;
+}
+header ul li a img {
+  width: 100%;
+}
+main {
+  margin: 230px 0;
+}
+footer {
+  background-image: linear-gradient(#fff, #d2cfcf);
+}
+footer h6 {
+  margin-bottom: 0;
+  padding: 15px;
+}
+.navbar-expand-lg {
+  justify-content: space-between;
+}
+.nav-content {
+  border-left: 5px solid #007bff!important;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #d2cfcf;
+}
+.nav-tabs .nav-link {
+  color: #495057;
+}

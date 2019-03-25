@@ -24,8 +24,8 @@ var students = [
 // }
 // console.log(result1);
 
-console.log(students.filter((ele) => {
-    return ele.age < 24;
+console.log(students.filter((stud) => {
+    return stud.age < 24;
 }));
 
 
@@ -38,10 +38,10 @@ console.log(students.filter((ele) => {
 // }
 // console.log(students);
 
-console.log(students.map((ele) => {
-    if (ele.name == 'Huynh Thi B') {
-        return {name: ele.name, age: 25};
-    } else return ele;
+console.log(students.map((stud) => {
+    if (stud.name == 'Huynh Thi B') {
+        return {name: stud.name, age: 25};
+    } else return stud;
 }))
 
 
@@ -52,12 +52,11 @@ console.log(students.map((ele) => {
 // }
 // console.log(sumAge);
 
-console.log(students.reduce((ele1, ele2, i) => {
-    if (i == 1){
-        return ele1.age + ele2.age;
-    }
-    return ele1 + ele2.age;
-}));
+console.log(students.reduce((sum, stud, index, students) => {
+    return sum += stud.age;
+}, 0));
+
+
 
 //4
 // for (i=0; i<students.length; i++) {
@@ -66,8 +65,8 @@ console.log(students.reduce((ele1, ele2, i) => {
 //     }
 // }
 
-console.log(students.find((ele) => {
-    return ele.age == 20;
+console.log(students.find((stud) => {
+    return stud.age == 20;
 }));
 
 //5
@@ -77,8 +76,8 @@ console.log(students.find((ele) => {
 //     }
 // }
 
-console.log(students.findIndex((ele) => {
-    return ele.age == 19;
+console.log(students.findIndex((stud) => {
+    return stud.age == 19;
 }));
 
 //6
@@ -94,6 +93,6 @@ console.log(students.findIndex((ele) => {
 
 // console.log(getDUser());
 
-console.log(students.some((ele) => {
-    return ele.name == "Le Van D";
+console.log(students.some((stud) => {
+    return stud.name == "Le Van D";
 }));
