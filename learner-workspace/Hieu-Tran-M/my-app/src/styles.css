@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  height: 100%;
-  margin: 0;
+  height: 100%!important;
+  flex-direction: column!important;
+  display: flex!important;
+}
+
+header main footer {
   display: block;
 }
 
@@ -23,26 +27,34 @@ body {
 }
 
 .main-body {
-  margin-top: 50px;
-  text-align: center;
+  margin: 0% 10%;
 }
 
-.main-body h1 {
-  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+.main-body h2 {
+  font-size: 24px;
+  border: 0.5rem;
+  padding: 1rem 0.5rem;
+  background-color: #e7eaec;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
 
 .footer {
-  background: linear-gradient(145deg,#ecebeb,#eaf2f8);
-  margin-top: 17.5rem; 
+  background: linear-gradient(45deg,#eeeded,#e7e0e0);
+  margin-top: 30.5%;
 }
 
 .text-footer {
+  padding: 10px;
+  background: linear-gradient(45deg,#8f6b6b,#e6e4e4);
   text-align: center;
+  border: 1rem;
 }
 
 .login {
   float: right;
-  margin-right: 5rem;
+}
+
+.color-tab-link a{
+  color: #495057;
 }
