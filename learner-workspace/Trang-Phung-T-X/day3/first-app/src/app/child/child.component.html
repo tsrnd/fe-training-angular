@@ -1,14 +1,4 @@
-<div [ngSwitch]="currentTab">
-  <div *ngSwitchCase="0" >
-    <h6>{{contentsTab[0].title | uppercase}}</h6>
-    <p>{{contentsTab[0].content}}</p>
-  </div>
-  <div *ngSwitchCase="1" >
-    <h6>{{contentsTab[1].title | uppercase}}</h6>
-    <p>{{contentsTab[1].content}}</p>
-  </div>
-  <div *ngSwitchCase="2" >
-    <h6>{{contentsTab[2].title | uppercase}}</h6>
-    <p>{{contentsTab[2].content}}</p>
-  </div>
+<div>
+  <h6>{{contentsTab[currentTab].title | uppercase}}</h6>
+  <p>{{contentsTab[currentTab].content}}</p>
 </div>
