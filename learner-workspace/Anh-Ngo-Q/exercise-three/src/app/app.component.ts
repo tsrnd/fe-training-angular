@@ -5,20 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'exercise-three';
-
-  index: number;
+export class AppComponent {
+  index = 0;
 
   listTab = [
     'home',
     'info',
     'contact'
   ];
-
-  ngOnInit(): void {
-    if (!this.index) {
-      this.index = 0;
-    }
-  }
 }

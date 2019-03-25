@@ -25,8 +25,8 @@
       <h4>{{listTab[index] | uppercase}}</h4>
     </div>
     <ul class="nav nav-tabs">
-      <li class="nav-item" *ngFor="let tab of listTab; let i=index">
-        <a [class.active]="index==i" class="nav-link" id={{tab}} (click)="index=listTab.indexOf($event.target.id)"
+      <li class="nav-item" *ngFor="let tab of listTab; let i = index">
+        <a [class.active]="index === i" class="nav-link" id="{{tab}}" (click)="index = listTab.indexOf($event.target.id)"
           href="#">{{tab}}</a>
       </li>
     </ul>
