@@ -22,9 +22,8 @@ export class ChildComponent implements OnInit {
     esse provident impedit minima porro! Laudantium laboriosam culpa quis fugiat ea, architecto velit ab,
     deserunt rem quibusdam voluptatum.`}
   ];
+
   constructor() { }
   ngOnInit() {
-// tslint:disable-next-line: no-unused-expression
-    this.contentsTab;
   }
 }
