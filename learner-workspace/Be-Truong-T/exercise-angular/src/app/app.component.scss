@@ -7,6 +7,9 @@ nav {
 .nav-tabs>li>a {
   color: black;
 }
+a:hover {
+  border-bottom: 2px solid white;
+}
 #nav-logo {
   width: 30px;
   vertical-align: bottom;

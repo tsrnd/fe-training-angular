@@ -1,25 +1,9 @@
   <!-- child works! {{tabClick}} -->
-  <div class="tab-content" *ngIf="tabClick==='Home'">
-    <h5>{{tabClick | uppercase}} {{'content' | uppercase}}</h5>
+  <div class="tab-content">
+    <h5>{{listContentTab[tabClick].title | uppercase}} {{'content' | uppercase}}</h5>
     <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-    </p>
-  </div>
-  <div class="tab-content" *ngIf="tabClick==='Profile'">
-    <h5>{{tabClick | uppercase}} {{'content' | uppercase}}</h5>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-    </p>
-  </div>
-  <div class="tab-content" *ngIf="tabClick==='Contact'">
-    <h5>{{tabClick | uppercase}} {{'content' | uppercase}}</h5>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab error ullam natus, tenetur quasi voluptatum ispam. Quos quod assumenda quaerat sequi alias a ipsam nulla! Architecto iure eius eum quaerat!<br><br>
+      {{listContentTab[tabClick].content}}<br>
+      {{listContentTab[tabClick].content}}<br>
+      {{listContentTab[tabClick].content}}<br>
     </p>
   </div>

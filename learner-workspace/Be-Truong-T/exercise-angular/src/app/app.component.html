@@ -34,7 +34,7 @@
   </div>
   <ul class="nav nav-tabs">
     <li class="nav-item" *ngFor=" let itemTabTitle of listTabTitle; let i=index" (click)="clicked($event)">
-      <a class="nav-link" href="#">{{itemTabTitle}}</a>
+      <a id={{i}} class="nav-link" href="#">{{itemTabTitle}}</a>
     </li>
   </ul> 
   <div>

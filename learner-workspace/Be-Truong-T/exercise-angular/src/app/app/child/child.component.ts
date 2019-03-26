@@ -7,9 +7,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  @Input() tabClick: string;
+  @Input() tabClick: any;
   constructor() { }
 
+  listContentTab = [
+    {
+      title: 'Home',
+      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
+    },
+    {
+      title: 'Profile',
+      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
+    },
+    {
+      title: 'Contact',
+      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
+    }
+  ];
   ngOnInit() {
   }
 

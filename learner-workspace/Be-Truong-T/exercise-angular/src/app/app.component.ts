@@ -10,11 +10,11 @@ export class AppComponent {
   title = 'erxercise-angular';
 
   listTabTitle = ['Home', 'Profile', 'Contact'];
-  currentTab = this.listTabTitle[0];
+  currentTab = 0;
 
   clicked(event) {
     console.log('Current tab clinking: ');
     console.log(event.target.innerHTML);
-    this.currentTab = event.target.innerHTML;
+    this.currentTab = event.target.id;
  }
 }
