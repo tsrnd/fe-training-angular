@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'phutranv';
+  content = 'work';
+  isShow = true;
+  parentindex = 0;
+  listTab = [
+    'home',
+    'profile',
+    'contact'
+  ];
 }
