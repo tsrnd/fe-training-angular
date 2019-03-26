@@ -40,13 +40,15 @@ header main footer {
 
 .footer {
   background-color: #e7eaec;
-  margin-top: 30.5%;
+  margin-top: 29.5%;
 }
 
 .text-footer {
-  padding: 1rem 0px;
+  padding: 1.5rem 0px;
   background-color: #e1e7eb;
   text-align: center;
+  border: 1px solid #eee;
+  border-radius: .25rem;
 }
 
 .login {
