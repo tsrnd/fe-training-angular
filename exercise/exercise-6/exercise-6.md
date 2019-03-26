@@ -2,8 +2,8 @@
 ### Yêu cầu:
 - Làm giao diện như hình bên dưới
 - Chức năng:
-    - Show list lifecycle hooks
-    - Click vào button dấu cộng màu đỏ sẽ open ra cái content của từng cái lifecycle
+    - Show list lifecycle hooks
+    - Click vào button dấu cộng màu đỏ sẽ open ra cái content của từng cái lifecycle
     - Dấu chéo bên phải là remove 1 cái lifecycle, khi click vào sẽ hiện lên modal confirm như hình bên dưới, bấm nút OK thì xoá lifecycle đó, Cancle vs nút `x` thì tắt modal
     - Trên modal content sẽ thay đổi theo từng cái lifecycle muốn xoá
 - Tạo component:
