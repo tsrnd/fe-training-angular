@@ -1,0 +1,12 @@
+<ng-container *ngIf="listItem; else showNotthing">
+  <ul class="list-group col-md-6">
+    <ng-container class="list-group" *ngFor="let item of listItem; let i=index">
+      <app-lifecycle-title (itemDelete)="visibleDeleteModal($event)" [name]="item.name" [position]="i"></app-lifecycle-title>
+      <app-lifecycle-content [content]="item.content" [position]="i"></app-lifecycle-content>
+    </ng-container>
+  </ul>
+</ng-container>
+<ng-template #showNotthing>
+  <h3 [ngStyle]="{'color': 'green', 'text-align': 'center'}">Empty</h3>
+</ng-template>
+<ng-content selector="app-modal"></ng-content>

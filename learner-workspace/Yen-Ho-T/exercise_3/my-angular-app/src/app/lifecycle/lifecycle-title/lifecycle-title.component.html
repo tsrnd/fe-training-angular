@@ -1,0 +1,5 @@
+<li class="list-group-item">
+  {{name}}
+  <span data-toggle="modal" data-target="#deleteModal" (click)="openDeleteModal()" class="glyphicon glyphicon-remove" [ngStyle]="{'float': 'right', 'margin-left': '10px'}"></span>
+  <span data-toggle="collapse" [attr.data-target]="'#' + position" class="glyphicon glyphicon-ok" [ngStyle]="{'float': 'right'}"></span>
+</li>
