@@ -1,0 +1,35 @@
+// style for master page
+footer {
+  background-image: linear-gradient(white, #d2cfcf);
+  line-height: 4em;
+  text-align: center;
+}
+
+.custom-navbar {
+  background: #1976d2;
+}
+
+#logo {
+  width: 120px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.text-body {
+  font-weight: 400;
+}
+
+.content-body {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
+}
