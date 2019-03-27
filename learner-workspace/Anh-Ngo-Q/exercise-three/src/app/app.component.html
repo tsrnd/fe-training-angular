@@ -21,7 +21,7 @@
 </header>
 <body>
   <div class="content-body col-md-10 offset-md-1">
-    <div class="bd-callout bd-callout-info">
+    <!-- <div class="bd-callout bd-callout-info">
       <h4>{{listTab[index] | uppercase}}</h4>
     </div>
     <ul class="nav nav-tabs">
@@ -32,7 +32,12 @@
     </ul>
     <div class="tab-content">
       <app-child [tabIndex]=index></app-child>
-    </div>
+    </div> -->
+
+    <app-lifecycle-title *ngFor="let data of datas" [data]="data">
+      <app-lifecycle-content [data]="data"></app-lifecycle-content>
+      <app-modal [data]="data" (removeData)="removeItem($event)"></app-modal>
+    </app-lifecycle-title>
   </div>
 </body>
 <footer>
