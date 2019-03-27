@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { currentId } from 'async_hooks';
 
 @Component({
   selector: 'app-child',

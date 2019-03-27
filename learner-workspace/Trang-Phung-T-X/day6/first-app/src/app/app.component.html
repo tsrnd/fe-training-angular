@@ -1,0 +1,17 @@
+<!-- HEADER -->
+<header class="header">
+  <div>
+    <h1>{{title}}</h1>
+  </div>
+</header>
+<!-- MAIN -->
+<main>
+  <section class="section-content">
+    <div class="container" *ngFor="let item of data">
+      <app-lifecycle-title [item]="item">
+        <app-lifecycle-content [item]="item"></app-lifecycle-content>
+        <app-modal [item]="item" (delItem)="delItem($event)"></app-modal>
+      </app-lifecycle-title>
+    </div>
+  </section>
+</main>
