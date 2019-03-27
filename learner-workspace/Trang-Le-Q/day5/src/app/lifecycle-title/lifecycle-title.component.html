@@ -1,0 +1,10 @@
+<li class="list-group-item">
+  <button type="button" data-toggle="collapse" [attr.data-target]="'#collapse' + item.id">
+    +
+  </button>
+  {{ item.name }}
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="modal" [attr.data-target]="'#modal' + item.id">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <ng-content></ng-content>
+</li>

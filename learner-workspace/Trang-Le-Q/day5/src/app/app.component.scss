@@ -1,0 +1,43 @@
+header ul {
+  align-items: center;
+}
+.header-logo-li {
+  display: inline-block;
+  width: 22%;
+}
+.header-logo-li a{
+  display: block;
+}
+header ul li {
+  margin-right: 20px;
+}
+header ul li a,
+.login {
+  font-size: x-large;
+  line-height: 1;
+}
+header ul li a img {
+  width: 100%;
+}
+main {
+  margin: 100px 0;
+}
+footer {
+  background-image: linear-gradient(#fff, #d2cfcf);
+}
+footer h6 {
+  margin-bottom: 0;
+  padding: 15px;
+}
+.navbar-expand-lg {
+  justify-content: space-between;
+}
+.list-group-item {
+  vertical-align: middle;
+}
+.list-group-item button {
+  background-color: red;
+  padding: 0 6px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
