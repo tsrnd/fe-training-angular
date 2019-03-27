@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./lifecycle-content.component.scss']
 })
 export class LifecycleContentComponent implements OnInit {
-  @Input() content: string;
-  @Input() position: string;
+  content: string;
+  position: number;
   constructor() { }
 
   ngOnInit() {
