@@ -1,0 +1,57 @@
+<div [style.display]="nameCollapse === 'onChange' && behaviorDelete ? 'none' : 'block'" class="card">
+  <div class="card-header" id="headingOne">
+    <button (click)="getContent('onChange')" class="btn btn-link plus" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+    </button>
+    <span>ngOnChanges()</span>
+    <button (click)="deleteContent('onChange')" class="btn btn-link delete" data-toggle="modal" data-target="#exampleModal">
+      <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+    </button>
+    <app-app-modal [modal]="toogleModal" [titleContent]="titleModal"></app-app-modal>
+  </div>
+  <app-app-lifecycle-content>
+    <div id="collapseOne" [class.show]="indexCollapse === 0" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid ngOnChange().
+      </div>
+    </div>
+  </app-app-lifecycle-content>
+</div>
+
+<div [style.display]="nameCollapse === 'onInit' && behaviorDelete ? 'none' : 'block'" class="card">
+  <div class="card-header" id="headingOne">
+    <button (click)="getContent('onInit')" class="btn btn-link plus" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+    </button>
+    <span>ngOnInit()</span>
+    <button (click)="deleteContent('onInit')" class="btn btn-link delete">
+      <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+    </button>
+  </div>
+  <app-app-lifecycle-content>
+    <div id="collapseTwo" [class.show]="indexCollapse === 1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid ngOnInit().
+      </div>
+    </div>
+  </app-app-lifecycle-content>
+</div>
+
+<div [style.display]="nameCollapse === 'doCheck' && behaviorDelete ? 'none' : 'block'" class="card">
+  <div class="card-header" id="headingOne">
+    <button (click)="getContent('doCheck')" class="btn btn-link plus" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+    </button>
+    <span>ngDoCheck()</span>
+    <button (click)="deleteContent('doCheck')" class="btn btn-link delete">
+      <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+    </button>
+  </div>
+  <app-app-lifecycle-content>
+    <div id="collapseThree" [class.show]="indexCollapse === 2" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid ngDoCheck().
+      </div>
+    </div>
+  </app-app-lifecycle-content>
+</div>

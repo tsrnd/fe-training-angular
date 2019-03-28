@@ -76,3 +76,16 @@ header main footer {
 .bd-callout-danger {
   border-left-color: #5f77e0;
 }
+
+.banner img{
+  height: 240px;
+  width: 1440px;
+}
+
+.plus {
+  color: rgb(177, 8, 8);
+}
+
+.delete {
+  float: right;
+}

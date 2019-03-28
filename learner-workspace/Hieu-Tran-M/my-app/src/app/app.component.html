@@ -7,40 +7,46 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Directive</a>
+        <a (click)="changePage('home')" [class.active]="indexPage === 0" class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a (click)="changePage('lifeCycleHook')" [class.active]="indexPage === 1" class="nav-item nav-link" href="#">Lifecycle Hooks</a>
         <a class="nav-item nav-link" href="#">Pricing</a>
       </div>
     </div>
     <a class="nav-link login" href="#">Login</a>
   </nav>
 </header>
-<main class="main-body container mt-5">
-  <div class="mb-5 bd-callout bd-callout-danger">
-    <h2>Tab content</h2>
-  </div>
-  <ul class="nav nav-tabs color-tab-link" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a (click)="getContent('home')" [class.active]="indexTab === 0" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-    </li>
-    <li class="nav-item">
-      <a (click)="getContent('profile')" [class.active]="indexTab === 1" class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-    </li>
-    <li class="nav-item">
-      <a (click)="getContent('contact')" [class.active]="indexTab === 2" class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <app-features [indexTab] = "indexTab"></app-features>
-  </div>
-      
-  <!-- <div>
-    <h1>
-      {{ title }}
-    </h1>
-    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div> -->
-</main>
+<ng-template [ngIf]="indexPage === 0">
+  <main class="main-body container mt-5">
+    <div class="mb-5 bd-callout bd-callout-danger">
+      <h2>Tab content</h2>
+    </div>
+    <ul class="nav nav-tabs color-tab-link" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a (click)="getContent('home')" [class.active]="indexTab === 0" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="getContent('profile')" [class.active]="indexTab === 1" class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="getContent('contact')" [class.active]="indexTab === 2" class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <app-features [indexTab] = "indexTab"></app-features>
+    </div>
+  </main>
+</ng-template>
+
+<ng-template [ngIf]="indexPage === 1">
+  <main>
+    <div class="banner">
+      <img src="assets/jugg.jpg">
+    </div>
+    <div class="container mt-5 accordion" id="accordionExample">
+      <app-app-lifecycle-title></app-app-lifecycle-title>
+    </div>
+  </main>
+</ng-template>
 <footer class="footer">
   <div class="text-footer container col-6">
     Footer

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   indexTab = 0;
+  indexPage = 1;
+
+  changePage(page: string): void {
+    if (page === 'home') {
+      this.indexPage = 0;
+    } else {
+      this.indexPage = 1;
+    }
+  }
+
   getContent(type: string): void {
     if (type === 'home') {
       this.indexTab = 0;
