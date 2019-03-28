@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalComponent } from './modal/modal.component';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  @ViewChild(ModalComponent) comfirmModal: ModalComponent;
+
+  deleteItemID;
+
   index = 0;
 
   listTab = [
@@ -57,9 +63,17 @@ export class AppComponent {
     },
   ];
 
-  removeItem(e) {
-    this.datas = this.datas.filter(data => {
-      return data.id !== e;
-    });
+  removeItem(confirmDelete) {
+    if (confirmDelete) {
+      this.datas = this.datas.filter(data => {
+        return data.id !== this.deleteItemID;
+      });
+      this.deleteItemID = undefined;
+    }
+  }
+
+  passDeleteItemToModal(itemID) {
+    this.deleteItemID = itemID;
+    this.comfirmModal.item = this.datas[this.deleteItemID];
   }
 }

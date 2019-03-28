@@ -34,10 +34,10 @@
       <app-child [tabIndex]=index></app-child>
     </div> -->
 
-    <app-lifecycle-title *ngFor="let data of datas" [data]="data">
-      <app-lifecycle-content [data]="data"></app-lifecycle-content>
-      <app-modal [data]="data" (removeData)="removeItem($event)"></app-modal>
+    <app-lifecycle-title *ngFor="let data of datas" [data]="data" (exportDeleteItem)="passDeleteItemToModal($event)">
+      <app-lifecycle-content></app-lifecycle-content>
     </app-lifecycle-title>
+    <app-modal (removeData)="removeItem($event)"></app-modal>
   </div>
 </body>
 <footer>

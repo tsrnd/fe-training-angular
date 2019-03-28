@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ContentChild } from '@angular/core';
+import { Component, OnInit, Input, ContentChild, Output, EventEmitter } from '@angular/core';
 import { LifecycleContentComponent } from '../lifecycle-content/lifecycle-content.component';
 
 @Component({
@@ -9,13 +9,15 @@ import { LifecycleContentComponent } from '../lifecycle-content/lifecycle-conten
 export class LifecycleTitleComponent implements OnInit {
   @Input('data') item;
   @ContentChild(LifecycleContentComponent) content: LifecycleContentComponent;
+  @Output('exportDeleteItem') deleteItemEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    this.content.item = this.item;
   }
 
-  toggle() {
-    this.content.isCollapsed = !this.content.isCollapsed;
+  deleteItem() {
+    this.deleteItemEvent.emit(this.item.id);
   }
 }

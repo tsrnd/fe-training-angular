@@ -6,9 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./lifecycle-content.component.scss']
 })
 export class LifecycleContentComponent implements OnInit {
-  @Input('data') item;
-
-  isCollapsed = true;
+  item;
 
   constructor() { }
 
