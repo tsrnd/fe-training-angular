@@ -6,18 +6,23 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./app-modal.component.css']
 })
 export class AppModalComponent implements OnInit {
-  @Input() modal: boolean;
-  deleteCollapse = false;
+  @Input() displayModal: boolean;
+  deleteCollapse = {onChange: false, onInit: false, doCheck: false};
   @Input() titleContent: string;
 
-  okDeleteContent(): string {
-    this.deleteCollapse = true;
-    this.modal = false;
-    return this.titleContent;
+  okDeleteContent(): void {
+    if (this.titleContent === 'onChange') {
+      this.deleteCollapse.onChange = true;
+    } else if (this.titleContent === 'onInit') {
+      this.deleteCollapse.onInit = true;
+    } else {
+      this.deleteCollapse.doCheck = true;
+    }
+    this.displayModal = false;
   }
 
   Cancle(): void {
-    this.modal = false;
+    this.displayModal = false;
   }
   constructor() { }
 

@@ -1,4 +1,4 @@
-<div [style.display]="nameCollapse === 'onChange' && behaviorDelete ? 'none' : 'block'" class="card">
+<div [style.display]="behaviorDelete.onChange ? 'none' : 'block'" class="card">
   <div class="card-header" id="headingOne">
     <button (click)="getContent('onChange')" class="btn btn-link plus" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
       <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
@@ -7,7 +7,6 @@
     <button (click)="deleteContent('onChange')" class="btn btn-link delete" data-toggle="modal" data-target="#exampleModal">
       <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
     </button>
-    <app-app-modal [modal]="toogleModal" [titleContent]="titleModal"></app-app-modal>
   </div>
   <app-app-lifecycle-content>
     <div id="collapseOne" [class.show]="indexCollapse === 0" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -18,7 +17,7 @@
   </app-app-lifecycle-content>
 </div>
 
-<div [style.display]="nameCollapse === 'onInit' && behaviorDelete ? 'none' : 'block'" class="card">
+<div [style.display]="behaviorDelete.onInit ? 'none' : 'block'" class="card">
   <div class="card-header" id="headingOne">
     <button (click)="getContent('onInit')" class="btn btn-link plus" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
       <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
@@ -37,7 +36,7 @@
   </app-app-lifecycle-content>
 </div>
 
-<div [style.display]="nameCollapse === 'doCheck' && behaviorDelete ? 'none' : 'block'" class="card">
+<div [style.display]="behaviorDelete.doCheck ? 'none' : 'block'" class="card">
   <div class="card-header" id="headingOne">
     <button (click)="getContent('doCheck')" class="btn btn-link plus" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
       <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
@@ -55,3 +54,5 @@
     </div>
   </app-app-lifecycle-content>
 </div>
+
+<app-app-modal [displayModal]="toogleModal" [titleContent]="titleModal"></app-app-modal>

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, QueryList } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, QueryList, OnChanges } from '@angular/core';
 import { AppModalComponent } from '../app-modal/app-modal.component';
 
 @Component({
@@ -37,7 +37,11 @@ export class AppLifecycleTitleComponent implements OnInit {
       this.titleModal = content;
     }
   }
-  get behaviorDelete(): boolean {
+
+  resetToogle(): void {
+    this.toogleModal = false;
+  }
+  get behaviorDelete(): any {
     return this.viewChild.deleteCollapse;
   }
 
@@ -50,8 +54,10 @@ export class AppLifecycleTitleComponent implements OnInit {
       this.displayCollapse = [false, true];
     }
   }
+
   constructor() { }
 
   ngOnInit() {
   }
+
 }
