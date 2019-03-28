@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AppLifecycleTitleComponent } from './app-lifecycle-title/app-lifecycle-title.component';
 import { AppLifecycleContentComponent } from './app-lifecycle-content/app-lifecycle-content.component';
 import { AppModalComponent } from './app-modal/app-modal.component';
+import { HoverItemDirective } from './shared/directive/hover-item.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppLifecycleTitleComponent,
     AppLifecycleContentComponent,
-    AppModalComponent
+    AppModalComponent,
+    HoverItemDirective
   ],
   imports: [
     BrowserModule,
