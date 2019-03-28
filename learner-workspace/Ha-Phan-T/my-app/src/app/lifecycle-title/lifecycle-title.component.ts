@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { LifecycleContentComponent } from './../lifecycle-content/lifecycle-content.component';
 
 @Component({
   selector: 'app-lifecycle-title',
@@ -7,25 +8,20 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./lifecycle-title.component.scss']
 })
 export class LifecycleTitleComponent implements OnInit {
-  @Input() listMethod: any;
-  @Input() titleMethod: string;
-  @Input() idMethod: any;
-
+  @Input() method: any;
+  @Output() itemDelete = new EventEmitter();
+  @ViewChild(LifecycleContentComponent) contentComponent: LifecycleContentComponent;
   constructor() { }
 
   ngOnInit() {
   }
-  showContent(id) {
-    let tmp = document.getElementById(id);
-    if (tmp.className == "collapse") {
-      tmp.setAttribute("class", "collapse show");
-    } else {
-      tmp.setAttribute("class", "collapse");
-    }
+  confirmDelete() {
+    this.itemDelete.emit({ title: this.method.title, id: this.method.id });
   }
-  callPopup(id, title) {
-    this.titleMethod = title;
-    this.idMethod = "card-" + id;
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.contentComponent.id = this.method.id;
+      this.contentComponent.content = this.method.content;
+    });
   }
-
 }

@@ -6,15 +6,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  @Input() title: string;
-  @Input() id: number;
+  @Input() name: string;
+  @Input() position: number;
   @Output() positionDeleted = new EventEmitter();
-
+  isHidden = true;
   constructor() { }
 
   ngOnInit() {
   }
-  deleteMethod() {
-    this.positionDeleted.emit(this.id);
+  deleteItem(position) {
+    this.positionDeleted.emit(position);
   }
 }

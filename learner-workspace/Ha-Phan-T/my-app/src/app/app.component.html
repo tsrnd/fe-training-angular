@@ -42,29 +42,15 @@
     <app-child [tabIndex]=index></app-child>
   </div> -->
   <div id="accordion">
-    <app-lifecycle-title [listMethod]="listMethod"></app-lifecycle-title>
+    <div *ngFor="let method of listMethod" class="card" id="card-{{method.id}}">
+      <app-lifecycle-title [method]="method">
+        <app-modal (positionDeleted)="deleteItemFromModal($event)"></app-modal>
+      </app-lifecycle-title>
+    </div>
+    <!-- <app-modal [title]="titleMethod" [id]="idMethod"></app-modal> -->
   </div>
 </main>
 <footer class="footer bg-primary">
   <p class="footer-text">Footer</p>
 </footer>
 <router-outlet></router-outlet>
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>

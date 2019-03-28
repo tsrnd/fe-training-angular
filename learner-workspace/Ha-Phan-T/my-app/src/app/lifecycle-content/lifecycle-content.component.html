@@ -1,5 +1,4 @@
-<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" id="{{index}}">
-  <div class="card-body">
-    {{contents}}
+<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" [id]="id">
+  <div class="card-body" [innerHTML]="content">
   </div>
 </div>

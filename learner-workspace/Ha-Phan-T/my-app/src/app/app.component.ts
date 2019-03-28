@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ChildComponent } from './child/child.component';
 
 @Component({
@@ -25,9 +25,14 @@ export class AppComponent {
     { id: 7, title: 'hello7', content: 'hello111117' },
     { id: 8, title: 'hello8', content: 'hello111118' },
   ];
+  @Input() titleMethod: string;
+  @Input() idMethod: any;
   ngOnInit(): void {
     // if (!this.index) {
     //   this.index = 0;
     // }
+  }
+  deleteItemFromModal(position) {
+    this.listMethod.splice(position - 1, 1);
   }
 }

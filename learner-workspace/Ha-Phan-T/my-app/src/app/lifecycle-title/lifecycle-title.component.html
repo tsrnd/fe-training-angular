@@ -1,18 +1,15 @@
-<div *ngFor="let method of listMethod; index as i" class="card" id="card-{{method.id}}">
   <div class="card-header" id="headingOne">
     <h5 class="mb-0">
       <div class="row">
-        <button class="btn btn-default">
-          <i class="fa fa-plus-circle btn-show" (click)="showContent(method.id-1)"></i>
+        <button class="btn btn-default" data-toggle="collapse" [attr.data-target]="'#' + method.id" aria-expanded="true"
+          aria-controls="collapseOne">
+          <i class="fa fa-plus-circle btn-show"></i>
         </button>
         <p class="btn-name">{{method.title}}</p>
         <button class="btn btn-defaul">
-          <i class="fa fa-close btn-delete" data-toggle="modal" data-target="#myModal"
-            (click)="callPopup(method.id, method.title)"></i>
+          <i class="fa fa-close btn-delete" data-toggle="modal" data-target="#myModal" (click)="confirmDelete()"></i>
         </button>
       </div>
     </h5>
   </div>
-  <app-lifecycle-content [contents]="method.content" [index]="i"></app-lifecycle-content>
-  <app-modal [title]="titleMethod" [id]="idMethod"></app-modal>
-</div>
+  <ng-content selector="app-modal"></ng-content>
