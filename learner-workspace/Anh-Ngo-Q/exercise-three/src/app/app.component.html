@@ -34,10 +34,18 @@
       <app-child [tabIndex]=index></app-child>
     </div> -->
 
-    <app-lifecycle-title *ngFor="let data of datas" [data]="data" (exportDeleteItem)="passDeleteItemToModal($event)">
+    <!-- <app-lifecycle-title *ngFor="let data of datas" [data]="data" (exportDeleteItem)="passDeleteItemToModal($event)">
       <app-lifecycle-content></app-lifecycle-content>
     </app-lifecycle-title>
-    <app-modal (removeData)="removeItem($event)"></app-modal>
+    <app-modal (removeData)="removeItem($event)"></app-modal> -->
+
+    <select [(ngModel)]="color">
+      <option *ngFor="let color of listColor">
+        {{color}}
+      </option>
+    </select>
+    <button appHighligh [choosenColor]="color">Button</button>
+    <button appHighligh [choosenColor]="color">Button</button>
   </div>
 </body>
 <footer>

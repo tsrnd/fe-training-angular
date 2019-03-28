@@ -20,6 +20,15 @@ export class AppComponent {
     'contact'
   ];
 
+  listColor = [
+    'white',
+    'blue',
+    'green',
+    'red'
+  ];
+
+  color = this.listColor[0];
+
   datas = [
     {
       id: 1,
