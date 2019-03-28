@@ -31,6 +31,11 @@
     </div>
   </div>  
 </div> -->
-<app-lifecycle [listItem]="listItem">
+
+<!-- <app-lifecycle [listItem]="listItem">
   <app-modal (positionDeleted)="deleteItemFromModal($event)"></app-modal>
-</app-lifecycle>
+</app-lifecycle> -->
+<div [ngStyle]="{'margin': '0 auto', 'width': 'max-content', 'padding-top': '200px'}">
+  <button appHoverDirective [backgroundColor]="'green'" class="btn btn-default">Green</button>
+  <button appHoverDirective [backgroundColor]="'orange'" class="btn btn-default">Orange</button>
+</div>
