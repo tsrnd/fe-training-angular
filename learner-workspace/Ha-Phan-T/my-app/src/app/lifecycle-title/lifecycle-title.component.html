@@ -1,0 +1,18 @@
+<div *ngFor="let method of listMethod; index as i" class="card" id="card-{{method.id}}">
+  <div class="card-header" id="headingOne">
+    <h5 class="mb-0">
+      <div class="row">
+        <button class="btn btn-default">
+          <i class="fa fa-plus-circle btn-show" (click)="showContent(method.id-1)"></i>
+        </button>
+        <p class="btn-name">{{method.title}}</p>
+        <button class="btn btn-defaul">
+          <i class="fa fa-close btn-delete" data-toggle="modal" data-target="#myModal"
+            (click)="callPopup(method.id, method.title)"></i>
+        </button>
+      </div>
+    </h5>
+  </div>
+  <app-lifecycle-content [contents]="method.content" [index]="i"></app-lifecycle-content>
+  <app-modal [title]="titleMethod" [id]="idMethod"></app-modal>
+</div>

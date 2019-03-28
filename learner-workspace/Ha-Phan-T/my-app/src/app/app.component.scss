@@ -5,7 +5,7 @@
 
 .header {
   text-transform: uppercase;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .footer {
@@ -31,4 +31,12 @@
 
 a {
   color: #111111;
+}
+
+* {
+  font-size: 18px;
+}
+
+.btn-login {
+  margin-top: -10px;
 }
