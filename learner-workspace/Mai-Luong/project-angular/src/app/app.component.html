@@ -23,12 +23,14 @@
 </header>
 <main>
   <div class="content offset-md-2 col-8">
-    <div id="accordion" *ngFor="let lifeCycleHookLists of lifeCycleHookLists">
+    <!-- <div id="accordion" *ngFor="let lifeCycleHookLists of lifeCycleHookLists">
       <app-lifecycle-title [lifeCycleHookLists]= "lifeCycleHookLists">
         <app-lifecycle-content [lifeCycleHookLists]= "lifeCycleHookLists"></app-lifecycle-content>
         <app-modal [lifeCycleHookLists]= "lifeCycleHookLists" (removeItem)="removeItem($event)"></app-modal>
       </app-lifecycle-title>
-    </div>
+    </div> -->
+    <button type="button" class="btn" [appHoverItem]="'red'">Success</button>
+    <button type="button" class="btn" [appHoverItem]="'blue'">Danger</button>
   </div>
 </main>
 <footer class="footer">

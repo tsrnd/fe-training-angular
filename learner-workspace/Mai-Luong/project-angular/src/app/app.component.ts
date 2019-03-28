@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { element } from 'protractor';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+// tslint:disable-next-line:directive-class-suffix
 export class AppComponent {
   title = 'project-angular';
   logo = 'HELLO ANGULAR';

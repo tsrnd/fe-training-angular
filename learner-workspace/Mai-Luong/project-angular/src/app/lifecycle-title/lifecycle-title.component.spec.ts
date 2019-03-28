@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppLifecycleTitleComponent } from './lifecycle-title.component';
+import { LifecycleTitleComponent } from './lifecycle-title.component';
 
 describe('AppLifecycleTitleComponent', () => {
-  let component: AppLifecycleTitleComponent;
-  let fixture: ComponentFixture<AppLifecycleTitleComponent>;
+  let component: LifecycleTitleComponent;
+  let fixture: ComponentFixture<LifecycleTitleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppLifecycleTitleComponent ]
+      declarations: [ LifecycleTitleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppLifecycleTitleComponent);
+    fixture = TestBed.createComponent(LifecycleTitleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
