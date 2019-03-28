@@ -1,0 +1,31 @@
+div.banner {
+  background-image: url("https://js.devexpress.com/Content/ImagesNew/Overview/angular-banner.png");
+  height: 180px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  padding-top: 55px;
+}
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.page-content {
+  margin-top: 5%;
+}
+.page-footer {
+  position: fixed;
+  background-color: #f1f3f5;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 3;
+}

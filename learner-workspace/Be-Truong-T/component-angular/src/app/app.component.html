@@ -1,0 +1,18 @@
+<header>
+  <div class="banner">
+    <h1 class="container">LifeCycle Hooks</h1>
+  </div>
+</header>
+
+<main class="page-content container">
+
+  <div class="accordion" *ngFor=" let itemLifeCycleHooks of listLifeCycleHooks; let i=index">
+    <app-app-lifecycle-title (cardCurrent)="getCardClicking($event)"  [elementCard]="itemLifeCycleHooks"></app-app-lifecycle-title>
+    <app-app-lifecycle-content [elementClick]="descCart" [elementCard]="itemLifeCycleHooks">
+    </app-app-lifecycle-content>
+    <app-app-modal [elementClick]="itemLifeCycleHooks" (removeHook)="removeHook($event)"></app-app-modal>
+  </div>
+</main>
+
+<footer class="page-footer">Footer</footer>
+<router-outlet></router-outlet>
