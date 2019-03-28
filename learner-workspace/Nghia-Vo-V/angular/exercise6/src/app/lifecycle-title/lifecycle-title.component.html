@@ -1,0 +1,16 @@
+<li class="list-group-item">
+  <div class="d-flex">
+    <div class="p-2">
+      <button type="button" class="btn btn-danger rounded-circle" data-toggle="collapse" [attr.data-target]="'#collapse' + data.id">
+        +
+      </button>
+      <span class="title">{{ data.name }}</span>
+    </div>
+    <div class="ml-auto p-2">
+      <button type="button" class="close" aria-label="Close" data-dismiss="modal" data-toggle="modal" [attr.data-target]="'#modal' + data.id">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>  
+  <ng-content></ng-content>
+</li>

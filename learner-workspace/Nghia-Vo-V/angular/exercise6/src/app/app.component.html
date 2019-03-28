@@ -1,0 +1,26 @@
+<header mb-4>
+  <div class="container-fluid">
+    <div class="alert alert-danger text-center banner">
+      <span>Lifecycle-Hooks</span>
+    </div>
+  </div>
+</header>
+<main>
+  <div class = "container">
+    <ul class="list-group">
+      <app-lifecycle-title *ngFor= "let data of datas" [title]= "data">
+        <app-lifecycle-content [content]= "data"></app-lifecycle-content>
+        <app-modal [title]= "data" (removeData)= "delData($event)"></app-modal>
+      </app-lifecycle-title>
+    </ul>
+  </div>
+</main>
+<footer class="mt-4">
+  <div class="container-fluid">
+    <div class="alert alert-danger text-center">
+      <span>footer</span>
+    </div>
+  </div>
+</footer>
+<router-outlet></router-outlet>
+  
