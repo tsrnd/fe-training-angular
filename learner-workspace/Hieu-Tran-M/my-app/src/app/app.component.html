@@ -9,7 +9,9 @@
       <div class="navbar-nav">
         <a (click)="changePage('home')" [class.active]="indexPage === 0" class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         <a (click)="changePage('lifeCycleHook')" [class.active]="indexPage === 1" class="nav-item nav-link" href="#">Lifecycle Hooks</a>
-        <a (click)="changePage('directive')" [class.active]="indexPage === 2"class="nav-item nav-link" href="#">Directive</a>
+        <a (click)="changePage('directive')" [class.active]="indexPage === 2" class="nav-item nav-link" href="#">Directive</a>
+        <a (click)="changePage('pipe')" [class.active]="indexPage === 3" class="nav-item nav-link" href="#">Pipe</a>
+        <a (click)="changePage('service')" [class.active]="indexPage === 4" class="nav-item nav-link" href="#">Service</a>
       </div>
     </div>
     <a class="nav-link login" href="#">Login</a>
@@ -57,6 +59,32 @@
     <input type="radio" name="colors" (click)="color='lightgreen'">Green
     <input type="radio" name="colors" (click)="color='yellow'">Yellow
     <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="indexPage === 3">
+  <div class="card-deck">
+    <div class="card">
+      <img src="assets/jugg.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{title | cardTitle: 'Card 1' | cardDescription: 6}}</h5>
+        <p class="card-text">{{description[0].des | cardDescription: limit}}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/jugg.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{title | cardTitle: 'Card 2' | cardDescription: 6}}</h5>
+        <p class="card-text">{{description[1].des | cardDescription: limit}}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/jugg.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{title | cardTitle: 'Card 3' | cardDescription: 6}}</h5>
+        <p class="card-text">{{description[2].des | cardDescription: limit}}</p>
+      </div>
+    </div>
   </div>
 </ng-template>
 

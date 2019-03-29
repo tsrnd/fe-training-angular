@@ -8,6 +8,8 @@ import { AppLifecycleTitleComponent } from './app-lifecycle-title/app-lifecycle-
 import { AppLifecycleContentComponent } from './app-lifecycle-title/app-lifecycle-content/app-lifecycle-content.component';
 import { AppModalComponent } from './app-modal/app-modal.component';
 import { HighlightDirective } from './highlight.directive';
+import { CardTitlePipe } from './shared/pipe/card-title.pipe';
+import { CardDescriptionPipe } from './shared/pipe/card-description.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HighlightDirective } from './highlight.directive';
     AppLifecycleTitleComponent,
     AppLifecycleContentComponent,
     AppModalComponent,
-    HighlightDirective
+    HighlightDirective,
+    CardTitlePipe,
+    CardDescriptionPipe
   ],
   imports: [
     BrowserModule,
