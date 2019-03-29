@@ -1,0 +1,11 @@
+<div [ngStyle]="{'padding-left': '8%'}">
+  <div class="card" *ngFor="let news of listNews">
+    <img class="card-img-top" src="{{news.imageLink}}" alt="Card image cap">
+    <div class="card-body">
+      <div class="card-title"><h4>{{news.title | limitText : 30}}</h4></div>
+      <div class="card-text" [innerHTML]="news.content | limitText : 200"></div>
+      <a href="#" [ngStyle]="{'margin-left': '30%'}"  class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+
