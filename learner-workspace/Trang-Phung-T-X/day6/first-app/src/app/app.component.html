@@ -1,17 +1,57 @@
 <!-- HEADER -->
 <header class="header">
-  <div>
-    <h1>{{title}}</h1>
-  </div>
+  <nav class="navbar navbar-expand-lg">
+    <a class="nav-link active" href="/">
+      <img alt="Logo" height="40" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" title="Logo"
+        width="150" class="ng-star-inserted">
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" title="Home">
+            <span class="nav-link-inner">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" title="Directive">
+            <span class="nav-link-inner">Directive</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" title="Pricing">
+            <span class="nav-link-inner">Pricing</span>
+          </a>
+        </li>
+      </ul>
+      <div>
+        <a class="nav-link active" href="#" title="Login">Login</a>
+      </div>
+    </div>
+  </nav>
 </header>
 <!-- MAIN -->
 <main>
-  <section class="section-content">
-    <div class="container" *ngFor="let item of data">
-      <app-lifecycle-title [item]="item">
-        <app-lifecycle-content [item]="item"></app-lifecycle-content>
-        <app-modal [item]="item" (delItem)="delItem($event)"></app-modal>
-      </app-lifecycle-title>
+  <ng-container *ngIf="data.length !== 0; else empty">
+    <section class="section-content">
+      <div class="container" *ngFor="let item of data">
+        <app-lifecycle-title [item]="item" (showItemDel)="showModalWithContent($event)"  >
+          <app-lifecycle-content [item]="item"></app-lifecycle-content>
+        </app-lifecycle-title>
+      </div>
+      <app-modal (delItem)="delItem($event)"></app-modal>
+    </section>
+  </ng-container>
+  <ng-template #empty>
+    <div class="alert alert-danger alert-dismissible fade in" id="empty">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Danger!</strong> Empty data!!!
     </div>
-  </section>
+  </ng-template>
 </main>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>Footer</p>
+  </div>
+</footer>
+<router-outlet></router-outlet>

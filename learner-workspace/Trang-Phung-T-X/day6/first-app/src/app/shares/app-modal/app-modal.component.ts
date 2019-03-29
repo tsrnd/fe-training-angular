@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -6,17 +6,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./app-modal.component.css']
 })
 export class AppModalComponent implements OnInit {
-  @Input() item: [];
-// tslint:disable-next-line: no-output-rename
-  @Output('delItem') delItemEvent = new EventEmitter();
+  // tslint:disable-next-line: no-output-rename
+  @Output('delItem') deleteItemSelected = new EventEmitter();
+  item: { id: number; title: string; content: string; };
 
   constructor() { }
-  ngOnInit() {
-  }
 
-  delItem(id: number) {
-    this.delItemEvent.emit(id);
-    console.log(id);
+  ngOnInit() { }
+
+  delItem() {
+    this.deleteItemSelected.emit(this.item.id);
   }
 
 }

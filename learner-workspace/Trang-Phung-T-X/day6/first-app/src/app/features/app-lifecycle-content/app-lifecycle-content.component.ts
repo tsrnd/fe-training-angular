@@ -6,8 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./app-lifecycle-content.component.css']
 })
 export class AppLifecycleContentComponent implements OnInit {
-  @Input() item: [];
-
+  @Input() item;
   constructor() { }
   ngOnInit() { }
 

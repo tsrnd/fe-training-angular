@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AppModalComponent } from './shares/app-modal/app-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -39,11 +40,11 @@ export class AppComponent {
       title: 'NgAfterContentChecked()',
       content: `Respond after Angular checks the content projected into the directive/component.
     Called after the ngAfterContentInit() and every subsequent ngDoCheck().`},
-    {
-      id: 6,
-      title: 'NgAfterViewInit()',
-      content: `Respond after Angular initializes the component's views and child views / the view that a directive is in.
-    Called once after the first ngAfterContentChecked().`},
+    // {
+    //   id: 6,
+    //   title: 'NgAfterViewInit()',
+    //   content: `Respond after Angular initializes the component's views and child views / the view that a directive is in.
+    // Called once after the first ngAfterContentChecked().`},
     {
       id: 7,
       title: 'NgAfterViewChecked()',
@@ -57,10 +58,17 @@ export class AppComponent {
     Called just before Angular destroys the directive/component.`}
   ];
 
+  @ViewChild(AppModalComponent) comfirmModal: AppModalComponent;
+
+  showModalWithContent(id) {
+    this.comfirmModal.item = this.data.find(item => item.id === id);
+  }
+
   delItem(id) {
-    this.data = this.data.filter(data => {
-      return data.id !== id;
-    });
+    if (id) {
+      this.data = this.data.filter(item => {
+        return item.id !== id;
+      });
+    }
   }
 }
-
