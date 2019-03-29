@@ -41,12 +41,17 @@
   <div class="tab-content" id="nav-tabContent">
     <app-child [tabIndex]=index></app-child>
   </div> -->
-  <div id="accordion">
+
+  <!-- ex_6 -->
+  <!-- <div id="accordion">
     <div *ngFor="let method of listMethod" class="card" id="card-{{method.id}}">
       <app-lifecycle-title [method]="method"></app-lifecycle-title>
     </div>
     <app-modal (positionDeleted)="deleteItemFromModal($event)"></app-modal>
-  </div>
+  </div> -->
+
+  <button type="button" class="btn btn-1" appHover hoverColor="blue">Basic 1</button>
+  <button type="button" class="btn btn-2" appHover hoverColor="blue">Basic 2</button>
 </main>
 <footer class="footer bg-primary">
   <p class="footer-text">Footer</p>

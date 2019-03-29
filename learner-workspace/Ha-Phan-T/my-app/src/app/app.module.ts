@@ -7,6 +7,7 @@ import { ChildComponent } from './child/child.component';
 import { LifecycleTitleComponent } from './lifecycle-title/lifecycle-title.component';
 import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content.component';
 import { ModalComponent } from './modal/modal.component';
+import { HoverDirective } from './share/directives/hover.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ModalComponent } from './modal/modal.component';
     ChildComponent,
     LifecycleTitleComponent,
     LifecycleContentComponent,
-    ModalComponent
+    ModalComponent,
+    HoverDirective,
   ],
   imports: [
     BrowserModule,
