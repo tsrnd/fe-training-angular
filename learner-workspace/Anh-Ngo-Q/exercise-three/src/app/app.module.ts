@@ -8,6 +8,7 @@ import { LifecycleTitleComponent } from './lifecycle-title/lifecycle-title.compo
 import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content.component';
 import { ModalComponent } from './modal/modal.component';
 import { HighlighDirective } from './highligh.directive';
+import { CompactContentPipe } from './compact-content.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HighlighDirective } from './highligh.directive';
     LifecycleTitleComponent,
     LifecycleContentComponent,
     ModalComponent,
-    HighlighDirective
+    HighlighDirective,
+    CompactContentPipe
   ],
   imports: [
     BrowserModule,

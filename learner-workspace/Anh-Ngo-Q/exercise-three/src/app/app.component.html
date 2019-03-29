@@ -19,6 +19,7 @@
     </div>
   </nav>
 </header>
+
 <body>
   <div class="content-body col-md-10 offset-md-1">
     <!-- <div class="bd-callout bd-callout-info">
@@ -39,13 +40,72 @@
     </app-lifecycle-title>
     <app-modal (removeData)="removeItem($event)"></app-modal> -->
 
-    <select [(ngModel)]="color">
+    <!-- <select [(ngModel)]="color">
       <option *ngFor="let color of listColor">
         {{color}}
       </option>
     </select>
     <button appHighligh [choosenColor]="color">Button</button>
-    <button appHighligh [choosenColor]="color">Button</button>
+    <button appHighligh [choosenColor]="color">Button</button> -->
+
+    <div class="row">
+      <div class="card col" style="width: 18rem;">
+        <img class="card-img-top" src="assets/images/card-img.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.content | compactContent: 100}}</p>
+          <a href="#" class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+
+      <div class="card col" style="width: 18rem;">
+        <img class="card-img-top" src="assets/images/card-img.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.content | compactContent: 100}}</p>
+          <a href="#" class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+
+      <div class="card col" style="width: 18rem;">
+        <img class="card-img-top" src="assets/images/card-img.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.content | compactContent: 100}}</p>
+          <a href="#" class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="select-type">
+      <input (change)="detectChange()" type="radio" [value]="false" [(ngModel)]="forObject"> Typing
+      <input (change)="detectChange()" type="radio" [value]="true" [(ngModel)]="forObject"> Select
+    </div>
+
+    <div *ngIf="!forObject; else objOption">
+      <input [(ngModel)]="selectedValue" type="text">
+    </div>
+    <ng-template #objOption>
+      <select [(ngModel)]="selectedValue">
+        <option *ngFor="let obj of listObject" [ngValue]="obj">{{obj.name}}</option>
+      </select>
+    </ng-template>
+
+    <br>
+    <div class="button-storage">
+      <button class="btn btn-dark" (click)="saveInput(true)">Save in localstorage</button><br>
+      <button class="btn btn-dark" (click)="storageValue=localer.getLocalStorage()">Get in localstorage</button>
+    </div>
+    <br>
+    <div class="button-storage">
+      <button class="btn btn-dark" (click)="saveInput(false)">Save in session storage</button><br>
+      <button class="btn btn-dark" (click)="storageValue=localer.getSessionStorage()">Get in session storage</button>
+    </div>
+
+    <div>
+      <h3>Show value in storage</h3>
+      {{storageValue}}
+    </div>
   </div>
 </body>
 <footer>

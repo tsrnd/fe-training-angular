@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalComponent } from './modal/modal.component';
+import { LocalerService } from './localer.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { ModalComponent } from './modal/modal.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private localer: LocalerService) {}
 
   @ViewChild(ModalComponent) comfirmModal: ModalComponent;
 
@@ -26,6 +29,13 @@ export class AppComponent {
     'green',
     'red'
   ];
+
+  post = {
+    title: 'Card title',
+    content: `Some quick example text to build on the card title and make up the bulk of the card's
+    content. Some quick example text to build on the card title and make up the bulk of the card's content.
+    Some quick example text to build on the card title and make up the bulk of the card's content.`
+  };
 
   color = this.listColor[0];
 
@@ -72,6 +82,23 @@ export class AppComponent {
     },
   ];
 
+  listObject = [
+    {
+      name: 'test1'
+    },
+    {
+      name: 'test2'
+    },
+    {
+      name: 'test3'
+    },
+  ];
+
+  selectedValue;
+  getStorageValue;
+
+  forObject = false;
+
   removeItem(confirmDelete) {
     if (confirmDelete) {
       this.datas = this.datas.filter(data => {
@@ -84,5 +111,16 @@ export class AppComponent {
   passDeleteItemToModal(itemID) {
     this.deleteItemID = itemID;
     this.comfirmModal.item = this.datas[this.deleteItemID];
+  }
+
+  saveInput(isLocal) {
+    isLocal ? this.localer.saveLocalStorage(this.selectedValue) : this.localer.saveSessionStorage(this.selectedValue);
+    if (!this.forObject) {
+      this.selectedValue = null;
+    }
+  }
+
+  detectChange() {
+    this.selectedValue = this.forObject ? this.listObject[0] : null;
   }
 }
