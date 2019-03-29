@@ -89,3 +89,22 @@ header main footer {
 .delete {
   float: right;
 }
+
+.directive {
+  text-align: center;
+  margin-top: 9.5rem;
+}
+
+.directive button {
+  border-color: #495057;
+  margin: 5px;
+}
+
+.input-color {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.input-color input {
+  margin: 5px;
+}

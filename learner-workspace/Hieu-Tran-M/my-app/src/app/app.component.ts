@@ -7,13 +7,15 @@ import { Component, OnChanges } from '@angular/core';
 })
 export class AppComponent {
   indexTab = 0;
-  indexPage = 1;
+  indexPage = 2;
 
   changePage(page: string): void {
     if (page === 'home') {
       this.indexPage = 0;
-    } else {
+    } else if (page === 'lifeCycleHook') {
       this.indexPage = 1;
+    } else if (page === 'directive') {
+      this.indexPage = 2;
     }
   }
 

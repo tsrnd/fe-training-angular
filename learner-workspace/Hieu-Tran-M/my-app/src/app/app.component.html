@@ -9,7 +9,7 @@
       <div class="navbar-nav">
         <a (click)="changePage('home')" [class.active]="indexPage === 0" class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         <a (click)="changePage('lifeCycleHook')" [class.active]="indexPage === 1" class="nav-item nav-link" href="#">Lifecycle Hooks</a>
-        <a class="nav-item nav-link" href="#">Pricing</a>
+        <a (click)="changePage('directive')" [class.active]="indexPage === 2"class="nav-item nav-link" href="#">Directive</a>
       </div>
     </div>
     <a class="nav-link login" href="#">Login</a>
@@ -47,6 +47,19 @@
     </div>
   </main>
 </ng-template>
+
+<ng-template [ngIf]="indexPage === 2">
+  <div class="directive col-12">
+    <button [appHighlight]="color" type="button" class="btn">Success</button>
+    <button [appHighlight]="color" defaultColor="pink" type="button" class="btn">Danger</button>
+  </div>
+  <div class="col-12 input-color">
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  </div>
+</ng-template>
+
 <footer class="footer">
   <div class="text-footer container col-6">
     Footer

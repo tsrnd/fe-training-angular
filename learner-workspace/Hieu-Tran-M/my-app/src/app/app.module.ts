@@ -7,6 +7,7 @@ import { FeaturesComponent } from './features/features.component';
 import { AppLifecycleTitleComponent } from './app-lifecycle-title/app-lifecycle-title.component';
 import { AppLifecycleContentComponent } from './app-lifecycle-title/app-lifecycle-content/app-lifecycle-content.component';
 import { AppModalComponent } from './app-modal/app-modal.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppModalComponent } from './app-modal/app-modal.component';
     FeaturesComponent,
     AppLifecycleTitleComponent,
     AppLifecycleContentComponent,
-    AppModalComponent
+    AppModalComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-app-modal',
@@ -6,11 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./app-modal.component.css']
 })
 export class AppModalComponent implements OnInit {
-  @Input() displayModal: boolean;
   deleteCollapse = {onChange: false, onInit: false, doCheck: false};
   @Input() titleContent: string;
+  @Output() delModal = new EventEmitter<boolean>();
 
   okDeleteContent(): void {
+    this.delModal.emit(true);
     if (this.titleContent === 'onChange') {
       this.deleteCollapse.onChange = true;
     } else if (this.titleContent === 'onInit') {
@@ -18,7 +19,6 @@ export class AppModalComponent implements OnInit {
     } else if (this.titleContent === 'doCheck') {
       this.deleteCollapse.doCheck = true;
     }
-    this.displayModal = false;
   }
 
   constructor() { }

@@ -23,7 +23,7 @@
       <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
     </button>
     <span>ngOnInit()</span>
-    <button (click)="deleteContent('onInit')" class="btn btn-link delete">
+    <button (click)="deleteContent('onInit')" class="btn btn-link delete" data-toggle="modal" data-target="#exampleModal">
       <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
     </button>
   </div>
@@ -42,7 +42,7 @@
       <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
     </button>
     <span>ngDoCheck()</span>
-    <button (click)="deleteContent('doCheck')" class="btn btn-link delete">
+    <button (click)="deleteContent('doCheck')" class="btn btn-link delete" data-toggle="modal" data-target="#exampleModal">
       <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
     </button>
   </div>
@@ -55,4 +55,4 @@
   </app-app-lifecycle-content>
 </div>
 
-<app-app-modal (delModal)="delCollapse($event)" [displayModal]="toogleModal" [titleContent]="titleModal"></app-app-modal>
+<app-app-modal (delModal)="delCollapse($event)" [titleContent]="titleModal"></app-app-modal>
