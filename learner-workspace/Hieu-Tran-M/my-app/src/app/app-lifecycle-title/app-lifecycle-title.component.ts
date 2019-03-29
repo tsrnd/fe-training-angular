@@ -9,21 +9,9 @@ import { AppModalComponent } from '../app-modal/app-modal.component';
 export class AppLifecycleTitleComponent implements OnInit {
   @ViewChild(AppModalComponent) viewChild: AppModalComponent;
 
-  indexCollapse?: number;
-  indexDelete?: number;
   toogleModal = false;
   titleModal?: string;
   displayCollapse = [true, true];
-
-  getContent(type: string): void {
-    if (type === 'onChange') {
-      this.indexCollapse = 0;
-    } else if (type === 'onInit') {
-      this.indexCollapse = 1;
-    } else {
-      this.indexCollapse = 2;
-    }
-  }
 
   deleteContent(content: string): void {
     if (content === 'onChange') {
@@ -38,9 +26,6 @@ export class AppLifecycleTitleComponent implements OnInit {
     }
   }
 
-  resetToogle(): void {
-    this.toogleModal = false;
-  }
   get behaviorDelete(): any {
     return this.viewChild.deleteCollapse;
   }
@@ -49,10 +34,9 @@ export class AppLifecycleTitleComponent implements OnInit {
     return this.viewChild.titleContent;
   }
 
-  deleteCollapse(name: string): void {
-    if (name === 'onChange') {
-      this.displayCollapse = [false, true];
-    }
+  delCollapse(e: any): void {
+    console.log(e);
+    this.toogleModal = false;
   }
 
   constructor() { }

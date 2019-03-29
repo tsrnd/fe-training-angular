@@ -15,15 +15,12 @@ export class AppModalComponent implements OnInit {
       this.deleteCollapse.onChange = true;
     } else if (this.titleContent === 'onInit') {
       this.deleteCollapse.onInit = true;
-    } else {
+    } else if (this.titleContent === 'doCheck') {
       this.deleteCollapse.doCheck = true;
     }
     this.displayModal = false;
   }
 
-  Cancle(): void {
-    this.displayModal = false;
-  }
   constructor() { }
 
   ngOnInit() {
