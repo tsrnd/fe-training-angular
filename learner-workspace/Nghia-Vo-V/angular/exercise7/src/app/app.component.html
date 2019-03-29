@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1>
+     {{ title }}
+  </h1>
+  <div class="container">
+      <div class="container pb-4">
+        <input type="radio" name="colors" (click)="color='lightgreen'" class="mr-1">Green
+        <input type="radio" name="colors" (click)="color='yellow'" class="ml-3 mr-1">Yellow
+        <input type="radio" name="colors" (click)="color='red'" class="ml-3 mr-1">Red
+      </div>
+      <div class="container">
+        <button type="button" class="btn btn-primary mr-3" [appChangecolorbutton]="color">Primary</button>
+        <button type="button" class="btn btn-success" [appChangecolorbutton]="color">Success</button>
+      </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
