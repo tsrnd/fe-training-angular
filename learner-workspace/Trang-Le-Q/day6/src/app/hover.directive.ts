@@ -8,10 +8,11 @@ export class HoverDirective {
   constructor(private el: ElementRef) { }
 
   @Input('appHover') hoverBtn: string;
+  defaultColor = 'red';
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.hover(this.hoverBtn || 'red');
+    this.hover(this.hoverBtn || this.defaultColor);
   }
 
   @HostListener('mouseleave')

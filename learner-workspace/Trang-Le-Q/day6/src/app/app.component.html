@@ -1,15 +1,51 @@
-<button [appHover]= "'pink'">abc</button>
-<button [appHover]= "'yellow'">abc</button>
+<!-- <div class="container">
+  <button [appHover]= "'pink'">abc</button>
+  <button [appHover]= "'yellow'">abc</button>
 
 
-<h4>Pick a highlight color</h4>
-<div>
-  <input type="radio" name="colors" (click)="color='lightgreen'">Green
-  <input type="radio" name="colors" (click)="color='yellow'">Yellow
-  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  <h4>Pick a highlight color</h4>
+  <div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  </div>
+  <p [appHover]="color">Mouse enter me!</p>
+
+  <p [appHover]="color" defaultColor="violet">
+    Mouse enter me too!
+  </p>
+  <p>-----------------------------------------</p>
+
+  <p>Lee Wuan Jain's birthday is {{ birthday | date }}</p>
+
+  <p>Lee Wuan Jain's birthday is {{ birthday | date:"dd/MM/yyyy" }} </p>
+
+  <p>Lee Wuan Jain's birthday is {{ birthday | date:format }}</p>
+  <button (click)="toggleFormat()">Toggle Format</button>
+
+  <p>The chained hero's birthday is {{ birthday | date | uppercase}}</p>
+  <p>The chained hero's birthday is {{ birthday | date: 'shortDate' | uppercase}}</p>
+  <p>The chained hero's birthday is {{  birthday | date:'fullDate' | uppercase}}</p>
+
+  <h2>Power Booster</h2>
+  <p>Super power boost: {{2 | power: 10 }}</p>
+
+  <h2>Power Boost Calculator</h2>
+  <div>Normal power: <input [(ngModel)]="power"></div>
+  <div>Boost factor: <input [(ngModel)]="factor"></div>
+  <p>
+    Super Hero Power:{{power}} ^ {{factor}} : {{power | power: factor}}
+  </p>
+
+  <input type="text" #box (keyup.enter)="addHero(box.value); box.value=''" placeholder="hero name">
+  <button (click)="reset()">Reset</button>
+  <div *ngFor="let hero of heroes">
+    {{hero.name}}
+  </div>
+</div> -->
+
+<div class="container">
+  <app-ex1 [data]= "datas"></app-ex1>
+  <app-ex2></app-ex2>
+
 </div>
-<p [appHover]="color">Mouse enter me!</p>
-
-<p [appHover]="color" defaultColor="violet">
-  Mouse enter me too!
-</p>
