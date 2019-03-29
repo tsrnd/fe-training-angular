@@ -9,6 +9,8 @@ import { AppModalComponent } from './shares/app-modal/app-modal.component';
 import { HighlightButtonDirective } from './directive/highlight-button.directive';
 import { CollapseTextPipe } from './pipe/collapse-text/collapse-text.pipe';
 import { NewsComponent } from './day8/news/news.component';
+import { ButtonsComponent } from './day8/buttons/buttons.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { NewsComponent } from './day8/news/news.component';
     AppModalComponent,
     HighlightButtonDirective,
     CollapseTextPipe,
-    NewsComponent
+    NewsComponent,
+    ButtonsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
