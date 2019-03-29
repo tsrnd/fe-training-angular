@@ -59,6 +59,7 @@ export class AppComponent {
   ];
 
   @ViewChild(AppModalComponent) comfirmModal: AppModalComponent;
+  color: string;
 
   showModalWithContent(id) {
     this.comfirmModal.item = this.data.find(item => item.id === id);

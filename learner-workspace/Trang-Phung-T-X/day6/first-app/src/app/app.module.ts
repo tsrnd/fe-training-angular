@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AppLifecycleTitleComponent } from './features/app-lifecycle-title/app-lifecycle-title.component';
 import { AppLifecycleContentComponent } from './features/app-lifecycle-content/app-lifecycle-content.component';
 import { AppModalComponent } from './shares/app-modal/app-modal.component';
+import { HighlightButtonDirective } from './directive/highlight-button.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppLifecycleTitleComponent,
     AppLifecycleContentComponent,
-    AppModalComponent
+    AppModalComponent,
+    HighlightButtonDirective
   ],
   imports: [
     BrowserModule,
