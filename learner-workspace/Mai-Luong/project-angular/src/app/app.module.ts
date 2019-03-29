@@ -7,6 +7,7 @@ import { LifecycleTitleComponent } from './lifecycle-title/lifecycle-title.compo
 import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content.component';
 import { ModalComponent } from './modal/modal.component';
 import { HoverItemDirective } from './shared/hover-item.directive';
+import { PipePipe } from './shared/pipe/pipe.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HoverItemDirective } from './shared/hover-item.directive';
     LifecycleTitleComponent,
     LifecycleContentComponent,
     ModalComponent,
-    HoverItemDirective
+    HoverItemDirective,
+    PipePipe
   ],
   imports: [
     BrowserModule,

@@ -29,8 +29,19 @@
         <app-modal [lifeCycleHookLists]= "lifeCycleHookLists" (removeItem)="removeItem($event)"></app-modal>
       </app-lifecycle-title>
     </div> -->
-    <button type="button" class="btn" [appHoverItem]="'red'">Success</button>
-    <button type="button" class="btn" [appHoverItem]="'blue'">Danger</button>
+
+    <!-- <button type="button" class="btn" [appHoverItem]="'red'">Success</button>
+    <button type="button" class="btn" [appHoverItem]="'blue'">Danger</button> -->
+    <div class="card-deck">
+      <div class="card" *ngFor = "let dataPipe of dataPipe">
+        <img class="card-img-top" src="../assets/images/dog.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ dataPipe.title | pipe: '10' }}</h5>
+          <p class="card-text">{{ dataPipe.content | pipe: '50' }}</p>
+        </div>
+      </div>
+    
+    </div>
   </div>
 </main>
 <footer class="footer">
