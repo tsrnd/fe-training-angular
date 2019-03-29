@@ -8,12 +8,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class AppLifecycleTitleComponent implements OnInit {
   @Input() item;
   // tslint:disable-next-line: no-output-rename
-  @Output('showItemDel') deleteItemEvent = new EventEmitter();
+  @Output() showItemDel = new EventEmitter();
   constructor() { }
 
   ngOnInit() { }
 
   deleteItem() {
-    this.deleteItemEvent.emit(this.item.id);
+    this.showItemDel.emit(this.item.id);
   }
 }

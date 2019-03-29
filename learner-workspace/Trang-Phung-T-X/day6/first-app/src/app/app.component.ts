@@ -19,37 +19,36 @@ export class AppComponent {
     {
       id: 2,
       title: 'NgOnInit()',
-      content: `
-    Initialize the directive/component after Angular first displays the data-bound properties and sets the
+      content: `Initialize the directive/component after Angular first displays the data-bound properties and sets the
     directive/component's input properties.
     Called once, after the first ngOnChanges().`
     },
-    {
-      id: 3,
-      title: 'NgDoCheck()',
-      content: `Detect and act upon changes that Angular can't or won't detect on its own.
-    Called during every change detection run, immediately after ngOnChanges() and ngOnInit().`
-    },
-    {
-      id: 4,
-      title: 'NgAfterContentInit()',
-      content: `Respond after Angular projects external content into the component's view / the view that a directive is in.
-    Called once after the first ngDoCheck().`},
-    {
-      id: 5,
-      title: 'NgAfterContentChecked()',
-      content: `Respond after Angular checks the content projected into the directive/component.
-    Called after the ngAfterContentInit() and every subsequent ngDoCheck().`},
+    // {
+    //   id: 3,
+    //   title: 'NgDoCheck()',
+    //   content: `Detect and act upon changes that Angular can't or won't detect on its own.
+    // Called during every change detection run, immediately after ngOnChanges() and ngOnInit().`
+    // },
+    // {
+    //   id: 4,
+    //   title: 'NgAfterContentInit()',
+    //   content: `Respond after Angular projects external content into the component's view / the view that a directive is in.
+    // Called once after the first ngDoCheck().`},
+    // {
+    //   id: 5,
+    //   title: 'NgAfterContentChecked()',
+    //   content: `Respond after Angular checks the content projected into the directive/component.
+    // Called after the ngAfterContentInit() and every subsequent ngDoCheck().`},
     // {
     //   id: 6,
     //   title: 'NgAfterViewInit()',
     //   content: `Respond after Angular initializes the component's views and child views / the view that a directive is in.
     // Called once after the first ngAfterContentChecked().`},
-    {
-      id: 7,
-      title: 'NgAfterViewChecked()',
-      content: `Respond after Angular checks the component's views and child views / the view that a directive is in.
-    Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked().`},
+    // {
+    //   id: 7,
+    //   title: 'NgAfterViewChecked()',
+    //   content: `Respond after Angular checks the component's views and child views / the view that a directive is in.
+    // Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked().`},
     {
       id: 8,
       title: 'Destroy()',
@@ -60,6 +59,7 @@ export class AppComponent {
 
   @ViewChild(AppModalComponent) comfirmModal: AppModalComponent;
   color: string;
+  defaultColor = 'blue';
 
   showModalWithContent(id) {
     this.comfirmModal.item = this.data.find(item => item.id === id);

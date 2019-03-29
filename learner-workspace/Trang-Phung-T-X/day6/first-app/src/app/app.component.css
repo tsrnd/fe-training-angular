@@ -25,7 +25,7 @@ main {
   text-transform: uppercase;
 }
 .section-content {
-  font-weight: bold;
+  /* font-weight: bold; */
   padding: 20px 0;
 }
 .bd-callout {
@@ -85,7 +85,6 @@ main {
   margin-bottom: 10px;
   background-color: #F8F9FA;
   width: 100%;
-  position:absolute;
   bottom:0;
   height:60px;
 }
@@ -99,5 +98,8 @@ main {
 .footer p {
   padding: 15px 0;
   font-size: 20px;
+}
+.main-section {
+  margin: 5% 0 10% 0;
 }
 

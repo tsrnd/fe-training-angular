@@ -50,39 +50,47 @@
     </ng-template>
   </ng-template>
 
-  <section class="section-content">
-    <div class="container">
-      <h1>My First Attribute Directive</h1>
+  <ng-template>
+    <section class="section-content">
+      <div class="container">
+        <h1>My First Attribute Directive</h1>
 
-      <h4>Pick a highlight color</h4>
-      <div class="bd-example">
-        <div class="form-check">
-          <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1" (click)="color='lightgreen'">
-          <label class="form-check-label" for="exampleRadios1">
-            Green
-          </label>
+        <h4>Pick a highlight color</h4>
+        <div class="bd-example">
+          <div class="form-check">
+            <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1" (click)="color='lightgreen'">
+            <label class="form-check-label" for="exampleRadios1">
+              Green
+            </label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="exampleRadios" id="exampleRadios2" value="option2" (click)="color='yellow'">
+            <label class="form-check-label" for="exampleRadios2">
+              Yellow
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input type="radio" name="exampleRadios" id="exampleRadios3" value="option3" (click)="color='cyan'">
+            <label class="form-check-label" for="exampleRadios3">
+              Cyan
+            </label>
+          </div>
         </div>
-        <div class="form-check">
-          <input type="radio" name="exampleRadios" id="exampleRadios2" value="option2" (click)="color='yellow'">
-          <label class="form-check-label" for="exampleRadios2">
-            Yellow
-          </label>
-        </div>
-        <div class="form-check disabled">
-          <input type="radio" name="exampleRadios" id="exampleRadios3" value="option3" (click)="color='cyan'">
-          <label class="form-check-label" for="exampleRadios3">
-            Cyan
-          </label>
-        </div>
+        <p [appHighlightButton]="color" [defaultColor]="defaultColor">Hover me!</p>
       </div>
-      <!-- <div>
-        <input type="radio" name="colors" (click)="color='lightgreen'">Green
-        <input type="radio" name="colors" (click)="color='yellow'">Yellow
-        <input type="radio" name="colors" (click)="color='cyan'">Cyan
-      </div> -->
-      <p [appHighlightButton]="color">Highlight me!</p>
+    </section>
+  </ng-template>
+
+  <section class="main-section">
+   <div class="container">
+    <div class="row">
+      <div *ngFor="let item of data">
+        <app-news [item]="item"></app-news>
+      </div>
     </div>
+   </div>
   </section>
+
 
 </main>
 <!-- FOOTER -->

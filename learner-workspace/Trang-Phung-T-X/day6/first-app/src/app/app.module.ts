@@ -7,6 +7,8 @@ import { AppLifecycleTitleComponent } from './features/app-lifecycle-title/app-l
 import { AppLifecycleContentComponent } from './features/app-lifecycle-content/app-lifecycle-content.component';
 import { AppModalComponent } from './shares/app-modal/app-modal.component';
 import { HighlightButtonDirective } from './directive/highlight-button.directive';
+import { CollapseTextPipe } from './pipe/collapse-text/collapse-text.pipe';
+import { NewsComponent } from './day8/news/news.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HighlightButtonDirective } from './directive/highlight-button.directive
     AppLifecycleTitleComponent,
     AppLifecycleContentComponent,
     AppModalComponent,
-    HighlightButtonDirective
+    HighlightButtonDirective,
+    CollapseTextPipe,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

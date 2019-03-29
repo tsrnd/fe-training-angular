@@ -7,17 +7,18 @@ export class HighlightButtonDirective {
   constructor(private el: ElementRef) { }
 
 // tslint:disable-next-line: no-input-rename
-  @Input('appHighlightButton') highlightColor: string;
+  @Input() appHighlightButton: string;
+  @Input() defaultColor: string;
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight(this.highlightColor || 'red');
+    this.hover(this.appHighlightButton || this.defaultColor || 'pink');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.highlight(null);
+    this.hover(null);
   }
 
-  private highlight(color: string) {
-    this.el.nativeElement.style.backgroundColor = color;
+  private hover(color: string) {
+    this.el.nativeElement.style.color = color;
   }
 }
