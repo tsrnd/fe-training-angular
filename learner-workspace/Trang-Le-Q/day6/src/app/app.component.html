@@ -1,0 +1,15 @@
+<button [appHover]= "'pink'">abc</button>
+<button [appHover]= "'yellow'">abc</button>
+
+
+<h4>Pick a highlight color</h4>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHover]="color">Mouse enter me!</p>
+
+<p [appHover]="color" defaultColor="violet">
+  Mouse enter me too!
+</p>
