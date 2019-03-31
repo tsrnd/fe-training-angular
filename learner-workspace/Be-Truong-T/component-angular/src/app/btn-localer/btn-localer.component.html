@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label for="keyInput">Key</label>
+  <input type="text" class="form-control" placeholder="Enter your key!" [(ngModel)]="keyInput">
+  <label for="valueInput">Value</label>
+  <input type="text" class="form-control" placeholder="Enter your value!" [(ngModel)]="valueInput">
+</div>
+<div class="btn-localer">
+  <button type="button" class="btn btn-primary" (click)="saveLocal()">Save LocalStorage</button>
+  <button type="button" class="btn btn-primary" (click)="getLocal()">Get LocalStorage</button>
+  <button type="button" class="btn btn-primary" (click)="saveSession()">Save SessionStorage</button>
+  <button type="button" class="btn btn-primary" (click)="getSession()">Get SessionStorage</button>
+</div>

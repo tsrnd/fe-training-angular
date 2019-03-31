@@ -33,18 +33,25 @@
   </ng-template>
 
   <!-- exercise8.1: news card(pipe) -->
-  <div class="card-deck card-news">
-    <div class="card" *ngFor="let itemCard of listNewsCard">
-      <img src="{{itemCard.img}}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title" >{{itemCard.title | wordLimit:15}}</h5>
-        <p class="card-text">{{itemCard.desc | wordLimit:70}}</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+  <ng-template>
+    <div class="card-deck card-news">
+      <div class="card" *ngFor="let itemCard of listNewsCard">
+        <img src="{{itemCard.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" >{{itemCard.title | wordLimit:15}}</h5>
+          <p class="card-text">{{itemCard.desc | wordLimit:70}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-template>
+
+  <!-- exercise8.2: localer-->
+  <app-btn-localer></app-btn-localer>
+  
+
 </main>
 
 <footer class="page-footer">Footer</footer>

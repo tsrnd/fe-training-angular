@@ -8,6 +8,8 @@ import { AppLifecycleContentComponent } from './app-lifecycle-content/app-lifecy
 import { AppModalComponent } from './app-modal/app-modal.component';
 import { HoverItemDirective } from './shared/directive/hover-item.directive';
 import { WordLimitPipe } from './shared/pipe/word-limit.pipe';
+import { BtnLocalerComponent } from './btn-localer/btn-localer.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { WordLimitPipe } from './shared/pipe/word-limit.pipe';
     AppLifecycleContentComponent,
     AppModalComponent,
     HoverItemDirective,
-    WordLimitPipe
+    WordLimitPipe,
+    BtnLocalerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
