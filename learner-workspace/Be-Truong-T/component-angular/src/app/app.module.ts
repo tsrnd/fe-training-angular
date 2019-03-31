@@ -7,6 +7,7 @@ import { AppLifecycleTitleComponent } from './app-lifecycle-title/app-lifecycle-
 import { AppLifecycleContentComponent } from './app-lifecycle-content/app-lifecycle-content.component';
 import { AppModalComponent } from './app-modal/app-modal.component';
 import { HoverItemDirective } from './shared/directive/hover-item.directive';
+import { WordLimitPipe } from './shared/pipe/word-limit.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HoverItemDirective } from './shared/directive/hover-item.directive';
     AppLifecycleTitleComponent,
     AppLifecycleContentComponent,
     AppModalComponent,
-    HoverItemDirective
+    HoverItemDirective,
+    WordLimitPipe
   ],
   imports: [
     BrowserModule,

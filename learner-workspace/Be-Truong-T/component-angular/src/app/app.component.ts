@@ -53,6 +53,28 @@ export class AppComponent {
     }
   ];
 
+  // news-card
+  listNewsCard = [
+    {
+      id: 0,
+      title: 'Card title one',
+      desc: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      img: '../assets/images/news-page/news1.jpeg'
+    },
+    {
+      id: 1,
+      title: 'Card title two',
+      desc: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      img: '../assets/images/news-page/news2.jpeg'
+    },
+    {
+      id: 2,
+      title: 'Card title three',
+      desc: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      img: '../assets/images/news-page/news3.jpeg'
+    }
+  ];
+
   getCardClicking($event) {
     this.descCart = $event;
     console.log('Get Card Clicking in parent: ' + $event);
@@ -63,4 +85,5 @@ export class AppComponent {
       return element.id !== $event;
     });
   }
+
 }

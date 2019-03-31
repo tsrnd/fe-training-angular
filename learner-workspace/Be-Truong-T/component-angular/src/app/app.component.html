@@ -5,6 +5,8 @@
 </header>
 
 <main class="page-content container">
+
+   <!-- exercise6: angular attribute direction -->
   <ng-template>
     <div class="accordion" *ngFor=" let itemLifeCycleHooks of listLifeCycleHooks; let i=index">
       <app-app-lifecycle-title (cardCurrent)="getCardClicking($event)"  [elementCard]="itemLifeCycleHooks"></app-app-lifecycle-title>
@@ -15,19 +17,34 @@
   </ng-template>
 
   <!-- exercise7: angular attribute direction -->
-  <h4>Attribute Directive</h4>
-  <h5>Pick a hover color</h5>
-  <div>
-    <input type="radio" name="colors" (click)="color='lightgreen'">Green
-    <input type="radio" name="colors" (click)="color='yellow'">Yellow
-    <input type="radio" name="colors" (click)="color='cyan'">Cyan
-    <input type="radio" name="colors" (click)="color='green'">Green
-    <input type="radio" name="colors" (click)="color='pink'">Pink
-    <input type="radio" name="colors" (click)="color='purple'">Purple
-  </div>
-  <button [appHoverItem]="color" >konichiwa</button>
-  <button [appHoverItem]="color" defaultColor="violet" >sayyounara</button>
+  <ng-template>
+    <h4>Attribute Directive</h4>
+    <h5>Pick a hover color</h5>
+    <div>
+      <input type="radio" name="colors" (click)="color='lightgreen'">Green
+      <input type="radio" name="colors" (click)="color='yellow'">Yellow
+      <input type="radio" name="colors" (click)="color='cyan'">Cyan
+      <input type="radio" name="colors" (click)="color='green'">Green
+      <input type="radio" name="colors" (click)="color='pink'">Pink
+      <input type="radio" name="colors" (click)="color='purple'">Purple
+    </div>
+    <button [appHoverItem]="color" >konichiwa</button>
+    <button [appHoverItem]="color" defaultColor="violet" >sayyounara</button>
+  </ng-template>
 
+  <!-- exercise8.1: news card(pipe) -->
+  <div class="card-deck card-news">
+    <div class="card" *ngFor="let itemCard of listNewsCard">
+      <img src="{{itemCard.img}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" >{{itemCard.title | wordLimit:15}}</h5>
+        <p class="card-text">{{itemCard.desc | wordLimit:70}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer class="page-footer">Footer</footer>
