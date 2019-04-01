@@ -7,15 +7,15 @@ export class LocalerService {
 
   constructor() { }
   saveLocalStorage(input: string) {
-    localStorage.setItem('local', input);
+    localStorage.setItem('local', JSON.stringify(input));
   }
   getLocalStorage() {
-    return localStorage.getItem('local');
+    return JSON.parse(localStorage.getItem('local'));
   }
   saveSessionStorage(input: string) {
-    sessionStorage.setItem('session', input);
+    sessionStorage.setItem('session', JSON.stringify(input));
   }
   getSessionStorage() {
-    return sessionStorage.getItem('session');
+    return JSON.parse(sessionStorage.getItem('session'));
   }
 }
