@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { Ex1Component } from './ex1/ex1.component';
 import { CompactPipe } from './feature/pipe/compact.pipe';
 import { Ex2Component } from './ex2/ex2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from 'selenium-webdriver/http';
+import { from } from 'rxjs';
+import { Ex9Component } from './ex9/ex9.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,13 @@ import { Ex2Component } from './ex2/ex2.component';
     Ex1Component,
     CompactPipe,
     Ex2Component,
+    Ex9Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

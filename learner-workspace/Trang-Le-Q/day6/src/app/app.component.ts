@@ -10,6 +10,9 @@ import { PowerPipe } from './feature/pipe/power.pipe';
 
 
 export class AppComponent {
+  constructor() {
+    // this.reset();
+  }
   title = 'day6';
   color: string;
   birthday = new Date(1996, 3, 29);
@@ -35,23 +38,26 @@ export class AppComponent {
     }
   ];
 
-  constructor() { this.reset(); }
-  get format()   { return this.toggle ? 'shortDate' : 'fullDate'; }
-  toggleFormat() { this.toggle = !this.toggle; }
+  // get format()   { return this.toggle ? 'shortDate' : 'fullDate'; }
+  // toggleFormat() { this.toggle = !this.toggle; }
 
-  powerPipe = new PowerPipe;
-  power = 1;
-  factor = 5;
-  heroes: any[] = [];
-  canFly = true;
+  // powerPipe = new PowerPipe;
+  // power = 1;
+  // factor = 5;
+  // heroes: any[] = [];
+  // canFly = true;
 
-  addHero(name: string) {
-    name = name.trim();
-    if (!name) { return; }
-    let hero = {name, canFly: this.canFly};
-    this.heroes.push(hero);
-  }
+  // addHero(name: string) {
+  //   name = name.trim();
+  //   if (!name) { return; }
+  //   let hero = {name, canFly: this.canFly};
+  //   this.heroes.push(hero);
+  // }
 
-  reset() { this.heroes = []; }
-
+  // reset() { this.heroes = []; }
+  // this.apiService.get();
+  // abc() {
+  //   this.apiService.getAssets('../assets/assets.json').subscribe(data => console.log(data));
+  //   // this.apiService.getConfigResponse(ENDPOINT.users).subscribe(data => console.log(data));
+  // }
 }
