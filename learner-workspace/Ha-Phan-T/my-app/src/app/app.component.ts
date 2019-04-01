@@ -1,13 +1,16 @@
-import { Component, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, ElementRef, ViewChild, OnDestroy, OnInit } from '@angular/core';
 import { ChildComponent } from './child/child.component';
 import { LocalerService } from './share/services/localer.service';
+import { ApiService } from './share/services/api.service';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   // title = 'my-app';
   // index: number;
   // listTab = [
@@ -15,29 +18,30 @@ export class AppComponent {
   //   'info',
   //   'contact'
   // ];
-  listMethod = [
-    { id: 1, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-    { id: 2, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-    { id: 3, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-    { id: 4, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-    { id: 5, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-    { id: 6, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-    { id: 7, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-    { id: 8, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
-  ];
+
   @Input() titleMethod: string;
   @Input() idMethod: any;
   @ViewChild('key') myKey: ElementRef;
   @ViewChild('data') myData: ElementRef;
-  constructor(private localerService: LocalerService) { }
+  getNewsAssetsSub: Subscription;
+  listMethods;
+  constructor(
+    private localerService: LocalerService,
+    private apiService: ApiService
+  ) { }
   ngOnInit(): void {
-    // if (!this.index) {
-    //   this.index = 0;
-    // }
+    this.getNewsAssetsSub = this.apiService.getAssets('assets/listmethods.json').subscribe((datas) => {
+      this.listMethods = datas;
+    });
   }
-  deleteItemFromModal(position) {
-    this.listMethod.splice(position - 1, 1);
+
+  ngOnDestroy(): void {
+    this.getNewsAssetsSub.unsubscribe();
   }
+  // deleteItemFromModal(position) {
+  //   listMethod.splice(position - 1, 1);
+  // }
+
   saveLocal() {
     if (this.myKey.nativeElement.value && this.myData.nativeElement.value) {
       this.localerService.saveLocalStorage(this.myKey.nativeElement.value, this.myData.nativeElement.value);

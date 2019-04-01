@@ -9,6 +9,7 @@ import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content
 import { ModalComponent } from './modal/modal.component';
 import { HoverDirective } from './share/directives/hover.directive';
 import { ContentLengthPipe } from './share/pipes/content-length.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContentLengthPipe } from './share/pipes/content-length.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
