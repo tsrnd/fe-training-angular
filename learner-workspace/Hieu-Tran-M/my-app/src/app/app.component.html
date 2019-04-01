@@ -88,6 +88,15 @@
   </div>
 </ng-template>
 
+<ng-template [ngIf]="indexPage === 4">
+  <div class="directive col-12">
+    <button (click)="localerService.saveLocalStorage('Primary', '1')" type="button" class="btn btn-primary">Primary</button>
+    <button (click)="localerService.getLocalStorage('1')" type="button" class="btn btn-secondary">Secondary</button>
+    <button (click)="localerService.saveSessionStorage('Success', 2)" type="button" class="btn btn-success">Success</button>
+    <button (click)="localerService.getSessionStorage('2')" type="button" class="btn btn-danger">Danger</button>
+  </div>
+</ng-template>
+
 <footer class="footer">
   <div class="text-footer container col-6">
     Footer

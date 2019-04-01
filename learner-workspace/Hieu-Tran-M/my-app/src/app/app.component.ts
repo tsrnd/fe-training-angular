@@ -1,4 +1,5 @@
 import { Component, OnChanges } from '@angular/core';
+import { LocalerService } from './core/services/localer.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component, OnChanges } from '@angular/core';
 })
 export class AppComponent {
   indexTab = 0;
-  indexPage = 3;
+  indexPage = 4;
   limit = 100;
   title = 'Card title';
   description = [
@@ -35,6 +36,8 @@ export class AppComponent {
       this.indexPage = 2;
     } else if (page === 'pipe') {
       this.indexPage = 3;
+    } else if (page === 'service') {
+      this.indexPage = 4;
     }
   }
 
@@ -47,4 +50,6 @@ export class AppComponent {
       this.indexTab = 2;
     }
   }
+
+  constructor(public localerService: LocalerService) {}
 }
