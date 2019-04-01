@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import {LocalerService} from './core/service/localer.service';
+import {ApiService, ENDPOINT} from './core/service/api.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,28 +11,8 @@ export class AppComponent {
   title = 'ANGULAR TRAINING';
   myValue: string;
   @ViewChild('key') myKey: ElementRef;
-  listNews = [
-    {
-      title: 'Excepteur',
-      content: `&nbsp &nbsp Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui Duis aute irure dolor in reprehenderit in voluptate
-         velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui`,
-      imageLink: 'assets/images/images.jpeg'
-    },
-    {
-      title: 'Duis aute irure dolor',
-      content: `&nbsp &nbsp Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui`,
-      imageLink: 'assets/images/images.jpeg'
-    },
-    {
-      title: 'Excepteur sint occaecat cupidatat non ',
-      content: `&nbsp &nbsp Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui`,
-      imageLink: 'assets/images/images.jpeg'
-    }
-  ];
+  listNews = [];
+  err: any;
   listItem = [
     {
       name: 'ngOnChange()',
@@ -74,8 +55,20 @@ export class AppComponent {
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui. ngDestroyed()`,
     }
   ];
-  constructor(private localerService: LocalerService) {
-
+  defaultValue = [
+    {
+      name: 'default'
+    }
+  ];
+  constructor(
+    private localerService: LocalerService,
+    private apiService: ApiService
+  ) {
+    apiService.getAssets('news.json').then( ob => {
+        this.listNews = ob;
+    }).catch( (err) => {
+      this.err = err;        
+    });
   }
   onChangeTab(tab) {
     this.myTab = tab;
@@ -84,8 +77,9 @@ export class AppComponent {
     this.listItem.splice(position, 1);
   }
   saveLocal() {
-    if (this.myKey.nativeElement.value && this.myValue) {
-      this.localerService.saveLocalStorage(this.myKey.nativeElement.value, this.myValue);
+    if (this.myKey.nativeElement.value) {
+      const value = this.myValue ? this.myValue : this.defaultValue;
+      this.localerService.saveLocalStorage(this.myKey.nativeElement.value, value);
     }
   }
   getLocal() {
@@ -94,8 +88,9 @@ export class AppComponent {
     }
   }
   saveSession() {
-    if (this.myKey.nativeElement.value && this.myValue) {
-      this.localerService.saveSessionStorage(this.myKey.nativeElement.value, this.myValue);
+    if (this.myKey.nativeElement.value) {
+      const value = this.myValue ? this.myValue : this.defaultValue;
+      this.localerService.saveSessionStorage(this.myKey.nativeElement.value, value);
     }
   }
   getSession() {

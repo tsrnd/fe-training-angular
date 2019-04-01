@@ -40,11 +40,15 @@
   <button appHoverDirective [backgroundColor]="'orange'" class="btn btn-default">Orange</button>
 </div> -->
 <app-news [listNews]="listNews"></app-news>
-<div [ngStyle]="{'margin': '30px 0 100px 20%'}">
+<ng-template [ngIf]="err">
+  <div class="alert alert-danger">{{err}}</div>
+</ng-template>
+
+<!-- <div [ngStyle]="{'margin': '30px 0 100px 20%'}">
   <label>Key</label> <input type="text" #key>
   <label>Value</label> <input type="text" [(ngModel)]="myValue">
   <button [ngStyle]="{'margin-left': '20px'}" class="btn btn-warning" (click)="saveLocal()">Save Local</button>
   <button [ngStyle]="{'margin-left': '20px'}" class="btn btn-warning" (click)="getLocal()">Get Local</button>
   <button [ngStyle]="{'margin-left': '20px'}" class="btn btn-primary"(click)="saveSession()">Save Session</button>
   <button [ngStyle]="{'margin-left': '20px'}" class="btn btn-primary"(click)="getSession()">Get Session</button>
-</div>
+</div> -->

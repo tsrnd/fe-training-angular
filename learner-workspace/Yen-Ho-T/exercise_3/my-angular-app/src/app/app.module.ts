@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
@@ -11,6 +12,7 @@ import { HoverDirectiveDirective } from './share/directive/hover-directive.direc
 import { NewsComponent } from './features/news/news.component';
 import { LimitTextPipe } from './share/pipe/limit-text.pipe';
 import {LocalerService} from './core/service/localer.service';
+import {ApiService} from './core/service/api.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import {LocalerService} from './core/service/localer.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [LocalerService],
+  providers: [LocalerService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
