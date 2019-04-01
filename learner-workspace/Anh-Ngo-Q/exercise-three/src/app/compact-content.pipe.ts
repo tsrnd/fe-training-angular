@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CompactContentPipe implements PipeTransform {
 
   transform(value: string, limit: number): any {
-    return `${value.substr(0, limit)}...`;
+    return value.length > limit ? `${value.substr(0, limit)}...` : value;
   }
-
 }

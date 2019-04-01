@@ -49,35 +49,17 @@
     <button appHighligh [choosenColor]="color">Button</button> -->
 
     <div class="row">
-      <div class="card col" style="width: 18rem;">
-        <img class="card-img-top" src="assets/images/card-img.png" alt="Card image cap">
+      <div *ngFor="let new of news" class="card col" style="width: 18rem;">
+        <img class="card-img-top" [src]="new.image_url" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <p class="card-text">{{post.content | compactContent: 100}}</p>
-          <a href="#" class="btn btn-primary">Read more</a>
-        </div>
-      </div>
-
-      <div class="card col" style="width: 18rem;">
-        <img class="card-img-top" src="assets/images/card-img.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <p class="card-text">{{post.content | compactContent: 100}}</p>
-          <a href="#" class="btn btn-primary">Read more</a>
-        </div>
-      </div>
-
-      <div class="card col" style="width: 18rem;">
-        <img class="card-img-top" src="assets/images/card-img.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <p class="card-text">{{post.content | compactContent: 100}}</p>
+          <h5 class="card-title">{{new.title | compactContent: 20}}</h5>
+          <p class="card-text">{{new.content | compactContent: 100}}</p>
           <a href="#" class="btn btn-primary">Read more</a>
         </div>
       </div>
     </div>
 
-    <div class="select-type">
+    <!-- <div class="select-type">
       <input (change)="detectChange()" type="radio" [value]="false" [(ngModel)]="forObject"> Typing
       <input (change)="detectChange()" type="radio" [value]="true" [(ngModel)]="forObject"> Select
     </div>
@@ -105,7 +87,7 @@
     <div>
       <h3>Show value in storage</h3>
       {{storageValue}}
-    </div>
+    </div> -->
   </div>
 </body>
 <footer>
