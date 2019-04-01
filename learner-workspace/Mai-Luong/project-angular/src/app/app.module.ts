@@ -8,6 +8,7 @@ import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content
 import { ModalComponent } from './modal/modal.component';
 import { HoverItemDirective } from './shared/hover-item.directive';
 import { PipePipe } from './shared/pipe/pipe.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PipePipe } from './shared/pipe/pipe.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
