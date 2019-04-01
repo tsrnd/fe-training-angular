@@ -135,5 +135,5 @@
     ```
 > Trên đây là những cái chúng ta hay dùng, mọi người có thể đọc thêm trên docs của angular.
 
-## Page để practive với api
+## Page để practice với api
 > https://reqres.in/
