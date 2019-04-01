@@ -2,7 +2,7 @@
 ## Các bước khi làm việc với service http
 1. Tạo 1 service: `ng g s api`
     * Lưu ý: 
-        + Trong file service có 1 cái option đó là `providedIn: 'root'` cái này mặc định nó sẽ provide vào app-root nên chúng ta không cần `provides` nó vào app-root.
+        + Trong file service có 1 cái option đó là `providedIn: 'root'` cái này mặc định nó sẽ provide vào app-root nên chúng ta không cần `provides` nó vào app-root.
         + Trường hợp nếu ko dùng `providedIn: 'root'` thì ta phải vào trong file `app.module.ts` và provide nó vào như thế này:
           ```
           @NgModule({
@@ -20,7 +20,7 @@
       })
     ```
 
-3. Trong `api.service.ts` file cần import `httpClient` để dùng những phương thức của nó như: `post, get, put, patch, ...`
+3. Trong `api.service.ts` file cần import `httpClient` để dùng những phương thức của nó như: `post, get, put, patch, ...`
 
 
 4. Cần tạo 1 biến môi trường trong file environment
@@ -33,7 +33,7 @@
 > Trên đây là những bước quan trọng mà chúng ta cần chuẩn bị để làm bước tiếp theo đó là dùng những phương thức mà httpClient cung cấp cho chúng ta.
 
 ## Triển khai với `api` service
-1. Tạo một `const` `ENDPOINT` và khai báo những path mà chúng ta cần gọi đến server. xem ví dụ dưới:
+1. Tạo một `const` `ENDPOINT` và khai báo những path mà chúng ta cần gọi đến server. xem ví dụ dưới:
     ```
     export const ENDPOINT = {
       users: 'users',
@@ -44,11 +44,11 @@
 
 2. Tạo một `const` `API_DOMAIN` để lấy thông tin domain từ phía biến environment
     ```
-      // Biến này sẽ tự động lấy domain api phù hợp với từng môi trường khi chúng ta build dự án. Nếu build --prod nó sẽ lấy file `..prod.ts` ngược lại thì sẽ lấy file dev.
+      // Biến này sẽ tự động lấy domain api phù hợp với từng môi trường khi chúng ta build dự án. Nếu build --prod nó sẽ lấy file `..prod.ts` ngược lại thì sẽ lấy file dev.
       export const API_DOMAIN = environment.api;
     ```
 
-3. Chi tiết những phương thức mà chúng ta sẽ sữ dụng
+3. Chi tiết những phương thức mà chúng ta sẽ sử dụng
     ```
       // Cần import những method liên quan từ rxjs hoặc từ angular
       import { environment } from './../../../environments/environment';
@@ -135,5 +135,5 @@
     ```
 > Trên đây là những cái chúng ta hay dùng, mọi người có thể đọc thêm trên docs của angular.
 
-## Page để practice với api
+## Page để practice với api
 > https://reqres.in/
