@@ -33,9 +33,9 @@
   </ng-template>
 
   <!-- exercise8.1: news card(pipe) -->
-  <ng-template>
+  <!-- <ng-template> -->
     <div class="card-deck card-news">
-      <div class="card" *ngFor="let itemCard of listNewsCard">
+      <div class="card" *ngFor="let itemCard of news$ | async">
         <img src="{{itemCard.img}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title" >{{itemCard.title | wordLimit:15}}</h5>
@@ -46,10 +46,10 @@
         </div>
       </div>
     </div>
-  </ng-template>
+  <!-- </ng-template> -->
 
   <!-- exercise8.2: localer-->
-  <app-btn-localer></app-btn-localer>
+  <!-- <app-btn-localer></app-btn-localer> -->
   
 
 </main>

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { asTextData } from '@angular/core/src/view';
+import {ApiService, API_DOMAIN, END_POINT} from './core/services/api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
 
   descCart: any;
   title = 'erxercise-angular';
@@ -53,27 +54,18 @@ export class AppComponent {
     }
   ];
 
-  // news-card
-  listNewsCard = [
-    {
-      id: 0,
-      title: 'Card title one',
-      desc: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-      img: '../assets/images/news-page/news1.jpeg'
-    },
-    {
-      id: 1,
-      title: 'Card title two',
-      desc: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-      img: '../assets/images/news-page/news2.jpeg'
-    },
-    {
-      id: 2,
-      title: 'Card title three',
-      desc: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-      img: '../assets/images/news-page/news3.jpeg'
-    }
-  ];
+  private subscribe;
+  news$: any;
+  constructor(private api: ApiService) {}
+
+  ngOnInit() {
+    this.subscribe = this.api.get(END_POINT.listNews).subscribe();
+    this.news$ = this.api.getAssets(END_POINT.newsJson);
+  }
+
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
+  }
 
   getCardClicking($event) {
     this.descCart = $event;
@@ -85,5 +77,6 @@ export class AppComponent {
       return element.id !== $event;
     });
   }
+
 
 }
