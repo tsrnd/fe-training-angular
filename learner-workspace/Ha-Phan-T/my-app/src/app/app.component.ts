@@ -1,6 +1,6 @@
-import { Component, Input, ElementRef } from '@angular/core';
+import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 import { ChildComponent } from './child/child.component';
-
+import { LocalerService } from './share/services/localer.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,17 +16,20 @@ export class AppComponent {
   //   'contact'
   // ];
   listMethod = [
-    { id: 1, title: 'hello1', content: 'hello111111' },
-    { id: 2, title: 'hello2', content: 'hello111112' },
-    { id: 3, title: 'hello3', content: 'hello111113' },
-    { id: 4, title: 'hello4', content: 'hello111114' },
-    { id: 5, title: 'hello5', content: 'hello111115' },
-    { id: 6, title: 'hello6', content: 'hello111116' },
-    { id: 7, title: 'hello7', content: 'hello111117' },
-    { id: 8, title: 'hello8', content: 'hello111118' },
+    { id: 1, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
+    { id: 2, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
+    { id: 3, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
+    { id: 4, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
+    { id: 5, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
+    { id: 6, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
+    { id: 7, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
+    { id: 8, title: 'test test test test test', content: 'Some quick example text to build on the card title and make up the bulk of the card' },
   ];
   @Input() titleMethod: string;
   @Input() idMethod: any;
+  @ViewChild('key') myKey: ElementRef;
+  @ViewChild('data') myData: ElementRef;
+  constructor(private localerService: LocalerService) { }
   ngOnInit(): void {
     // if (!this.index) {
     //   this.index = 0;
@@ -34,5 +37,27 @@ export class AppComponent {
   }
   deleteItemFromModal(position) {
     this.listMethod.splice(position - 1, 1);
+  }
+  saveLocal() {
+    if (this.myKey.nativeElement.value && this.myData.nativeElement.value) {
+      this.localerService.saveLocalStorage(this.myKey.nativeElement.value, this.myData.nativeElement.value);
+      console.log(this.myKey.nativeElement.value);
+      console.log(this.myData.nativeElement.value);
+    }
+  }
+  getLocal() {
+    if (this.myKey.nativeElement.value) {
+      this.myData.nativeElement.value = this.localerService.getLocalStorage(this.myKey.nativeElement.value);
+    }
+  }
+  saveSession() {
+    if (this.myKey.nativeElement.value && this.myData.nativeElement.value) {
+      this.localerService.saveSessionStorage(this.myKey.nativeElement.value, this.myData.nativeElement.value);
+    }
+  }
+  getSession() {
+    if (this.myKey.nativeElement.value) {
+      this.myData.nativeElement.value = this.localerService.getSessionStorage(this.myKey.nativeElement.value);
+    }
   }
 }

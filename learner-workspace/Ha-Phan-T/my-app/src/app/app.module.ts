@@ -8,6 +8,7 @@ import { LifecycleTitleComponent } from './lifecycle-title/lifecycle-title.compo
 import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content.component';
 import { ModalComponent } from './modal/modal.component';
 import { HoverDirective } from './share/directives/hover.directive';
+import { ContentLengthPipe } from './share/pipes/content-length.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HoverDirective } from './share/directives/hover.directive';
     LifecycleContentComponent,
     ModalComponent,
     HoverDirective,
+    ContentLengthPipe,
   ],
   imports: [
     BrowserModule,
