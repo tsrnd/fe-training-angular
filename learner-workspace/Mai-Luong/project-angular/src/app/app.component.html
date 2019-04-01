@@ -32,6 +32,7 @@
 
     <!-- <button type="button" class="btn" [appHoverItem]="'red'">Success</button>
     <button type="button" class="btn" [appHoverItem]="'blue'">Danger</button> -->
+
     <!-- <div class="card-deck">
       <div class="card" *ngFor = "let dataPipe of dataPipe">
         <img class="card-img-top" src="../assets/images/dog.jpg" alt="Card image cap">
@@ -42,7 +43,19 @@
       </div>
     
     </div> -->
-    <div class="input-group">
+
+    <div class="card-deck">
+      <div class="card" *ngFor = "let dataPipe of dataPipes">
+        <img class="card-img-top" src="../assets/images/dog.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ dataPipe.title | pipe: '10' }}</h5>
+          <p class="card-text">{{ dataPipe.content | pipe: '50' }}</p>
+        </div>
+      </div>
+    
+    </div>
+
+    <!-- <div class="input-group">
       <input type="text" class="form-control" placeholder="Key Local" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="keyLocal">
       <input type="text" class="form-control" placeholder="Value Local" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="valueLocal">
       <div class="input-group-append">
@@ -51,7 +64,7 @@
         <button class="savesession btn btn-outline-warning" name="savesession" id="savesession" type="button" (click)="saveSession()">Save Session</button>
         <button class="getsession btn btn-outline-success" name="getsession" id="getsession" type="button" (click)="getSession()">Get Session</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </main>
 <footer class="footer">
