@@ -59,8 +59,11 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.subscribe = this.api.get(END_POINT.listNews).subscribe();
-    this.news$ = this.api.getAssets(END_POINT.newsJson);
+    /**
+     *  exercise 9: service advance
+     * this.subscribe = this.api.get(END_POINT.listNews).subscribe();
+     * this.news$ = this.api.getAssets(END_POINT.newsJson);
+     */
   }
 
   ngOnDestroy() {

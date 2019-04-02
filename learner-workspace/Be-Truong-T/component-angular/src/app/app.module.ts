@@ -9,8 +9,10 @@ import { AppModalComponent } from './app-modal/app-modal.component';
 import { HoverItemDirective } from './shared/directive/hover-item.directive';
 import { WordLimitPipe } from './shared/pipe/word-limit.pipe';
 import { BtnLocalerComponent } from './btn-localer/btn-localer.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './account/create/create.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppModalComponent,
     HoverItemDirective,
     WordLimitPipe,
-    BtnLocalerComponent
+    BtnLocalerComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

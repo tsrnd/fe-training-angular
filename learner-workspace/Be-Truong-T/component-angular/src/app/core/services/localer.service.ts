@@ -14,7 +14,12 @@ export class LocalerService {
     return localStorage.setItem(key, value);
   }
   getLocalStorage(key: string) {
-    console.log(JSON.parse(localStorage.getItem(key)[0]));
+    if (typeof localStorage.getItem(key) === 'string') {
+      return localStorage.getItem(key);
+    }
+  }
+  removeLocalStorage(key: string) {
+    return localStorage.removeItem(key);
   }
   saveSessionStorage(key: string, value: any) {
     if (typeof value === 'object' ) {
