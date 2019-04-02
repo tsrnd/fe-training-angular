@@ -3,6 +3,7 @@ import { ModalComponent } from './modal/modal.component';
 import { LocalerService } from './localer.service';
 import { ApiService } from './api.service';
 import { Observable, Subscription } from 'rxjs';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private localer: LocalerService,
-    private api: ApiService
+    private api: ApiService,
+    private fb: FormBuilder
   ) { }
 
   @ViewChild(ModalComponent) comfirmModal: ModalComponent;
@@ -61,6 +63,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   news;
 
+  // inital form
+  registerForm: FormGroup;
+
   removeItem(confirmDelete) {
     if (confirmDelete) {
       this.datas = this.datas.filter(data => {
@@ -96,10 +101,60 @@ export class AppComponent implements OnInit, OnDestroy {
     // this.getDataAssetsSub = this.api.getAssets('assets/lifecycles.json').subscribe((datas) => {
     //   this.datas = datas;
     // });
+
+    // intial register form group
+    this.registerForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+      passwordConfirm: ['']
+    }, {
+        validators: [
+          this.validatePasswordMatched,
+          this.validateEmailExist(this.localer)
+        ]
+      });
   }
 
   ngOnDestroy(): void {
     this.getNewsAssetsSub.unsubscribe();
     // this.getDataAssetsSub.unsubscribe();
+  }
+
+  /**
+   * Custom function validate password confirm
+   * @param group : param group
+   */
+  validatePasswordMatched(group: AbstractControl) {
+    if (group.get('password').value !== group.get('passwordConfirm').value) {
+      group.get('passwordConfirm').setErrors({ NoPasswordMatch: true });
+    }
+  }
+
+  validateEmailExist(localer) {
+    return (group: AbstractControl) => {
+      const emailValue = group.get('email').value;
+      const listLocalData = localer.getLocalStorage();
+      const isExist = listLocalData.find((v) => {
+        return v.email === emailValue;
+      });
+      if (isExist) {
+        group.get('email').setErrors({ EmailExist: true });
+      }
+    };
+  }
+
+  registerUser() {
+    if (this.registerForm.valid) {
+      this.localer.saveLocalStorage(this.registerForm.value);
+      this.registerForm.reset();
+    } else {
+      this.registerForm.controls.firstName.markAsTouched();
+      this.registerForm.controls.lastName.markAsTouched();
+      this.registerForm.controls.email.markAsTouched();
+      this.registerForm.controls.password.markAsTouched();
+      this.registerForm.controls.passwordConfirm.markAsTouched();
+    }
   }
 }

@@ -11,8 +11,16 @@ export class LocalerService {
 
   saveLocalStorage(v: any) {
     if (v) {
-      v = (v instanceof Object) ? JSON.stringify(v) : v;
-      localStorage.setItem(STORAGE_KEY, v);
+      // v = (v instanceof Object) ? JSON.stringify(v) : v;
+      const storageData = this.getLocalStorage();
+      console.log('new value', v);
+      if (storageData) {
+        storageData.push(v);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
+        return;
+      }
+      const saveData = [v];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saveData));
     }
   }
 
