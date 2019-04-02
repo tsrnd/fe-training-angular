@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { environment } from './../../environments/environment';
 
 
-export const API_DOMAIN = environment.api;
+export const API_DOMAIN = environment.api; //'https://reqres.in/api/'
 export const ENDPOINT = {
   users: 'users',
   events: 'events'
@@ -65,6 +65,11 @@ export class ApiService {
     );
   }
 
+  delete(url: string, params?:params): Observable<any> {
+    return this.http.delete(API_DOMAIN + url, params).pipe(
+      catchError(this.handleError)
+    );
+  }
   /**
    * get assets
    * @param url

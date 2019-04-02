@@ -84,7 +84,7 @@
   <section class="main-section">
    <div class="container">
     <div class="row">
-      <div *ngFor="let item of data">
+      <div *ngFor="let item of data | async">
         <app-news [item]="item"></app-news>
       </div>
     </div>
