@@ -65,7 +65,7 @@ export class ApiService {
     );
   }
 
-  delete(url: string, params?:params): Observable<any> {
+  delete(url: string, params?: any): Observable<any> {
     return this.http.delete(API_DOMAIN + url, params).pipe(
       catchError(this.handleError)
     );
