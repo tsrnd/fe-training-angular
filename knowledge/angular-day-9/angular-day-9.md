@@ -7,13 +7,13 @@
 
 ## Triển khai với Reactive Form
 ### 1. Các yêu cầu khi làm vơi Reactive Form
-  - Import `ReactiveFormsModule` vào module quản lý của component cần dùng, hiện tại module quản lý của chúng ta đó là `app-module`.
-  - Import những feature của module bên trong component như bên dưới: 
+  - Import `ReactiveFormsModule` vào module quản lý của component cần dùng, hiện tại module quản lý của chúng ta đó là `app-module`.
+  - Import những feature của module bên trong component như bên dưới: 
     ```
     // Lưu ý cái nào cần dùng để handle thì mình import vào.
     import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
     ```
-### 2. Khai báo form build trong component.ts theo ví dụ dưới.
+### 2. Khai báo form build trong component.ts theo ví dụ dưới.
   ```
   formReactive: FormGroup;
 
@@ -57,7 +57,7 @@
           ```
       2. Set value cho form có 2 cách:
           ```
-            \\ 1. Dùng hàm setValue()
+            \\ 1. Dùng hàm setValue()
             this.formReactive.setValue({
               firstName: 'abc',
               lastName: 'bcd'
@@ -70,17 +70,17 @@
             });
           ```
           * Lưu ý sự khác biệt giữa 2 thằng này:
-            - setValue(): khi dùng hàm này thì phải set value hết cho tất cả các field, nếu ko sẽ có lổi xảy ra.
-            - patchValue(): thì ngược lại với setValue()
+            - setValue(): khi dùng hàm này thì phải set value hết cho tất cả các field, nếu ko sẽ có lổi xảy ra.
+            - patchValue(): thì ngược lại với setValue()
 
       3. Form validate
           - Dùng form validate bằng cách import `Validators`
           ```
-            // 1 cái
+            // 1 cái
             firstName: ['', Validators.required],
 
             // Nhiều cái
-            firstName: ['', [Validators.required, Validators.maxLength(20)]],
+            firstName: ['', [Validators.required, Validators.maxLength(20)]],
           ```
 
       4. Add more field với form Array
