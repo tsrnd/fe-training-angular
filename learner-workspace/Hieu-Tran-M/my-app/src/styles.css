@@ -108,3 +108,16 @@ header main footer {
 .input-color input {
   margin: 5px;
 }
+
+.register {
+  float: right;
+}
+
+.form-register input, button {
+  width: 40%;
+}
+
+.small-text-register {
+  margin-top: 1rem;
+  margin-left: 6rem;
+}
