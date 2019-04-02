@@ -64,25 +64,11 @@
 
 <ng-template [ngIf]="indexPage === 3">
   <div class="card-deck">
-    <div class="card">
+    <div *ngFor="let event of events$ | async" class="card">
       <img src="assets/jugg.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{title | cardTitle: 'Card 1' | cardDescription: 6}}</h5>
-        <p class="card-text">{{description[0].des | cardDescription: limit}}</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="assets/jugg.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{title | cardTitle: 'Card 2' | cardDescription: 6}}</h5>
-        <p class="card-text">{{description[1].des | cardDescription: limit}}</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="assets/jugg.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{title | cardTitle: 'Card 3' | cardDescription: 6}}</h5>
-        <p class="card-text">{{description[2].des | cardDescription: limit}}</p>
+        <h5 class="card-title">{{ event.title | cardDescription:6 }}</h5>
+        <p class="card-text">{{ event.des | cardDescription:limit }}</p>
       </div>
     </div>
   </div>
@@ -90,10 +76,10 @@
 
 <ng-template [ngIf]="indexPage === 4">
   <div class="directive col-12">
-    <button (click)="localerService.saveLocalStorage('Primary', '1')" type="button" class="btn btn-primary">Primary</button>
-    <button (click)="localerService.getLocalStorage('1')" type="button" class="btn btn-secondary">Secondary</button>
-    <button (click)="localerService.saveSessionStorage('Success', 2)" type="button" class="btn btn-success">Success</button>
-    <button (click)="localerService.getSessionStorage('2')" type="button" class="btn btn-danger">Danger</button>
+    <button (click)="localerService.saveLocalStorage(1, 'Primary')" type="button" class="btn btn-primary">Primary</button>
+    <button (click)="localerService.getLocalStorage(1)" type="button" class="btn btn-secondary">Secondary</button>
+    <button (click)="localerService.saveSessionStorage(2, 'Success')" type="button" class="btn btn-success">Success</button>
+    <button (click)="localerService.getSessionStorage(2)" type="button" class="btn btn-danger">Danger</button>
   </div>
 </ng-template>
 

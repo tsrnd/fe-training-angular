@@ -4,22 +4,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalerService {
-  saveLocalStorage(name: string, id: string): void {
-    localStorage.setItem(id, name);
+  saveLocalStorage(key: string, value: string): void {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
-  getLocalStorage(id: string): string {
-    console.log(localStorage.getItem(id));
-    return localStorage.getItem(id);
+  getLocalStorage(key: string): string {
+    console.log(localStorage.getItem(key));
+    return localStorage.getItem(key);
   }
 
-  saveSessionStorage(name: string, id: string): void {
-    sessionStorage.setItem(id, name);
+  saveSessionStorage(key: string, value: string): void {
+    sessionStorage.setItem(key, JSON.stringify(value));
   }
 
-  getSessionStorage(id: string): string {
-    console.log(sessionStorage.getItem(id));
-    return sessionStorage.getItem(id);
+  getSessionStorage(key: string): string {
+    console.log(sessionStorage.getItem(key));
+    return sessionStorage.getItem(key);
   }
 
   constructor() { }

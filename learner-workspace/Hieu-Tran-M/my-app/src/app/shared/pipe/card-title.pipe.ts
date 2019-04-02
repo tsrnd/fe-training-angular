@@ -5,8 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CardTitlePipe implements PipeTransform {
 
-  transform(value: string, args?: string): any {
-    value = args;
+  transform(value: string, args?: any): any {
     return value.toUpperCase();
   }
 

@@ -1,31 +1,29 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { LocalerService } from './core/services/localer.service';
+import { ApiService } from './core/services/api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   indexTab = 0;
-  indexPage = 4;
+  indexPage = 3;
   limit = 100;
   title = 'Card title';
-  description = [
-    {
-      cardId: 1,
-      des: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-    },
-    {
-      cardId: 2,
-      // tslint:disable-next-line:max-line-length
-      des: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.'
-    },
-    {
-      cardId: 3,
-      des: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-    }
-  ];
+  events$: any;
+  cards: any;
+
+  constructor(public localerService: LocalerService, private api: ApiService) {
+  }
+
+  ngOnInit() {
+    this.api.getAssets('assets/news.json').subscribe(data => {
+      this.cards = data;
+      console.log(this.cards); });
+    this.events$ = this.api.getAssets('assets/news.json');
+  }
 
   changePage(page: string): void {
     if (page === 'home') {
@@ -50,6 +48,4 @@ export class AppComponent {
       this.indexTab = 2;
     }
   }
-
-  constructor(public localerService: LocalerService) {}
 }
