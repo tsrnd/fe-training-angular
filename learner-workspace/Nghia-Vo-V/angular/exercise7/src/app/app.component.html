@@ -1,4 +1,5 @@
-<div style="text-align:center">
+<!-- exercise 7 -->
+<!-- <div style="text-align:center">
   <h1>
      {{ title }}
   </h1>
@@ -12,6 +13,23 @@
         <button type="button" class="btn btn-primary mr-3" [appChangecolorbutton]="color">Primary</button>
         <button type="button" class="btn btn-success" [appChangecolorbutton]="color">Success</button>
       </div>
+  </div>
+</div> -->
+
+
+<!-- exercise 8 -->
+<div class="container" *ngFor="let data of datas">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ data.title | limitcontent: '10' }}</h5>
+          <p class="card-text">{{ data.content | limitcontent: '20' }}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <a href="#" class="btn btn-primary">Detail</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

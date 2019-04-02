@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChangecolorbuttonDirective } from './changecolorbutton.directive';
+import { LimitcontentPipe } from './limitcontent.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChangecolorbuttonDirective
+    ChangecolorbuttonDirective,
+    LimitcontentPipe
   ],
   imports: [
     BrowserModule,
