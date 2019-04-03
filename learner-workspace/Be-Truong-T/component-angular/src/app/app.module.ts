@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './account/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HoverItemDirective,
     WordLimitPipe,
     BtnLocalerComponent,
-    CreateComponent
+    CreateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
