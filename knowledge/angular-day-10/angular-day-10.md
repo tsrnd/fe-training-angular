@@ -1,14 +1,14 @@
 # FORMS (Template-driven)
 ## Triển khai với Template-driven Form
-### 1. Các yêu cầu khi làm vơi Reactive Form
+### 1. Các yêu cầu khi làm với Template-driven Form
   - Import `FormsModule` vào module quản lý của component cần dùng, hiện tại module quản lý của chúng ta đó là `app-module`.
-  - Import những feature của module bên trong component như bên dưới: 
+  - Import những features của angular forms bên trong component như bên dưới: 
     ```
     // Lưu ý cái nào cần dùng để handle thì mình import thêm vào.
     import { NgForm } from '@angular/forms';
     ```
     
-### 2. Khai báo form với component template
+### 2. Khai báo form với template component
 ```
 <form #login="ngForm" (ngSubmit)="onSubmit(login)">
     <div class="form-group">
@@ -26,14 +26,14 @@
       <label for="">Address</label>
       <div class="row">
         <div class="col-md-6">
-          <input class="form-control" type="text" name="street">
+          <input class="form-control" type="text" ngModel name="street">
         </div>
         <div class="col-md-6">
-          <input class="form-control" type="text" name="city">
+          <input class="form-control" type="text" ngModel name="city">
         </div>
       </div>
     </div>
-    <div class="button-set">
+    <div class="buttons-set">
       <button class="btn btn-primary" [disabled]="login.invalid">Submit</button>
     </div>
   </form>
