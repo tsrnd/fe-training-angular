@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { LocalerService } from './../../services/localer.service';
-import { isObject } from 'util';
 
 @Component({
   selector: 'app-register',
@@ -26,8 +25,9 @@ export class RegisterComponent implements OnInit {
         Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')
       ])),
       password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
-    });
+      confirmPassword: ['']
+    }, { validators: this.validatePasswordConfirm }
+    );
   }
   onSubmit() {
     this.hideAlert();
@@ -41,6 +41,12 @@ export class RegisterComponent implements OnInit {
     value.push(this.formReactive.value);
     this.localService.saveLocalStorage(this.key, value);
     this.showSuccess = true;
+  }
+
+  validatePasswordConfirm( group: FormGroup ) {
+    let pass = group.controls.password.value;
+    let confirmPass = group.controls.confirmPassword.value;
+    return pass === confirmPass ? null : { notSame: true };
   }
 
   hideAlert() {

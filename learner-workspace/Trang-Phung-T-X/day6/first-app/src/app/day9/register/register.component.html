@@ -59,6 +59,9 @@
             <div class="form-group">
               <label class="required-explain">Confirm Password</label>
               <input type="password" class="form-control" formControlName="confirmPassword">
+              <div class="error my-2">
+                <span *ngIf="formReactive.hasError('notSame')">Confirm password do not match</span>
+              </div>
             </div>
 
             <div class="btn-submit">
