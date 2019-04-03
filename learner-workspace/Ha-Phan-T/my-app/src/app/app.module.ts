@@ -10,7 +10,8 @@ import { ModalComponent } from './modal/modal.component';
 import { HoverDirective } from './share/directives/hover.directive';
 import { ContentLengthPipe } from './share/pipes/content-length.pipe';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ModalComponent,
     HoverDirective,
     ContentLengthPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

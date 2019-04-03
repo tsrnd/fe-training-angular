@@ -1,0 +1,43 @@
+<h2 style="text-align: center;">Login</h2>
+<ng-template [ngIf]="check===false">
+  <div class="row justify-content-md-center notice">
+    <div class="col-md-4 alert alert-danger">{{notice}}</div>
+  </div>
+</ng-template>
+<ng-template [ngIf]="check===true">
+  <div class="row justify-content-md-center notice">
+    <div class="col-md-4 alert alert-success">{{notice}}</div>
+  </div>
+</ng-template>
+<div class="row justify-content-md-center">
+  <form #loginForm="ngForm" class="col-md-4" (ngSubmit)="onSubmitLogin(loginForm)">
+    <div class="form-group">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" #vldemail="ngModel" [(ngModel)]="email"
+          required email>
+        <div *ngIf="vldemail?.invalid && (vldemail?.dirty || vldemail?.touched)" class="alert alert-danger">
+          <div *ngIf="vldemail?.errors?.required">
+            Email is required.
+          </div>
+          <div *ngIf="vldemail?.errors?.email">
+            Type is email.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" #vldpass="ngModel"
+        [(ngModel)]="password" required>
+      <div *ngIf="vldpass?.invalid && (vldpass?.dirty || vldpass?.touched)" class="alert alert-danger">
+        <div *ngIf="vldpass?.errors?.required">
+          Password is required.
+        </div>
+      </div>
+    </div>
+    <div class="button-login">
+      <button type="submit" class="btn btn-primary btn-lg">Login</button>
+    </div>
+  </form>
+</div>
