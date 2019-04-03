@@ -90,7 +90,8 @@
     </div> -->
 
     <div class="col-md-6 offset-md-3">
-      <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+      <h3 [ngStyle]="{'margin-bottom.px': 40, 'text-align': 'center'}"><b>Create an account</b></h3>
+      <form class="form-register" [formGroup]="registerForm" (ngSubmit)="registerUser()">
         <div class="form-group">
           <label for="firstNameInput">First Name</label>
           <input type="text" class="form-control" id="firstNameInput" formControlName="firstName">
@@ -147,8 +148,11 @@
           </div>
         </div>
         {{registerForm.submitted}}
-        <button type="submit" class="btn btn-primary">CREATE</button>
+        <button [style.width.%]="100" type="submit" class="btn btn-primary">CREATE</button>
       </form>
+      <div [ngStyle]="{'text-align': 'center'}">
+        <span>Already have an account? sign in <a href="#">here</a></span>
+      </div>
     </div>
   </div>
 </body>

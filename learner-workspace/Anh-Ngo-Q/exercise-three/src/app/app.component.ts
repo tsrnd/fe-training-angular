@@ -161,9 +161,7 @@ export class AppComponent implements OnInit, OnDestroy {
       } else {
         saveList = [this.registerForm.value];
       }
-      console.log(listUser);
       this.localer.saveLocalStorage('users', saveList);
-
       this.registerForm.reset();
     } else {
       this.registerForm.controls.firstName.markAsTouched();
