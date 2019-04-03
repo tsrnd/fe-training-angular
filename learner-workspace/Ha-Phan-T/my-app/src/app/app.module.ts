@@ -10,6 +10,7 @@ import { ModalComponent } from './modal/modal.component';
 import { HoverDirective } from './share/directives/hover.directive';
 import { ContentLengthPipe } from './share/pipes/content-length.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
