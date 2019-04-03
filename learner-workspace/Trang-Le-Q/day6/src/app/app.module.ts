@@ -14,6 +14,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { from } from 'rxjs';
 import { Ex9Component } from './ex9/ex9.component';
 import { Ex10Component } from './ex10/ex10.component';
+import { Ex11Component } from './ex11/ex11.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Ex10Component } from './ex10/ex10.component';
     CompactPipe,
     Ex2Component,
     Ex9Component,
-    Ex10Component
+    Ex10Component,
+    Ex11Component
   ],
   imports: [
     BrowserModule,
