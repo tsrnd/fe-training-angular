@@ -9,7 +9,7 @@ import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content
 import { ModalComponent } from './modal/modal.component';
 import { HoverItemDirective } from './shared/hover-item.directive';
 import { PipePipe } from './shared/pipe/pipe.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './api.service';
 
 @NgModule({
@@ -25,7 +25,8 @@ import { ApiService } from './api.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

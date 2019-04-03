@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
 import { LocalerService } from '../app/core/service/localer.service';
 import { ApiService, ENDPOINT } from './api.service';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 
+const STORAGE_KEY = 'users';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -79,13 +81,11 @@ export class AppComponent implements OnInit {
   getValue: string;
   dataPipes: any;
   error: any;
+  checkForm: boolean;
 
-  ngOnInit() {
-
-  }
-  constructor(private service: LocalerService, private apiService: ApiService) {
-    this.apiService.getAssets('../assets/files/new.json').subscribe(obj => this.dataPipes = obj, error => this.error = error);
-  }
+  // constructor(private service: LocalerService, private apiService: ApiService) {
+  //   this.apiService.getAssets('../assets/files/new.json').subscribe(obj => this.dataPipes = obj, error => this.error = error);
+  // }
 
   // removeItem(id) {
   //   this.lifeCycleHookLists = this.lifeCycleHookLists.filter(item => {
@@ -93,30 +93,67 @@ export class AppComponent implements OnInit {
   //   });
   // }
 
-  saveLocal() {
-    if (this.keyLocal && this.valueLocal) {
-      this.service.saveLocal(this.keyLocal, this.valueLocal);
-      console.log(this.keyLocal);
-      console.log(this.valueLocal);
-    }
+  // saveLocal() {
+  //   if (this.keyLocal && this.valueLocal) {
+  //     this.service.saveLocal(this.keyLocal, this.valueLocal);
+  //     console.log(this.keyLocal);
+  //     console.log(this.valueLocal);
+  //   }
+  // }
+  // getLocal() {
+  //   if (this.keyLocal) {
+  //     this.getValue = this.service.getLocal(this.keyLocal);
+  //     console.log(this.keyLocal);
+  //   }
+  // }
+  // saveSession() {
+  //   if (this.keyLocal && this.valueLocal) {
+  //     this.service.saveSession(this.keyLocal, this.valueLocal);
+  //     console.log(this.keyLocal);
+  //     console.log(this.valueLocal);
+  //   }
+  // }
+  // getSession() {
+  //   if (this.keyLocal) {
+  //     this.getValue = this.service.getSession(this.keyLocal);
+  //     console.log(this.keyLocal);
+  //   }
+  // }
+  formReactive: FormGroup;
+  profileUser: any;
+  arrayProfile = [];
+  constructor(
+    private fb: FormBuilder,
+    private service: LocalerService
+  ) { }
+  ngOnInit() {
+    this.formReactive = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
+    });
   }
-  getLocal() {
-    if (this.keyLocal) {
-      this.getValue = this.service.getLocal(this.keyLocal);
-      console.log(this.keyLocal);
+  onSubmit() {
+    console.log(this.formReactive.value);
+    this.profileUser = this.service.getLocal(STORAGE_KEY);
+    this.arrayProfile = this.profileUser ? JSON.parse(this.profileUser) : [];
+    if (this.arrayProfile.some(email => {
+      return email.email === this.formReactive.controls.email.value;
+    })) {
+          this.checkForm = false;
+          this.error = 'email is already exist';
+          return;
     }
-  }
-  saveSession() {
-    if (this.keyLocal && this.valueLocal) {
-      this.service.saveSession(this.keyLocal, this.valueLocal);
-      console.log(this.keyLocal);
-      console.log(this.valueLocal);
-    }
-  }
-  getSession() {
-    if (this.keyLocal) {
-      this.getValue = this.service.getSession(this.keyLocal);
-      console.log(this.keyLocal);
+    if (this.formReactive.controls.password.value !== this.formReactive.controls.confirmPassword.value) {
+      this.checkForm = false;
+      this.error = 'password is not same';
+    } else {
+    this.arrayProfile.push(this.formReactive.value);
+    this.service.saveLocal(STORAGE_KEY, JSON.stringify(this.arrayProfile));
+    this.error = null;
+    this.checkForm = true;
     }
   }
 }
