@@ -16,9 +16,8 @@
   </div>
 </div> -->
 
-
 <!-- exercise 8 -->
-<div class="container" *ngFor="let data of datas">
+<!-- <div class="container" *ngFor="let data of datas">
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
@@ -31,6 +30,62 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<!-- exercise 8  part 2 basic service-->
+<!-- <div class="container mt-4">
+  <button type="button" class="btn btn-success mr-3" (click)="saveLocalStorage()">Save Local</button>
+  <button type="button" class="btn btn-primary mr-3" (click)="getLocalStorage()">Get Local</button>
+  <button type="button" class="btn btn-success mr-3" (click)="saveSessionStorage()">Save Session</button>
+  <button type="button" class="btn btn-primary" (click)="getSessionStorage()">Get Session</button>
+</div> -->
+
+<!-- exercise 10-->
+
+<div class="container mt-4">
+    <div class="alert alert-warning" role="alert" *ngIf="emailError">
+      Email address has existed!
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">     
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" formControlName="firstName" required>
+        <div *ngIf="registerForm.controls.firstName.invalid 
+          && (registerForm.controls.firstName.dirty || registerForm.controls.firstName.touched)">
+          <span *ngIf="registerForm.get('firstName').errors.required">This field is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" formControlName="lastName" required>
+        <div *ngIf="registerForm.controls.lastName.invalid 
+          && (registerForm.controls.lastName.dirty || registerForm.controls.lastName.touched)">
+          <span *ngIf="registerForm.get('lastName').errors.required">This field is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>E-mail:</label>
+        <input type="email" name="email" formControlName="email" email>
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" formControlName="password" required>
+        <div *ngIf="registerForm.controls.password.invalid 
+          && (registerForm.controls.password.dirty || registerForm.controls.password.touched)">
+          <span *ngIf="registerForm.get('password').errors.required">This field is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Comfirm Password:</label>
+        <input type="password" formControlName="passwordConfirm" required>
+        <div *ngIf="registerForm.controls.passwordConfirm.invalid 
+          && (registerForm.controls.passwordConfirm.dirty || registerForm.controls.passwordConfirm.touched)">
+          <span *ngIf="registerForm.get('passwordConfirm').errors.required">This field is required</span>
+        </div>
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid">Create</button>
+      </form>
 </div>
+
 
 <router-outlet></router-outlet>
