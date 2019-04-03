@@ -20,15 +20,15 @@ export class Ex2Component implements OnInit {
   ngOnInit() {
   }
   saveLocalStorage() {
-    this.nameService.saveLocalStorage(this.inputText);
+    this.nameService.saveLocalStorage('local',this.inputText);
   }
   getLocalStorage() {
-    this.local = this.nameService.getLocalStorage();
+    this.local = this.nameService.getLocalStorage('local');
   }
   saveSessionStorage() {
-    this.nameService.saveSessionStorage(this.inputText);
+    this.nameService.saveSessionStorage('session', this.inputText);
   }
   getSessionStorage() {
-    this.session = this.nameService.getSessionStorage();
+    this.session = this.nameService.getSessionStorage('session');
   }
 }

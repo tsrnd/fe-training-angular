@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { from } from 'rxjs';
 import { PowerPipe } from './feature/pipe/power.pipe';
+import { ApiService } from './feature/service/api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { PowerPipe } from './feature/pipe/power.pipe';
 
 
 export class AppComponent {
-  constructor() {
+  constructor(private apiService: ApiService) {
     // this.reset();
   }
   title = 'day6';
@@ -56,8 +57,8 @@ export class AppComponent {
 
   // reset() { this.heroes = []; }
   // this.apiService.get();
-  // abc() {
-  //   this.apiService.getAssets('../assets/assets.json').subscribe(data => console.log(data));
-  //   // this.apiService.getConfigResponse(ENDPOINT.users).subscribe(data => console.log(data));
-  // }
+  abc() {
+    this.apiService.getAssets('../assets/assets.json').subscribe(data => console.log(data));
+    // this.apiService.getConfigResponse(ENDPOINT.users).subscribe(data => console.log(data));
+  }
 }

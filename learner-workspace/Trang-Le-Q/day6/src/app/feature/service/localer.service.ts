@@ -6,16 +6,16 @@ import { Injectable } from '@angular/core';
 export class LocalerService {
 
   constructor() { }
-  saveLocalStorage(input: string) {
-    localStorage.setItem('local', JSON.stringify(input));
+  saveLocalStorage(key: string, input: string) {
+    localStorage.setItem(key, JSON.stringify(input));
   }
-  getLocalStorage() {
-    return JSON.parse(localStorage.getItem('local'));
+  getLocalStorage(key: string) {
+    return JSON.parse(localStorage.getItem(key));
   }
-  saveSessionStorage(input: string) {
-    sessionStorage.setItem('session', JSON.stringify(input));
+  saveSessionStorage(key: string, input: string) {
+    sessionStorage.setItem(key, JSON.stringify(input));
   }
-  getSessionStorage() {
-    return JSON.parse(sessionStorage.getItem('session'));
+  getSessionStorage(key: string) {
+    return JSON.parse(sessionStorage.getItem(key));
   }
 }
