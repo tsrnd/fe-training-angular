@@ -81,7 +81,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   saveInput(isLocal) {
-    isLocal ? this.localer.saveLocalStorage(this.selectedValue) : this.localer.saveSessionStorage(this.selectedValue);
+    isLocal ? this.localer.saveLocalStorage('current-value', this.selectedValue) : this.localer.saveSessionStorage('current-value', this.selectedValue);
     if (!this.forObject) {
       this.selectedValue = null;
     }
@@ -132,22 +132,38 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Custom validator email check exists
+   * @param localer : param localer
+   */
   validateEmailExist(localer) {
     return (group: AbstractControl) => {
       const emailValue = group.get('email').value;
-      const listLocalData = localer.getLocalStorage();
-      const isExist = listLocalData.find((v) => {
+      const listLocalData = localer.getLocalStorage('users');
+      const isExist = listLocalData ? listLocalData.find((v) => {
         return v.email === emailValue;
-      });
+      }) : null;
       if (isExist) {
         group.get('email').setErrors({ EmailExist: true });
       }
     };
   }
 
+  /**
+   * save user into localstorage
+   */
   registerUser() {
     if (this.registerForm.valid) {
-      this.localer.saveLocalStorage(this.registerForm.value);
+      const listUser = this.localer.getLocalStorage('users');
+      let saveList = listUser;
+      if (listUser) {
+        listUser.push(this.registerForm.value);
+      } else {
+        saveList = [this.registerForm.value];
+      }
+      console.log(listUser);
+      this.localer.saveLocalStorage('users', saveList);
+
       this.registerForm.reset();
     } else {
       this.registerForm.controls.firstName.markAsTouched();

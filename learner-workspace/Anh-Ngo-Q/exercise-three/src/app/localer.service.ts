@@ -9,41 +9,33 @@ export class LocalerService {
 
   constructor() { }
 
-  saveLocalStorage(v: any) {
+  saveLocalStorage(key, v: any) {
     if (v) {
-      // v = (v instanceof Object) ? JSON.stringify(v) : v;
-      const storageData = this.getLocalStorage();
-      console.log('new value', v);
-      if (storageData) {
-        storageData.push(v);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
-        return;
-      }
-      const saveData = [v];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(saveData));
+      v = (v instanceof Object) ? JSON.stringify(v) : v;
+      localStorage.setItem(key, v);
     }
   }
 
-  getLocalStorage() {
+  getLocalStorage(key) {
     try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY));
+      return JSON.parse(localStorage.getItem(key));
     } catch (e) {
-      return localStorage.getItem(STORAGE_KEY);
+      return localStorage.getItem(key);
     }
   }
 
-  saveSessionStorage(v: any) {
+  saveSessionStorage(key, v: any) {
     if (v) {
       v = (v instanceof Object) ? JSON.stringify(v) : v;
       sessionStorage.setItem(STORAGE_KEY, v);
     }
   }
 
-  getSessionStorage() {
+  getSessionStorage(key) {
     try {
-      return JSON.parse(sessionStorage.getItem(STORAGE_KEY));
+      return JSON.parse(sessionStorage.getItem(key));
     } catch (e) {
-      return sessionStorage.getItem(STORAGE_KEY);
+      return sessionStorage.getItem(key);
     }
   }
 }

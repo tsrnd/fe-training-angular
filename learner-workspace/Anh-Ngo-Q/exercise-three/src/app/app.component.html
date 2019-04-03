@@ -76,12 +76,12 @@
     <br>
     <div class="button-storage">
       <button class="btn btn-dark" (click)="saveInput(true)">Save in localstorage</button><br>
-      <button class="btn btn-dark" (click)="storageValue=localer.getLocalStorage()">Get in localstorage</button>
+      <button class="btn btn-dark" (click)="storageValue=localer.getLocalStorage('current-value')">Get in localstorage</button>
     </div>
     <br>
     <div class="button-storage">
       <button class="btn btn-dark" (click)="saveInput(false)">Save in session storage</button><br>
-      <button class="btn btn-dark" (click)="storageValue=localer.getSessionStorage()">Get in session storage</button>
+      <button class="btn btn-dark" (click)="storageValue=localer.getSessionStorage('current-value')">Get in session storage</button>
     </div>
 
     <div>
@@ -120,8 +120,8 @@
             <div *ngIf="registerForm.get('email').errors.email" class="alert alert-danger" role="alert">
               email is not valid
             </div>
-            <div *ngIf="registerForm.get('email').hasError('EmailExist') && registerForm.submitted" class="alert alert-danger" role="alert">
-              email exist
+            <div *ngIf="registerForm.get('email').hasError('EmailExist')" class="alert alert-danger" role="alert">
+              email already exist
             </div>
           </div>
         </div>
@@ -146,6 +146,7 @@
             </div>
           </div>
         </div>
+        {{registerForm.submitted}}
         <button type="submit" class="btn btn-primary">CREATE</button>
       </form>
     </div>
