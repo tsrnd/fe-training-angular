@@ -14,6 +14,7 @@ import { LimitTextPipe } from './share/pipe/limit-text.pipe';
 import {LocalerService} from './core/service/localer.service';
 import {ApiService} from './core/service/api.service';
 import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RegisterComponent } from './auth/register/register.component';
     NewsComponent,
     LimitTextPipe,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
