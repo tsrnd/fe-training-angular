@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   show = false;
   showSuccess = false;
   key = 'userRegister';
+
   ngOnInit() {
     this.formReactive = this.fb.group({
       firstName: ['', Validators.required],
@@ -33,7 +34,7 @@ export class RegisterComponent implements OnInit {
     this.hideAlert();
     let valueLocal = this.localService.getLocalStorage(this.key);
     let value = valueLocal ? valueLocal : [];
-    if (valueLocal && valueLocal.lenght !== 0 && valueLocal.find( ob => {
+    if (valueLocal && valueLocal.find( ob => {
       return ob.email === this.formReactive.controls.email.value;
     })) {
       return this.show = true;
