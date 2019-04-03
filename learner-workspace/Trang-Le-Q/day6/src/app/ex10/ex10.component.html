@@ -67,10 +67,11 @@
                 </div>
               </div>
               <div class= "row">
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <span *ngIf= "formReactive.get('password').value !== formReactive.get('confirmPassword').value">This field must map with password field!</span>
+                </div>
                 <div class="col-md-6 alert alert-warning" *ngIf= "formReactive.controls.confirmPassword.invalid
                   && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
-                  <span *ngIf= "formReactive.get('password') !== formReactive.get('confirmPassword')">This field must map with password field!</span>
                   <span *ngIf="formReactive.get('confirmPassword').errors.required">This field is required</span>
                 </div>
               </div>
