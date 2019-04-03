@@ -3,7 +3,7 @@ import { ModalComponent } from './modal/modal.component';
 import { LocalerService } from './localer.service';
 import { ApiService } from './api.service';
 import { Observable, Subscription } from 'rxjs';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, NgForm, EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -62,6 +62,10 @@ export class AppComponent implements OnInit, OnDestroy {
   forObject = false;
 
   news;
+
+  isAuthenticate = false;
+
+  authMessage: string;
 
   // inital form
   registerForm: FormGroup;
@@ -170,5 +174,15 @@ export class AppComponent implements OnInit, OnDestroy {
       this.registerForm.controls.password.markAsTouched();
       this.registerForm.controls.passwordConfirm.markAsTouched();
     }
+  }
+
+  /**
+   * authenticate user
+   * @param loginForm : form instance
+   */
+  login(loginForm: NgForm) {
+    this.isAuthenticate = this.localer.getLocalStorage('users').some((user) => {
+      return user.email === loginForm.value.email && user.password === loginForm.value.password;
+    });
   }
 }
