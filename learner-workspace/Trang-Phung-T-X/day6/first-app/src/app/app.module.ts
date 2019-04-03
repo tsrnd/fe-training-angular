@@ -12,6 +12,8 @@ import { NewsComponent } from './day8/news/news.component';
 import { ButtonsComponent } from './day8/buttons/buttons.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './day9/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { HttpClientModule } from '@angular/common/http';
     HighlightButtonDirective,
     CollapseTextPipe,
     NewsComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

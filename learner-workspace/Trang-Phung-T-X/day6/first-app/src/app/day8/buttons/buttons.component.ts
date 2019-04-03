@@ -54,4 +54,17 @@ export class ButtonsComponent implements OnInit {
       alert('Enter key!' + key + ')');
     }
   }
+
+  removeLocalStorage() {
+    if (this.enterKey) {
+      this.localerService.removeLocalStorage(this.enterKey);
+      this.enterKey = '';
+    } else {
+      alert('Enter key and value!!');
+    }
+  }
+
+  clearLocalStorage() {
+    this.localerService.clearLocalStorage();
+  }
 }

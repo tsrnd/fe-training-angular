@@ -15,7 +15,7 @@ export class LocalerService {
   }
 
   getLocalStorage(key: string) {
-    return localStorage.getItem(key);
+    return JSON.parse(localStorage.getItem(key));
   }
 
   saveSessionStorage(key: string, value: any) {
@@ -29,5 +29,13 @@ export class LocalerService {
 
   getSessionStorage(key: string) {
     return sessionStorage.getItem(key);
+  }
+
+  removeLocalStorage(key: string) {
+    localStorage.removeItem(key);
+  }
+
+  clearLocalStorage() {
+    localStorage.clear();
   }
 }

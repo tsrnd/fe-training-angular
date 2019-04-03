@@ -35,7 +35,7 @@
     <ng-container *ngIf="data.length !== 0; else empty">
       <section class="section-content">
         <div class="container" *ngFor="let item of data">
-          <app-lifecycle-title [item]="item" (showItemDel)="showModalWithContent($event)"  >
+          <app-lifecycle-title [item]="item" (showItemDel)="showModalWithContent($event)">
             <app-lifecycle-content [item]="item"></app-lifecycle-content>
           </app-lifecycle-title>
         </div>
@@ -81,20 +81,28 @@
     </section>
   </ng-template>
 
-  <section class="main-section">
-   <div class="container">
-    <div class="row">
-      <div *ngFor="let item of data | async">
-        <app-news [item]="item"></app-news>
+  <ng-template>
+    <section class="main-section">
+      <div class="container">
+        <div class="row">
+          <div *ngFor="let item of data | async">
+            <app-news [item]="item"></app-news>
+          </div>
+        </div>
       </div>
-    </div>
-   </div>
-  </section>
+    </section>
+
+    <section>
+      <div class="container">
+        <app-buttons></app-buttons>
+      </div>
+    </section>
+  </ng-template>
 
   <section>
-    <div class="container">
-     <app-buttons></app-buttons>
-    </div>
+    <app-register>
+      
+    </app-register>
   </section>
 
 </main>
