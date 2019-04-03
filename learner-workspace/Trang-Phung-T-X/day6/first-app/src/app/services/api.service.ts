@@ -16,7 +16,7 @@ export const ENDPOINT = {
 })
 
 export class ApiService {
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   /**
    * get api
@@ -74,15 +74,15 @@ export class ApiService {
    * get assets
    * @param url
    */
-  getAssets(url: string): Observable<any> {
+  getAssets(url: string): Promise<any> {
     return this.http.get('assets/' + url).pipe(
       catchError(this.handleError)
-    );
+    ).toPromise();
   }
 
 
   getFullRespone(url: string): Observable<HttpResponse<any>> {
-    return this.http.get(API_DOMAIN + url, {observe: 'response'}).pipe(
+    return this.http.get(API_DOMAIN + url, { observe: 'response' }).pipe(
       catchError(this.handleError)
     );
   }
@@ -93,7 +93,7 @@ export class ApiService {
       console.log('An error occurred', error.error.message);
     } else {
       console.error(`Backend returned code ${error.status}, ` +
-      `body was: ${error.error}`);
+        `body was: ${error.error}`);
     }
     return throwError(
       'Something bad happened; please try again later.'

@@ -31,7 +31,10 @@ export class AppComponent implements OnDestroy {
   private data: Observable<any[]> ;
 
   constructor(private apiService: ApiService) {
-    this.data = apiService.getAssets('news.json');
+    // this.data = apiService.getAssets('news.json');
+    apiService.getAssets('news.json').then( res => {
+      this.data = res;
+    });
   }
 
   @ViewChild(AppModalComponent) comfirmModal: AppModalComponent;
