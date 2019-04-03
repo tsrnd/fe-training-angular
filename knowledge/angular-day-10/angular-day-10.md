@@ -39,14 +39,14 @@
   </form>
   ```
   * Chi tiết về ví dụ trên:
-    - `#login="ngForm"`: Tạo variable với ngForm (form group)
+    - `#login="ngForm"`: Tạo variable với ngForm (form group)
     - `(ngSubmit)="onSubmit(login)">`: Event submit form
     - `ngModel`: đại diện cho form control có 3 cách dùng cho ngModel
         1. `ngModel`: Kiểu bình thường dùng để khai báo form control
-        2. `[ngModel]`: kiểu property binding (1-way)
-        3. `[(ngModel)]`: 2-way binding
+        2. `[ngModel]`: kiểu property binding (1-way)
+        3. `[(ngModel)]`: 2-way binding
     - `ngModelGroup`: tạo mới 1 form group cấp con
-    - `(ngModelChange)`: Event để lắng nghe sự thay đổi của input và lấy value.
-    - `validators`: dùng những attribute validate của html, ngoài ra chúng ta có thể custom thêm attribute validate cho template-driven form, tham khảo thêm trên docs form của angular.
+    - `(ngModelChange)`: Event để lắng nghe sự thay đổi của input và lấy value.
+    - `validators`: dùng những attribute validate của html, ngoài ra chúng ta có thể custom thêm attribute validate cho template-driven form, tham khảo thêm trên docs form của angular.
 
 > Trên đây là những cái mà chúng ta sẽ thường gặp. mọi người muốn tìm hiểu thêm thì lên trang docs của angular nhé.
