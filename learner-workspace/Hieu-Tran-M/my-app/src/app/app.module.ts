@@ -1,34 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
+import { FeaturesModule } from './features/features.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeaturesComponent } from './features/features.component';
-import { AppLifecycleTitleComponent } from './app-lifecycle-title/app-lifecycle-title.component';
-import { AppLifecycleContentComponent } from './app-lifecycle-title/app-lifecycle-content/app-lifecycle-content.component';
-import { AppModalComponent } from './app-modal/app-modal.component';
-import { HighlightDirective } from './highlight.directive';
-import { CardTitlePipe } from './shared/pipe/card-title.pipe';
-import { CardDescriptionPipe } from './shared/pipe/card-description.pipe';
+import { AuthComponent } from './auth/auth.component';
+import { AccountComponent } from './account/account.component';
+import { HomeComponent } from './features/home/home.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeaturesComponent,
-    AppLifecycleTitleComponent,
-    AppLifecycleContentComponent,
-    AppModalComponent,
-    HighlightDirective,
-    CardTitlePipe,
-    CardDescriptionPipe
+    AuthComponent,
+    AccountComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    FeaturesModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

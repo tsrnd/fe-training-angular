@@ -1,0 +1,19 @@
+<header class="header bg-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark app-toolbar container">
+    <a class="navbar-brand" href="#"><img class="img-icon-angular" alt="Home" src="assets/logo-nav@2x.png" title="Home"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a routerLink="/" (click)="changePage('home')" [class.active]="indexPage === 0" class="nav-item nav-link">Home <span class="sr-only">(current)</span></a>
+        <a routerLink="/lifecyclehooks" (click)="changePage('lifeCycleHook')" [class.active]="indexPage === 1" class="nav-item nav-link">Lifecycle Hooks</a>
+        <a routerLink="/directive" (click)="changePage('directive')" [class.active]="indexPage === 2" class="nav-item nav-link">Directive</a>
+        <a routerLink="/pipe" (click)="changePage('pipe')" [class.active]="indexPage === 3" class="nav-item nav-link">Pipe</a>
+        <a routerLink="/service" (click)="changePage('service')" [class.active]="indexPage === 4" class="nav-item nav-link">Service</a>
+      </div>
+    </div>
+    <a (click)="changePage('login')" [class.active]="indexPage === 6" class="nav-link login" href="#">Login</a>
+    <a routerLink="/register" (click)="changePage('register')" [class.active]="indexPage === 5" class="nav-link register" href="#">Register</a>
+  </nav>
+</header>

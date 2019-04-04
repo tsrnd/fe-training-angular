@@ -1,0 +1,9 @@
+<div class="directive col-12">
+  <button [appHighlight]="color" type="button" class="btn">Success</button>
+  <button [appHighlight]="color" defaultColor="pink" type="button" class="btn">Danger</button>
+</div>
+<div class="col-12 input-color">
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>

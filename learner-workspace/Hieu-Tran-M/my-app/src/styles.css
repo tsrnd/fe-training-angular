@@ -113,11 +113,31 @@ header main footer {
   float: right;
 }
 
-.form-register input, button {
-  width: 40%;
+.form-register {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-block-end-width: .25rem;
+  border-radius: .25rem;
 }
 
-.small-text-register {
+.form-register button {
+  width: 100%;
+  max-width: 420px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 3rem;
   margin-top: 1rem;
-  margin-left: 6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-block-end-width: .25rem;
+  border-radius: .25rem;
 }

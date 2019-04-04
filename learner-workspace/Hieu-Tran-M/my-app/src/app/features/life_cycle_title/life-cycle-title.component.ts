@@ -1,17 +1,22 @@
-import { Component, OnInit, AfterViewInit, ViewChild, QueryList, OnChanges } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { AppModalComponent } from '../app-modal/app-modal.component';
 
 @Component({
-  selector: 'app-app-lifecycle-title',
-  templateUrl: './app-lifecycle-title.component.html',
-  styleUrls: ['./app-lifecycle-title.component.css']
+  selector: 'app-life-cycle-title',
+  templateUrl: './life-cycle-title.component.html',
+  styleUrls: ['./life-cycle-title.component.css']
 })
-export class AppLifecycleTitleComponent implements OnInit {
+export class LifeCycleTitleComponent implements OnInit {
   @ViewChild(AppModalComponent) viewChild: AppModalComponent;
 
   toogleModal = false;
   titleModal?: string;
   displayCollapse = [true, true];
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 
   deleteContent(content: string): void {
     if (content === 'onChange') {
@@ -37,11 +42,6 @@ export class AppLifecycleTitleComponent implements OnInit {
   delCollapse(e: any): void {
     console.log(e);
     this.toogleModal = false;
-  }
-
-  constructor() { }
-
-  ngOnInit() {
   }
 
 }
