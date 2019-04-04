@@ -65,16 +65,17 @@
         <button class="getsession btn btn-outline-success" name="getsession" id="getsession" type="button" (click)="getSession()">Get Session</button>
       </div>
     </div> -->
-    <ng-template [ngIf]="error">
+    
+    <!-- <ng-template [ngIf]="error">
         <div class="alert alert-danger">{{error}}</div>
     </ng-template>
     <ng-template [ngIf]="checkForm">
         <div class="alert alert-success">Successfull!</div>
       </ng-template>
     <h3 class="title-form">Create an account</h3>
-    <div class="modal-login">
-      <div class="boder-form">
-      <div class="form-login">
+    <div class="modal-register">
+      <div class="boder-form-register">
+      <div class="form-register">
       <form [formGroup]="formReactive" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label>First Name</label>
@@ -111,16 +112,44 @@
           <div *ngIf="formReactive.controls.confirmPassword.invalid && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
             <span *ngIf="formReactive.get('confirmPassword').errors.required">This field is required</span>
           </div>
-          <!-- <div *ngIf="formReactive.controls.confirmPassword.invalid !== formReactive.controls.password.invalid)">
-            <span>This password is not same</span>
-          </div> -->
         </div>
         <button type="submit" class="btn btn-primary col-12" [disabled]="formReactive.invalid">CREATE</button>
       </form>
       </div>
       </div>
+    </div> -->
+
+    <ng-template [ngIf]="error">
+        <div class="alert alert-danger">{{error}}</div>
+    </ng-template>
+    <ng-template [ngIf]="checkForm">
+        <div class="alert alert-success">Login Successfull!</div>
+    </ng-template>
+    <h3 class="title-form">Login</h3>
+    <div class="modal-login">
+      <div class="boder-form-login">
+        <div class="form-login"> 
+          <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+            <div class="form-group">
+              <label for="">Email</label>
+              <input class="form-control" #validateEmail="ngModel" type="email" ngModel name="email" required email>
+              <ng-container *ngIf="validateEmail?.invalid && validateEmail?.dirty || validateEmail?.touched">
+                <p class="alert alert-danger" *ngIf="validateEmail?.errors?.required"> This field is required </p>
+                <p class="alert alert-danger" *ngIf="validateEmail?.errors?.email"> This field is not email </p>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" class="form-control" #validatePassword="ngModel" ngModel name="password" required>
+              <ng-container *ngIf="validatePassword?.invalid && validatePassword?.dirty || validatePassword?.touched">
+                <p class="alert alert-danger" *ngIf="validatePassword?.errors?.required"> This field is required </p>
+              </ng-container>
+            </div>
+            <button type="submit" class="btn btn-primary col-12" [disabled]="login.invalid">CREATE</button>
+          </form>
+        </div>
+      </div>
     </div>
-    
   </div>
 </main>
 <footer class="footer">
