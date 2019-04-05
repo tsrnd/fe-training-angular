@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ContentChild } from '@angular/core';
-import {ModalComponent} from './../share/modal/modal.component';
+import {ModalComponent} from './../shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-lifecycle',

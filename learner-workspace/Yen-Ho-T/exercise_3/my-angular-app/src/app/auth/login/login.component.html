@@ -1,9 +1,6 @@
 <ng-template [ngIf]="err">
   <div class="alert alert-danger">{{err}}</div>
 </ng-template>
-<ng-template [ngIf]="isSuccess">
-  <div class="alert alert-success">Login successfully!</div>
-</ng-template>
 <div class="col-md-5 login-form">
   <h2 [ngStyle]="{'text-align': 'center'}">Login</h2>
   <form action="" #login="ngForm" (ngSubmit)="onSubmit(login)">

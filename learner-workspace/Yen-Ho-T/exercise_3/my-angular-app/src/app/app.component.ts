@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import {LocalerService} from './core/service/localer.service';
-import {ApiService, ENDPOINT} from './core/service/api.service';
+import { Router, NavigationStart } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +12,6 @@ export class AppComponent {
   myValue: string;
   @ViewChild('key') myKey: ElementRef;
   listNews = [];
-  err: any;
   listItem = [
     {
       name: 'ngOnChange()',
@@ -62,13 +61,15 @@ export class AppComponent {
   ];
   constructor(
     private localerService: LocalerService,
-    private apiService: ApiService
+    private router: Router
   ) {
-    apiService.getAssets('news.json').then( ob => {
-        this.listNews = ob;
-    }).catch( (err) => {
-      this.err = err;        
-    });
+  }
+  ngOnInit(): void {
+    this.router.events.subscribe( e => {
+      if (e instanceof NavigationStart) {
+        window.scroll(0,0);
+      }
+    })
   }
   onChangeTab(tab) {
     this.myTab = tab;

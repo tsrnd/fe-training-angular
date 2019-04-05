@@ -1,0 +1,15 @@
+<div class="header white-text">
+  <a class="nav-link home">
+    <a class="nav-item"></a><img alt="Home" height="40" src="assets/images/logo.png" title="Home" class="ng-star-inserted">
+    <div class="nav-item font-weight-lighter text-uppercase align-middle"><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">home</a></div>
+    <div class="nav-item font-weight-lighter text-uppercase align-middle"><a routerLinkActive="active" routerLink="/news">news</a></div>
+    <div class="nav-item font-weight-lighter text-uppercase align-middle"><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/account">account</a></div>
+  </a>
+  <ng-container *ngIf="authService.isLoggedIn; else loginLink">
+    <a routerLinkActive="active" class="nav-item font-weight-lighter" [ngStyle]="{'color': 'white', 'font-size': 'large'}" (click)="logout()">Logout</a>
+  </ng-container>
+  <ng-template #loginLink>
+    <a routerLinkActive="active" class="nav-item font-weight-lighter" [ngStyle]="{'color': 'white', 'font-size': 'large'}" routerLink="/login">Login</a>
+    <a routerLinkActive="active" class="nav-item font-weight-lighter" [ngStyle]="{'color': 'white', 'font-size': 'large'}" routerLink="/register">register</a>
+  </ng-template>
+</div>

@@ -1,9 +1,6 @@
 <ng-template [ngIf]="err">
   <div class="alert alert-danger">{{err}}</div>
 </ng-template>
-<ng-template [ngIf]="isSuccess">
-  <div class="alert alert-success">Registion is successfull!</div>
-</ng-template>
 <div class="col-md-5 register-form">
   <h2 [ngStyle]="{'text-align': 'center'}">Create an account</h2>
   <form action="" [formGroup]="formReactive" (ngSubmit)="onSubmit()">

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import {LocalerService} from './../../core/service/localer.service';
+import { AuthService } from 'src/app/core/service/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const USER_STORAGE_KEY = 'users';
 @Component({
@@ -11,10 +13,11 @@ const USER_STORAGE_KEY = 'users';
 export class RegisterComponent implements OnInit {
   formReactive: FormGroup;
   err: any;
-  isSuccess: any;
   constructor(
     private fb: FormBuilder,
-    private ls: LocalerService
+    private ls: LocalerService,
+    private as: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -34,12 +37,12 @@ export class RegisterComponent implements OnInit {
       return user.email == this.formReactive.controls.email.value
     })) {
       this.err = 'Email is already exist!';
-      this.isSuccess = false;
       return
     }
     this.err = null;
     listUser.push(this.formReactive.value);
     this.ls.saveLocalStorage(USER_STORAGE_KEY, JSON.stringify(listUser));
-    this.isSuccess = true;
+    this.as.isLoggedIn = true;
+    this.router.navigate([this.as.redirectUrl || '/'])
   }
 }

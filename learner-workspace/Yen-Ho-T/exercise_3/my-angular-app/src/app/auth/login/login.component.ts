@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Validators } from '@angular/forms';
 import {LocalerService} from './../../core/service/localer.service';
+import { AuthService } from 'src/app/core/service/auth.service';
+import { Router } from '@angular/router';
 
 const USER_STORAGE_KEY = 'users';
 @Component({
@@ -10,10 +12,11 @@ const USER_STORAGE_KEY = 'users';
 })
 export class LoginComponent implements OnInit {
   err: any;
-  isSuccess: any;
   myemail: string;
   mypassword: string;
   constructor(
+    private as: AuthService,
+    private router: Router,
     private ls: LocalerService
   ) { }
 
@@ -29,10 +32,10 @@ export class LoginComponent implements OnInit {
       return user.email == ng.controls.email.value && user.password == ng.controls.password.value
     })) {
       this.err = null;
-      this.isSuccess = true;
+      this.as.isLoggedIn = true;
+      this.router.navigate([this.as.redirectUrl || '/'])      
       return
     }
     this.err = `Account doesn't exist. Enter a different account.`;
-    this.isSuccess = false;
   }
 }

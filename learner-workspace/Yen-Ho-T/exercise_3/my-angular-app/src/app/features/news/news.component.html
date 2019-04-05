@@ -1,11 +1,10 @@
 <div [ngStyle]="{'padding-left': '8%', 'padding-bottom': '100px'}">
-  <div class="card" *ngFor="let news of listNews">
+  <div class="card" *ngFor="let news of listNews; let i = index">
     <img class="card-img-top" src="{{news.imageLink}}" alt="Card image cap">
     <div class="card-body">
       <div class="card-title"><h4>{{news.title | limitText : 30}}</h4></div>
       <div class="card-text" [innerHTML]="news.content | limitText : 200"></div>
-      <a href="#" [ngStyle]="{'margin-left': '30%'}"  class="btn btn-primary">Go Detail</a>
+      <a routerLink="/news/{{i}}" [ngStyle]="{'margin-left': '30%'}"  class="btn btn-primary">Go Detail</a>
     </div>
   </div>
 </div>
-
