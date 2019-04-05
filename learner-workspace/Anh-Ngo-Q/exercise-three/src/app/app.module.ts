@@ -12,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     FeaturesModule,
     AuthModule,
+    AccountModule,
     SharedModule,
     AppRoutingModule
   ],
