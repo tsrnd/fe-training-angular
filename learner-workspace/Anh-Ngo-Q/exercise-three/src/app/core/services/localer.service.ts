@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { CoreModule } from '../core.module';
 
 const STORAGE_KEY = 'current-value';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: CoreModule
 })
 export class LocalerService {
 

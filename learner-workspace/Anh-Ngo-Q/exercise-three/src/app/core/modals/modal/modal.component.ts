@@ -3,7 +3,7 @@ import { Component, OnInit, EventEmitter, ViewChild, ElementRef, Input, Output, 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.sass']
+  styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
   item;

@@ -1,31 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, FormGroup, FormBuilder, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
-import { LifecycleTitleComponent } from './lifecycle-title/lifecycle-title.component';
-import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content.component';
-import { ModalComponent } from './modal/modal.component';
-import { HighlighDirective } from './highligh.directive';
-import { CompactContentPipe } from './compact-content.pipe';
+
+import { CoreModule } from './core/core.module';
+import { FeaturesModule } from './features/features.module';
+import { Routes, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent,
-    LifecycleTitleComponent,
-    LifecycleContentComponent,
-    ModalComponent,
-    HighlighDirective,
-    CompactContentPipe
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule,
+    FeaturesModule,
+    AuthModule,
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
+import { CoreModule } from '../core.module';
 
 export const API_DOMAIN = environment.api;
 const httpOptions = {
@@ -10,7 +11,7 @@ const httpOptions = {
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: CoreModule
 })
 export class ApiService {
 
