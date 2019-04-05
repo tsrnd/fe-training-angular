@@ -1,0 +1,26 @@
+h1 {
+    text-transform: uppercase;
+  }
+  nav {
+    text-transform: uppercase;
+  }
+  .nav-tabs>li>a {
+    color: black;
+  }
+  a:hover {
+    border-bottom: 2px solid white;
+  }
+  #nav-logo {
+    width: 30px;
+    vertical-align: bottom;
+  }
+  .float-right{
+    float: right;
+  }
+  .float-right>a {
+    color: #f1f3f5;
+  }
+  .container {
+    width: 1240px;
+    margin: 0 auto;
+  }

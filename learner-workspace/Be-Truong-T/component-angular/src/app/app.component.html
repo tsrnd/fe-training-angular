@@ -1,20 +1,11 @@
 <header>
+  <app-header></app-header>
   <div class="banner">
     <h1 class="container">LifeCycle Hooks</h1>
   </div>
 </header>
 
 <main class="page-content container">
-
-   <!-- exercise6: angular attribute direction -->
-  <ng-template>
-    <div class="accordion" *ngFor=" let itemLifeCycleHooks of listLifeCycleHooks; let i=index">
-      <app-app-lifecycle-title (cardCurrent)="getCardClicking($event)"  [elementCard]="itemLifeCycleHooks"></app-app-lifecycle-title>
-      <app-app-lifecycle-content [elementClick]="descCart" [elementCard]="itemLifeCycleHooks">
-      </app-app-lifecycle-content>
-      <app-app-modal [elementClick]="itemLifeCycleHooks" (removeHook)="removeHook($event)"></app-app-modal>
-    </div>
-  </ng-template>
 
   <!-- exercise7: angular attribute direction -->
   <ng-template>
@@ -32,31 +23,8 @@
     <button [appHoverItem]="color" defaultColor="violet" >sayyounara</button>
   </ng-template>
 
-  <!-- exercise8.1: news card(pipe) -->
-  <ng-template>
-    <div class="card-deck card-news">
-      <div class="card" *ngFor="let itemCard of news$ | async">
-        <img src="{{itemCard.img}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title" >{{itemCard.title | wordLimit:15}}</h5>
-          <p class="card-text">{{itemCard.desc | wordLimit:70}}</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-  </ng-template>
-
-  <!-- exercise8.2: localer-->
-  <!-- <app-btn-localer></app-btn-localer> -->
-
-  <!-- <app-create></app-create> -->
-
-  <app-login></app-login>
-  
+  <router-outlet></router-outlet>
 
 </main>
 
 <footer class="page-footer">Footer</footer>
-<router-outlet></router-outlet>

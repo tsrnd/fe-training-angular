@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LocalerService } from '../core/services/localer.service';
+import { LocalerService } from './../../core/services/localer.service';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     if (key) {
       this.obj = JSON.parse(this.localer.getLocalStorage(key));
       this.checkMail = this.obj.find((element) => element.email === account.email);
+      console.log(this.checkMail);
       this.checkSuccess = this.checkMail.password.includes(account.password);
     }
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-app-lifecycle-content',
+  selector: 'app-lifecycle-content',
   templateUrl: './app-lifecycle-content.component.html',
   styleUrls: ['./app-lifecycle-content.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-app-lifecycle-title',
+  selector: 'app-lifecycle-title',
   templateUrl: './app-lifecycle-title.component.html',
   styleUrls: ['./app-lifecycle-title.component.scss']
 })

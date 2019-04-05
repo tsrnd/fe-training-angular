@@ -3,36 +3,33 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppLifecycleTitleComponent } from './app-lifecycle-title/app-lifecycle-title.component';
-import { AppLifecycleContentComponent } from './app-lifecycle-content/app-lifecycle-content.component';
-import { AppModalComponent } from './app-modal/app-modal.component';
 import { HoverItemDirective } from './shared/directive/hover-item.directive';
-import { WordLimitPipe } from './shared/pipe/word-limit.pipe';
-import { BtnLocalerComponent } from './btn-localer/btn-localer.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CreateComponent } from './account/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { FeaturesComponent } from './features/features.component';
+import { FeaturesModule } from './features/features.module';
+import { AuthComponent } from './auth/auth.component';
+import { AuthModule } from './auth/auth.module';
+import { HeaderComponent } from './shared/component/header/header.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppLifecycleTitleComponent,
-    AppLifecycleContentComponent,
-    AppModalComponent,
     HoverItemDirective,
-    WordLimitPipe,
-    BtnLocalerComponent,
-    CreateComponent,
-    LoginComponent
+    FeaturesComponent,
+    AuthComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    FeaturesModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

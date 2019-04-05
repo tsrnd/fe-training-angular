@@ -1,0 +1,13 @@
+<h2>News card</h2>
+<div class="card-deck card-news">
+  <div class="card" *ngFor="let itemCard of news$ | async">
+    <img src="{{itemCard.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" >{{itemCard.title | wordLimit:15}}</h5>
+      <p class="card-text">{{itemCard.desc | wordLimit:70}}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>

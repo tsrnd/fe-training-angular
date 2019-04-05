@@ -1,0 +1,6 @@
+<div class="accordion" *ngFor=" let itemLifeCycleHooks of listLifeCycleHooks; let i=index">
+  <app-lifecycle-title (cardCurrent)="getCardClicking($event)"  [elementCard]="itemLifeCycleHooks"></app-lifecycle-title>
+  <app-lifecycle-content [elementCard]="itemLifeCycleHooks" [elementClick]="descCart" >
+  </app-lifecycle-content>
+  <app-modal [elementClick]="itemLifeCycleHooks" (removeHook)="removeHook($event)"></app-modal>
+</div>

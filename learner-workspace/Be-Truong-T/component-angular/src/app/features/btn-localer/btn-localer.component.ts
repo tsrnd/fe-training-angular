@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import { LocalerService } from './../../app/core/services/localer.service';
+import { LocalerService } from './../../../app/core/services/localer.service';
 
 
 @Component({
