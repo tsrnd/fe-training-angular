@@ -4,29 +4,28 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LifecycleTitleComponent } from './lifecycle-title/lifecycle-title.component';
-import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content.component';
-import { ModalComponent } from './modal/modal.component';
-import { HoverItemDirective } from './shared/hover-item.directive';
-import { PipePipe } from './shared/pipe/pipe.pipe';
 import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 import { ApiService } from './api.service';
-
+import { SharedModule } from './shared/shared.module';
+import { FeaturesModule } from './features/features.module';
+import { AuthModule } from './auth/auth.module';
+import { AccountModule } from './account/account.module';
+import { AuthComponent } from './auth/auth.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LifecycleTitleComponent,
-    LifecycleContentComponent,
-    ModalComponent,
-    HoverItemDirective,
-    PipePipe
+    AuthComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    FeaturesModule,
+    AuthModule,
+    AccountModule,
+    AppRoutingModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

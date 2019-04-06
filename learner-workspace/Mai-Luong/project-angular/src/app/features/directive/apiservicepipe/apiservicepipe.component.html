@@ -1,0 +1,10 @@
+<div class="card-deck">
+  <div class="card" *ngFor = "let dataPipe of dataPipes">
+    <img class="card-img-top" src="../assets/images/dog.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ dataPipe.title | pipe: '10' }}</h5>
+      <p class="card-text">{{ dataPipe.content | pipe: '50' }}</p>
+    </div>
+  </div>
+
+</div>
