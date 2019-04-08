@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate } from '@angular/router';
 import { Observable } from 'rxjs';
-
-export interface CanComponentDeactivate {
-  canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
-}
+import { ProfileComponent } from './profile/profile.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileGuard implements CanDeactivate<CanComponentDeactivate> {
+export class ProfileGuard implements CanDeactivate<ProfileComponent> {
 
-  canDeactivate(component: CanComponentDeactivate) {
-    console.log(component['userForm'].value);
-    return window.confirm('Discard changes?');
+  canDeactivate(component: ProfileComponent) {
+    if (component.isChanged()) {
+      return confirm('Your input will be delete?');
+    }
+    return true;
   }
 }

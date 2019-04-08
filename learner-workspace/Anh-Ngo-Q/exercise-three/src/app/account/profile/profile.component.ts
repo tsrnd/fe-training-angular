@@ -28,4 +28,8 @@ export class ProfileComponent implements OnInit {
       passwordConfirm: ['']
     });
   }
+
+  isChanged() {
+    return this.userForm.dirty;
+  }
 }

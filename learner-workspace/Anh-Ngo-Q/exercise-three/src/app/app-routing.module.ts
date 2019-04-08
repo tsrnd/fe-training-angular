@@ -6,7 +6,7 @@ import { FeaturesComponent } from './features/features.component';
 
 const routes: Routes = [
   {
-    path: '', component: FeaturesComponent
+    path: 'features', loadChildren: './features/features.module#FeaturesModule'
   }
 ];
 

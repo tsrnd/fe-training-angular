@@ -11,7 +11,7 @@ const routes: Routes = [{
   path: 'account',
   component: AccountComponent,
   canActivate: [AccountGuard],
-  // canActivateChild: [AccountGuard],
+  canActivateChild: [AccountGuard],
   children: [
     {
       path: 'dashboard',
