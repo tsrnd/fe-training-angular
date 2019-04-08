@@ -44,10 +44,10 @@ const appRoutes: Routes = [
 export class AppModule { }
 ```
 * Giải thích những config trên
-  - Để khai báo route cho 1 trang ta cần phải khai 2 thuộc tính đó là `path` và `component`.
+  - Để khai báo route cho 1 trang ta cần phải khai 2 thuộc tính đó là `path` và `component`.
   - `children`: là route con
-  - `:id`: là route động và không cố định path (vd: `news/1, news/2, ...`), thường được dùng cho những trang chi tiết.
-  - `**`: dành cho trang not found, trong trường hợp ta gỏ sai đường dẩn.
+  - `:id`: là route động và không cố định path (vd: `news/1, news/2, ...`), thường được dùng cho những trang chi tiết.
+  - `**`: dành cho trang not found, trong trường hợp ta gỏ sai đường dẩn.
   - `redirectTo`: Dùng cho trường hợp chuyển hướng trang, ví dụ trên là khi người dùng chuyển hướng đến path `hero` thì nó sẽ tự động redirect đên trang `heroes`
   - Trong `RouterModule` for 2 method là `forRoot` vs `forChild`
     + `forRoot`: Nên dùng cho app-root nếu dùng route child sẽ bị lổi
