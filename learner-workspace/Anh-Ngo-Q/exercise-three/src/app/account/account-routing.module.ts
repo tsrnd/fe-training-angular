@@ -5,6 +5,7 @@ import { AccountGuard } from './account.guard';
 import { AccountComponent } from './account.component';
 import { ProfileGuard } from './profile.guard';
 import { ProfileprefetchGuard } from './profileprefetch.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [{
   path: 'account',
@@ -12,6 +13,10 @@ const routes: Routes = [{
   canActivate: [AccountGuard],
   // canActivateChild: [AccountGuard],
   children: [
+    {
+      path: 'dashboard',
+      component: DashboardComponent
+    },
     {
       path: 'profile',
       component: ProfileComponent,
