@@ -1,0 +1,17 @@
+.section-content {
+  padding: 7% 3% 25% 3%;
+}
+.bd-example {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: .2rem;
+}
+.form-check {
+  position: relative;
+  display: block;
+  padding: 0.25rem;
+}
+.form-check input {
+  margin-right: 10px;
+}

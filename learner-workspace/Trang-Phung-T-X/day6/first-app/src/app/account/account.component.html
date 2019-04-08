@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Angular Router</h1>
+  <nav>
+    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/profile" routerLinkActive="active">Profile</a>
+    <a routerLink="" routerLinkActive="active">Home</a>
+    <button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
+    <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

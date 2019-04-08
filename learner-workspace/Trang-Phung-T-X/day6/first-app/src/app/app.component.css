@@ -11,19 +11,6 @@ main {
   min-height:100%;
   position:relative;
 }
-.header {
-  margin-top: 10px;
-  background-color: #0275d8;
-  padding: 0 8%;
-}
-.header .active {
-  color: azure;
-  text-transform: uppercase;
-}
-.header a {
-  color: rgb(222, 228, 228);
-  text-transform: uppercase;
-}
 .section-content {
   /* font-weight: bold; */
   padding: 20px 0;
@@ -66,38 +53,6 @@ main {
   font-style: italic;
   opacity: 0.8;
   color: red;
-}
-.bd-example {
-  padding: 1.5rem;
-  margin-right: 0;
-  margin-left: 0;
-  border-width: .2rem;
-}
-.form-check {
-  position: relative;
-  display: block;
-  padding: 0.25rem;
-}
-.form-check input {
-  margin-right: 10px;
-}
-.footer {
-  margin-bottom: 10px;
-  background-color: #F8F9FA;
-  width: 100%;
-  bottom:0;
-  height:60px;
-}
-.footer-content {
-  width: 50%;
-  margin: auto;
-  text-align: center;
-  color: black;
-  background: linear-gradient(to top, #E8E9EA 31%, #F8F9FA 61%);
-}
-.footer p {
-  padding: 15px 0;
-  font-size: 20px;
 }
 .main-section {
   margin: 5% 0 10% 0;

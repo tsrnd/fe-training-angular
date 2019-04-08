@@ -3,38 +3,36 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppLifecycleTitleComponent } from './features/app-lifecycle-title/app-lifecycle-title.component';
-import { AppLifecycleContentComponent } from './features/app-lifecycle-content/app-lifecycle-content.component';
-import { AppModalComponent } from './shares/app-modal/app-modal.component';
-import { HighlightButtonDirective } from './directive/highlight-button.directive';
-import { CollapseTextPipe } from './pipe/collapse-text/collapse-text.pipe';
-import { NewsComponent } from './day8/news/news.component';
-import { ButtonsComponent } from './day8/buttons/buttons.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterComponent } from './day9/register/register.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './day9/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SharedModule } from './shared/shared.module';
+import { FeaturesComponent } from './features/features.component';
+import { FeaturesModule } from './features/features.module';
+import { CoreModule } from './core/core.module';
+import { AuthComponent } from './auth/auth.component';
+import { AuthModule } from './auth/auth.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppLifecycleTitleComponent,
-    AppLifecycleContentComponent,
-    AppModalComponent,
-    HighlightButtonDirective,
-    CollapseTextPipe,
-    NewsComponent,
-    ButtonsComponent,
-    RegisterComponent,
-    LoginComponent
+    FeaturesComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    SharedModule,
+    CoreModule,
+    FeaturesModule,
+    AuthModule,
+    AccountModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
