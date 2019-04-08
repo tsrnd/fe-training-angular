@@ -6,6 +6,7 @@ import {HoverDirectiveDirective} from './directive/hover-directive.directive';
 import {LimitTextPipe} from './pipe/limit-text.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AuthService } from '../core/service/auth.service';
 @NgModule({
   declarations: [
     ModalComponent,

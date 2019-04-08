@@ -18,6 +18,8 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthModule } from './auth/auth.module';
 import { AccountComponent } from './account/account.component';
 import { AccountModule } from './account/account.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './core/service/auth.service';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,8 @@ import { AccountModule } from './account/account.module';
     LifecycleComponent,
     LifecycleContentComponent,
     LifecycleTitleComponent,
-    RegisterComponent,
-    LoginComponent,
     FeaturesComponent,
-    AuthComponent,
-    AccountComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -38,12 +37,10 @@ import { AccountModule } from './account/account.module';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
-    AuthModule,
-    AccountModule,
     FeaturesModule,
     AppRoutingModule
   ],
-  providers: [LocalerService],
+  providers: [ LocalerService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

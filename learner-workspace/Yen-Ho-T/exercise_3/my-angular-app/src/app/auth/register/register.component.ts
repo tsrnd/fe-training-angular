@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private ls: LocalerService,
-    private as: AuthService,
+    private auth: AuthService,
     private router: Router
   ) { }
 
@@ -42,7 +42,8 @@ export class RegisterComponent implements OnInit {
     this.err = null;
     listUser.push(this.formReactive.value);
     this.ls.saveLocalStorage(USER_STORAGE_KEY, JSON.stringify(listUser));
-    this.as.isLoggedIn = true;
-    this.router.navigate([this.as.redirectUrl || '/'])
+    this.auth.login().subscribe(ob => {
+      this.router.navigate([this.auth.redirectUrl || '/'])   
+    })
   }
 }

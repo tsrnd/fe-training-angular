@@ -9,7 +9,7 @@ import { ProfileResolverService } from './profile-resolver.service';
 
 const routes: Routes = [
   {
-    path: 'account',
+    path: '',
     component: AccountComponent,
     canActivate: [ AuthGuard ],
     canActivateChild: [ AuthGuard ],

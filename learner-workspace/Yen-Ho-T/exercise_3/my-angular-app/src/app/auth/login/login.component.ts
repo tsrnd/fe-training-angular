@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   myemail: string;
   mypassword: string;
   constructor(
-    private as: AuthService,
+    private auth: AuthService,
     private router: Router,
     private ls: LocalerService
   ) { }
@@ -32,8 +32,9 @@ export class LoginComponent implements OnInit {
       return user.email == ng.controls.email.value && user.password == ng.controls.password.value
     })) {
       this.err = null;
-      this.as.isLoggedIn = true;
-      this.router.navigate([this.as.redirectUrl || '/'])      
+      this.auth.login().subscribe(ob => {
+        this.router.navigate([this.auth.redirectUrl || '/'])   
+      })
       return
     }
     this.err = `Account doesn't exist. Enter a different account.`;
