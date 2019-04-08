@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FeaturesComponent } from './features/features.component';
 import { AuthComponent } from './auth/auth.component';
+import { AccountComponent } from './account/account.component';
+import { CanDeactivateGuard } from './auth/can-deactivate.guard';
 
 const routers: Routes = [
   {
@@ -10,7 +12,13 @@ const routers: Routes = [
   },
   {
     path: 'auth',
-    component: AuthComponent
+    component: AuthComponent,
+    canDeactivate: [CanDeactivateGuard]
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+    canDeactivate: [CanDeactivateGuard]
   }
 ];
 @NgModule({

@@ -66,7 +66,8 @@ export class ApiService {
 
 export const END_POINT = {
   listNews: 'news',
-  newsJson: 'assets/news.json'
+  newsJson: 'assets/news.json',
+  users: 'profile'
 };
 
 export const API_DOMAIN = environment.api;

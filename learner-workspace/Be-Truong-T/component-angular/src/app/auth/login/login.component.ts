@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LocalerService } from './../../core/services/localer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,10 @@ export class LoginComponent implements OnInit {
   private checkSuccess: any;
   private obj: any;
 
-  constructor(private localer: LocalerService) { }
+  constructor(
+    private localer: LocalerService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
@@ -26,8 +30,11 @@ export class LoginComponent implements OnInit {
     if (key) {
       this.obj = JSON.parse(this.localer.getLocalStorage(key));
       this.checkMail = this.obj.find((element) => element.email === account.email);
-      console.log(this.checkMail);
       this.checkSuccess = this.checkMail.password.includes(account.password);
+      if (this.checkSuccess && typeof this.checkMail === 'object') {
+        localStorage.setItem('isLoggedIn', 'true');
+        this.router.navigate(['/profile', this.checkMail]);
+      }
     }
   }
 }
