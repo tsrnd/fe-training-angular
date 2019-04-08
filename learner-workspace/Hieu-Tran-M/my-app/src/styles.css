@@ -141,3 +141,12 @@ header main footer {
   border-block-end-width: .25rem;
   border-radius: .25rem;
 }
+
+.title-login {
+  text-align: center;
+  line-height: 1.2;
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}

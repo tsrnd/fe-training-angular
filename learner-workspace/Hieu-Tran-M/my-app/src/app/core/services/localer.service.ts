@@ -9,7 +9,6 @@ export class LocalerService {
   }
 
   getLocalStorage(key: any): string {
-    console.log(localStorage.getItem(key));
     return localStorage.getItem(key);
   }
 
@@ -18,7 +17,6 @@ export class LocalerService {
   }
 
   getSessionStorage(key: any): string {
-    console.log(sessionStorage.getItem(key));
     return sessionStorage.getItem(key);
   }
 

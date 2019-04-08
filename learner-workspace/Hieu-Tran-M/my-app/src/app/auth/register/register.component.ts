@@ -8,6 +8,7 @@ import { LocalerService } from 'src/app/core/services/localer.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
   formReactive: FormGroup;
   arrayUser = [];
   failedCreate?: boolean;
@@ -34,4 +35,5 @@ export class RegisterComponent implements OnInit {
       this.localerService.saveLocalStorage('user', this.arrayUser);
     }
   }
+
 }

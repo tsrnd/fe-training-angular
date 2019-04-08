@@ -1,0 +1,36 @@
+<div class="form-signin mt-5">
+  <ng-template [ngIf]="submited">
+    <div *ngIf="result; else fail">
+      <div class="alert alert-success" role="alert">
+          Login successfully!
+      </div>
+    </div>
+    <ng-template #fail>
+      <div class="alert alert-danger" role="alert">
+          Account doesn't exist. Enter a different account!
+      </div>
+    </ng-template>
+  </ng-template>
+  
+  <div class="title-login">
+    Login
+  </div>
+  
+  <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+    <div class="form-label-group">
+      <label >Email address</label>
+      <input type="email" #validEmail="ngModel" class="form-control" [(ngModel)]="email" name="email" required maxlength="20">
+      <ng-container *ngIf="validEmail.invalid && (validEmail.dirty && validEmail.touched)">
+        <p *ngIf="validEmail.errors.required">Field is required</p>
+      </ng-container>
+    </div>
+  
+    <div class="form-label-group mt-2">
+      <label >Password</label>
+      <input type="password" class="form-control" [(ngModel)]="password" name="password">
+    </div>
+  
+    <button class="btn btn-lg btn-primary btn-block mt-4" [disabled]="login.invalid">Sign in</button>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
+  </form>
+</div>

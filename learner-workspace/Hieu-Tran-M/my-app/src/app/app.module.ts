@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FeaturesModule } from './features/features.module';
+import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeaturesComponent } from './features/features.component';
 import { AuthComponent } from './auth/auth.component';
 import { AccountComponent } from './account/account.component';
-import { HomeComponent } from './features/home/home.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { ProfileComponent } from './account/profile/profile.component';
+import { DashboardComponent } from './account/dashboard/dashboard.component';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
@@ -18,15 +21,19 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     FeaturesComponent,
     AuthComponent,
     AccountComponent,
-    HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FeaturesModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FeaturesModule,
+    AuthModule,
+    ReactiveFormsModule,
+    AccountModule
   ],
   providers: [],
   bootstrap: [AppComponent]

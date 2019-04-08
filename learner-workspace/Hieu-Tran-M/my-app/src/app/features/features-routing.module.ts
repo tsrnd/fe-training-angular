@@ -6,15 +6,16 @@ import { LifeCycleTitleComponent } from './life_cycle_title/life-cycle-title.com
 import { DirectiveComponent } from './directive/directive.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { ServiceComponent } from './service/service.component';
-import { RegisterComponent } from './register/register.component';
+import { GuardGuard } from '../account/guard.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: FeaturesComponent,
+    canActivate: [GuardGuard],
     children: [
       {
-        path: '',
+        path: 'home',
         component: HomeComponent
       },
       {
@@ -30,12 +31,9 @@ const routes: Routes = [
         component: PipeComponent
       },
       {
+        canActivateChild: [GuardGuard],
         path: 'service',
         component: ServiceComponent
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
       }
     ]
   }

@@ -13,7 +13,7 @@ import { PipeComponent } from './pipe/pipe.component';
 import { CardTitlePipe } from './../shared/pipe/card-title.pipe';
 import { CardDescriptionPipe } from './../shared/pipe/card-description.pipe';
 import { ServiceComponent } from './service/service.component';
-import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { RegisterComponent } from './register/register.component';
     CardTitlePipe,
     CardDescriptionPipe,
     ServiceComponent,
-    RegisterComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
