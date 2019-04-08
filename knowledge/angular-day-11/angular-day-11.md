@@ -183,6 +183,28 @@ export class AppModule { }
           return this.canActivate(next, state);
         }
       }
+
+      // Resolve file
+      import { Injectable } from '@angular/core';
+      import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+      import { Observable } from 'rxjs';
+      import { ApiService, ENDPOINT } from './../core/services/api.service';
+
+      @Injectable({
+        providedIn: 'root'
+      })
+      export class ProfileResolve implements Resolve<any> {
+        constructor(
+          private api: ApiService
+        ) {
+        }
+        resolve(
+          next: ActivatedRouteSnapshot,
+          state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+          return this.api.get(ENDPOINT.users);
+        }
+      }
+
     ```
   - Hướng dẩn code cho phần này có trên docs của angular, mọi người check thêm trên đó.
 
