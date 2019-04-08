@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://reqres.in/api/'
+  api: 'https://reqres.in/api/'
 };
 
 /*

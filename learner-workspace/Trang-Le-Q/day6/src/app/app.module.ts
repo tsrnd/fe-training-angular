@@ -13,8 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from 'selenium-webdriver/http';
 import { from } from 'rxjs';
 import { Ex9Component } from './ex9/ex9.component';
-import { Ex10Component } from './ex10/ex10.component';
-import { Ex11Component } from './ex11/ex11.component';
+import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
+import { AccountModule } from './account/account.module';
+import { FeaturesModule } from './features/features.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +28,18 @@ import { Ex11Component } from './ex11/ex11.component';
     CompactPipe,
     Ex2Component,
     Ex9Component,
-    Ex10Component,
-    Ex11Component
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    AuthModule,
+    AccountModule,
+    FeaturesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

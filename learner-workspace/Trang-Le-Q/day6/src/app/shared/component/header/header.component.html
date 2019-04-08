@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header class="bg-primary">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item header-logo-li">
+          <a class="nav-link text-uppercase" href="#">
+            <img class="header-logo" alt="Angular Logo"
+            src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-uppercase" href="#" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#" routerLink="/features">Directive</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Pricing</a>
+        </li>
+      </ul>
+      <ng-container *ngIf="isLogin; else login">
+          <div>
+            <a href="" (click)="logout()" class="nav-link text-uppercase text-white login">Logout</a>
+          </div>
+      </ng-container>
+      <ng-template #login>
+        <div>
+          <a href="" routerLink="/login" class="nav-link text-uppercase text-white login">Login</a>
+          <a href="" routerLink="/register" class="nav-link text-uppercase text-white login">Register</a>
+          
+        </div>
+      </ng-template>
+      
+    </nav>
+  </div>
+</header>

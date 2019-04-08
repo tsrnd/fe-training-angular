@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
-import { LocalerService } from '../feature/service/localer.service';
+import { LocalerService } from 'src/app/feature/service/localer.service';
 
 const REGISTER = 'register';
 @Component({
-  selector: 'app-ex10',
-  templateUrl: './ex10.component.html',
-  styleUrls: ['./ex10.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class Ex10Component implements OnInit {
+
+export class RegisterComponent implements OnInit {
 
   formReactive: FormGroup;
   msgErr: string;
