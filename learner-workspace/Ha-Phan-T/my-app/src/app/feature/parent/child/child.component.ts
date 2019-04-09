@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./child.component.scss']
 })
 export class ChildComponent implements OnInit {
-  @Input() tabIndex: number;
+  @Input() tabIndex: any;
+
   constructor() { }
 
   ngOnInit() {

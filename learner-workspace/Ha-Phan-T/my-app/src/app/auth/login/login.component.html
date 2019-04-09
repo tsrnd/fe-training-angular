@@ -4,11 +4,11 @@
     <div class="col-md-4 alert alert-danger">{{notice}}</div>
   </div>
 </ng-template>
-<ng-template [ngIf]="check===true">
+<!-- <ng-template [ngIf]="check===true">
   <div class="row justify-content-md-center notice">
     <div class="col-md-4 alert alert-success">{{notice}}</div>
   </div>
-</ng-template>
+</ng-template> -->
 <div class="row justify-content-md-center">
   <form #loginForm="ngForm" class="col-md-4" (ngSubmit)="onSubmitLogin(loginForm)">
     <div class="form-group">

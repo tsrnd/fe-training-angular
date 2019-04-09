@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ContentChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { LifecycleContentComponent } from './../lifecycle-content/lifecycle-content.component';
-import { ModalComponent } from './../modal/modal.component';
+import { ModalComponent } from './../../../share/modal/modal.component';
 
 @Component({
   selector: 'app-lifecycle-title',

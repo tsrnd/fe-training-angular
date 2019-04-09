@@ -1,0 +1,34 @@
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
+    <div class="collapse navbar-collapse col-10" id="navbarText">
+      <a class="nav-link" href="#">
+        <img src="assets/images/logo-nav@2x.png" alt="Home" title="Home" class="ng-star-inserted" id="img-logo">
+      </a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link nav-link-inner" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-inner" href="#">Directive</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-inner" routerLink="/child">Pricing</a>
+        </li>
+      </ul>
+      <ul class="navbar-text navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link nav-link-inner btn-login" href="#" routerLink="/login" *ngIf="!authService.isLoggedIn"
+            routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-inner btn-login" href="#" routerLink="/register" *ngIf="!authService.isLoggedIn"
+            routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-inner btn-login" *ngIf="authService.isLoggedIn" (click)="logout()"
+            routerLinkActive="active">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,47 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<header class="header">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
-    <div class="collapse navbar-collapse col-10" id="navbarText">
-      <a class="nav-link" href="#">
-        <img src="assets/images/logo-nav@2x.png" alt="Home" title="Home" class="ng-star-inserted" id="img-logo">
-      </a>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link nav-link-inner" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-inner" href="#">Directive</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-inner" href="#">Pricing</a>
-        </li>
-      </ul>
-      <ul class="navbar-text navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link nav-link-inner btn-login" href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+<app-header></app-header>
 <main class="main container">
-  <!-- ex_4 -->
-  <!-- <nav class="navbar navbar-light bg-light" id="intro-tab-content">
-    <a class="navbar-brand" href="#">Tab content</a>
-  </nav>
-  <nav id="tab-content">
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <div *ngFor="let tab of listTab; let i=index">
-        <a [class.active]="index==i" class="nav-item nav-link" id={{i}} data-toggle="tab" href="#nav-home" role="tab"
-          aria-controls="nav-home" aria-selected="true" (click)="index=$event.target.id">{{tab | uppercase}}</a>
-      </div>
-    </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <app-child [tabIndex]=index></app-child>
-  </div> -->
-
   <!-- ex_6 -->
   <!-- <div id="accordion">
     <div *ngFor="let method of listMethod" class="card" id="card-{{method.id}}">
@@ -78,73 +36,8 @@
     </div>
   </div> -->
 
-  <!-- ex-10 -->
-  <!-- <h2 style="text-align: center;">Create an account</h2>
-  <div class="row justify-content-md-center">
-    <form [formGroup]="formReactive" class="col-md-5" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" formControlName="firstName">
-        <div *ngIf="formReactive.controls.firstName.invalid 
-        && (formReactive.controls.firstName.dirty || formReactive.controls.firstName.touched)">
-          <div *ngIf="formReactive.get('firstName').errors.required" class="alert alert-danger">This field is
-            required</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" formControlName="lastName">
-        <div *ngIf="formReactive.controls.lastName.invalid 
-        && (formReactive.controls.lastName.dirty || formReactive.controls.lastName.touched)">
-          <div *ngIf="formReactive.get('lastName').errors.required" class="alert alert-danger">This field is
-            required</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
-        <div *ngIf="formReactive.controls.email.invalid 
-        && (formReactive.controls.email.dirty || formReactive.controls.email.touched)">
-          <div *ngIf="formReactive.get('email').errors.required" class="alert alert-danger">This field is
-            required</div>
-          <div *ngIf="formReactive.get('email').errors.email" class="alert alert-danger">Email must have type email
-          </div>
-        </div>
-        <div *ngIf="checkmail" class="alert alert-danger" role="alert">
-          {{errmail}}
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" formControlName="password">
-        <div *ngIf="formReactive.controls.password.invalid 
-        && (formReactive.controls.password.dirty || formReactive.controls.password.touched)">
-          <div *ngIf="formReactive.get('password').errors.required" class="alert alert-danger">This field is
-            required</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
-        <div *ngIf="formReactive.controls.confirmPassword.invalid 
-        && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
-          <div *ngIf="formReactive.get('confirmPassword').errors.required" class="alert alert-danger">This field is
-            required</div>
-        </div>
-        <div *ngIf="checkpass" class="alert alert-danger" role="alert">
-          {{errpass}}
-        </div>
-      </div>
-      <div>
-        <button type="submit" class="btn btn-primary" [disabled]="!formReactive.valid">Create</button>
-      </div>
-    </form>
-  </div> -->
-
   <!-- ex-11 -->
-  <app-login></app-login>
+  <!-- <app-login></app-login> -->
+  <router-outlet></router-outlet>
 </main>
-<footer class="footer bg-primary">
-  <p class="footer-text">Footer</p>
-</footer>
-<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,0 +1,15 @@
+<!-- ex_4 -->
+<nav class="navbar navbar-light bg-light" id="intro-tab-content">
+  <a class="navbar-brand" href="#">Tab content</a>
+</nav>
+<nav id="tab-content">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <div *ngFor="let tab of listTab; let i=index">
+      <a [class.active]="index==i" class="nav-item nav-link" id={{i}} data-toggle="tab" href="#nav-home" role="tab"
+        aria-controls="nav-home" aria-selected="true" (click)="index=$event.target.id">{{tab | uppercase}}</a>
+    </div>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <app-child [tabIndex]=index></app-child>
+</div>

@@ -1,0 +1,62 @@
+<!-- ex-10 -->
+<h2 style="text-align: center;">Create an account</h2>
+<div class="row justify-content-md-center">
+  <form [formGroup]="formReactive" class="col-md-5" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName">
+      <div *ngIf="formReactive.controls.firstName.invalid 
+        && (formReactive.controls.firstName.dirty || formReactive.controls.firstName.touched)">
+        <div *ngIf="formReactive.get('firstName').errors.required" class="alert alert-danger">This field is
+          required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName">
+      <div *ngIf="formReactive.controls.lastName.invalid 
+        && (formReactive.controls.lastName.dirty || formReactive.controls.lastName.touched)">
+        <div *ngIf="formReactive.get('lastName').errors.required" class="alert alert-danger">This field is
+          required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+      <div *ngIf="formReactive.controls.email.invalid 
+        && (formReactive.controls.email.dirty || formReactive.controls.email.touched)">
+        <div *ngIf="formReactive.get('email').errors.required" class="alert alert-danger">This field is
+          required</div>
+        <div *ngIf="formReactive.get('email').errors.email" class="alert alert-danger">Email must have type email
+        </div>
+      </div>
+      <div *ngIf="checkmail" class="alert alert-danger" role="alert">
+        {{errmail}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+      <div *ngIf="formReactive.controls.password.invalid 
+        && (formReactive.controls.password.dirty || formReactive.controls.password.touched)">
+        <div *ngIf="formReactive.get('password').errors.required" class="alert alert-danger">This field is
+          required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+      <div *ngIf="formReactive.controls.confirmPassword.invalid 
+        && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
+        <div *ngIf="formReactive.get('confirmPassword').errors.required" class="alert alert-danger">This field is
+          required</div>
+      </div>
+      <div *ngIf="checkpass" class="alert alert-danger" role="alert">
+        {{errpass}}
+      </div>
+    </div>
+    <div style="text-align:center">
+      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!formReactive.valid">Create</button>
+    </div>
+  </form>
+</div>
