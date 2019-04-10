@@ -14,6 +14,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthModule } from './auth/auth.module';
 import { AccountComponent } from './account/account.component';
 import { AccountModule } from './account/account.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AccountModule } from './account/account.module';
     HoverItemDirective,
     FeaturesComponent,
     AuthComponent,
-    AccountComponent
+    AccountComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

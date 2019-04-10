@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LocalerService } from './../../core/services/localer.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'src/app/core/services/cookie.service';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  private checkMail: any;
-  private checkSuccess: any;
-  private obj: any;
+  checkMail: any;
+  checkSuccess: any;
+  obj: any;
 
   constructor(
+    private cookieService: CookieService,
     private localer: LocalerService,
     private router: Router
     ) { }
@@ -32,8 +34,8 @@ export class LoginComponent implements OnInit {
       this.checkMail = this.obj.find((element) => element.email === account.email);
       this.checkSuccess = this.checkMail.password.includes(account.password);
       if (this.checkSuccess && typeof this.checkMail === 'object') {
-        localStorage.setItem('isLoggedIn', 'true');
-        this.router.navigate(['/profile', this.checkMail]);
+        this.cookieService.setCookie('login', 1, 2);
+        this.router.navigate(['profile', this.checkMail]);
       }
     }
   }
