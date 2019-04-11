@@ -41,6 +41,10 @@
     * Chức năng:
       1. Show những sản phẩm yêu thích
       2. Có thể xoá sản phẩm yêu thích
+- Page bootstrap tham khảo
+```
+https://colorlib.com/wp/free-bootstrap-ecommerce-website-templates/
+```
 
 ## Hình ảnh mockup
 ### Home page
