@@ -1,19 +1,12 @@
 <section class="section-content">
   <div class="container">
-    <ng-container *ngIf="data?.length !== 0; else empty">
-      <section class="section-content">
-        <div class="container" *ngFor="let item of data">
-          <app-lifecycle-title [item]="item" (showItemDel)="showModalWithContent($event)">
-            <app-lifecycle-content [item]="item"></app-lifecycle-content>
-          </app-lifecycle-title>
-        </div>
-        <app-modal (delItem)="delItem($event)"></app-modal>
-      </section>
-    </ng-container>
-    <ng-template #empty>
-      <div class="alert alert-danger" role="alert">
-        <strong>Danger!</strong> Empty data!!!
+    <section class="section-content">
+      <div class="container" *ngFor="let item of data">
+        <app-lifecycle-title [item]="item" (showItemDel)="showModalWithContent($event)">
+          <app-lifecycle-content [item]="item"></app-lifecycle-content>
+        </app-lifecycle-title>
       </div>
-    </ng-template>
+      <app-modal (delItem)="delItem($event)"></app-modal>
+    </section>
   </div>
 </section>

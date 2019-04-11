@@ -11,8 +11,10 @@ const routes: Routes = [
   {
     path: '',
     component: AccountComponent,
-    canActivate: [AccountGuard],
-    canActivateChild: [AccountGuard],
+    // CanActivate: used to allow or disallow access to parent routes.
+    // canActivate: [AccountGuard],
+    // CanActivateChild: used to allow or disallow access to child routes.
+    // canActivateChild: [AccountGuard],
     children: [
       {
         path: 'dashboard',

@@ -20,7 +20,7 @@ import { AccountModule } from './account/account.module';
   declarations: [
     AppComponent,
     FeaturesComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

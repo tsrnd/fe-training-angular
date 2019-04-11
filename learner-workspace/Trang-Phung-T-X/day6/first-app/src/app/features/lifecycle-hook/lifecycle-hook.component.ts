@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AppModalComponent } from 'src/app/core/app-modal/app-modal.component';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-lifecycle-hook',
@@ -10,11 +11,10 @@ import { AppModalComponent } from 'src/app/core/app-modal/app-modal.component';
 })
 export class LifecycleHookComponent implements OnInit {
 
-  constructor(private apiService: ApiService) {
-
-  }
-  private data: Observable<any[]>;
-
+  constructor(
+    private apiService: ApiService,
+    public authService: AuthService) {}
+  data: Observable<any[]>;
   @ViewChild(AppModalComponent) comfirmModal: AppModalComponent;
 
   ngOnInit() {

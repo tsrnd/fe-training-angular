@@ -8,6 +8,7 @@ import { HighlightButtonDirective } from './directive/highlight-button.directive
 import { CollapseTextPipe } from './pipe/collapse-text.pipe';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     FormsModule,
+    CoreModule,
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule

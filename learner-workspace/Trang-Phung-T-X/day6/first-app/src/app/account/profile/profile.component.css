@@ -1,6 +1,9 @@
-.section {
-  margin-top: 20px
+.container {
+  padding: 5% 0;
 }
-input {
-  width: 20em
+label {
+  text-align: right;
+}
+h2 {
+  margin-bottom: 16px;
 }

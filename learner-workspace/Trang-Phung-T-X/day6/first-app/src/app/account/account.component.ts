@@ -19,7 +19,6 @@ export class AccountComponent implements OnInit {
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggedIn) {
         // set isLoggedIn=true
-        this.router.navigate(['/account']);
       }
     });
   }
@@ -27,6 +26,5 @@ export class AccountComponent implements OnInit {
   logout() {
     // set isLoggedIn=false
     this.authService.logout();
-    this.router.navigate(['/account']);
   }
 }

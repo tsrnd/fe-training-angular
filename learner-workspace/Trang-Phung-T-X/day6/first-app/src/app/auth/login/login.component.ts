@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   isAuthenticate = false;
 
   constructor(private localService: LocalerService,
-              private authService: AuthService,
-              private router: Router, ) { }
+    private authService: AuthService,
+    private router: Router, ) { }
 
   key = 'userRegister';
   firstUser: any;
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     // check data in localStorage
     if (this.listAccount && this.checkAccout(f)) {
       this.authService.isLoggedIn = true;
-      this.router.navigate([this.authService.redirectUrl || '/']);
+      this.router.navigate(['/']);
       return this.showSuccess = true;
     }
     this.showError = true;

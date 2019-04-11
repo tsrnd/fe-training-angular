@@ -30,16 +30,17 @@
       <div>
         <a class="nav-link" routerLink="/account" routerLinkActive="active" title="Account">Account</a>
       </div>
-      <div>
+      <!-- <div>
         <a class="nav-link" routerLink="/login" *ngIf="!authService.isLoggedIn" routerLinkActive="active"
           title="Login">Login</a>
-      </div>
+      </div> -->
       <div>
         <a class="nav-link" (click)="logout()" *ngIf="authService.isLoggedIn" routerLinkActive="active"
           title="Logout">Logout</a>
       </div>
       <div>
-        <a class="nav-link" routerLink="/register" routerLinkActive="active" title="Register">Register</a>
+        <a class="nav-link" routerLink="/register" *ngIf="!authService.isLoggedIn" routerLinkActive="active"
+          title="Register">Register</a>
       </div>
     </div>
   </nav>

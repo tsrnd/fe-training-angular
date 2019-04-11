@@ -13,6 +13,7 @@ import { AppLifecycleTitleComponent } from './lifecycle-hook/app-lifecycle-title
 import { AppLifecycleContentComponent } from './lifecycle-hook/app-lifecycle-content/app-lifecycle-content.component';
 import { CoreModule } from '../core/core.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DetailNewsComponent } from './news/detail-news/detail-news.component';
 @NgModule({
   declarations: [
     NewsComponent,
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DirectiveComponent,
     AppLifecycleTitleComponent,
     AppLifecycleContentComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DetailNewsComponent
   ],
   imports: [
     CommonModule,

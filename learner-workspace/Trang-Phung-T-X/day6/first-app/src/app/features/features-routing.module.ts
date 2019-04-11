@@ -5,13 +5,13 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { FeaturesComponent } from './features.component';
 import { LifecycleHookComponent } from './lifecycle-hook/lifecycle-hook.component';
 import { DirectiveComponent } from './directive/directive.component';
-import { AuthGuard } from '../auth/auth.guard';
+import { DetailNewsComponent } from './news/detail-news/detail-news.component';
 
 const routes: Routes = [
   {
     path: '',
     component: FeaturesComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -28,6 +28,10 @@ const routes: Routes = [
       {
         path: 'directive',
         component: DirectiveComponent
+      },
+      {
+        path: 'news/:id',
+        component: DetailNewsComponent
       }
     ]
   }

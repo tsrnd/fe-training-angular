@@ -8,6 +8,7 @@ import { AccountComponent } from './account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CanDeactivateGuard } from './can-deactivate.guard';
 import { CoreModule } from '../core/core.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,16 @@ import { CoreModule } from '../core/core.module';
   imports: [
     CommonModule,
     CoreModule,
+    SharedModule,
     AccountRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ],
   exports: [
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    AccountComponent
   ],
-  providers: [CanDeactivateGuard]
+  providers: [CanDeactivateGuard] // service
 })
 export class AccountModule { }

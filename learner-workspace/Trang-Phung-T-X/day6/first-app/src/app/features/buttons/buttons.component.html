@@ -1,17 +1,35 @@
 <div class="section-content">
-  <div class="mx-4">
-    <div class="my-4">
-      <label>Key: </label> <input class="mx-4" type="text" [(ngModel)]="enterKey">
-      <label>Value: </label> <input class="mx-4" type="text" [(ngModel)]="enterValue">
+  <div class="input my-4 mx-4">
+    <label>Key: </label> <input class="mx-4" type="text" [(ngModel)]="enterKey">
+    <label>Value: </label> <input class="mx-4" type="text" [(ngModel)]="enterValue">
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <button type="button" class="btn btn-primary btn-lg mx-4" (click)="setLocalStorage()">saveLocalStorage()</button>
+
     </div>
-    <button type="button" class="btn btn-primary btn-lg mx-4" (click)="setLocalStorage()">saveLocalStorage()</button>
-    <button type="button" class="btn btn-primary btn-lg mx-4" (click)="getLocalStorage()">getLocalStorage()</button>
-    <button type="button" class="btn btn-primary btn-lg mx-4"
-      (click)="setSessionStorage()">saveSessionStorage()</button>
-    <button type="button" class="btn btn-primary btn-lg mx-4" (click)="getSessionStorage()">getSessionStorage()</button>
-    <button type="button" class="btn btn-primary btn-lg mx-4 my-4"
-      (click)="removeLocalStorage()">removeLocalStorage()</button>
-    <button type="button" class="btn btn-primary btn-lg mx-4 my-4"
-      (click)="clearLocalStorage()">clearLocalStorage()</button>
+    <div class="col-4">
+      <button type="button" class="btn btn-primary btn-lg mx-4" (click)="getLocalStorage()">getLocalStorage()</button>
+
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-primary btn-lg mx-4"
+        (click)="setSessionStorage()">saveSessionStorage()</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <button type="button" class="btn btn-primary btn-lg mx-4 my-4"
+        (click)="getSessionStorage()">getSessionStorage()</button>
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-primary btn-lg mx-4 my-4"
+        (click)="removeLocalStorage()">removeLocalStorage()</button>
+    </div>
+    <div class="col-4">
+
+      <button type="button" class="btn btn-primary btn-lg mx-4 my-4"
+        (click)="clearLocalStorage()">clearLocalStorage()</button>
+    </div>
   </div>
 </div>

@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+// true => allow access
+// false => dont allow access
 export class AccountGuard implements CanActivate {
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
-  // next: ActivatedRouteSnapshotwhich is the next route that will be activated if the guard is allowing access,
-  // state: RouterStateSnapshotwhich is the next router state if the guard is allowing access.
+  // next: ActivatedRouteSnapshot which is the next route that will be activated if the guard is allowing access,
+  // state: RouterStateSnapshot which is the next router state if the guard is allowing access.
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    let url: string = state.url;
-    return this.checkLogin(url);
+    let url: string = state.url; // get next url want access
+    return this.checkLogin(url); // check guard
+    // true => allow access
+    // false => navigate(['/login'])
   }
 
   canActivateChild(
@@ -28,13 +31,15 @@ export class AccountGuard implements CanActivate {
   }
 
   checkLogin(url: string): boolean {
+    // if login => true => access
     if (this.authService.isLoggedIn) { return true; }
 
     // Store the attempted URL for redirecting
-    this.authService.redirectUrl = url;
+    // this.authService.redirectUrl = url;
 
     // Navigate to the login page with extras
-    this.router.navigate(['/login']);
+    // else navigate(['/login'])
+    this.router.navigate(['/account']);
     return false;
   }
 }

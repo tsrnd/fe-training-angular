@@ -1,12 +1,41 @@
-<div class="container">
-  <h1>Angular Router</h1>
-  <nav>
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a routerLink="/profile" routerLinkActive="active">Profile</a>
-    <a routerLink="" routerLinkActive="active">Home</a>
-    <button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
-    <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <a class="nav-link active" href="/">
+      <img alt="Logo" height="40" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" title="Logo"
+        width="150" class="ng-star-inserted">
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/" routerLinkActive="active" title="Home">
+            <span class="nav-link-inner">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active" title="Directive">
+            <span class="nav-link-inner">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active" title="Pricing">
+            <span class="nav-link-inner">Profile</span>
+          </a>
+        </li>
+      </ul>
+      <div>
+        <a class="nav-link" (click)="login()" *ngIf="!authService.isLoggedIn" routerLinkActive="active"
+          title="Login">Login</a>
+      </div>
+      <div>
+        <a class="nav-link" (click)="logout()" *ngIf="authService.isLoggedIn" routerLinkActive="active"
+          title="Logout">Logout</a>
+      </div>
+    </div>
   </nav>
+</header>
 
-  <router-outlet></router-outlet>
-</div>
+<body>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</body>
