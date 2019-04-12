@@ -1,0 +1,13 @@
+.detail_product img {
+  height: 600px;
+  width: 400px
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.card-product__img img {
+  height: 330px;
+  width: 250px;
+}

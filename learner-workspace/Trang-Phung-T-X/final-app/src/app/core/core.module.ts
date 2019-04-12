@@ -4,13 +4,14 @@ import { RouterModule } from '@angular/router';
 import { ApiService } from './services/api.service';
 import { LocalerService } from './services/localer.service';
 import { AuthService } from './services/auth.service';
+import { CommonService } from './services/common.service';
 
 @NgModule({
   declarations: [
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     CommonModule,
@@ -20,6 +21,7 @@ import { AuthService } from './services/auth.service';
     ApiService,
     LocalerService,
     AuthService,
+    CommonService
   ],
 })
 export class CoreModule { }

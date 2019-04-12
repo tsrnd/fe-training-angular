@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiService } from 'src/app/core/services/api.service';
+import { ApiService, KEY } from 'src/app/core/services/api.service';
 import { LocalerService } from 'src/app/core/services/localer.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
+import { CommonService } from 'src/app/core/services/common.service';
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,6 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  KEY = 'newFavorate';
   value: any;
   @Input() data;
   title: string;
@@ -22,7 +22,8 @@ export class ProductsComponent implements OnInit {
     private apiService: ApiService,
     private localService: LocalerService,
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private commonService: CommonService) {
   }
 
   ngOnInit() {
@@ -43,20 +44,6 @@ export class ProductsComponent implements OnInit {
   }
 
   myfavorites(id) {
-    const valueLocal = this.localService.getLocalStorage(this.KEY);
-    // check data in localStorage be has value or null
-    const value = valueLocal ? valueLocal : [];
-    // check email is exist in local
-    // tslint:disable-next-line: only-arrow-functions
-    if (valueLocal && valueLocal.find(function (element) {
-      return element === id;
-    })) {
-      return value;
-    }
-    // push id to arr id in local
-    value.push(id);
-    // save local
-    this.localService.saveLocalStorage(this.KEY, value);
+    this.commonService.addFavorite(id);
   }
-
 }

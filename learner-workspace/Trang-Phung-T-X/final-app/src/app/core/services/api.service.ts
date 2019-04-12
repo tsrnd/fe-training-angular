@@ -11,6 +11,10 @@ export const ENDPOINT = {
   events: 'events'
 };
 
+export const KEY = {
+  favorite: 'newFavorate'
+};
+
 @Injectable({
   providedIn: 'root'
 })

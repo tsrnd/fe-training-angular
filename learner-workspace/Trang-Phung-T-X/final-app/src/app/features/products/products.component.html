@@ -16,7 +16,8 @@
           </div>
           <div class="card-body">
             <h2>{{ item.title | collapseText: '7' }}</h2>
-            <p class="card-product__title"><a href="">{{item.desc | collapseText: '20'}}</a></p>
+            <p class="card-product__title"><a [routerLink]="['/product',item.id]">{{item.desc | collapseText: '20'}}</a>
+            </p>
             <p class="card-product__price">{{item.price}}</p>
           </div>
         </div>

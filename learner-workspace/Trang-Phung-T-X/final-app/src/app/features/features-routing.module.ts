@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ListProductResolveService } from './home/list-product-resolve.service';
 import { ProductsResolveService } from './products/products-resolve.service';
+import { DetailProductComponent } from './products/detail-product/detail-product.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,13 @@ const routes: Routes = [
       {
         path: 'children',
         component: ProductsComponent,
+        resolve: {
+          products: ProductsResolveService
+        }
+      },
+      {
+        path: 'product/:id',
+        component: DetailProductComponent,
         resolve: {
           products: ProductsResolveService
         }

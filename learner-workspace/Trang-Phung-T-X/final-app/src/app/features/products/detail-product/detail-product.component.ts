@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ApiService, KEY } from 'src/app/core/services/api.service';
+import { ActivatedRoute } from '@angular/router';
+import { LocalerService } from 'src/app/core/services/localer.service';
+import { CommonService } from 'src/app/core/services/common.service';
 
 @Component({
   selector: 'app-detail-product',
@@ -6,10 +10,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-product.component.css']
 })
 export class DetailProductComponent implements OnInit {
+  data: any;
+  product: any;
+  id: number;
+  listSuggest: any;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+    private localService: LocalerService,
+    private commonService: CommonService) {
   }
 
+  ngOnInit() {
+
+    this.route.data
+      .subscribe(data => {
+        this.data = data.products;
+      });
+    this.route.paramMap.subscribe(data => {
+      this.id = Number(data.params.id);
+    });
+    this.product = this.data.find(item => item.id === this.id);
+    this.listSuggest = this.data.filter(item => item.type === this.product.type && item.id !== this.id);
+  }
+
+  addFavorite(id) {
+    this.commonService.addFavorite(id);
+  }
 }
