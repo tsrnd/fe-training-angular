@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "type": "women",
+    "title": "product1",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/cloth_1.jpg"
+  },
+  {
+    "id": 2,
+    "type": "women",
+    "title": "product2",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/cloth_2.jpg"
+  },
+  {
+    "id": 3,
+    "type": "women",
+    "title": "product3",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/cloth_3.jpg"
+  },
+  {
+    "id": 4,
+    "type": "women",
+    "title": "product4",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/women.jpg"
+  },
+  {
+    "id": 5,
+    "type": "men",
+    "title": "product5",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/prod_1.png"
+  },
+  {
+    "id": 6,
+    "type": "men",
+    "title": "product6",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/prod_2.png"
+  },
+  {
+    "id": 7,
+    "type": "men",
+    "title": "product7",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/prod_3.png"
+  },
+  {
+    "id": 8,
+    "type": "men",
+    "title": "product8",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/men.jpg"
+  },
+  {
+    "id": 10,
+    "type": "children",
+    "title": "product10",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/model_4.png"
+  },
+  {
+    "id": 11,
+    "type": "children",
+    "title": "product11",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/model_3.png"
+  },
+  {
+    "id": 12,
+    "type": "children",
+    "title": "product12",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/model_2.png"
+  },
+  {
+    "id": 13,
+    "type": "children",
+    "title": "product13",
+    "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
+    "price": "100$",
+    "img": "assets/images/model_1.png"
+  }
+]

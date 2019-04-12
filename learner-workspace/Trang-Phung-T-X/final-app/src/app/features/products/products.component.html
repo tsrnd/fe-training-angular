@@ -1,0 +1,26 @@
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="title-section mb-5 col-12">
+        <h2 class="text-uppercase">{{title}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 item-entry mb-3" *ngFor="let item of data">
+        <div class="card text-center card-product md-height bg-gray d-block">
+          <div class="card-product__img">
+            <img class="card-img" src="{{item.img}}" alt="">
+            <div class="card-product__imgOverlay">
+              <button (click)="myfavorites(item.id)"><i class="fa fa-heart" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2>{{ item.title | collapseText: '7' }}</h2>
+            <p class="card-product__title"><a href="">{{item.desc | collapseText: '20'}}</a></p>
+            <p class="card-product__price">{{item.price}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
