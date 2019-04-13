@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="cotainer my-form">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div [hidden]="!showError" class="alert alert-danger" role="alert">
+        Account doesn't exist. Enter a different account
+      </div>
+      <div [hidden]="!showSuccess" class="alert alert-success" role="alert">
+        Login successfully!
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h4>Login</h4>
+        </div>
+        <div class="card-body">
+          <form action="" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="form-group">
+              <label for="email" class="required-explain">Email</label>
+              <input type="text" id="email" class="form-control mb-2" ngModel name="email" [(ngModel)]="email"
+                placeholder="Enter email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                #validateEmail="ngModel">
+              <ng-container *ngIf="validateEmail.invalid && validateEmail.dirty || validateEmail.touched">
+                <span class="error" *ngIf="validateEmail.errors?.required">
+                  Email is required
+                </span>
+                <span class="error" *ngIf="validateEmail.errors && validateEmail.errors.pattern">
+                  Email is invalid
+                </span>
+              </ng-container>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="required-explain">Password</label>
+              <input type="password" id="password" class="form-control mb-2" ngModel name="password"
+                [(ngModel)]="password" placeholder="Enter password" required #validatePassword="ngModel">
+              <ng-container *ngIf="validatePassword.invalid && validatePassword.dirty || validatePassword.touched">
+                <span class="error" *ngIf="validatePassword.errors?.required">
+                  Password is required
+                </span>
+              </ng-container>
+            </div>
+
+            <div class="btn-submit">
+              <button class="btn btn-large btn-block btn-primary" type="submit"
+                [disabled]="loginForm.invalid">Submit</button>
+            </div>
+
+            <div class="form-group my-2 text-center">
+              <a routerLink="/register">Dont have an account? Create an account</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

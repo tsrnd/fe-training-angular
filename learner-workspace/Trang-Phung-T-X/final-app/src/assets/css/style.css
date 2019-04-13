@@ -163,7 +163,7 @@ a {
   margin-bottom: 0px;
   z-index: 1999;
   position: relative;
-  background: #fff !important; }
+  background: #fff; }
   .site-navbar.transparent {
     background: transparent; }
   .site-navbar .site-navbar-top {

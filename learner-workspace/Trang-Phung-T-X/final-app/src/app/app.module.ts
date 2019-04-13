@@ -7,10 +7,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +24,7 @@ import { FeaturesModule } from './features/features.module';
     SharedModule,
     FormsModule,
     HttpClientModule,
+    AccountModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],

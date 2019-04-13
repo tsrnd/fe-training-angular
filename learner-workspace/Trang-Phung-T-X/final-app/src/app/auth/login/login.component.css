@@ -1,0 +1,35 @@
+.my-form {
+  padding: 120px;
+}
+.card-header h4 {
+  text-transform: uppercase;
+  text-align:  center;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+.form-group {
+  padding: 5px 10px 10px 10px;
+}
+
+.required-explain {
+  margin-bottom: 10px;
+  padding: 0;
+  font-weight: normal;
+}
+.required-explain::after {
+  color: red;
+  content: '*';
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+.btn-submit {
+  margin: 0 10px 0 10px;
+}
+
+.btn-submit button {
+  text-transform: uppercase;
+}
