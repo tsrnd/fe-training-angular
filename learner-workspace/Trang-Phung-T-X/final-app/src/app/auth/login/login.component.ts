@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LocalerService } from './../../core/services/localer.service';
+import { LocalerService, KEY } from './../../core/services/localer.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Router } from '@angular/router';
+import { CommonService } from 'src/app/core/services/common.service';
 
 @Component({
   selector: 'app-login',
@@ -15,19 +16,19 @@ export class LoginComponent implements OnInit {
   constructor(
     private localService: LocalerService,
     private authService: AuthService,
-    private router: Router ) { }
+    private router: Router,
+    private commonService: CommonService) { }
 
-  key = 'userRegister';
+
   firstUser: any;
   listAccount: any;
   password: string;
   email: string;
   showError = false;
-  showSuccess = false;
 
   ngOnInit() {
     // get data account localStorage
-    this.listAccount = this.localService.getLocalStorage(this.key);
+    this.listAccount = this.localService.getLocalStorage(KEY.listUser);
   }
 
   onSubmit(f: NgForm) {
@@ -35,9 +36,9 @@ export class LoginComponent implements OnInit {
     this.hideAlert();
     // check data in localStorage
     if (this.listAccount && this.checkAccout(f)) {
-      // this.authService.isLoggedIn = true;
-      this.router.navigate(['/']);
-      return this.showSuccess = true;
+      this.authService.isLoggedIn = true;
+      this.commonService.currentAccount(this.email);
+      return this.router.navigate(['/dashboard']);
     }
     this.showError = true;
   }
@@ -55,7 +56,6 @@ export class LoginComponent implements OnInit {
 
   hideAlert() {
     this.showError = false;
-    this.showSuccess = false;
   }
 
 }

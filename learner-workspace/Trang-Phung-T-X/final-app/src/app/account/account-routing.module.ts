@@ -3,15 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: AccountComponent,
     // CanActivate: used to allow or disallow access to parent routes.
-    // canActivate: [AccountGuard],
+    // canActivate: [AuthGuard],
     // CanActivateChild: used to allow or disallow access to child routes.
-    // canActivateChild: [AccountGuard],
+    // canActivateChild: [AuthGuard],
     children: [
       {
         path: 'dashboard',
@@ -22,7 +23,7 @@ const routes: Routes = [
         component: ProfileComponent,
 
       }
-]
+    ]
   }
 
 ];

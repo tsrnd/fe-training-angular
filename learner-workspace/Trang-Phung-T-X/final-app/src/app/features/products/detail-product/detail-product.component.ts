@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ApiService, KEY } from 'src/app/core/services/api.service';
+import { ApiService } from 'src/app/core/services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { LocalerService } from 'src/app/core/services/localer.service';
 import { CommonService } from 'src/app/core/services/common.service';
@@ -10,6 +10,7 @@ import { CommonService } from 'src/app/core/services/common.service';
   styleUrls: ['./detail-product.component.css']
 })
 export class DetailProductComponent implements OnInit {
+  title = 'Detail product';
   data: any;
   product: any;
   id: number;

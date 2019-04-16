@@ -94,8 +94,6 @@ nav.sidebar, .main{
 
   /*gives sidebar width/height*/
   nav.sidebar{
-    width: 200px;
-    height: 100%;
     margin-left: -160px;
     float: left;
     z-index: 8000;
@@ -151,7 +149,8 @@ section{
 }
 
 .navbar-nav {
-  width: 100% !important;
+  width: 100%;
+  margin-right: 20px;
 }
 
 .navbar-nav>li>a {

@@ -1,0 +1,13 @@
+.site-navbar {
+  background-color: #333333;
+  color: white;
+}
+.icons {
+  text-transform: uppercase;
+}
+.site-navbar a:hover {
+  color: #ee4266;
+}
+.active {
+  color: #ee4266 !important;
+}

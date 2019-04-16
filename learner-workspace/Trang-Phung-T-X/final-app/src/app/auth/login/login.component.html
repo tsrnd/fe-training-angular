@@ -5,9 +5,6 @@
       <div [hidden]="!showError" class="alert alert-danger" role="alert">
         Account doesn't exist. Enter a different account
       </div>
-      <div [hidden]="!showSuccess" class="alert alert-success" role="alert">
-        Login successfully!
-      </div>
       <div class="card">
         <div class="card-header">
           <h4>Login</h4>
@@ -17,13 +14,12 @@
             <div class="form-group">
               <label for="email" class="required-explain">Email</label>
               <input type="text" id="email" class="form-control mb-2" ngModel name="email" [(ngModel)]="email"
-                placeholder="Enter email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                #validateEmail="ngModel">
+                placeholder="Enter email" required #validateEmail="ngModel">
               <ng-container *ngIf="validateEmail.invalid && validateEmail.dirty || validateEmail.touched">
                 <span class="error" *ngIf="validateEmail.errors?.required">
                   Email is required
                 </span>
-                <span class="error" *ngIf="validateEmail.errors && validateEmail.errors.pattern">
+                <span class="error" *ngIf="validateEmail.errors && validateEmail.errors.email">
                   Email is invalid
                 </span>
               </ng-container>

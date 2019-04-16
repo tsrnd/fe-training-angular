@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiService, KEY } from 'src/app/core/services/api.service';
+import { ApiService } from 'src/app/core/services/api.service';
 import { LocalerService } from 'src/app/core/services/localer.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';

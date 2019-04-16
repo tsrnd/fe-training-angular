@@ -10,6 +10,7 @@ import { FeaturesModule } from './features/features.module';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AccountModule } from './account/account.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { AccountModule } from './account/account.module';
     BrowserModule,
     SharedModule,
     FeaturesModule,
-    SharedModule,
+    CoreModule,
     FormsModule,
     HttpClientModule,
     AccountModule,
