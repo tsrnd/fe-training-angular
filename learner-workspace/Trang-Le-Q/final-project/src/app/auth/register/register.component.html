@@ -1,3 +1,63 @@
-<p>
-  register works!
-</p>
+<!-- Sign up form -->
+<div class="main">
+  <section class="signup">
+    <div class="container">
+      <div class="signup-content">
+        <div class="signup-form">
+          <h2 class="form-title">Sign up</h2>
+          <form class="register-form" id="register-form" [formGroup]= "formReactive" (ngSubmit)= "onSubmit()">
+            <div class="form-group text-danger" *ngIf= "msgErr">
+                <span>{{ msgErr }}</span>
+            </div>
+            <div class="form-group text-success" *ngIf= "msgSuccess">
+                <span>{{msgSuccess }}</span>
+            </div>
+            <div class="form-group">
+              <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+              <input type="text" name="name" id="name" placeholder="Your Name" formControlName="name"/>
+            </div>
+            <div class="form-group text-warning" *ngIf= "formReactive.controls.name.invalid
+              && (formReactive.controls.name.dirty || formReactive.controls.name.touched)">
+              <span *ngIf="formReactive.get('name').errors.required">This field is required</span>
+            </div>
+            <div class="form-group">
+              <label for="email"><i class="zmdi zmdi-email"></i></label>
+              <input type="email" name="email" id="email" placeholder="Your Email" formControlName="email"/>
+            </div>
+            <div class="form-group text-warning" *ngIf= "formReactive.controls.email.invalid
+              && (formReactive.controls.email.dirty || formReactive.controls.email.touched)">
+              <span *ngIf="formReactive.get('email').errors.required">This field is required</span>
+              <span *ngIf="formReactive.get('email').errors.email">This field must be an email</span>
+            </div>
+            <div class="form-group">
+              <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+              <input type="password" name="password" id="pass" placeholder="Password" formControlName="password"/>
+            </div>
+            <div class="form-group text-warning" *ngIf= "formReactive.controls.password.invalid
+              && (formReactive.controls.password.dirty || formReactive.controls.password.touched)">
+              <span *ngIf="formReactive.get('password').errors.required">This field is required</span>
+            </div>
+            <div class="form-group">
+              <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+              <input type="password" name="confirmPassword" id="re_pass" placeholder="Repeat your password" formControlName="confirmPassword"/>
+            </div>
+            <div class="form-group text-warning">
+                <span *ngIf= "formReactive.get('password').value !== formReactive.get('confirmPassword').value">This field must map with password field!</span>
+            </div>
+            <div class="form-group text-warning" *ngIf= "formReactive.controls.confirmPassword.invalid
+              && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
+              <span *ngIf="formReactive.get('confirmPassword').errors.required">This field is required</span>
+            </div>
+            <div class="form-group form-button">
+              <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="formReactive.invalid || formReactive.controls.password.value != formReactive.controls.confirmPassword.value"/>
+            </div>
+          </form>
+        </div>
+        <div class="signup-image">
+          <figure><img src="./../../../assets/img/signup-image.jpg" alt="sing up image"></figure>
+          <a href="#" class="signup-image-link">I am already member</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

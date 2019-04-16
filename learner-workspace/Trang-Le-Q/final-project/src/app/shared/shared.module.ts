@@ -5,9 +5,10 @@ import { FooterComponent } from './component/footer/footer.component';
 import { SlideshowComponent } from './component/slideshow/slideshow.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { AboutComponent } from './component/about/about.component';
+import { NotfoundComponent } from './component/notfound/notfound.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SlideshowComponent, ContactComponent, AboutComponent],
+  declarations: [HeaderComponent, FooterComponent, SlideshowComponent, ContactComponent, AboutComponent, NotfoundComponent],
   imports: [
     CommonModule
   ],
