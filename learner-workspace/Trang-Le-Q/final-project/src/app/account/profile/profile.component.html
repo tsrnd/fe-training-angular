@@ -1,3 +1,66 @@
-<p>
-  profile works!
-</p>
+<div class="row">
+    <div class="col-md-12">
+      <h4>Your Profile</h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]= "formReactive" (ngSubmit)= "onSubmit()">
+        <div class="form-group text-success" *ngIf= "msgSuccess">
+            <span>{{ msgSuccess }}</span>
+        </div>
+        <div class="form-group row">
+          <label for="name" class="col-4 col-form-label">Name</label> 
+          <div class="col-8">
+            <input name="name" class="form-control here" type="text" formControlName="name" placeholder="New name">
+          </div>
+        </div>
+        <div class="form-group text-danger row">
+          <span class="offset-4 col-8" *ngIf= "formReactive.get('name').value === user.name">This name already use!</span>
+        </div>
+        <div class="form-group text-warning" *ngIf= "formReactive.controls.name.invalid
+          && (formReactive.controls.name.dirty || formReactive.controls.name.touched)">
+          <span class="offset-4 col-8" *ngIf="formReactive.get('name').errors.required">This field is required</span>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-4 col-form-label">Email</label> 
+          <div class="col-8">
+            <input name="email" class="form-control here" required=true disabled="disabled" type="text" formControlName="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="newpass" class="col-4 col-form-label">New Password</label> 
+          <div class="col-8">
+            <input name="newPass" placeholder="New Password" class="form-control here" type="password" formControlName="password">
+          </div>
+        </div> 
+        <div class="form-group text-danger row">
+          <span class="offset-4 col-8" *ngIf= "formReactive.get('password').value === user.password">This password already use!</span>
+        </div>
+        <div class="form-group text-warning row" *ngIf= "formReactive.controls.password.invalid
+          && (formReactive.controls.password.dirty || formReactive.controls.password.touched)">
+          <span class="offset-4 col-8" *ngIf="formReactive.get('password').errors.required">This field is required</span>
+        </div>
+        <div class="form-group row">
+          <label for="newpass" class="col-4 col-form-label">Confirm New Password</label> 
+          <div class="col-8">
+            <input name="confirmNewPass" placeholder="Confirm New Password" class="form-control here" type="password" formControlName="confirmPassword">
+          </div>
+        </div>
+        <div class="form-group text-warning row">
+            <span class="offset-4 col-8" *ngIf= "formReactive.get('password').value !== formReactive.get('confirmPassword').value">This field must map with password field!</span>
+        </div>
+        <div class="form-group text-warning row" *ngIf= "formReactive.controls.confirmPassword.invalid
+          && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
+          <span class="offset-4 col-8" *ngIf="formReactive.get('confirmPassword').errors.required">This field is required</span>
+        </div>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary" [disabled]="formReactive.invalid || formReactive.controls.password.value != formReactive.controls.confirmPassword.value">Update Profile</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { FeaturesModule } from './features/features.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { FeaturesModule } from './features/features.module';
     BrowserModule,
     SharedModule,
     AuthModule,
+    HttpClientModule,
     FeaturesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AccountModule
 
   ],
   providers: [],

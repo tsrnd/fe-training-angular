@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { LocalerService } from 'src/app/core/service/localer.service';
+import { userInfo } from 'os';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +9,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  user: any[];
+  formReactive: FormGroup;
+  msgSuccess: string;
 
-  constructor() { }
+  constructor(
+    private local: LocalerService,
+    private formBuild: FormBuilder,
+  ) { }
 
   ngOnInit() {
+    this.user = this.local.getLocalStorage('userLogin');
+    this.formReactive = this.formBuild.group({
+      name: ['', Validators.required],
+      email: [this.user.email, Validators.email],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
+    });
+  }
+  onSubmit() {
+    this.local.saveLocalStorage('userLogin', this.formReactive.value);
+    this.msgSuccess = 'Update your profile successfull!';
+    let data = this.local.getLocalStorage('register');
+    for (let index = 0; index < data.length; index++) {
+      if (data[index].email === this.user.email) {
+        data[index] = this.formReactive.value;
+      }
+      this.local.saveLocalStorage('register', data);
+    }
   }
 
 }

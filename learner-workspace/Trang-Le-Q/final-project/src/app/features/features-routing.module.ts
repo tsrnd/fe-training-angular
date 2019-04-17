@@ -11,14 +11,12 @@ const routes: Routes = [
     component: FeaturesComponent,
     children: [
       {
-        path: 'a',
+        path: 'home',
         component: HomeComponent
       },
       {
         path: 'category',
         component: CategoryComponent
-        // redirectTo: 'home',
-        // pathMatch: 'full'
       },
       {
         path: 'category/:id',

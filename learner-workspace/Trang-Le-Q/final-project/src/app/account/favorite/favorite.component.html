@@ -1,3 +1,20 @@
-<p>
-  favorite works!
-</p>
+
+  <div class="container">
+    
+  </div>
+  <div class="row">
+      <div class="col-md-4 col-sm-6 portfolio-item" *ngFor="let item of data">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="{{ item.image }}" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <a href="#">{{ item.name }}</a>
+          <p class="text-muted">Price: {{ item.price }}$</p>
+        </div>
+      </div>
+    </div>

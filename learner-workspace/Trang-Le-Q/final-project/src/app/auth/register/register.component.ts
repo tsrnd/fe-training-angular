@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { LocalerService } from 'src/app/core/service/localer.service';
+import { Router } from '@angular/router';
 
 const REGISTER = 'register';
 
@@ -13,11 +14,11 @@ export class RegisterComponent implements OnInit {
 
   formReactive: FormGroup;
   msgErr: string;
-  msgSuccess: string;
 
   constructor(
     private local: LocalerService,
-    private formBuild: FormBuilder
+    private formBuild: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,13 +38,13 @@ export class RegisterComponent implements OnInit {
       return users.email === this.formReactive.get('email').value;
     })) {
       this.msgErr = 'This email already exits.';
-      this.msgSuccess = null;
       return null;
     } else {
       arr.push(this.formReactive.value);
       this.local.saveLocalStorage(REGISTER, arr);
-      this.msgSuccess = 'Sign up success!';
-      this.msgErr = null;
+      this.router.navigate(['/dashboard']);
+      this.local.saveLocalStorage('userLogin', this.formReactive.value);
+
     }
   }
 

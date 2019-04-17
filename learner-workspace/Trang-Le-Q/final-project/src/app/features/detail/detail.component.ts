@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class DetailComponent implements OnInit {
   tittle = 'Details';
 
-  constructor() { }
+  constructor(
+    private activeRouter: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.activeRouter.data.subscribe(v => console.log(v));
   }
 
 }
