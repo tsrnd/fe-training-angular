@@ -1,7 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ApiService } from 'src/app/core/services/api.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LocalerService } from 'src/app/core/services/localer.service';
 import { CommonService } from 'src/app/core/services/common.service';
 
 @Component({
@@ -17,9 +15,7 @@ export class DetailProductComponent implements OnInit {
   listSuggest: any;
 
   constructor(
-    private apiService: ApiService,
     private route: ActivatedRoute,
-    private localService: LocalerService,
     private commonService: CommonService) {
   }
 

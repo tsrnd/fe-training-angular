@@ -1,34 +1,52 @@
-<!-- BANER -->
-<div class="slide-one-item home-slider owl-carousel">
-
-  <div class="site-blocks-cover inner-page overlay" style="background-image: url(assets/images/model_3.png);"
-    data-aos="fade" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6" data-aos="fade">
-          <h1 class="font-secondary font-weight-bold text-uppercase">Small Business Insurance Agency</h1>
-          <span class="caption d-block text-white">An Insurance Company</span>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row">
+        <div class="col-md-6 ml-auto order-md-2 align-self-start">
+          <div class="site-block-cover-content">
+            <h2 class="sub-title">#New Summer Collection 2019</h2>
+            <h1>Arrivals Sales</h1>
+          </div>
+        </div>
+        <div class="col-md-6 order-1 align-self-end first-bg">
+          <img src="assets/images/model_3.png" alt="Image" class="img-fluid">
         </div>
       </div>
     </div>
-    <div>asdasd</div>
-  </div>
-
-  <div class="site-blocks-cover inner-page overlay" style="background-image: url(assets/images/model_4.png);"
-    data-aos="fade" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-7 text-center" data-aos="fade">
-          <h1 class="font-secondary font-weight-bold text-uppercase">Insurance Coverage To Meet Your Needs</h1>
-          <span class="caption d-block text-white">You Will Love Our Services</span>
+    <div class="carousel-item">
+      <div class="row">
+        <div class="col-md-6 order-1 align-self-end first-bg">
+          <div class="site-block-cover-content">
+            <h2 class="sub-title">#New Summer Collection 2019</h2>
+            <h1>Arrivals Sales</h1>
+          </div>
+        </div>
+        <div class="col-md-6 ml-auto order-md-2 align-self-start">
+          <img src="assets/images/model_4.png" alt="Image" class="img-fluid">
         </div>
       </div>
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100"
+        style="background-image: url(https://colorlib.com/activello/wp-content/uploads/sites/10/2015/11/photo-1431578500526-4d9613015464-1920x550.jpg);">
+    </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-
 <!-- CONTENT -->
-<div class="site-section">
+<!-- <div class="site-section">
   <div class="container">
     <div class="title-section mb-5">
       <h2 class="text-uppercase"><span class="d-block">Discover</span> The Collections</h2>
@@ -53,7 +71,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <app-products [data]="productsWomen"></app-products>
 <app-products [data]="productsMen"></app-products>
 <app-products [data]="productsChildren"></app-products>

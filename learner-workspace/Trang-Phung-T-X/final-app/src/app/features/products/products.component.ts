@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiService } from 'src/app/core/services/api.service';
-import { LocalerService } from 'src/app/core/services/localer.service';
 import { ActivatedRoute } from '@angular/router';
-import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from 'src/app/core/services/common.service';
 
 @Component({
@@ -19,10 +16,7 @@ export class ProductsComponent implements OnInit {
 
 
   constructor(
-    private apiService: ApiService,
-    private localService: LocalerService,
     private route: ActivatedRoute,
-    private router: Router,
     private commonService: CommonService) {
   }
 

@@ -14,7 +14,9 @@
       <div class="card-product__img">
         <img class="card-img" src="{{item.img}}" alt="">
         <div class="card-product__imgOverlay">
-          <button (click)="removeMyfavorites(item.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <button (click)="showModalItem(item.id)" aria-hidden="true" data-toggle="modal" data-target="#modal">
+            <i class="fa fa-trash"></i>
+          </button>
         </div>
       </div>
       <div class="card-body">
@@ -24,5 +26,7 @@
         <p class="card-product__price">{{item.price}}</p>
       </div>
     </div>
+
   </div>
+  <app-modal (delItem)="delItem($event)"></app-modal>
 </div>
