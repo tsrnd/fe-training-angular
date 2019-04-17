@@ -12,6 +12,7 @@ import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content
 import { ModalComponent } from './modal/modal.component';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesComponent } from './features/features.component';
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { FeaturesComponent } from './features/features.component';
     LifecycleTitleComponent,
     LifecycleContentComponent,
     ModalComponent,
+    HighlightDirective,
   ],
   imports: [
     CommonModule,
