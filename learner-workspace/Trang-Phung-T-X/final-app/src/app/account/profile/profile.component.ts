@@ -36,10 +36,10 @@ export class ProfileComponent implements OnInit {
         // this.editName = this.user.data.first_name; // user define in account-routing
       });
     this.formReactive = this.fb.group({
-      firstName: [this.currentUser.firstName],
-      lastName: [this.currentUser.lastName],
-      email: [this.currentUser.email, Validators.email],
-      password: [this.currentUser.password],
+      firstName: [this.currentUser.firstName, Validators.required],
+      lastName: [this.currentUser.lastName, Validators.required],
+      email: [this.currentUser.email, [Validators.email, Validators.required]],
+      password: [this.currentUser.password, Validators.required],
       confirmPassword: [this.currentUser.password]
     }, { validators: this.validatePasswordConfirm }
     );
@@ -77,9 +77,9 @@ export class ProfileComponent implements OnInit {
   }
 
   // used to allow or deny exit from route.
-  canDeactivate(): Observable<boolean> | boolean {
-    if (this.user.name !== this.editName) {
-      return window.confirm('Discard changes?');
+  canDeactivate(): boolean {
+    if (this.hasEmpty(this.formReactive.value)) {
+      return confirm('Discard changes?');
     }
     return true;
   }
@@ -94,8 +94,18 @@ export class ProfileComponent implements OnInit {
     // compare pass with confirmpass, show mess 'notSame' if diff
     return pass === confirmPass ? null : { notSame: true };
   }
+
   hideAlert() {
     this.show = false;
     this.showSuccess = false;
+  }
+
+  hasEmpty(arr) {
+    for (let ele in arr) {
+      if (arr[ele] === '') {
+        return true;
+      }
+    }
+    return false;
   }
 }

@@ -4,6 +4,7 @@ import { AccountComponent } from './account.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from '../auth.guard';
+import { CanDeactivateGuard } from './profile/can-deactivate.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
+        canDeactivate: [CanDeactivateGuard]
 
       }
     ]
