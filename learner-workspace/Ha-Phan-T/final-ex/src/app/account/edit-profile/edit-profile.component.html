@@ -1,0 +1,65 @@
+  <h2>Edit account</h2>
+  <div class="row">
+    <form [formGroup]="formEditProfile" class="col-md-5" (ngSubmit)="edit()">
+      <div *ngIf="err" class="alert alert-danger" role="alert">
+        {{err}}
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName"
+          value="{{dataUserLogin.firstName}}">
+        <div *ngIf="formEditProfile.controls.firstName.invalid && formEditProfile.controls.firstName.dirty">
+          <div *ngIf="formEditProfile.get('firstName').errors.required" class="alert alert-danger">This field is
+            required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName"
+          value="{{dataUserLogin.lastName}}">
+        <div *ngIf="formEditProfile.controls.lastName.invalid && formEditProfile.controls.lastName.dirty">
+          <div *ngIf="formEditProfile.get('lastName').errors.required" class="alert alert-danger">This field is
+            required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email"
+          value="{{dataUserLogin.email}}">
+        <div *ngIf="formEditProfile.controls.email.invalid && formEditProfile.controls.email.dirty">
+          <div *ngIf="formEditProfile.get('email').errors.required" class="alert alert-danger">This field is
+            required</div>
+          <div *ngIf="formEditProfile.get('email').errors.email" class="alert alert-danger">Email must have type email
+          </div>
+        </div>
+        <div *ngIf="checkmail" class="alert alert-danger" role="alert">
+          {{errmail}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password"
+          value="{{dataUserLogin.password}}">
+        <div *ngIf="formEditProfile.controls.password.invalid && formEditProfile.controls.password.dirty">
+          <div *ngIf="formEditProfile.get('password').errors.required" class="alert alert-danger">This field is
+            required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+          value="{{dataUserLogin.confirmPassword}}">
+        <div *ngIf="formEditProfile.controls.confirmPassword.invalid && formEditProfile.controls.confirmPassword.dirty">
+          <div *ngIf="formEditProfile.get('confirmPassword').errors.required" class="alert alert-danger">This field is
+            required</div>
+        </div>
+        <div *ngIf="checkpass" class="alert alert-danger" role="alert">
+          {{errpass}}
+        </div>
+      </div>
+      <div style="text-align:center">
+        <button type="submit" class="btn btn-primary btn-lg">Update</button>
+      </div>
+
+    </form>
+  </div>

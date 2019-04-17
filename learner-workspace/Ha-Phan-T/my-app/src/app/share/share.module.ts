@@ -5,9 +5,11 @@ import { ShareRoutingModule } from './share-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './modal/modal.component';
+import { ContentLengthPipe } from './pipes/content-length.pipe';
+import { HoverDirective } from './directives/hover.directive';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ModalComponent],
+  declarations: [HeaderComponent, HoverDirective, FooterComponent, ModalComponent, ContentLengthPipe],
   imports: [
     CommonModule,
     ShareRoutingModule

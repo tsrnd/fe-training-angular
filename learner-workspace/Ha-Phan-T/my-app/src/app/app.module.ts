@@ -15,6 +15,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthComponent } from './auth/auth.component';
 import { AccountModule } from './account/account.module';
 import { AuthModule } from './auth/auth.module';
+import { HoverDirective } from './share/directives/hover.directive';
+import { ContentLengthPipe } from './share/pipes/content-length.pipe';
 
 @NgModule({
   declarations: [

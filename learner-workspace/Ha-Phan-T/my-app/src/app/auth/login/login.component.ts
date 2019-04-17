@@ -11,7 +11,8 @@ const USERS_KEY = 'users';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  email: string;
+  password: string;
   constructor(
     private localerService: LocalerService,
     private authService: AuthService,
@@ -28,10 +29,10 @@ export class LoginComponent implements OnInit {
     this.listUsers = listUsersString ? JSON.parse(listUsersString) : [];
     if (formLogin.valid) {
       let email = this.listUsers.find((v) => {
-        return v.email === formLogin.value.email;
+        return v.email === this.email;
       });
       let pass = this.listUsers.find((v) => {
-        return v.password === formLogin.value.password;
+        return v.password === this.password;
       });
       if (!email || !pass) {
         this.check = false;
