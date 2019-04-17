@@ -8,9 +8,10 @@ import { AccountComponent } from './account.component';
 import { SharedModule } from '../shared/shared.module';
 import { NavLeftComponent } from './nav-left/nav-left.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyFavoriteComponent } from './my-favorite/my-favorite.component';
 
 @NgModule({
-  declarations: [DashboardComponent, ProfileComponent, AccountComponent, NavLeftComponent],
+  declarations: [DashboardComponent, ProfileComponent, AccountComponent, NavLeftComponent, MyFavoriteComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,
