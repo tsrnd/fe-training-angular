@@ -1,0 +1,23 @@
+<div *ngIf="isShownForm">
+  <input type="text" placeholder="en" [(ngModel)]="en">
+
+  <input type="text" placeholder="vn" [(ngModel)]="vn">
+
+  <button (click)="addWord();">add word</button>
+</div>
+<select [(ngModel)]="filterStatus">
+  <option value="showAll">showAll</option>
+  <option value="memorized">memorized</option>
+  <option value="notlearn">notlearn</option>
+</select>
+<button (click)="isShownForm=true" *ngIf="!isShownForm">add word</button>
+<div *ngFor="let word of arrWords">
+  <!-- <div class="word" *ngIf="filterStatus === 'showAll' || (filterStatus === 'memorized' && word.memorized) || (filterStatus === 'notlearn' && !word.memorized)"> -->
+  <div class="word" *ngIf="getShowStatus(word.memorized)">
+    <p [ngStyle]="{ color: word?.memorized ? 'green' : 'red' }">
+      {{ word.en}} {{ word.vn}}
+    </p>
+    <button (click)="removeWord();">delete</button>
+    <button (click)="word.memorized = !word.memorized">{{ word.memorized ? 'notlearn' : 'learned'}}</button>
+  </div>
+</div>
