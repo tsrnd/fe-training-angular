@@ -22,9 +22,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
 
-
+    // get category cloth
     // tslint:disable-next-line: no-conditional-assignment
     this.type = this.route.snapshot.routeConfig.path;
+    // get products by category
     if (this.type) {
       this.route.data
         .subscribe(data => {
@@ -32,11 +33,13 @@ export class ProductsComponent implements OnInit {
         });
       this.data = this.products.filter(item => item.type === this.type);
     }
+    // title category
     this.title = this.data[0].type;
 
 
   }
 
+  // add my favorite
   myfavorites(id) {
     this.commonService.addFavorite(id);
   }

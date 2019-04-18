@@ -10,23 +10,21 @@
       <div class="col-lg-6 detail_product">
         <img class="img-fluid" src="{{product.img}}" alt="">
       </div>
-      <div class="col-lg-5 offset-lg-1">
+      <div class="col-lg-6">
         <div class="s_product_text">
           <h3>{{product.title | uppercase}}</h3>
-          <h2>{{product.price}}</h2>
-          <ul class="list">
-            <li><a class="active" href="#"><span>Category: </span>{{product.type}}</a></li>
-            <li><a href="#"><span>Availibility</span> : In Stock</a></li>
-          </ul>
           <p>{{product.desc}}</p>
-          <button type="button" class="btn btn-primary" (click)="addFavorite(product.id)">Favorite</button>
+          <h2 class="product_price">{{product.price}}</h2>
+          <div class="free_delivery d-flex flex-row align-items-center justify-content-center"
+            (click)="addFavorite(product.id)">
+            <span>Favorite</span>
+          </div>
         </div>
       </div>
     </div>
-    <hr>
     <section>
-      <div class="row">
-        <div class="title-section mb-5 col-12">
+      <div class="row mt-4">
+        <div class="title-section my-4 col-12">
           <h2 class="text-uppercase">You might also like</h2>
         </div>
       </div>

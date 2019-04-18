@@ -17,8 +17,14 @@
           </ul>
         </nav>
       </div>
-      <div class="icons">
-        <a class="nav-link" routerLink="/login" *ngIf="!authService.isLoggedIn" routerLinkActive="active">login</a>
+      <div class="row auth-content">
+        <div class="col-6">
+          <a class="nav-link" routerLink="/login" *ngIf="!authService.isLoggedIn" routerLinkActive="active">login</a>
+        </div>
+        <div class="col-6">
+          <a class="nav-link" routerLink="/register" *ngIf="!authService.isLoggedIn"
+            routerLinkActive="active">Register</a>
+        </div>
         <a class="nav-link" (click)="logout()" *ngIf="authService.isLoggedIn" routerLinkActive="active"
           title="Logout">Logout</a>
       </div>

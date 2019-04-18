@@ -20,18 +20,22 @@ export class DetailProductComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // get all products
     this.route.data
       .subscribe(data => {
         this.data = data.products;
       });
+    // get id in url
     this.route.paramMap.subscribe(data => {
       this.id = Number(data.params.id);
     });
+    // get product by id
     this.product = this.data.find(item => item.id === this.id);
-    this.listSuggest = this.data.filter(item => item.type === this.product.type && item.id !== this.id);
+    // get products same category except
+    this.listSuggest = this.data.filter(item => item.type === this.product.type && item.id !== this.id).slice(0, 4);
   }
 
+  // add my favorite
   addFavorite(id) {
     this.commonService.addFavorite(id);
   }

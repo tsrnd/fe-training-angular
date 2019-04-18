@@ -21,15 +21,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // get all products
     this.route.data
       .subscribe(data => {
         this.data = data.products;
       });
+    // get products by category limit 4
+    this.productsWomen = this.data.filter(item => item.type === 'women').slice(0, 4);
+    this.productsMen = this.data.filter(item => item.type === 'men').slice(0, 4);
+    this.productsChildren = this.data.filter(item => item.type === 'children').slice(0, 4);
 
-    this.productsWomen = this.data.filter(item => item.type === 'women');
-    this.productsMen = this.data.filter(item => item.type === 'men');
-    this.productsChildren = this.data.filter(item => item.type === 'children');
   }
-
 
 }
