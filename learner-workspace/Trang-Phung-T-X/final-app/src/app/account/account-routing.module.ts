@@ -6,7 +6,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from '../auth.guard';
 import { CanDeactivateGuard } from './profile/can-deactivate.guard';
 import { MyFavoriteComponent } from './my-favorite/my-favorite.component';
-import { resolve } from 'path';
 import { FavoriteResolveService } from './my-favorite/favorite-resolve.service';
 
 const routes: Routes = [

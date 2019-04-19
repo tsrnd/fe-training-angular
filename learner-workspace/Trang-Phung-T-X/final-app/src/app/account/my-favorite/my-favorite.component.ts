@@ -15,34 +15,70 @@ export class MyFavoriteComponent implements OnInit {
   data: any;
   products: any;
   show = true;
+  currentUser: any;
+
+
   constructor(
     private localService: LocalerService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    // get data local
+    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
     this.data = this.localService.getLocalStorage(KEY.favorite);
+    // favorite of currentUser
+    if (this.data) {
+      this.data = this.data.find(ob => ob.userId === this.currentUser.id);
+    }
+    this.data = this.data ? this.data.listIdProduct : [];
+    // resolve
     this.route.data
       .subscribe(data => {
         this.products = data.products;
       });
-    if (this.data.length !== 0) {
+    // get value of product by id in products.json
+    if (this.data && this.data.length !== 0) {
       this.data = this.products.filter(item => this.data.includes(item.id));
       this.show = false;
     }
   }
 
   delItem(id) {
+    let favoriteOtherUser: any;
+    let favoriteCurrentUser: any;
+    let favoriteLocal: any;
+    let favoriteList: any;
+    let favoriteCurrentUserNew: any;
+    // tslint:disable-next-line: prefer-const
     let value = [];
+    // tslint:disable-next-line: prefer-const
+    let valueSaveLocal = [];
+
     if (id) {
+      // data = except delItem
       this.data = this.data.filter(item => {
         return item.id !== id;
       });
     }
-    this.data.map(item => value.push(item.id));
+
     // update local
+    this.data.map(item => value.push(item.id));
+    // get all favorites of all users
+    favoriteLocal = this.localService.getLocalStorage(KEY.favorite);
+    favoriteList = favoriteLocal ? favoriteLocal : [];
+    favoriteOtherUser = favoriteList.filter(item => item.userId !== this.currentUser.id);
+    favoriteCurrentUser = favoriteList.find(ob => ob.userId === this.currentUser.id);
+
+    favoriteCurrentUserNew = Object.assign({ userId: this.currentUser.id }, { listIdProduct: value });
+    valueSaveLocal.push(favoriteCurrentUserNew);
+    if (favoriteOtherUser.length !== 0) {
+      valueSaveLocal.push(favoriteOtherUser);
+    }
+    debugger;
     this.localService.removeLocalStorage(KEY.favorite);
-    this.localService.saveLocalStorage(KEY.favorite, value);
+    this.localService.saveLocalStorage(KEY.favorite, valueSaveLocal);
+
     if (this.data.length === 0) {
       this.show = true;
     }

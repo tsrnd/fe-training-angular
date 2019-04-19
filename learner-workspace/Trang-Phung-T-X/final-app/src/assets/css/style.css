@@ -1041,7 +1041,7 @@ a {
   .card-product__imgOverlay button{
     border:0;border-radius:0;
     padding:7px 12px;
-    background:#8894ff}
+    background:#fe4c50}
   .card-product__imgOverlay button i,
   .card-product__imgOverlay button span{
     font-size:15px;
@@ -1049,7 +1049,7 @@ a {
     vertical-align:middle
   }
   .card-product__imgOverlay  button:hover{
-    background:#384aeb}
+    background:#a11517}
   .card-product__imgOverlay li:not(:last-child){
     margin-right:5px}
   .card-product__title a{

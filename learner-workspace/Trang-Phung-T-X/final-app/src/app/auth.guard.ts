@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AuthService } from './core/services/auth.service';
+import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { LocalerService, KEY } from './core/services/localer.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +8,8 @@ import { AuthService } from './core/services/auth.service';
 export class AuthGuard implements CanActivate, CanActivateChild {
 
   constructor(
-    private authService: AuthService,
-    private router: Router) { }
+    private localService: LocalerService
+  ) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -26,7 +25,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+    if (!!this.localService.getLocalStorage(KEY.currentUser)) { return true; }
     return false;
   }
 }

@@ -1,6 +1,6 @@
 .site-navbar {
   background-color: #333333;
-  color: white;
+  color: #868995;
 }
 .auth-content {
   text-transform: uppercase;
@@ -10,4 +10,7 @@
 }
 .active {
   color: #ee4266 !important;
+}
+.auth-content a {
+  cursor: pointer;
 }

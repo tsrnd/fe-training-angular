@@ -9,6 +9,8 @@ import { LocalerService, KEY } from 'src/app/core/services/localer.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  currentUser: any;
+  show: boolean;
 
   constructor(
     public authService: AuthService,
@@ -16,13 +18,15 @@ export class HeaderComponent implements OnInit {
     private localService: LocalerService
   ) { }
 
-  isLoggedIn;
   ngOnInit() {
+    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.show = !this.currentUser;
   }
 
   logout() {
-    this.authService.logout();
+    this.show = !this.show;
     this.localService.removeLocalStorage(KEY.currentUser);
+    this.currentUser = [];
     this.router.navigate(['/']);
   }
 

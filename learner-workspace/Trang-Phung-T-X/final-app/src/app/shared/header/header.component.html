@@ -14,19 +14,20 @@
             <li><a routerLink="/women" routerLinkActive="active">Women</a></li>
             <li><a routerLink="/men" routerLinkActive="active">Men</a></li>
             <li><a routerLink="/children" routerLinkActive="active">Children</a></li>
+            <ng-container *ngIf="!!currentUser">
+              <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+            </ng-container>
           </ul>
         </nav>
       </div>
       <div class="row auth-content">
         <div class="col-6">
-          <a class="nav-link" routerLink="/login" *ngIf="!authService.isLoggedIn" routerLinkActive="active">login</a>
+          <a class="nav-link" routerLink="/login" *ngIf="show" routerLinkActive="active">login</a>
         </div>
         <div class="col-6">
-          <a class="nav-link" routerLink="/register" *ngIf="!authService.isLoggedIn"
-            routerLinkActive="active">Register</a>
+          <a class="nav-link" routerLink="/register" *ngIf="show" routerLinkActive="active">Register</a>
         </div>
-        <a class="nav-link" (click)="logout()" *ngIf="authService.isLoggedIn" routerLinkActive="active"
-          title="Logout">Logout</a>
+        <a class="nav-link" (click)="logout()" *ngIf="!show" routerLinkActive="active" title="Logout">Logout</a>
       </div>
     </div>
   </div>

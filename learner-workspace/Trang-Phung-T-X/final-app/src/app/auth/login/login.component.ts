@@ -20,13 +20,17 @@ export class LoginComponent implements OnInit {
     private commonService: CommonService) { }
 
 
-  firstUser: any;
   listAccount: any;
   password: string;
   email: string;
   showError = false;
 
   ngOnInit() {
+    // set default user
+    // let firstUser: any;
+    // firstUser = this.localService.getLocalStorage(KEY.listUser)[0];
+    // this.email = firstUser.email;
+    // this.password = firstUser.password;
     // get data account localStorage
     this.listAccount = this.localService.getLocalStorage(KEY.listUser);
   }
@@ -36,7 +40,6 @@ export class LoginComponent implements OnInit {
     this.hideAlert();
     // check data in localStorage
     if (this.listAccount && this.checkAccout(f)) {
-      this.authService.isLoggedIn = true;
       this.commonService.currentAccount(this.email);
       return this.router.navigate(['/dashboard']);
     }

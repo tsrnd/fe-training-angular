@@ -14,11 +14,13 @@
         <div class="s_product_text">
           <h3>{{product.title | uppercase}}</h3>
           <p>{{product.desc}}</p>
-          <h2 class="product_price">{{product.price}}</h2>
-          <div class="free_delivery d-flex flex-row align-items-center justify-content-center"
-            (click)="addFavorite(product.id)">
-            <span>Favorite</span>
-          </div>
+          <h4 class="product_price">Price: {{product.price}}</h4>
+          <ng-container *ngIf="!!currentUser">
+            <div class="free_delivery d-flex flex-row align-items-center justify-content-center"
+              (click)="addFavorite(product.id)">
+              <span>Favorite</span>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -33,16 +35,21 @@
           <div class="card text-center card-product md-height bg-gray d-block">
             <div class="card-product__img">
               <img class="card-img" src="{{item.img}}" alt="">
-              <div class="card-product__imgOverlay">
-                <button (click)="addFavorite(item.id)"><i class="fa fa-heart" aria-hidden="true"></i></button>
-              </div>
+              <ng-container *ngIf="!!currentUser">
+                <div class="card-product__imgOverlay w-100">
+                  <button (click)="addFavorite(item.id)">
+                    <i class="icon-heart"></i>
+                  </button>
+                </div>
+              </ng-container>
             </div>
             <div class="card-body">
-              <h2>{{ item.title | collapseText: '7' }}</h2>
+              <h3>{{ item.title | collapseText: '10' }}</h3>
               <p class="card-product__title"><a
                   [routerLink]="['/product',item.id]">{{item.desc | collapseText: '20'}}</a>
               </p>
-              <p class="card-product__price">{{item.price}}</p>
+              <p class="card-product__price item-price">{{item.price}}</p>
+
             </div>
           </div>
         </div>

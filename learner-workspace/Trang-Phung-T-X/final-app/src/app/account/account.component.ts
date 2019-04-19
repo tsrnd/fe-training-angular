@@ -14,7 +14,7 @@ export class AccountComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
   }
 
 }

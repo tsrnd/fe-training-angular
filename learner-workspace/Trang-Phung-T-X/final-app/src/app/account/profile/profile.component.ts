@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LocalerService, KEY } from 'src/app/core/services/localer.service';
 import { CommonService } from 'src/app/core/services/common.service';
 
@@ -79,7 +78,7 @@ export class ProfileComponent implements OnInit {
   // used to allow or deny exit from route.
   canDeactivate(): boolean {
     if (this.hasEmpty(this.formReactive.value)) {
-      return confirm('Discard changes?');
+      return confirm('Your profile was changed?');
     }
     return true;
   }

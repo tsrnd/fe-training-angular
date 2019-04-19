@@ -5,6 +5,8 @@
 .card-img {
   height: 300px;
 }
-h2 {
+.card-body h2 {
   text-transform: uppercase;
+  color: #fe4c50;
+  font-family: 'Times New Roman', Times, serif;
 }

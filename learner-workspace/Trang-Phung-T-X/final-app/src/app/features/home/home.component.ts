@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
   productsWomen: any;
   productsChildren: any;
   productsMen: any;
+  productsWomenTotal: number;
+  productsMenTotal: number;
+  productsChildrenTotal: number;
 
   constructor(
     private apiService: ApiService,
@@ -27,6 +30,10 @@ export class HomeComponent implements OnInit {
         this.data = data.products;
       });
     // get products by category limit 4
+    this.productsWomenTotal = this.data.filter(item => item.type === 'women').length;
+    this.productsMenTotal = this.data.filter(item => item.type === 'men').length;
+    this.productsChildrenTotal = this.data.filter(item => item.type === 'children').length;
+
     this.productsWomen = this.data.filter(item => item.type === 'women').slice(0, 4);
     this.productsMen = this.data.filter(item => item.type === 'men').slice(0, 4);
     this.productsChildren = this.data.filter(item => item.type === 'children').slice(0, 4);

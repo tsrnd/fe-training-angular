@@ -13,20 +13,46 @@ export class CommonService {
   currentUser: any;
 
   addFavorite(id) {
-    const valueLocal = this.localService.getLocalStorage(KEY.favorite);
-    // check data in localStorage be has value or null
-    const value = valueLocal ? valueLocal : [];
-    // check product belong to favorite product
-    // tslint:disable-next-line: only-arrow-functions
-    if (valueLocal && valueLocal.find(function(element) {
-      return element === id;
-    })) {
-      return value;
+    let value: any;
+    let favoriteOtherUser: any;
+    let favoriteCurrentUser: any;
+    let favoriteList: any;
+    let favoriteLocal: any;
+
+    // get currentUser
+    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    // get all favorites of all users
+    favoriteLocal = this.localService.getLocalStorage(KEY.favorite);
+
+    favoriteList = favoriteLocal ? favoriteLocal : [];
+
+    // favoriteLocal===[]
+    if (favoriteList.length === 0) {
+      value = Object.assign({ userId: this.currentUser.id }, { listIdProduct: [id] });
+      favoriteList.push(value);
+      return this.localService.saveLocalStorage(KEY.favorite, favoriteList);
     }
-    // push id to arr id in local
-    value.push(id);
-    // save local
-    this.localService.saveLocalStorage(KEY.favorite, value);
+
+    favoriteOtherUser = favoriteList.filter(item => item.userId !== this.currentUser.id);
+    favoriteCurrentUser = favoriteList.find(ob => ob.userId === this.currentUser.id);
+    // check data in localStorage be has value or null
+    favoriteCurrentUser = favoriteCurrentUser ? favoriteCurrentUser : [];
+
+    // favoriteLocal===[{favorite1},{favoriteCurrent===null}]
+    if (favoriteCurrentUser.length === 0) {
+      value = Object.assign({ userId: this.currentUser.id }, { listIdProduct: [id] });
+      favoriteOtherUser.push(value);
+      // save local
+      return this.localService.saveLocalStorage(KEY.favorite, favoriteOtherUser);
+    }
+
+    // favoriteLocal===[{favorite1},{favoriteCurrent}]
+    if (favoriteCurrentUser.listIdProduct.find(ele => ele === id)) {
+      return favoriteCurrentUser;
+    }
+    favoriteCurrentUser.listIdProduct.push(id);
+    favoriteOtherUser.push(favoriteCurrentUser);
+    return this.localService.saveLocalStorage(KEY.favorite, favoriteOtherUser);
   }
 
   currentAccount(email) {
