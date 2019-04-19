@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export const KEY = {
   listUser: 'userRegister',
   currentUser: 'currentUser',
-  favorite: 'newFavorite'
+  favorite: 'newFavorite',
 };
 
 @Injectable({

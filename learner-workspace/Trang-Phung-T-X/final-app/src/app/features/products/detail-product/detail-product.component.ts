@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonService } from 'src/app/core/services/common.service';
-import { LocalerService, KEY } from 'src/app/core/services/localer.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-detail-product',
@@ -15,15 +15,17 @@ export class DetailProductComponent implements OnInit {
   id: number;
   listSuggest: any;
   currentUser: any;
+  show: boolean;
 
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
-    private localService: LocalerService) {
+    private authService: AuthService) {
   }
 
   ngOnInit() {
-    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.currentUser = this.commonService.checkCurrentUser();
+    this.show = !!this.authService.getCurrentUser();
     // get all products
     this.route.data
       .subscribe(data => {

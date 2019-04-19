@@ -15,7 +15,7 @@
           <h3>{{product.title | uppercase}}</h3>
           <p>{{product.desc}}</p>
           <h4 class="product_price">Price: {{product.price}}</h4>
-          <ng-container *ngIf="!!currentUser">
+          <ng-container *ngIf="show">
             <div class="free_delivery d-flex flex-row align-items-center justify-content-center"
               (click)="addFavorite(product.id)">
               <span>Favorite</span>
@@ -35,7 +35,7 @@
           <div class="card text-center card-product md-height bg-gray d-block">
             <div class="card-product__img">
               <img class="card-img" src="{{item.img}}" alt="">
-              <ng-container *ngIf="!!currentUser">
+              <ng-container *ngIf="show">
                 <div class="card-product__imgOverlay w-100">
                   <button (click)="addFavorite(item.id)">
                     <i class="icon-heart"></i>

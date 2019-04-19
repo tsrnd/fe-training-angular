@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/core/services/common.service';
-import { LocalerService, KEY } from 'src/app/core/services/localer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,11 +11,11 @@ export class DashboardComponent implements OnInit {
   currentUser: any;
 
   constructor(
-    private localService: LocalerService
+    private commonService: CommonService
   ) { }
 
   ngOnInit() {
-    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.currentUser = this.commonService.checkCurrentUser();
   }
 
 }

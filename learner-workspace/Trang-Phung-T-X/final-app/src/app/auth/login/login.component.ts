@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
     this.hideAlert();
     // check data in localStorage
     if (this.listAccount && this.checkAccout(f)) {
-      this.commonService.currentAccount(this.email);
+      const account = this.listAccount.find(acc => acc.email === this.email);
+      this.authService.setCurrentUser(account.id);
       return this.router.navigate(['/dashboard']);
     }
     this.showError = true;

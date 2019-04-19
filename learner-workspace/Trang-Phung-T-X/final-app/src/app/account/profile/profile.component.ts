@@ -28,11 +28,10 @@ export class ProfileComponent implements OnInit {
   ) { }
   // Resolve`: used for doing operations (resolve data) just before route activation etc.
   ngOnInit() {
-    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.currentUser = this.commonService.checkCurrentUser();
     this.route.data
       .subscribe(data => {
         this.user = data.user;
-        // this.editName = this.user.data.first_name; // user define in account-routing
       });
     this.formReactive = this.fb.group({
       firstName: [this.currentUser.firstName, Validators.required],
@@ -66,11 +65,13 @@ export class ProfileComponent implements OnInit {
     }
 
     // push item to arr items in local
-    allUser.push(this.formReactive.value);
+    // tslint:disable-next-line: prefer-const
+    let newUser = Object.assign(this.formReactive.value, { id: this.currentUser.id });
+    allUser.push(newUser);
     // save local
     this.localService.saveLocalStorage(KEY.listUser, allUser);
-    this.localService.removeLocalStorage(KEY.currentUser);
-    this.localService.saveLocalStorage(KEY.currentUser, this.formReactive.value);
+    // this.localService.removeLocalStorage(KEY.currentUser);
+    // this.localService.saveLocalStorage(KEY.currentUser, this.formReactive.value);
     this.showSuccess = true;
     this.router.navigate(['/dashboard']);
   }

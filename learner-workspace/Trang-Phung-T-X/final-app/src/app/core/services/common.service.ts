@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalerService, KEY } from './localer.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,8 @@ import { LocalerService, KEY } from './localer.service';
 export class CommonService {
 
   constructor(
-    private localService: LocalerService
+    private localService: LocalerService,
+    private authService: AuthService,
   ) { }
 
   currentUser: any;
@@ -20,7 +22,7 @@ export class CommonService {
     let favoriteLocal: any;
 
     // get currentUser
-    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.currentUser = this.checkCurrentUser();
     // get all favorites of all users
     favoriteLocal = this.localService.getLocalStorage(KEY.favorite);
 
@@ -55,12 +57,22 @@ export class CommonService {
     return this.localService.saveLocalStorage(KEY.favorite, favoriteOtherUser);
   }
 
-  currentAccount(email) {
-    // find user login
-    this.currentUser = this.localService.getLocalStorage(KEY.listUser).find(acc => {
-      return acc.email === email;
+  // currentAccount(email) {
+  //   // find user login
+  //   this.currentUser = this.localService.getLocalStorage(KEY.listUser).find(acc => {
+  //     return acc.email === email;
+  //   });
+  //   // save local current user
+  //   this.localService.saveLocalStorage(KEY.currentUser, this.currentUser);
+  // }
+
+  checkCurrentUser() {
+    const id = Number(this.authService.getCurrentUser());
+    let listUsers = this.localService.getLocalStorage(KEY.listUser) || [];
+
+    this.currentUser = listUsers.find(acc => {
+      return acc.id === id;
     });
-    // save local current user
-    this.localService.saveLocalStorage(KEY.currentUser, this.currentUser);
+    return this.currentUser;
   }
 }

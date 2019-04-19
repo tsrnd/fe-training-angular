@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalerService, KEY } from '../core/services/localer.service';
+import { CommonService } from '../core/services/common.service';
 
 @Component({
   selector: 'app-account',
@@ -10,11 +10,11 @@ export class AccountComponent implements OnInit {
   currentUser: any;
 
   constructor(
-    private localService: LocalerService
+    private commonService: CommonService
   ) { }
 
   ngOnInit() {
-    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.currentUser = this.commonService.checkCurrentUser();
   }
 
 }

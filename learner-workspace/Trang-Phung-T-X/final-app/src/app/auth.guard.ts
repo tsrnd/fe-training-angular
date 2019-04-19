@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { LocalerService, KEY } from './core/services/localer.service';
+import { KEY } from './core/services/localer.service';
+import { AuthService } from './core/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { LocalerService, KEY } from './core/services/localer.service';
 export class AuthGuard implements CanActivate, CanActivateChild {
 
   constructor(
-    private localService: LocalerService
+    private authService: AuthService
   ) { }
 
   canActivate(
@@ -25,7 +26,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   checkLogin(url: string): boolean {
-    if (!!this.localService.getLocalStorage(KEY.currentUser)) { return true; }
+    if (!!this.authService.getCurrentUser()) { return true; }
     return false;
   }
 }

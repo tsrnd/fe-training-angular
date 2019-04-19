@@ -474,7 +474,7 @@ a {
     min-height: 400px;
     height: 500px; }
   .site-blocks-cover h2 {
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: normal;
     color: #000;
     letter-spacing: .2em;

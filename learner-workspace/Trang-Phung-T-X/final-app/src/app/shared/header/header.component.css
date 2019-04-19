@@ -1,9 +1,11 @@
 .site-navbar {
   background-color: #333333;
   color: #868995;
+  padding: 0;
 }
 .auth-content {
   text-transform: uppercase;
+  font-size: 14px;
 }
 .site-navbar a:hover {
   color: #ee4266;

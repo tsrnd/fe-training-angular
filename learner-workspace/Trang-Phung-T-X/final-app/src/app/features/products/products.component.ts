@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonService } from 'src/app/core/services/common.service';
-import { LocalerService, KEY } from 'src/app/core/services/localer.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-products',
@@ -15,17 +15,18 @@ export class ProductsComponent implements OnInit {
   type: string;
   products: any;
   currentUser: any;
-
+  show: boolean;
 
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
-    private localService: LocalerService) {
+    private authService: AuthService) {
   }
 
   ngOnInit() {
     // get current user
-    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.show = !!this.authService.getCurrentUser();
+    this.currentUser = this.commonService.checkCurrentUser();
     // get category cloth
     // tslint:disable-next-line: no-conditional-assignment
     this.type = this.route.snapshot.routeConfig.path;

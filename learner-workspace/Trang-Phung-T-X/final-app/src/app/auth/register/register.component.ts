@@ -62,7 +62,7 @@ export class RegisterComponent implements OnInit {
     this.localService.saveLocalStorage(KEY.listUser, value);
     this.showSuccess = true;
     // update currentUser
-    this.commonService.currentAccount(this.formReactive.controls.email.value);
+    this.authService.setCurrentUser(id);
     this.router.navigate(['/dashboard']);
   }
 

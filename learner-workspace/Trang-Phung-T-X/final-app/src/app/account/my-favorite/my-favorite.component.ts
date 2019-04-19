@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { LocalerService, KEY } from 'src/app/core/services/localer.service';
 import { ActivatedRoute } from '@angular/router';
 import { AppModalComponent } from 'src/app/core/app-modal/app-modal.component';
+import { CommonService } from 'src/app/core/services/common.service';
 
 
 @Component({
@@ -20,12 +21,13 @@ export class MyFavoriteComponent implements OnInit {
 
   constructor(
     private localService: LocalerService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private commonService: CommonService
   ) { }
 
   ngOnInit() {
     // get data local
-    this.currentUser = this.localService.getLocalStorage(KEY.currentUser);
+    this.currentUser = this.commonService.checkCurrentUser();
     this.data = this.localService.getLocalStorage(KEY.favorite);
     // favorite of currentUser
     if (this.data) {
@@ -75,7 +77,6 @@ export class MyFavoriteComponent implements OnInit {
     if (favoriteOtherUser.length !== 0) {
       valueSaveLocal.push(favoriteOtherUser);
     }
-    debugger;
     this.localService.removeLocalStorage(KEY.favorite);
     this.localService.saveLocalStorage(KEY.favorite, valueSaveLocal);
 
