@@ -12,7 +12,7 @@ import { NgForm, NgModel } from '../../../node_modules/@angular/forms';
       <input type="password" placeholder ="Password" ngModel #txtPassword="ngModel" name="password" minlength="6" pattern="[a-z]*">
       <br><br>
       <div ngModelGroup="ahihi">
-      <label><input type="checkbox" [ngModel]="false" name="phu"> phu</label>
+      <label><input type="checkbox" [ngModel]="false" name="phu"> phu</label> 
       <label><input type="checkbox" [ngModel]="false" name="phu1"> phu</label>
       <label><input type="checkbox" [ngModel]="false" name="phu2"> phu</label>
       <label><input type="checkbox" [ngModel]="false" name="phu3"> phu</label>

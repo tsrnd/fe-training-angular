@@ -8,8 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PersonComponent implements OnInit {
   @Input() name: string;
   @Input() age: number;
+  @Input('account-id') id: string;
   @Output() removePerson = new EventEmitter<string>();
-
   constructor() { }
 
   ngOnInit() {

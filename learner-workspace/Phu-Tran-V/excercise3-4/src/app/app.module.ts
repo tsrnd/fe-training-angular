@@ -13,6 +13,7 @@ import { ModalComponent } from './modal/modal.component';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesComponent } from './features/features.component';
 import { HighlightDirective } from './highlight.directive';
+import { BankAccountComponent } from './bank-account/bank-account.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { HighlightDirective } from './highlight.directive';
     LifecycleContentComponent,
     ModalComponent,
     HighlightDirective,
+    BankAccountComponent,
   ],
   imports: [
     CommonModule,

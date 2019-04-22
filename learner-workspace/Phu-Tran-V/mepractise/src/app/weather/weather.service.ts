@@ -12,8 +12,6 @@ export class WeatherService {
         .toPromise()
         .then(
             (res: Response) => this.responseData = res['main']
-            // (res: Response) => console.log(res['main'])
-            // (res: Response) => console.log(res['sys'])
         )
         .then(resJson => this.responseData = resJson.temp)
     }

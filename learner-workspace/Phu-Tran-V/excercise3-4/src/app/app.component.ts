@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  bankName="RBC"
   public itemsList: object[] = [
     {
       title: 'Collapsible Group Item #1',
