@@ -21,7 +21,7 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'account',
+    path: '',
     component: AccountComponent,
     canActivate: [AuthGuard],
   },
@@ -33,7 +33,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

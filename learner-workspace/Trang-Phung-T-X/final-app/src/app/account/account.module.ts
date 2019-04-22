@@ -10,6 +10,7 @@ import { NavLeftComponent } from './nav-left/nav-left.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyFavoriteComponent } from './my-favorite/my-favorite.component';
 import { CoreModule } from '../core/core.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [DashboardComponent, ProfileComponent, AccountComponent, NavLeftComponent, MyFavoriteComponent],
@@ -19,7 +20,8 @@ import { CoreModule } from '../core/core.module';
     SharedModule,
     FormsModule,
     AccountRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   exports: [
     DashboardComponent,

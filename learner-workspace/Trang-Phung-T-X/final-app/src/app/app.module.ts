@@ -13,6 +13,7 @@ import { AccountModule } from './account/account.module';
 import { CoreModule } from './core/core.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CookieService } from 'ngx-cookie-service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     AccountModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     AppRoutingModule
   ],
   providers: [CookieService],

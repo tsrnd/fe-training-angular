@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     // set default user
-    // let firstUser: any;
-    // firstUser = this.localService.getLocalStorage(KEY.listUser)[0];
-    // this.email = firstUser.email;
-    // this.password = firstUser.password;
+    let firstUser: any;
+    firstUser = this.localService.getLocalStorage(KEY.listUser)[0];
+    this.email = firstUser.email;
+    this.password = firstUser.password;
     // get data account localStorage
     this.listAccount = this.localService.getLocalStorage(KEY.listUser);
   }

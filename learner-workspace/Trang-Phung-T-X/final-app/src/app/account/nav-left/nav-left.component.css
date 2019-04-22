@@ -157,5 +157,12 @@ section{
   color: black;
 
 }
+.nav>li>a:hover, .nav>li>a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.active {
+  color: #ee4266;
+  background: #eee;
 
-
+}

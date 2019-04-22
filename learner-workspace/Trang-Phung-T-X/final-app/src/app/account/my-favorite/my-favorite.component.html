@@ -8,25 +8,29 @@
     </ng-container>
   </div>
 </div>
-<div class="row session-content">
-  <div class="col-lg-4 col-md-6 item-entry mb-3" *ngFor="let item of data">
-    <div class="card text-center card-product md-height bg-gray d-block">
-      <div class="card-product__img">
-        <img class="card-img" src="{{item.img}}" alt="">
-        <div class="card-product__imgOverlay">
-          <button (click)="showModalItem(item.id)" aria-hidden="true" data-toggle="modal" data-target="#modal">
-            <i class="fa fa-trash"></i>
-          </button>
+<div class="session-content">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 item-entry mb-3"
+      *ngFor="let item of data | paginate: { itemsPerPage: 3, currentPage: p }">
+      <div class="card text-center card-product md-height bg-gray d-block">
+        <div class="card-product__img">
+          <img class="card-img" src="{{item.img}}" alt="">
+          <div class="card-product__imgOverlay">
+            <button (click)="showModalItem(item.id)" aria-hidden="true" data-toggle="modal" data-target="#modal">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <h2>{{item.title}}</h2>
+          <p class="card-product__title"><a>{{item.desc}}</a>
+          </p>
+          <p class="card-product__price">{{item.price}}</p>
         </div>
       </div>
-      <div class="card-body">
-        <h2>{{item.title}}</h2>
-        <p class="card-product__title"><a>{{item.desc}}</a>
-        </p>
-        <p class="card-product__price">{{item.price}}</p>
-      </div>
-    </div>
 
+    </div>
+    <app-modal (delItem)="delItem($event)"></app-modal>
   </div>
-  <app-modal (delItem)="delItem($event)"></app-modal>
+  <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
 </div>

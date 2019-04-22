@@ -8,6 +8,7 @@ import { FeaturesComponent } from './features.component';
 import { SharedModule } from '../shared/shared.module';
 import { DetailProductComponent } from './products/detail-product/detail-product.component';
 import { CoreModule } from '../core/core.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [HomeComponent, ProductsComponent, FeaturesComponent, DetailProductComponent],
@@ -15,7 +16,8 @@ import { CoreModule } from '../core/core.module';
     CommonModule,
     FeaturesRoutingModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    NgxPaginationModule
   ],
   exports: [
   ]

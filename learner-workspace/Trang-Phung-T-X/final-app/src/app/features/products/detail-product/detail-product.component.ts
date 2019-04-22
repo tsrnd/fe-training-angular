@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonService } from 'src/app/core/services/common.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -20,7 +20,8 @@ export class DetailProductComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
-    private authService: AuthService) {
+    private authService: AuthService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -30,15 +31,12 @@ export class DetailProductComponent implements OnInit {
     this.route.data
       .subscribe(data => {
         this.data = data.products;
+        // get product by id
+        this.id = +this.route.snapshot.paramMap.get('id');
+        this.product = this.data.find(item => item.id === this.id);
+        // get products same category except
+        this.listSuggest = this.data.filter(item => item.type === this.product.type && item.id !== this.id).slice(0, 4);
       });
-    // get id in url
-    this.route.paramMap.subscribe(data => {
-      this.id = Number(data.params.id);
-    });
-    // get product by id
-    this.product = this.data.find(item => item.id === this.id);
-    // get products same category except
-    this.listSuggest = this.data.filter(item => item.type === this.product.type && item.id !== this.id).slice(0, 4);
   }
 
   // add my favorite

@@ -16,6 +16,8 @@ export class ProductsComponent implements OnInit {
   products: any;
   currentUser: any;
   show: boolean;
+  p = 1;
+  collection: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,6 +39,7 @@ export class ProductsComponent implements OnInit {
           this.products = data.products;
         });
       this.data = this.products.filter(item => item.type === this.type);
+
     }
     // title category
     this.title = this.data[0].type;
@@ -47,4 +50,5 @@ export class ProductsComponent implements OnInit {
   myfavorites(id) {
     this.commonService.addFavorite(id);
   }
+
 }

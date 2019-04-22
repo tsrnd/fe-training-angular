@@ -6,7 +6,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-6 item-entry mb-3" *ngFor="let item of data">
+      <div class="col-lg-3 col-md-6 item-entry mb-3"
+        *ngFor="let item of data | paginate: { itemsPerPage: 4, currentPage: p }">
         <div class="card text-center card-product md-height bg-gray d-block">
           <div class="card-product__img">
             <a [routerLink]="['/product',item.id]">
@@ -27,5 +28,7 @@
         </div>
       </div>
     </div>
+
+    <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>

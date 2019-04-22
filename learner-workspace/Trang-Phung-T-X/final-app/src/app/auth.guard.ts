@@ -9,7 +9,8 @@ import { AuthService } from './core/services/auth.service';
 export class AuthGuard implements CanActivate, CanActivateChild {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   canActivate(
@@ -27,6 +28,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   checkLogin(url: string): boolean {
     if (!!this.authService.getCurrentUser()) { return true; }
+    this.router.navigate(['/login']);
     return false;
   }
 }

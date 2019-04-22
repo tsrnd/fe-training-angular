@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { LocalerService, KEY } from './localer.service';
 import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,7 @@ export class CommonService {
   constructor(
     private localService: LocalerService,
     private authService: AuthService,
+    private apiService: ApiService
   ) { }
 
   currentUser: any;
@@ -67,7 +70,7 @@ export class CommonService {
   // }
 
   checkCurrentUser() {
-    const id = Number(this.authService.getCurrentUser());
+    const id = +this.authService.getCurrentUser();
     let listUsers = this.localService.getLocalStorage(KEY.listUser) || [];
 
     this.currentUser = listUsers.find(acc => {
