@@ -8,9 +8,13 @@ import { AuthModule } from './auth/auth.module';
 import { FeaturesModule } from './features/features.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AccountModule } from './account/account.module';
+import { FeaturesComponent } from './features/features.component';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
+    FeaturesComponent,
     AppComponent
   ],
   imports: [
@@ -19,9 +23,9 @@ import { AccountModule } from './account/account.module';
     AuthModule,
     HttpClientModule,
     FeaturesModule,
-    AppRoutingModule,
-    AccountModule
-
+    AccountModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

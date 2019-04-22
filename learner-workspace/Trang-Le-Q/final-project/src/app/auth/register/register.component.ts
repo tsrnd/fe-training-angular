@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { LocalerService } from 'src/app/core/service/localer.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/service/auth.service';
 
 const REGISTER = 'register';
 
@@ -18,7 +19,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private local: LocalerService,
     private formBuild: FormBuilder,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) { }
 
   ngOnInit() {
@@ -44,7 +46,7 @@ export class RegisterComponent implements OnInit {
       this.local.saveLocalStorage(REGISTER, arr);
       this.router.navigate(['/dashboard']);
       this.local.saveLocalStorage('userLogin', this.formReactive.value);
-
+      this.auth.setCookie('isLogin', 'true', 30);
     }
   }
 

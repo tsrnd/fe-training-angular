@@ -4,6 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features.component';
 import { CategoryComponent } from './category/category.component';
 import { DetailComponent } from './detail/detail.component';
+import { WomanGuard } from './guard/woman.guard';
+import { ManGuard } from './guard/man.guard';
+import { KidsGuard } from './guard/kids.guard';
 
 const routes: Routes = [
   {
@@ -15,11 +18,28 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'category',
-        component: CategoryComponent
+        path: 'woman',
+        component: CategoryComponent,
+        resolve: {
+          data: WomanGuard
+        }
       },
       {
-        path: 'category/:id',
+        path: 'man',
+        component: CategoryComponent,
+        resolve: {
+          data: ManGuard
+        }
+      },
+      {
+        path: 'kids',
+        component: CategoryComponent,
+        resolve: {
+          data: KidsGuard
+        }
+      },
+      {
+        path: ':category/product/:id',
         component: DetailComponent
       },
       // {

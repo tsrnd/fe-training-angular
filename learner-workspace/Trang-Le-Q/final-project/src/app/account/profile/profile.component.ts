@@ -9,7 +9,7 @@ import { userInfo } from 'os';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  user: any[];
+  user: object;
   formReactive: FormGroup;
   msgSuccess: string;
 
@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
     this.user = this.local.getLocalStorage('userLogin');
     this.formReactive = this.formBuild.group({
       name: ['', Validators.required],
-      email: [this.user.email, Validators.email],
+      email: [this.user.email],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required]
     });

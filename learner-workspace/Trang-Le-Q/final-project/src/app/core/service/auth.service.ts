@@ -47,7 +47,7 @@ export class AuthService {
   }
 
   logout() {
-    this.setCookie('isLogin', 'false', 1);
+    this.setCookie('isLogin', 'false', -1);
     this.router.navigate(['/']);
   }
 }

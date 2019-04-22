@@ -33,10 +33,14 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     // console.log(this.formReactive.value);
     let data = this.local.getLocalStorage(REGISTER);
+    let userLogin: object;
     if (data && data.find((user) => {
-      return user.email === this.formReactive.get('email').value && user.password === this.formReactive.get('password').value;
+      if (user.email === this.formReactive.get('email').value && user.password === this.formReactive.get('password').value) {
+        userLogin = user;
+        return true;
+      }
     })) {
-      this.local.saveLocalStorage('userLogin', data);
+      this.local.saveLocalStorage('userLogin', userLogin);
       this.authSerive.setCookie('isLogin', 'true', 30);
       this.router.navigate(['/dashboard']);
     } else {

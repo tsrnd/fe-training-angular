@@ -6,11 +6,13 @@ import { SlideshowComponent } from './component/slideshow/slideshow.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { AboutComponent } from './component/about/about.component';
 import { NotfoundComponent } from './component/notfound/notfound.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SlideshowComponent, ContactComponent, AboutComponent, NotfoundComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

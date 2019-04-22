@@ -4,11 +4,16 @@ import { AccountComponent } from './account.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { AccountGuard } from './guard/account.guard';
+import { ProfileGuard } from './guard/profile.guard';
+import { FavoriteGuard } from './guard/favorite.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: AccountComponent,
+    canActivate: [AccountGuard],
+    canActivateChild: [AccountGuard],
     children: [
       {
         path: 'dashboard',
@@ -16,11 +21,15 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canDeactivate: [ProfileGuard]
       },
       {
         path: 'favorite',
-        component: FavoriteComponent
+        component: FavoriteComponent,
+        resolve: {
+          data: FavoriteGuard
+        }
       }
     ]
   }
