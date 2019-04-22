@@ -17,7 +17,6 @@ export class ProductsComponent implements OnInit {
   currentUser: any;
   show: boolean;
   p = 1;
-  collection: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,7 +31,7 @@ export class ProductsComponent implements OnInit {
     // get category cloth
     // tslint:disable-next-line: no-conditional-assignment
     this.type = this.route.snapshot.routeConfig.path;
-    // get products by category
+    // get products by category(type)
     if (this.type) {
       this.route.data
         .subscribe(data => {
@@ -41,7 +40,7 @@ export class ProductsComponent implements OnInit {
       this.data = this.products.filter(item => item.type === this.type);
 
     }
-    // title category
+    // title category(type)
     this.title = this.data[0].type;
 
   }

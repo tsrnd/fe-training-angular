@@ -25,6 +25,7 @@ export class DetailProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    // get current user
     this.currentUser = this.commonService.checkCurrentUser();
     this.show = !!this.authService.getCurrentUser();
     // get all products

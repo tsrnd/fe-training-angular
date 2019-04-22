@@ -10,3 +10,7 @@
   color: #fe4c50;
   font-family: 'Times New Roman', Times, serif;
 }
+.pagination-page {
+  font-size: 16px;
+  text-align: center;
+}

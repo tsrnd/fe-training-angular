@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Router } from '@angular/router';
-import { CommonService } from 'src/app/core/services/common.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +13,6 @@ export class HeaderComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private commonService: CommonService
   ) { }
 
   ngOnInit() {
@@ -22,6 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    // clear cookie
     this.authService.logout();
     this.show = !!this.authService.getCurrentUser();
     this.router.navigate(['/']);

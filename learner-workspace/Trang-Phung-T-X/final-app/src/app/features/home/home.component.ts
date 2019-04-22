@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/core/services/api.service';
-import { LocalerService } from 'src/app/core/services/localer.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -17,10 +15,7 @@ export class HomeComponent implements OnInit {
   productsMenTotal: number;
   productsChildrenTotal: number;
 
-  constructor(
-    private apiService: ApiService,
-    private localService: LocalerService,
-    private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -29,15 +24,14 @@ export class HomeComponent implements OnInit {
       .subscribe(data => {
         this.data = data.products;
       });
-    // get products by category limit 4
+    // get length each category
     this.productsWomenTotal = this.data.filter(item => item.type === 'women').length;
     this.productsMenTotal = this.data.filter(item => item.type === 'men').length;
     this.productsChildrenTotal = this.data.filter(item => item.type === 'children').length;
 
+    // get products by category limit 4
     this.productsWomen = this.data.filter(item => item.type === 'women').slice(0, 4);
     this.productsMen = this.data.filter(item => item.type === 'men').slice(0, 4);
     this.productsChildren = this.data.filter(item => item.type === 'children').slice(0, 4);
-
   }
-
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { KEY } from './core/services/localer.service';
 import { AuthService } from './core/services/auth.service';
 
 @Injectable({
@@ -16,7 +15,9 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
+    // tslint:disable-next-line: prefer-const
     let url: string = state.url;
+    // check guard auth by url
     return this.checkLogin(url);
   }
 
@@ -27,6 +28,8 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   checkLogin(url: string): boolean {
+    // if had currentUser(login) => true  => dashboard screen
+    //                           => false => login screen
     if (!!this.authService.getCurrentUser()) { return true; }
     this.router.navigate(['/login']);
     return false;

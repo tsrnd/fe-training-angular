@@ -2,6 +2,7 @@
 <div class="cotainer my-form">
   <div class="row justify-content-center">
     <div class="col-md-6">
+      <!-- ERROR MESSAGE -->
       <div [hidden]="!showError" class="alert alert-danger" role="alert">
         Account doesn't exist. Enter a different account
       </div>
@@ -9,6 +10,7 @@
         <div class="card-header">
           <h4>Login</h4>
         </div>
+        <!-- CONTENT -->
         <div class="card-body">
           <form action="" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
             <div class="form-group">

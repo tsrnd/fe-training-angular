@@ -32,5 +32,7 @@
     </div>
     <app-modal (delItem)="delItem($event)"></app-modal>
   </div>
-  <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
+  <ng-container *ngIf="data.length > 3">
+    <pagination-controls class="pagination-page" (pageChange)="p = $event"></pagination-controls>
+  </ng-container>
 </div>

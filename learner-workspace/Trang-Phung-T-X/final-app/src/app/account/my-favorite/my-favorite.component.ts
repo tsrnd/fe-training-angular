@@ -29,11 +29,11 @@ export class MyFavoriteComponent implements OnInit {
     // get data local
     this.currentUser = this.commonService.checkCurrentUser();
     this.data = this.localService.getLocalStorage(KEY.favorite);
-    // favorite of currentUser
+    // favorite of currentUser [{userId: 1, listIdProduct:[1,2,3]},{},{}]
     if (this.data) {
       this.data = this.data.find(ob => ob.userId === this.currentUser.id);
     }
-    this.data = this.data ? this.data.listIdProduct : [];
+    this.data = this.data ? this.data.listIdProduct : '';
     // resolve
     this.route.data
       .subscribe(data => {

@@ -71,6 +71,7 @@ export class CommonService {
 
   checkCurrentUser() {
     const id = +this.authService.getCurrentUser();
+    // tslint:disable-next-line: prefer-const
     let listUsers = this.localService.getLocalStorage(KEY.listUser) || [];
 
     this.currentUser = listUsers.find(acc => {

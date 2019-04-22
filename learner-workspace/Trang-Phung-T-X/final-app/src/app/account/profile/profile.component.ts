@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
     this.formReactive = this.fb.group({
       firstName: [this.currentUser.firstName, Validators.required],
       lastName: [this.currentUser.lastName, Validators.required],
-      email: [this.currentUser.email, [Validators.email, Validators.required]],
+      email: [this.currentUser.email, [Validators.required, Validators.email]],
       password: [this.currentUser.password, Validators.required],
       confirmPassword: [this.currentUser.password]
     }, { validators: this.validatePasswordConfirm }
@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
     if (allUser && allUser.find(ob => {
       return ob.email === this.formReactive.controls.email.value;
     })) {
-      return this.show = true;
+      return this.show = true; // show error
     }
 
     // push item to arr items in local
@@ -73,7 +73,7 @@ export class ProfileComponent implements OnInit {
     // this.localService.removeLocalStorage(KEY.currentUser);
     // this.localService.saveLocalStorage(KEY.currentUser, this.formReactive.value);
     this.showSuccess = true;
-    this.router.navigate(['/dashboard']);
+    // this.router.navigate(['/dashboard']);
   }
 
   // used to allow or deny exit from route.
@@ -89,7 +89,9 @@ export class ProfileComponent implements OnInit {
   }
 
   validatePasswordConfirm(group: FormGroup) {
+    // tslint:disable-next-line: prefer-const
     let pass = group.controls.password.value;
+    // tslint:disable-next-line: prefer-const
     let confirmPass = group.controls.confirmPassword.value;
     // compare pass with confirmpass, show mess 'notSame' if diff
     return pass === confirmPass ? null : { notSame: true };
@@ -101,6 +103,7 @@ export class ProfileComponent implements OnInit {
   }
 
   hasEmpty(arr) {
+    // tslint:disable-next-line: prefer-const
     for (let ele in arr) {
       if (arr[ele] === '') {
         return true;

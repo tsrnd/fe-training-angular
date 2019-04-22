@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { LocalerService, KEY } from './../../core/services/localer.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Router } from '@angular/router';
-import { CommonService } from 'src/app/core/services/common.service';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private localService: LocalerService,
     private authService: AuthService,
-    private router: Router,
-    private commonService: CommonService) { }
+    private router: Router) { }
 
 
   listAccount: any;
@@ -26,7 +24,7 @@ export class LoginComponent implements OnInit {
   showError = false;
 
   ngOnInit() {
-    // set default user
+    // set default user (first user)
     let firstUser: any;
     firstUser = this.localService.getLocalStorage(KEY.listUser)[0];
     this.email = firstUser.email;
@@ -38,8 +36,10 @@ export class LoginComponent implements OnInit {
   onSubmit(f: NgForm) {
     // reset alert
     this.hideAlert();
-    // check data in localStorage
+    // check data in localStorage(email & pass)
     if (this.listAccount && this.checkAccout(f)) {
+      // true
+      // set cookie => navigate
       const account = this.listAccount.find(acc => acc.email === this.email);
       this.authService.setCurrentUser(account.id);
       return this.router.navigate(['/dashboard']);
