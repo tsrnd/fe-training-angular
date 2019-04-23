@@ -13,6 +13,7 @@ const REGISTER = 'register';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  title = 'Login';
   formReactive: FormGroup;
   msgErr: string;
 
@@ -20,7 +21,6 @@ export class LoginComponent implements OnInit {
     private local: LocalerService,
     private formBuild: FormBuilder,
     private authSerive: AuthService,
-    // private api: ApiService,
     private router: Router
   ) { }
 

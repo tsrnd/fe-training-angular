@@ -7,6 +7,7 @@ import { LocalerService } from 'src/app/core/service/localer.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  title = 'Dashboard';
   user: any[];
 
   constructor(

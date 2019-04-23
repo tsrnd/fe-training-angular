@@ -7,6 +7,7 @@ import { LocalerService } from 'src/app/core/service/localer.service';
   styleUrls: ['./favorite.component.scss']
 })
 export class FavoriteComponent implements OnInit {
+  title = 'Your Favorite';
   data: any[];
 
   constructor(

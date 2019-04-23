@@ -9,17 +9,25 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#" routerLink="/woman">Woman</a>
+          <a class="nav-link js-scroll-trigger" href="#" routerLink="/woman" routerLinkActive="active">Woman</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#" routerLink="/man">Man</a>
+          <a class="nav-link js-scroll-trigger" href="#" routerLink="/man" routerLinkActive="active">Man</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#" routerLink="/kids">Kids</a>
+          <a class="nav-link js-scroll-trigger" href="#" routerLink="/kids" routerLinkActive="active">Kids</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#" routerLink="/login">login</a>
-        </li>
+        <ng-container *ngIf="!checkLogin; else logout">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#" routerLink="/login" routerLinkActive="active">login</a>
+          </li>
+        </ng-container>
+        <ng-template #logout>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" (click)="logOut()">LogOut</a>
+          </li>
+        </ng-template>
+        
       </ul>
     </div>
   </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { LocalerService } from 'src/app/core/service/localer.service';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +8,7 @@ import { userInfo } from 'os';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  title = 'User Profile';
   user: object;
   formReactive: FormGroup;
   msgSuccess: string;

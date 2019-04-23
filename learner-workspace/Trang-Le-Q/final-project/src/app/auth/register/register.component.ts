@@ -12,7 +12,7 @@ const REGISTER = 'register';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  title = 'Logout';
   formReactive: FormGroup;
   msgErr: string;
 

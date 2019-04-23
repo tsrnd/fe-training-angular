@@ -7,15 +7,14 @@ import { ApiService } from 'src/app/core/service/api.service';
   styleUrls: ['./slideshow.component.scss']
 })
 export class SlideshowComponent implements OnInit {
-
+  slide: any[];
   constructor(
-    // private api: ApiService,
+    private api: ApiService,
 
   ) { }
 
   ngOnInit() {
-    // let data = this.api.get('users/2').toPromise();
-    // console.log(data);
+    this.api.get('category/1/product?p=1&l=3').subscribe(data => this.slide = data);
   }
 
 }
