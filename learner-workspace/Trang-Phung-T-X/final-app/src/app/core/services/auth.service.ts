@@ -9,9 +9,6 @@ export class AuthService {
 
   constructor(private cookieService: CookieService) { }
 
-  // store the URL so we can redirect after logging in
-  // redirectUrl: string;
-
   setCurrentUser(id): void {
     this.cookieService.set(KEY.currentUser, id);
   }

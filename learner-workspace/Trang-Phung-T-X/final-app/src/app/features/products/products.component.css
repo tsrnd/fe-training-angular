@@ -1,6 +1,3 @@
-.card-img {
-  height: 300px;
-}
 h2 {
   text-transform: uppercase;
   color: #fe4c50;
@@ -13,4 +10,14 @@ h2 {
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-product__img {
+  width: 100%;
+  height: 330px;
+  position: relative;
+  overflow: hidden;
+}
+.card-product__img img {
+  background-size: cover;
 }

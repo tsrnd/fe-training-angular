@@ -1,5 +1,6 @@
-.my-form {
-  padding: 120px;
+.container {
+  margin-top: 5%;
+  margin-bottom: 15%;
 }
 .card-header h4 {
   text-transform: uppercase;

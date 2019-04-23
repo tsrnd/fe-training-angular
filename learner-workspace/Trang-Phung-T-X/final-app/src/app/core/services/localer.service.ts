@@ -14,10 +14,6 @@ export class LocalerService {
 
   constructor() { }
   saveLocalStorage(key: string, value: any) {
-    // if (typeof value === 'object') {
-    //   return localStorage.setItem(key, JSON.stringify(value));
-    // }
-    // check typeof value order to JSON.stringify(value)
     value = (typeof value === 'object') ? JSON.stringify(value) : value;
     return localStorage.setItem(key, value);
   }
@@ -27,10 +23,6 @@ export class LocalerService {
   }
 
   saveSessionStorage(key: string, value: any) {
-    // if (typeof value === 'object') {
-    //   return sessionStorage.setItem(key, JSON.stringify(value));
-    // }
-    // return sessionStorage.setItem(key, value);
     value = (typeof value === 'object') ? JSON.stringify(value) : value;
     return sessionStorage.setItem(key, value);
   }

@@ -17,7 +17,7 @@ export class MyFavoriteComponent implements OnInit {
   products: any;
   show = true;
   currentUser: any;
-
+  p = 1;
 
   constructor(
     private localService: LocalerService,
@@ -26,64 +26,31 @@ export class MyFavoriteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // get data local
-    this.currentUser = this.commonService.checkCurrentUser();
-    this.data = this.localService.getLocalStorage(KEY.favorite);
-    // favorite of currentUser [{userId: 1, listIdProduct:[1,2,3]},{},{}]
+    // favorite save local: [{"userId":3,"listIdProduct":[7,8]}, {"userId":1,"listIdProduct":[2,7,5]}]
+    this.currentUser = this.commonService.checkCurrentUser(); // get currentUser
+    this.data = this.localService.getLocalStorage(KEY.favorite); // get favorite was save local
     if (this.data) {
-      this.data = this.data.find(ob => ob.userId === this.currentUser.id);
+      this.data = this.data.find(ob => ob.userId === this.currentUser.id); // get ob of currentUser
     }
-    this.data = this.data ? this.data.listIdProduct : '';
-    // resolve
-    this.route.data
+    this.data = this.data ? this.data.listIdProduct : ''; // get list id favorite of currentUser
+
+    this.route.data // resolve
       .subscribe(data => {
         this.products = data.products;
       });
-    // get value of product by id in products.json
+
     if (this.data && this.data.length !== 0) {
-      this.data = this.products.filter(item => this.data.includes(item.id));
+      this.data = this.products.filter(item => this.data.includes(item.id)); // get value of product by id in products.json
       this.show = false;
     }
   }
 
   delItem(id) {
-    let favoriteOtherUser: any;
-    let favoriteCurrentUser: any;
-    let favoriteLocal: any;
-    let favoriteList: any;
-    let favoriteCurrentUserNew: any;
-    // tslint:disable-next-line: prefer-const
-    let value = [];
-    // tslint:disable-next-line: prefer-const
-    let valueSaveLocal = [];
-
-    if (id) {
-      // data = except delItem
-      this.data = this.data.filter(item => {
-        return item.id !== id;
-      });
-    }
-
-    // update local
-    this.data.map(item => value.push(item.id));
-    // get all favorites of all users
-    favoriteLocal = this.localService.getLocalStorage(KEY.favorite);
-    favoriteList = favoriteLocal ? favoriteLocal : [];
-    favoriteOtherUser = favoriteList.filter(item => item.userId !== this.currentUser.id);
-    favoriteCurrentUser = favoriteList.find(ob => ob.userId === this.currentUser.id);
-
-    favoriteCurrentUserNew = Object.assign({ userId: this.currentUser.id }, { listIdProduct: value });
-    valueSaveLocal.push(favoriteCurrentUserNew);
-    if (favoriteOtherUser.length !== 0) {
-      valueSaveLocal.push(favoriteOtherUser);
-    }
-    this.localService.removeLocalStorage(KEY.favorite);
-    this.localService.saveLocalStorage(KEY.favorite, valueSaveLocal);
+    this.data = this.commonService.removeFavorite(this.data, id);
 
     if (this.data.length === 0) {
       this.show = true;
     }
-
   }
 
   showModalItem(id) {

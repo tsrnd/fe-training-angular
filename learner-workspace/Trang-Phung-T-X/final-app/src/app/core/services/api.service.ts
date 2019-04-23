@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { environment } from './../../../environments/environment';
 
 
-export const API_DOMAIN = environment.api; //'https://reqres.in/api/'
+export const API_DOMAIN = environment.api;
 export const ENDPOINT = {
   users: 'users',
   events: 'events'

@@ -28,11 +28,11 @@ export class ProductsComponent implements OnInit {
     // get current user
     this.show = !!this.authService.getCurrentUser();
     this.currentUser = this.commonService.checkCurrentUser();
-    // get category cloth
+
     // tslint:disable-next-line: no-conditional-assignment
-    this.type = this.route.snapshot.routeConfig.path;
-    // get products by category(type)
-    if (this.type) {
+    this.type = this.route.snapshot.routeConfig.path; // get category cloth
+
+    if (this.type) { // get products by category(type)
       this.route.data
         .subscribe(data => {
           this.products = data.products;
@@ -40,8 +40,8 @@ export class ProductsComponent implements OnInit {
       this.data = this.products.filter(item => item.type === this.type);
 
     }
-    // title category(type)
-    this.title = this.data[0].type;
+
+    this.title = this.data[0].type; // title category(type)
 
   }
 

@@ -16,3 +16,6 @@
 .auth-content a {
   cursor: pointer;
 }
+.auth-content a {
+  float: right;
+}

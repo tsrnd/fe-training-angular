@@ -24,31 +24,26 @@ export class LoginComponent implements OnInit {
   showError = false;
 
   ngOnInit() {
-    // set default user (first user)
-    let firstUser: any;
+    let firstUser: any; // set default user (first user)
     firstUser = this.localService.getLocalStorage(KEY.listUser)[0];
     this.email = firstUser.email;
     this.password = firstUser.password;
+
     // get data account localStorage
     this.listAccount = this.localService.getLocalStorage(KEY.listUser);
   }
 
   onSubmit(f: NgForm) {
-    // reset alert
-    this.hideAlert();
-    // check data in localStorage(email & pass)
-    if (this.listAccount && this.checkAccout(f)) {
-      // true
-      // set cookie => navigate
+    this.hideAlert(); // reset alert
+    if (this.listAccount && this.checkAccount(f)) { // check data in localStorage(email & pass)
       const account = this.listAccount.find(acc => acc.email === this.email);
-      this.authService.setCurrentUser(account.id);
+      this.authService.setCurrentUser(account.id); // save cookie
       return this.router.navigate(['/dashboard']);
     }
     this.showError = true;
   }
 
-  // check value in localStorage
-  checkAccout(f: NgForm) {
+  checkAccount(f: NgForm) {
     if (this.listAccount.find(acc => {
       return acc.email === f.value.email && acc.password === f.value.password;
     })) {

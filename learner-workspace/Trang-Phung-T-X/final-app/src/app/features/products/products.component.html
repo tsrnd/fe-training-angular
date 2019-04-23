@@ -7,12 +7,13 @@
       </div>
     </div>
     <!-- CONTENT PRODUCT -->
+
     <div class="row">
       <div class="col-lg-3 col-md-6 item-entry mb-3"
         *ngFor="let item of data | paginate: { itemsPerPage: 4, currentPage: p }">
         <div class="card text-center card-product md-height bg-gray d-block">
           <div class="card-product__img">
-            <a [routerLink]="['/product',item.id]">
+            <a [routerLink]="['/',title ,'product', item.id]">
               <img class="card-img" src="{{item.img}}" alt="">
             </a>
             <ng-container *ngIf="show">
@@ -23,13 +24,15 @@
           </div>
           <div class="card-body">
             <h2 class="item-title"><b>{{ item.title | collapseText: '10' }}</b></h2>
-            <p class="card-product__title"><a [routerLink]="['/product',item.id]">{{item.desc | collapseText: '20'}}</a>
+            <p class="card-product__title"><a
+                [routerLink]="['/',title ,'product', item.id]">{{item.desc | collapseText: '20'}}</a>
             </p>
             <strong class="item-price">{{item.price}}</strong>
           </div>
         </div>
       </div>
     </div>
+
     <!-- PAGINATION -->
     <ng-container *ngIf="data.length > 4">
       <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>

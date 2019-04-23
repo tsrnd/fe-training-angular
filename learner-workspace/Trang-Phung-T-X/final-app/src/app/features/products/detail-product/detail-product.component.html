@@ -31,10 +31,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-md-6 item-entry mb-3" *ngFor="let item of listSuggest">
+        <div class="col-lg-4 col-md-6 item-entry mb-3" *ngFor="let item of listSuggest">
           <div class="card text-center card-product md-height bg-gray d-block">
             <div class="card-product__img">
-              <img class="card-img" src="{{item.img}}" alt="">
+              <a [routerLink]="['/',item.type ,'product', item.id]">
+                <img class="card-img" src="{{item.img}}" alt="">
+              </a>
               <ng-container *ngIf="show">
                 <div class="card-product__imgOverlay w-100">
                   <button (click)="addFavorite(item.id)">
@@ -46,7 +48,7 @@
             <div class="card-body">
               <h3>{{ item.title | collapseText: '10' }}</h3>
               <p class="card-product__title"><a
-                  [routerLink]="['/product',item.id]">{{item.desc | collapseText: '20'}}</a>
+                  [routerLink]="['/',item.type ,'product', item.id]">{{item.desc | collapseText: '20'}}</a>
               </p>
               <p class="card-product__price item-price">{{item.price}}</p>
             </div>

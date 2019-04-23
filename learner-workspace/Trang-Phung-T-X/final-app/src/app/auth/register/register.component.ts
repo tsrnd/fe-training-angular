@@ -19,11 +19,10 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private authService: AuthService) { }
 
-  show = false;
+  showError = false;
   showSuccess = false;
 
   ngOnInit() {
-    // build form
     this.formReactive = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -38,42 +37,34 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    // reset alert
-    this.hideAlert();
-    // get data in localStorage
-    const valueLocal = this.localService.getLocalStorage(KEY.listUser);
-    // check data in localStorage be has value or null
+    this.hideAlert(); // reset alert
+    const valueLocal = this.localService.getLocalStorage(KEY.listUser); // get data in localStorage
     const value = valueLocal ? valueLocal : [];
-    // check email is exist in local
-    if (valueLocal && valueLocal.find(ob => {
+
+    if (valueLocal && valueLocal.find(ob => { // check email is exist in local
       return ob.email === this.formReactive.controls.email.value;
     })) {
-      return this.show = true;
+      return this.showError = true;
     }
-    // add id for user
-    // tslint:disable-next-line: prefer-const
-    let id = valueLocal ? valueLocal.length : 0;
+    const id = valueLocal ? valueLocal.length : 0;
     // tslint:disable-next-line: object-literal-shorthand
-    let newUser = Object.assign(this.formReactive.value, { id: id });
-    // push ner acc to list acc on local
-    value.push(newUser);
-    // save local
-    this.localService.saveLocalStorage(KEY.listUser, value);
+    const newUser = Object.assign(this.formReactive.value, { id: id }); // add id
+    value.push(newUser); // add new user to list local
+    this.localService.saveLocalStorage(KEY.listUser, value); // save local
     this.showSuccess = true;
-    // update currentUser on cookie
-    this.authService.setCurrentUser(id);
+
+    this.authService.setCurrentUser(id); // save cookie
     this.router.navigate(['/dashboard']);
   }
 
   validatePasswordConfirm(group: FormGroup) {
     const pass = group.controls.password.value;
     const confirmPass = group.controls.confirmPassword.value;
-    // compare pass with confirmpass, show mess 'notSame' if diff
     return pass === confirmPass ? null : { notSame: true };
   }
 
   hideAlert() {
-    this.show = false;
+    this.showError = false;
     this.showSuccess = false;
   }
 }

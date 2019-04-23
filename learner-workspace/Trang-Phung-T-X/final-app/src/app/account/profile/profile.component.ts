@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   editName: string;
   data: any;
   formReactive: FormGroup;
-  show: boolean;
+  showError: boolean;
   showSuccess: boolean;
   currentUser: any;
 
@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
     private localService: LocalerService,
     private commonService: CommonService
   ) { }
-  // Resolve`: used for doing operations (resolve data) just before route activation etc.
+  // Resolve: used for doing operations (resolve data) just before route activation etc.
   ngOnInit() {
     this.currentUser = this.commonService.checkCurrentUser();
     this.route.data
@@ -48,32 +48,26 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit() {
-    // reset alert
-    this.hideAlert();
-    // get data in localStorage
-    let allUser = this.localService.getLocalStorage(KEY.listUser);
-    // check data in localStorage be has value or null
-    // remove item currentUser
-    allUser = allUser.filter(user => {
+    this.hideAlert(); // reset alert
+    let allUser = this.localService.getLocalStorage(KEY.listUser); // get all users in localStorage
+
+    allUser = allUser.filter(user => { // remove currentUser on list users
       return user.id !== this.currentUser.id;
     });
-    // check email is exist in local
+
     if (allUser && allUser.find(ob => {
-      return ob.email === this.formReactive.controls.email.value;
+      return ob.email === this.formReactive.controls.email.value; // check email is exist in local
     })) {
-      return this.show = true; // show error
+      return this.showError = true; // show error
     }
 
-    // push item to arr items in local
-    // tslint:disable-next-line: prefer-const
-    let newUser = Object.assign(this.formReactive.value, { id: this.currentUser.id });
-    allUser.push(newUser);
-    // save local
-    this.localService.saveLocalStorage(KEY.listUser, allUser);
-    // this.localService.removeLocalStorage(KEY.currentUser);
-    // this.localService.saveLocalStorage(KEY.currentUser, this.formReactive.value);
+
+    const newUser = Object.assign(this.formReactive.value, { id: this.currentUser.id }); // add id
+    allUser.push(newUser); // add value currentUser
+    this.localService.saveLocalStorage(KEY.listUser, allUser); // save local
+
     this.showSuccess = true;
-    // this.router.navigate(['/dashboard']);
+    this.router.navigate(['/dashboard']);
   }
 
   // used to allow or deny exit from route.
@@ -89,16 +83,13 @@ export class ProfileComponent implements OnInit {
   }
 
   validatePasswordConfirm(group: FormGroup) {
-    // tslint:disable-next-line: prefer-const
-    let pass = group.controls.password.value;
-    // tslint:disable-next-line: prefer-const
-    let confirmPass = group.controls.confirmPassword.value;
-    // compare pass with confirmpass, show mess 'notSame' if diff
+    const pass = group.controls.password.value;
+    const confirmPass = group.controls.confirmPassword.value;
     return pass === confirmPass ? null : { notSame: true };
   }
 
   hideAlert() {
-    this.show = false;
+    this.showError = false;
     this.showSuccess = false;
   }
 

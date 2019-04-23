@@ -41,7 +41,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'product/:id',
+        path: ':type/product/:id',
         component: DetailProductComponent,
         resolve: {
           products: ProductsResolveService

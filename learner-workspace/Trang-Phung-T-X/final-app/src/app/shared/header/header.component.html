@@ -22,10 +22,10 @@
       </div>
       <!-- NAVIGATE COMPONENT AUTH -->
       <div class="row auth-content">
-        <div class="col-6">
+        <div class="col-lg-6 col-md-12">
           <a class="nav-link" routerLink="/login" *ngIf="!show" routerLinkActive="active">login</a>
         </div>
-        <div class="col-6">
+        <div class="col-lg-6 col-md-12">
           <a class="nav-link" routerLink="/register" *ngIf="!show" routerLinkActive="active">Register</a>
         </div>
         <a class="nav-link" (click)="logout()" *ngIf="show" routerLinkActive="active" title="Logout">Logout</a>
