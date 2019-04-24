@@ -4,3 +4,6 @@
 - Làm trong `app.component.html`
 - Có style thì dùng trong file `styles.scss` or `styles.css`
 - Dùng bootstrap `https://getbootstrap.com/`
+
+### Hình ảnh:
+![image info](./exercise-3-img.png)
