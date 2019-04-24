@@ -1,0 +1,12 @@
+<section class="section-content">
+  <div class="container">
+    <section class="section-content">
+      <div class="container" *ngFor="let item of data">
+        <app-lifecycle-title [item]="item" (showItemDel)="showModalWithContent($event)">
+          <app-lifecycle-content [item]="item"></app-lifecycle-content>
+        </app-lifecycle-title>
+      </div>
+      <app-modal (delItem)="delItem($event)"></app-modal>
+    </section>
+  </div>
+</section>

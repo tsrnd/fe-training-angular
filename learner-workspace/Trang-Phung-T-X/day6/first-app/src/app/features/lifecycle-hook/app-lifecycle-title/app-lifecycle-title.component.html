@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <button class="btn collapsed" data-toggle="collapse" [attr.data-target]="'#item' + item.id">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+    <div id="title">
+      <h5 class="mb-0">{{item.title}}</h5>
+    </div>
+    <button class="btn">
+      <i class="fa fa-trash" aria-hidden="true" data-toggle="modal" data-target="#modal1" (click)="deleteItem()"></i>
+    </button>
+  </div>
+  <ng-content class="card-body"></ng-content>
+</div>

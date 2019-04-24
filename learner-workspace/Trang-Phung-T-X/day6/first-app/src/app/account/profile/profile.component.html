@@ -1,0 +1,106 @@
+<!-- <div class="section">
+  <div *ngIf="user">
+    <div class="my-4">
+      <label>Name: </label>
+      <input class="ml-3" type="text" [(ngModel)]="editName" placeholder="name" />
+    </div>
+    <p> Edit name: "{{ editName }}"</p>
+    <p>
+      <button class="btn btn-small btn-primary mt-3 mr-3" (click)="save()">Save</button>
+      <button class="btn btn-small btn-primary mt-3" (click)="cancel()">Cancel</button>
+    </p>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row my-2">
+    <!-- edit form column -->
+    <div class="col-lg-3 text-lg-center">
+      <h2>Edit Profile</h2>
+    </div>
+    <div class="col-lg-9">
+      <ng-container *ngIf="show">
+        <div class="alert alert-danger" role="alert">
+          Email is already existed!
+        </div>
+      </ng-container>
+      <ng-container *ngIf="showSuccess">
+        <div class="alert alert-success" role="alert">
+          Register successfully!
+        </div>
+      </ng-container>
+    </div>
+    <div class="col-lg-3 pull-lg-9 text-center">
+      <img src="//placehold.it/150" class="m-x-auto img-fluid rounded-circle" alt="avatar" />
+    </div>
+    <div class="col-lg-9 push-lg-3 personal-info">
+      <form action="" [formGroup]="formReactive" (ngSubmit)="onSubmit()">
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label required-explain ">First Name</label>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" formControlName="firstName">
+            <div class="error my-2" *ngIf="formReactive.controls.firstName.invalid
+                    && (formReactive.controls.firstName.dirty || formReactive.controls.firstName.touched)">
+              <span *ngIf="formReactive.get('firstName').errors.required">First name is required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label required-explain ">Last Name</label>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" formControlName="lastName">
+            <div class="error my-2" *ngIf="formReactive.controls.lastName.invalid
+                      && (formReactive.controls.lastName.dirty || formReactive.controls.lastName.touched)">
+              <span *ngIf="formReactive.get('lastName').errors.required">Last name is required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label required-explain ">Email</label>
+          <div class="col-lg-9">
+            <input type="email" class="form-control" formControlName="email">
+            <div class="error my-2" *ngIf="formReactive.controls.email.invalid
+                      && (formReactive.controls.email.dirty || formReactive.controls.email.touched)">
+              <span *ngIf="formReactive.get('email').errors.required">Email is required</span>
+              <span *ngIf="formReactive.get('email').hasError('pattern')">
+                Email is invalid
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label required-explain ">Password</label>
+          <div class="col-lg-9">
+            <input type="password" class="form-control" formControlName="password">
+            <div class="error my-2" *ngIf="formReactive.controls.password.invalid
+                      && (formReactive.controls.password.dirty || formReactive.controls.password.touched)">
+              <span *ngIf="formReactive.get('password').errors.required">Password is required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label required-explain">Confirm Password</label>
+          <div class="col-lg-9">
+            <input type="password" class="form-control" formControlName="confirmPassword">
+            <div class="error my-2">
+              <span *ngIf="formReactive.hasError('notSame')">Confirm password do not match</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label"></label>
+          <div class="col-lg-9">
+            <button type="submit" class="btn btn-primary mr-4" (click)="cancel()">Cancel</button>
+            <button type="submit" class="btn btn-primary" [disabled]="formReactive.invalid">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />

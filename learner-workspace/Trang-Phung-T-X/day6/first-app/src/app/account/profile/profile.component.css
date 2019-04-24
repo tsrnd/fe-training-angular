@@ -1,0 +1,9 @@
+.container {
+  padding: 5% 0;
+}
+label {
+  text-align: right;
+}
+h2 {
+  margin-bottom: 16px;
+}
