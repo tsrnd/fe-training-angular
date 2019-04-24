@@ -17,7 +17,7 @@
               <img class="card-img" src="{{item.img}}" alt="">
             </a>
             <ng-container *ngIf="show">
-              <div class="card-product__imgOverlay">
+              <div class="card-product__imgOverlay" [hidden]="checkFavorite(item.id)">
                 <button (click)="myfavorites(item.id)"><i class="fas fa-heart" aria-hidden="true"></i></button>
               </div>
             </ng-container>

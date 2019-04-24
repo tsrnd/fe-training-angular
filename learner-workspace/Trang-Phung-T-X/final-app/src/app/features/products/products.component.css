@@ -19,5 +19,6 @@ h2 {
   overflow: hidden;
 }
 .card-product__img img {
-  background-size: cover;
+  width: auto;
+  height: 100%;
 }

@@ -1,35 +1,33 @@
-<div class="site-navbar">
-  <!-- NAVIGATE COMPONENT FEATURE -->
+<nav class="headnav navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <div class="d-flex align-items-center justify-content-between">
-      <div class="logo">
-        <div class="site-logo">
-          <a routerLink="/" class="js-logo-clone">ShopMax</a>
-        </div>
-      </div>
-      <div class="main-nav d-none d-lg-block">
-        <nav class="site-navigation text-right text-md-center" role="navigation">
-          <ul class="site-menu js-clone-nav d-none d-lg-block">
-            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-            <li><a routerLink="/women" routerLinkActive="active">Women</a></li>
-            <li><a routerLink="/men" routerLinkActive="active">Men</a></li>
-            <li><a routerLink="/children" routerLinkActive="active">Children</a></li>
-            <ng-container *ngIf="show">
-              <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-            </ng-container>
-          </ul>
-        </nav>
-      </div>
-      <!-- NAVIGATE COMPONENT AUTH -->
-      <div class="row auth-content">
-        <div class="col-lg-6 col-md-12">
-          <a class="nav-link" routerLink="/login" *ngIf="!show" routerLinkActive="active">login</a>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          <a class="nav-link" routerLink="/register" *ngIf="!show" routerLinkActive="active">Register</a>
-        </div>
-        <a class="nav-link" (click)="logout()" *ngIf="show" routerLinkActive="active" title="Logout">Logout</a>
+    <div class="logo">
+      <div class="site-logo">
+        <a routerLink="/" class="js-logo-clone">ShopMax</a>
       </div>
     </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-lg-center" id="navbarSupportedContent">
+      <ul class="navbar-nav menu-feature">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+        <li><a routerLink="/women" routerLinkActive="active">Women</a></li>
+        <li><a routerLink="/men" routerLinkActive="active">Men</a></li>
+        <li><a routerLink="/children" routerLinkActive="active">Children</a></li>
+      </ul>
+      <ul class="navbar-nav" [hidden]="show">
+        <li><a class="nav-link" routerLink="/login" routerLinkActive="active">login</a></li>
+        <li><a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a></li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <ng-container *ngIf="show">
+          <li><a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Account</a></li>
+          <li><a class="nav-link" (click)="logout()" *ngIf="show" routerLinkActive="active" title="Logout">Logout</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>

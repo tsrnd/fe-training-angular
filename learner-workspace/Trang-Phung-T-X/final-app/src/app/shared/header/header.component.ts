@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     // clear cookie
     this.authService.logout();
     this.show = !!this.authService.getCurrentUser();
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
 }

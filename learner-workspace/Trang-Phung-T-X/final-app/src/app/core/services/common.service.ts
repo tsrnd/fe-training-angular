@@ -6,57 +6,43 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class CommonService {
+  favoriteOtherUser: any;
+  favoriteCurrentUser: any;
+  currentUser: any;
+  favoriteList: any;
 
   constructor(
     private localService: LocalerService,
     private authService: AuthService
   ) { }
 
-  currentUser: any;
-
   addFavorite(id) {
     let value: any;
-    let favoriteOtherUser: any;
-    let favoriteCurrentUser: any;
-    let favoriteList: any;
-    let favoriteLocal: any;
 
-    this.currentUser = this.checkCurrentUser();
-
-    favoriteLocal = this.localService.getLocalStorage(KEY.favorite); // get all favorites of all users
-    favoriteList = favoriteLocal ? favoriteLocal : [];
-
+    this.getCurrentUserFavorite();
     // favoriteLocal===[]
-    if (favoriteList.length === 0) {
+    if (this.favoriteList.length === 0) {
       value = Object.assign({ userId: this.currentUser.id }, { listIdProduct: [id] });
-      return this.saveLocalNewFavorite(favoriteList, value);
+      confirm('Add favorite Success!');
+      return this.saveLocalNewFavorite(this.favoriteList, value);
+    } else {  // favoriteLocal===[{favorite1},{favoriteCurrent===null}]
+      if (this.favoriteCurrentUser.length === 0) {
+        value = Object.assign({ userId: this.currentUser.id }, { listIdProduct: [id] });
+        confirm('Add favorite Success!');
+        return this.saveLocalNewFavorite(this.favoriteOtherUser, value);
+      } else { // favoriteLocal===[{favoriteOtherUser},{favoriteCurrent}]
+        if (this.favoriteCurrentUser.listIdProduct.find(ele => ele === id)) {
+          // this product is exits
+          return this.favoriteCurrentUser;
+        }
+        this.favoriteCurrentUser.listIdProduct.push(id);
+        confirm('Add favorite Success!');
+        return this.saveLocalNewFavorite(this.favoriteOtherUser, this.favoriteCurrentUser);
+      }
     }
-
-    favoriteOtherUser = favoriteList.filter(item => item.userId !== this.currentUser.id);
-    favoriteCurrentUser = favoriteList.find(ob => ob.userId === this.currentUser.id);
-    favoriteCurrentUser = favoriteCurrentUser ? favoriteCurrentUser : [];
-
-    // favoriteLocal===[{favorite1},{favoriteCurrent===null}]
-    if (favoriteCurrentUser.length === 0) {
-      value = Object.assign({ userId: this.currentUser.id }, { listIdProduct: [id] });
-      return this.saveLocalNewFavorite(favoriteOtherUser, value);
-    }
-
-    // favoriteLocal===[{favoriteOtherUser},{favoriteCurrent}]
-    if (favoriteCurrentUser.listIdProduct.find(ele => ele === id)) {
-      // this product is exits
-      this.showError();
-      return favoriteCurrentUser;
-    }
-    favoriteCurrentUser.listIdProduct.push(id);
-    return this.saveLocalNewFavorite(favoriteOtherUser, favoriteCurrentUser);
   }
 
   removeFavorite(data, id) {
-    let favoriteOtherUser: any;
-    let favoriteCurrentUser: any;
-    let favoriteLocal: any;
-    let favoriteList: any;
     let favoriteCurrentUserNew: any;
     // tslint:disable-next-line: prefer-const
     let value = [];
@@ -67,21 +53,42 @@ export class CommonService {
       });
     }
 
-    // update local
     data.map(item => value.push(item.id));
-    // get all favorites of all users
-    favoriteLocal = this.localService.getLocalStorage(KEY.favorite);
-    favoriteList = favoriteLocal ? favoriteLocal : [];
-    favoriteOtherUser = favoriteList.filter(item => item.userId !== this.currentUser.id);
-    favoriteCurrentUser = favoriteList.find(ob => ob.userId === this.currentUser.id);
+    this.getCurrentUserFavorite();
 
     favoriteCurrentUserNew = Object.assign({ userId: this.currentUser.id }, { listIdProduct: value });
-    favoriteOtherUser.push(favoriteCurrentUserNew);
-
     this.localService.removeLocalStorage(KEY.favorite);
-    this.localService.saveLocalStorage(KEY.favorite, favoriteOtherUser);
+    this.saveLocalNewFavorite(this.favoriteOtherUser, favoriteCurrentUserNew);
 
     return data;
+  }
+
+  showButtonFavorite(id) {
+    this.getCurrentUserFavorite();
+    if (this.favoriteCurrentUser.listIdProduct) {
+      if (this.favoriteCurrentUser.listIdProduct.length !== 0) {
+        return this.favoriteCurrentUser.listIdProduct.find(item => item === id);
+      }
+    }
+    return false;
+  }
+
+  getCurrentUserFavorite(): void {
+    this.currentUser = this.checkCurrentUser();
+
+    this.favoriteList = this.localService.getLocalStorage(KEY.favorite); // get all favorites of all users
+    this.favoriteList = this.favoriteList ? this.favoriteList : [];
+
+    if (this.favoriteList.length !== 0) {
+      this.favoriteOtherUser = this.favoriteList.filter(item => item.userId !== this.currentUser.id);
+      this.favoriteCurrentUser = this.favoriteList.find(ob => ob.userId === this.currentUser.id);
+      this.favoriteCurrentUser = this.favoriteCurrentUser ? this.favoriteCurrentUser : [];
+    }
+  }
+
+  saveLocalNewFavorite(valueSaveLocal, favoriteCurrentUser) {
+    valueSaveLocal.push(favoriteCurrentUser);
+    return this.localService.saveLocalStorage(KEY.favorite, valueSaveLocal);
   }
 
   checkCurrentUser() {
@@ -93,19 +100,5 @@ export class CommonService {
       return acc.id === id;
     });
     return this.currentUser;
-  }
-
-  showSuccess() {
-    alert('Success!');
-  }
-
-  showError() {
-    alert('This product was added your favorite!');
-  }
-
-  saveLocalNewFavorite(valueSaveLocal, favoriteCurrentUser) {
-    valueSaveLocal.push(favoriteCurrentUser);
-    this.showSuccess();
-    return this.localService.saveLocalStorage(KEY.favorite, valueSaveLocal);
   }
 }

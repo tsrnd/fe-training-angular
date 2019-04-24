@@ -50,4 +50,8 @@ export class ProductsComponent implements OnInit {
     this.commonService.addFavorite(id);
   }
 
+  checkFavorite(id) {
+    return this.commonService.showButtonFavorite(id);
+  }
+
 }

@@ -3,3 +3,6 @@
   border-left: 4px solid #ee4266;
   display: inline-block;
   color: #000; }
+.container {
+  padding-top: 2em;
+}

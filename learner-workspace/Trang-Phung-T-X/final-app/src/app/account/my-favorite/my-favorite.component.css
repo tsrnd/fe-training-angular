@@ -18,4 +18,6 @@
 }
 .card-product__img img {
   background-size: cover;
+  width: auto;
+  height: 100%;
 }

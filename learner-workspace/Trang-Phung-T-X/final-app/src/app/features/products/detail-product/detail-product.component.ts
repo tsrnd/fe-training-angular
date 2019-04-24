@@ -48,4 +48,8 @@ export class DetailProductComponent implements OnInit {
   addFavorite(id) {
     this.commonService.addFavorite(id);
   }
+
+  checkFavorite(id) {
+    return this.commonService.showButtonFavorite(id);
+  }
 }
