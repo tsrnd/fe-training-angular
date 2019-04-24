@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@ang
 import {LocalerService} from './../../core/service/localer.service';
 import { AuthService } from './../../core/service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 const USER_STORAGE_KEY = 'users';
 @Component({
@@ -17,6 +18,7 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private localerService: LocalerService,
     private authService: AuthService,
+    private cookieService: CookieService,
     private router: Router
   ) { }
 
@@ -46,6 +48,7 @@ export class RegisterComponent implements OnInit {
     this.localerService.saveLocalStorage(USER_STORAGE_KEY, JSON.stringify(listUser));
     this.authService.login().subscribe(ob => {
       this.authService.userLogin = saveValue;
+      this.cookieService.set('userEmail', saveValue.email.toString());
       this.router.navigate([this.authService.redirectUrl || '/dashboard']);
     });
   }

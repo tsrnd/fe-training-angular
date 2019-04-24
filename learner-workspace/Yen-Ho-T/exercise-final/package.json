@@ -27,6 +27,7 @@
     "file-system": "^2.2.2",
     "jquery": "^3.4.0",
     "ng-simple-slideshow": "^1.2.9",
+    "ngx-cookie-service": "^2.1.0",
     "ngx-infinite-scroll": "^7.1.0",
     "ngx-owl-carousel-o": "^1.1.1",
     "popper.js": "^1.15.0",

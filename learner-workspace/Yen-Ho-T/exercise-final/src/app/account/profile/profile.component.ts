@@ -6,6 +6,7 @@ import $ from 'jquery';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LocalerService } from './../../core/service/localer.service';
 import { AuthService } from './../../core/service/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -23,6 +24,7 @@ export class ProfileComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private localerService: LocalerService,
+    private cookieService: CookieService,
     private authService: AuthService
   ) { }
   ngOnInit() {
@@ -79,6 +81,7 @@ export class ProfileComponent implements OnInit {
     this.formReactive.controls.password.setValue('');
     this.formReactive.controls.confirmPassword.setValue('');
     this.localerService.saveLocalStorage('users', JSON.stringify(listUser));
+    this.cookieService.set('userEmail', this.user.email.toString());
   }
   hasUnsavedData() {
     return this.user ? (this.user.avatar !== this.userbefore.avatar)

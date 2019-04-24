@@ -10,6 +10,7 @@ import { AuthService } from './core/service/auth.service';
 import { ApiService } from './core/service/api.service';
 import { DeactiveDialogService } from './core/service/deactive-dialog.service';
 import { LocalerService } from './core/service/localer.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { LocalerService } from './core/service/localer.service';
     FeaturesModule,
     AppRoutingModule
   ],
-  providers: [AuthService, ApiService, DeactiveDialogService, LocalerService],
+  providers: [AuthService, ApiService, DeactiveDialogService, LocalerService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { AuthService } from './../../../core/service/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   constructor(
+    private cookieService: CookieService,
     public authService: AuthService,
   ) {
   }
@@ -16,6 +18,7 @@ export class HeaderComponent implements OnInit {
   }
   logout() {
     this.authService.logout();
+    this.cookieService.delete('userEmail');
     location.reload();
   }
 }

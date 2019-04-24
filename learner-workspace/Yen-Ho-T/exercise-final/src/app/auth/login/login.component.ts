@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import {LocalerService} from './../../core/service/localer.service';
 import { AuthService } from './../../core/service/auth.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 const USER_STORAGE_KEY = 'users';
 @Component({
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
+    private cookieService: CookieService,
     private localerService: LocalerService
   ) { }
 
@@ -32,6 +34,8 @@ export class LoginComponent implements OnInit {
       this.err = null;
       this.authService.login().subscribe(ob => {
         this.authService.userLogin = userLogin;
+        console.log(JSON.stringify(userLogin).toString());
+        this.cookieService.set('userEmail', userLogin.email.toString());
         this.router.navigate([this.authService.redirectUrl || '/dashboard']);
       });
       return;

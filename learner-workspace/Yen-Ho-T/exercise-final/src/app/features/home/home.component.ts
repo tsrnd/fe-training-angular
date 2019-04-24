@@ -15,10 +15,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) {
   }
   caption(name: string, routerLink: string): string {
-    return `<div class="text-center">Best for ${name}!<br/>
-      <a href="${routerLink}"class="btn btn-danger circle-butt">
-      VISIT</a>
-      <div>`;
+    return `<div class="text-center banner-text font-weight-lighter">Best for ${name}!<br/>
+      <ul class="menu-banner">
+        <li><a href="${routerLink}" class="see-more">See more</a></li>
+      </ul>
+    <div>`;
   }
   ngOnInit() {
     this.imageUrls = [
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     ];
   }
   ngAfterViewInit() {
-    Array.from(document.getElementsByClassName('circle-butt')).forEach(element => {
+    Array.from(document.getElementsByClassName('see-more')).forEach(element => {
       element.addEventListener('click', (e) => {
         window.location.href = (e.target as HTMLElement).getAttribute('href');
       });
