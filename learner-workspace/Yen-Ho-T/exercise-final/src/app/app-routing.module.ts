@@ -27,9 +27,8 @@ const routes: Routes = [
     component: NotFoundComponent
   },
 ];
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadSelectModuleService })],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadSelectModuleService,  useHash: true })],
   exports: [RouterModule],
   providers: [ PreloadSelectModuleService ]
 })

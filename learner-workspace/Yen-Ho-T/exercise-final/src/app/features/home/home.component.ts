@@ -25,22 +25,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.imageUrls = [
       {
         url: 'http://image.gmarket.co.kr/service_image/2019/04/16/20190416131246121747_0_0.jpg',
-        caption: this.caption('women', '/woman?limit=12'),
+        caption: this.caption('women', 'woman'),
       },
       {
         url: 'http://image.gmarket.co.kr/brandon/banner/2018/03/13/20180313133825447096_0_0.jpg',
-        caption: this.caption('men', '/man?limit=12'),
+        caption: this.caption('men', 'man'),
       },
       {
         url: 'http://image.gmarket.co.kr/service_image/2019/04/19/20190419161703798762_0_0.jpg',
-        caption: this.caption('children', '/childen?limit=12'),
+        caption: this.caption('children', 'childen'),
       }
     ];
   }
   ngAfterViewInit() {
     Array.from(document.getElementsByClassName('see-more')).forEach(element => {
       element.addEventListener('click', (e) => {
-        window.location.href = (e.target as HTMLElement).getAttribute('href');
+        e.stopPropagation();
+        e.preventDefault();
+        this.router.navigate([(e.target as HTMLElement).getAttribute('href')], { queryParams: { limit: 12} });
       });
     });
   }

@@ -25,6 +25,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     private router: Router,
     public authService: AuthService
   ) {
+    console.log('kkk');
     // reload when access same route
     this.router.routeReuseStrategy.shouldReuseRoute = () => {
       return false;
