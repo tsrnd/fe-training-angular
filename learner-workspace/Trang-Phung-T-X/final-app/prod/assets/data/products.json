@@ -69,7 +69,7 @@
     "title": "product10",
     "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
     "price": "100$",
-    "img": "assets/images/children_1.jpg"
+    "img": "assets/images/children_14.jpg"
   },
   {
     "id": 11,
@@ -77,7 +77,7 @@
     "title": "product11",
     "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
     "price": "100$",
-    "img": "assets/images/children_7.jpg"
+    "img": "assets/images/children_11.jpg"
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "title": "product13",
     "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
     "price": "100$",
-    "img": "assets/images/children_12.jpg"
+    "img": "assets/images/children_13.jpg"
   },
   {
     "id": 14,
@@ -125,7 +125,7 @@
     "title": "product17",
     "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
     "price": "100$",
-    "img": "assets/images/children_13.jpg"
+    "img": "assets/images/children_12.jpg"
   },
   {
     "id": 18,
@@ -141,7 +141,7 @@
     "title": "product19",
     "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
     "price": "100$",
-    "img": "assets/images/children_11.jpg"
+    "img": "assets/images/children_7.jpg"
   },
   {
     "id": 20,
@@ -149,6 +149,6 @@
     "title": "product20",
     "desc": "If you are interested in creative and minimalistic web design, Aroma is the free shopping website template for you. With this impressive layout, you can kick off your own online store now.",
     "price": "100$",
-    "img": "assets/images/children_14.jpg"
+    "img": "assets/images/children_1.jpg"
   }
 ]

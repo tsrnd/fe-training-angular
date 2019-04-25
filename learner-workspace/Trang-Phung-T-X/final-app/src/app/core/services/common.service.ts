@@ -67,7 +67,7 @@ export class CommonService {
     this.getCurrentUserFavorite();
     if (this.favoriteCurrentUser.listIdProduct) {
       if (this.favoriteCurrentUser.listIdProduct.length !== 0) {
-        return this.favoriteCurrentUser.listIdProduct.find(item => item === id);
+        return !!this.favoriteCurrentUser.listIdProduct.find(item => item === id);
       }
     }
     return false;
