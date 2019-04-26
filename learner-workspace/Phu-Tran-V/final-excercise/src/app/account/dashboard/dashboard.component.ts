@@ -7,13 +7,13 @@ import { LocalerService } from 'src/app/core/service/localer.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-user: any[];
+user;
   constructor(
     private local: LocalerService
   ) { }
 
   ngOnInit() {
     this.user = this.local.getLocalStorage('userLogin');
-    console.log("asdd")
+    console.log(this.user)
   }
 }

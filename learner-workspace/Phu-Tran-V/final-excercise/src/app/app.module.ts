@@ -10,6 +10,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AuthModule } from './auth/auth.module';
 import { AccountModule } from './account/account.module';
 import { FeaturesComponent } from './features/features.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FeaturesComponent } from './features/features.component';
   imports: [
     BrowserModule,
     SharedModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     FeaturesModule,

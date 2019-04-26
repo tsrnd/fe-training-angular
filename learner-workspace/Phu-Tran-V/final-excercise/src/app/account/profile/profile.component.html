@@ -11,18 +11,24 @@
             <span>{{ msgSuccess }}</span>
         </div>
         <div class="form-group row">
-          <label for="name" class="col-4 col-form-label">Name</label> 
+          <label for="first_name" class="col-4 col-form-label">First Name</label> 
           <div class="col-8">
-            <input name="name" class="form-control here" type="text" formControlName="name" placeholder="New name">
+            <input name="first_name" class="form-control here" type="text" formControlName="first_name" placeholder="New first name">
+          </div>
+        </div> 
+        <div class="form-group row">
+          <label for="last_name" class="col-4 col-form-label">Last Name</label> 
+          <div class="col-8">
+            <input name="last_name" class="form-control here" type="text" formControlName="last_name" placeholder="New last name">
           </div>
         </div>
-        <div class="form-group text-danger row">
+        <!-- <div class="form-group text-danger row">
           <span class="offset-4 col-8" *ngIf= "formReactive.get('name').value === user.name">This name already use!</span>
         </div>
         <div class="form-group text-warning" *ngIf= "formReactive.controls.name.invalid
           && (formReactive.controls.name.dirty || formReactive.controls.name.touched)">
           <span class="offset-4 col-8" *ngIf="formReactive.get('name').errors.required">This field is required</span>
-        </div>
+        </div> -->
         <div class="form-group row">
           <label for="email" class="col-4 col-form-label">Email</label> 
           <div class="col-8">

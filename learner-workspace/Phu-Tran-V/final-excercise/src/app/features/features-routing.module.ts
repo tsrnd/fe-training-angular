@@ -9,9 +9,18 @@ const routes: Routes = [
     component: FeaturesComponent,
     children: [
       {
-        path: 'category',
+        path: '',
         component: CategoryComponent
       },
+      {
+        path: 'category',
+        component: CategoryComponent
+      }
+      // {
+      //   path: '',
+      //   redirectTo: 'home',
+      //   pathMatch: 'full'
+      // }
     ]
   }
 ];
