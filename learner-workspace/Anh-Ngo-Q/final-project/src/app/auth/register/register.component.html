@@ -1,0 +1,85 @@
+<div class="container">
+  <div [style.margin-top.px]="100">
+    <article class="card-body mx-auto custom-card-body">
+      <h4 class="card-title mt-3 text-center">Create Account</h4>
+      <p class="text-center">Get started with your free account</p>
+      <p>
+        <a href="" class="btn btn-block btn-twitter"> <i class="fa fa-twitter"></i>   Login via Twitter</a>
+        <a href="" class="btn btn-block btn-facebook"> <i class="fa fa-facebook-f"></i>   Login via facebook</a>
+      </p>
+      <p class="divider-text">
+        <span class="bg-light">OR</span>
+      </p>
+      <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input #firstName formControlName="firstName" name="" class="form-control" placeholder="First name" type="text">
+        </div> <!-- form-group// -->
+        <div *ngIf="registerForm.controls.firstName.invalid && (registerForm.controls.firstName.dirty || registerForm.controls.firstName.touched)" class="alert alert-danger" role="alert">
+          <div *ngIf="registerForm.controls.firstName.errors.required">
+            First name is required
+          </div>
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input formControlName="lastName" name="" class="form-control" placeholder="Last name" type="text">
+        </div> <!-- form-group// -->
+        <div *ngIf="registerForm.controls.lastName.invalid && (registerForm.controls.lastName.dirty || registerForm.controls.lastName.touched)" class="alert alert-danger" role="alert">
+          <div *ngIf="registerForm.controls.lastName.errors.required">
+            Last name is required
+          </div>
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          </div>
+          <input formControlName="email" name="" class="form-control" placeholder="Email address" type="email">
+        </div> <!-- form-group// -->
+        <div *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)" class="alert alert-danger" role="alert">
+          <div *ngIf="registerForm.controls.email.errors.required">
+            Email is required
+          </div>
+          <div *ngIf="registerForm.controls.email.errors.email">
+            Email is not valid
+          </div>
+          <div *ngIf="registerForm.controls.email.errors.emailExist">
+            Email already taken
+          </div>
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input formControlName="password" class="form-control" placeholder="Create password" type="password">
+        </div> <!-- form-group// -->
+        <div *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)" class="alert alert-danger" role="alert">
+          <div *ngIf="registerForm.controls.password.errors.required">
+            Password is required
+          </div>
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input formControlName="passwordConfirm" class="form-control" placeholder="Repeat password" type="password">
+        </div> <!-- form-group// -->
+        <div *ngIf="registerForm.controls.passwordConfirm.invalid && (registerForm.controls.passwordConfirm.dirty || registerForm.controls.passwordConfirm.touched)" class="alert alert-danger" role="alert">
+          <div *ngIf="registerForm.controls.passwordConfirm.errors.required">
+            Password repeat is required
+          </div>
+          <div *ngIf="registerForm.controls.passwordConfirm.errors.matchPassword">
+            Password not match
+          </div>
+        </div>
+        <div class="form-group">
+          <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary btn-block"> Create Account </button>
+        </div> <!-- form-group// -->
+        <p class="text-center">Have an account? <a routerLink="/login"> Login</a></p>
+      </form>
+    </article>
+  </div> <!-- card.// -->
+</div>

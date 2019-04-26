@@ -1,0 +1,11 @@
+<app-banner></app-banner>
+<div class="container">
+  <div *ngFor="let listProduct of topProducts" class="row product-row">
+    <div class="col">
+      <h2>{{listProduct.type | uppercase}}</h2>
+      <div [ngStyle]="{'justify-content': 'space-between', 'display': 'flex'}">
+        <app-product class="product-item" *ngFor="let product of listProduct.products" [product]="{type: listProduct.type, data: product}"></app-product>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <!-- <h1>{{}}</h1> -->
+  </div>
+  <div *ngFor="let products of listProduct" class="row product-row">
+    <div class="col">
+      <div [ngStyle]="{'justify-content': 'space-between', 'display': 'flex'}">
+        <app-product class="product-item" *ngFor="let product of products" [product]="{type: currentPage.type, data: product}"></app-product>
+      </div>
+    </div>
+  </div>
+  <div class="row paginate">
+    <app-pagination [currentPage]="currentPage"></app-pagination>
+  </div>
+</div>

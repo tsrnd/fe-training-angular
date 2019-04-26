@@ -1,0 +1,12 @@
+.active {
+  background: black;
+  color: white;
+}
+
+.active:focus {
+  outline: none;
+}
+
+.page-link:focus {
+  outline: none !important;
+}
