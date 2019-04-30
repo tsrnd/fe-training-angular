@@ -1,3 +1,31 @@
-<p>
-  favorite works!
-</p>
+<div class="row">
+  <div class="col-lg-10 col-xl-12 m-lr-auto m-b-50">
+    <div class="m-l-25 m-r--38 m-lr-0-xl">
+      <div class="wrap-table-shopping-cart">
+        <p *ngIf="err">{{err}}</p>
+        <table class="table-shopping-cart" *ngIf="!err">
+          <tr class="table_head">
+            <th class="column-1">Product</th>
+            <th class="column-2">Name</th>
+            <th class="column-3">Price</th>
+            <th class="column-4">Favorite</th>
+          </tr>
+
+          <tr class="table_row" *ngFor="let datafavor of dataFavors">
+            <td class="column-1">
+              <div class="how-itemcart1">
+                <img src="{{datafavor.image_product}}" alt="IMG">
+              </div>
+            </td>
+            <td class="column-2">{{datafavor.name_product}}</td>
+            <td class="column-3">{{datafavor.price_product}}</td>
+            <td class="column-4">
+              <button type="button" class="btn btn-outline-danger" (click)="deleteFavor(datafavor.id_product)"
+                remove-on-click>Unlike</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

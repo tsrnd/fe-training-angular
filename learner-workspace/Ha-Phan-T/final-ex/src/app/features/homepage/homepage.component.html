@@ -38,10 +38,10 @@
             </div>
 
             <div class="block2-txt-child2 flex-r p-t-3" *ngIf="authService.isLoggedIn">
-              <a class="btn-addwish-b2 dis-block pos-relative js-addwish-b2" (click)="favorite(datamen.id)">
+              <a class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
                 <img class="icon-heart1 dis-block trans-04" src="assets/images/icons/icon-heart-01.png" alt="ICON">
                 <img class="icon-heart2 dis-block trans-04 ab-t-l" src="assets/images/icons/icon-heart-02.png"
-                  alt="ICON" *ngIf="showFavorite">
+                  alt="ICON" (click)="favoriteService.favorite(datamen)">
               </a>
             </div>
           </div>
@@ -89,10 +89,10 @@
             </div>
 
             <div class="block2-txt-child2 flex-r p-t-3" *ngIf="authService.isLoggedIn">
-              <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+              <a class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
                 <img class="icon-heart1 dis-block trans-04" src="assets/images/icons/icon-heart-01.png" alt="ICON">
                 <img class="icon-heart2 dis-block trans-04 ab-t-l" src="assets/images/icons/icon-heart-02.png"
-                  alt="ICON">
+                  alt="ICON" (click)="favoriteService.favorite(datawomen)">
               </a>
             </div>
           </div>
@@ -140,10 +140,10 @@
             </div>
 
             <div class="block2-txt-child2 flex-r p-t-3" *ngIf="authService.isLoggedIn">
-              <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+              <a class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
                 <img class="icon-heart1 dis-block trans-04" src="assets/images/icons/icon-heart-01.png" alt="ICON">
                 <img class="icon-heart2 dis-block trans-04 ab-t-l" src="assets/images/icons/icon-heart-02.png"
-                  alt="ICON">
+                  alt="ICON" (click)="favoriteService.favorite(datachild)">
               </a>
             </div>
           </div>

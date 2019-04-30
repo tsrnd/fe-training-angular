@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { FavoriteService } from 'src/app/core/services/favorite.service';
 
 const CAT_MEN = 1;
 const CAT_WOMEN = 2;
@@ -21,7 +22,9 @@ export class ListProductsComponent implements OnInit {
   constructor(
     private router: Router,
     private apiService: ApiService,
-    private authService: AuthService
+    private authService: AuthService,
+    private favoriteService: FavoriteService
+
   ) { }
 
   ngOnInit() {
