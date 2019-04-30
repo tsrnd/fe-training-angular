@@ -1,28 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './features/home/home.component';
-import { LoginComponent } from './auth/login/login.component';
-import { LogoutComponent } from './auth/logout/logout.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { ProductListComponent } from './features/products/product-list/product-list.component';
-import { ProductDetailComponent } from './features/products/product-detail/product-detail.component';
+import { SharedModule } from './shared/shared.module';
+import { FeaturesModule } from './features/features.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LoginComponent,
-    LogoutComponent,
-    RegisterComponent,
-    ProductListComponent,
-    ProductDetailComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    FeaturesModule,
+    AuthModule,
+    UserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
