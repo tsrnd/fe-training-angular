@@ -5,7 +5,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { FeaturesRoutingModule } from './features-routing.module';
 import { SharedModule } from '../shared/shared.module';
-
+import {SlideshowModule} from 'ng-simple-slideshow';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -15,7 +15,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     SharedModule,
-    FeaturesRoutingModule
+    FeaturesRoutingModule,
+    SlideshowModule
   ],
   exports: [
     CarouselComponent,
