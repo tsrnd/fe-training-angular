@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        My Profile
+      </div>
+      <div class="panel-body">
+          <div class="container container-profile">
+              <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="well well-sm">
+                          <div class="row">
+                              <div class="col-sm-6 col-md-4">
+                                <img src="assets/images/profile.jpg" alt="" class="img-rounded img-responsive" />
+                              </div>
+                              <div class="col-sm-6 col-md-8">
+                                  <h4>{{ dataProfile[0]?.lastName }} {{ dataProfile[0]?.firstName }}</h4>
+                                  <p>
+                                      <i class="glyphicon glyphicon-envelope"></i>{{ dataProfile[0]?.email}}
+                                      <br/>
+                                      <i class="glyphicon glyphicon-gift"></i>June 02, 2000</p>
+                                  <!-- Split button -->
+                                  <div class="btn-group">
+                                      <button routerLink="/account/edit_profile" type="button" class="btn btn-primary edit-profile">Edit Profile</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

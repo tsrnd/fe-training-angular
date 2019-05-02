@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LocalerService {
+
+  constructor() { }
+
+  saveLocal(keyLocal: any, valueLocal: any) {
+    if (typeof(valueLocal) === 'object') {
+      valueLocal = JSON.stringify(valueLocal);
+    } else {
+      localStorage.setItem(keyLocal, valueLocal);
+    }
+  }
+
+  getLocal(keyLocal: any): string {
+    return localStorage.getItem(keyLocal);
+  }
+}

@@ -1,0 +1,89 @@
+<!-- Home -->
+
+<div class="home">
+    <div class="home_container d-flex flex-column align-items-center justify-content-end">
+      <div class="home_content text-center">
+        <div class="home_title">Detail Product</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Product -->
+
+  <div class="product_detail">
+    <div class="container">
+      <div class="row">
+        
+        <!-- Product Image -->
+        <div class="col-lg-6 product_image">
+          <img src="{{ data?.images_url }}" alt="">
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-lg-6 product_col">
+          <div class="product_info">
+            <div class="product_name_detail">{{ data?.title }}</div>
+            <div class="product_rating_container d-flex flex-row align-items-center justify-content-start">
+              <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="product_reviews">4.7 out of (3514)</div>
+            </div>
+            <div class="product_price"> $ {{ data?.price }}</div>
+            <div class="product_text">
+              <p>{{ data?.content }}</p>
+            </div>
+            <div class="product_buttons">
+              <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+                  <div><div><a *ngIf="isLoginIn" (click)="this.shareService.likeFun(data?.id)"><img src="assets/images/heart_2.svg" class="svg" alt=""></a></div></div>
+                </div>
+                <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                  <div><div><img src="assets/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boxes -->
+  <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="section_title text-center product_the_same">Related Products</div>
+      </div>
+    </div>
+  <div class="row products_row products_container grid">
+    <!-- Product -->
+    <div *ngFor="let relatedProduct of dataProduct">
+      <div class="product_detail_ca" *ngIf="relatedProduct.categoryId == data?.categoryId">
+        
+        <div><img class="product_image_detail" src="{{ relatedProduct.images_url }}" alt=""></div>
+        <div class="product_content">
+          <div class="product_info d-flex flex-row align-items-start justify-content-start">
+            <div>
+              <div>
+                <div class="product_name"><a href="product.html">{{ relatedProduct.title }}</a></div>
+              </div>
+            </div>
+            <div class="ml-auto text-right">
+              <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="product_price text-right">$ {{ relatedProduct.price }}</div>
+            </div>
+          </div>
+          <div class="product_buttons">
+            <div class="text-right d-flex flex-row align-items-start justify-content-start">
+              <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+                <div><div><a *ngIf="isLoginIn; else [disabled]=='true'" (click)="this.shareService.likeFun(relatedProduct.id)"><img src="assets/images/heart_2.svg" class="svg" alt=""></a></div></div>
+              </div>
+              <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                <div><div><a class="btn btn-primary" routerLink="/detail/{{ relatedProduct.id }}">Detail</a></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,65 @@
+<div class="super_container_inner">
+		
+
+  <!-- Home -->
+
+  <div class="home">
+    <div class="home_container d-flex flex-column align-items-center justify-content-end">
+      <div class="home_content text-center">
+        <div class="home_title">Pigs Page</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+
+  <div class="products">
+    <div class="container">
+      <div class="row products_row products_container grid">
+        
+        <!-- Product -->
+        <div class="col-xl-4 col-md-6 grid-item new" *ngFor="let dataPigs of dataPigs">
+          <div class="product">
+            <div class="product_image"><img src="{{ dataPigs.images_url }}" alt=""></div>
+            <div class="product_content">
+              <div class="product_info d-flex flex-row align-items-start justify-content-start">
+                <div>
+                  <div>
+                    <div class="product_name"><a href="product.html">{{ dataPigs.title }}</a></div>
+                  </div>
+                </div>
+                <div class="ml-auto text-right">
+                  <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="product_price text-right">$ {{ dataPigs.price }}</div>
+                </div>
+              </div>
+              <div class="product_buttons">
+                <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                  <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+                    <div><div><a *ngIf="isLoginIn; else [disabled]=='true'" (click)="this.shareService.likeFun(dataPigs.id)"><img src="assets/images/heart_2.svg" class="svg" alt=""></a></div></div>
+                  </div>
+                  <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                    <div><div><a class="btn btn-primary" routerLink="/detail/{{ dataPigs.id }}">Detail</a></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row page_nav_row">
+        <div class="col">
+          <div class="page_nav">
+            <ul class="d-flex flex-row align-items-start justify-content-center">
+              <li><a href="#">01</a></li>
+              <li><a href="#">02</a></li>
+              <li><a href="#">03</a></li>
+              <li><a href="#">04</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

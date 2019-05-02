@@ -1,0 +1,278 @@
+<div class="super_container_inner">
+	<div class="super_overlay"></div>
+
+	<!-- Home -->
+
+	<div class="home-slider">
+		<!-- Home Slider -->
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+				
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url(assets/images/slide_dog.jpg)"></div>
+					<div class="container fill_height">
+						<div class="row fill_height">
+							<div class="col fill_height">
+								<div class="home_container d-flex flex-column align-items-center justify-content-start">
+									<div class="home_content">
+										<div class="home_title">Dogs</div>
+										<div class="home_items">
+											<div class="row">
+												<div class="col-sm-3 offset-lg-1">
+													<div class="home_item_side"><a href="product.html"><img src="assets/images/slide_dog1.jpg" alt=""></a></div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-8 offset-sm-2 offset-md-0">
+													<div class="product home_item_large">
+														<div class="product_content">																
+														
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="home_item_side"><a href="product.html"><img src="assets/images/slide_dog2.jpg" alt=""></a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+
+				<!-- Slide -->
+				<div class="owl-item cloned">
+					<div class="background_image" style="background-image:url(assets/images/slide_cat.jpg)"></div>
+					<div class="container fill_height">
+						<div class="row fill_height">
+							<div class="col fill_height">
+								<div class="home_container d-flex flex-column align-items-center justify-content-start">
+									<div class="home_content">
+										<div class="home_title">Cats</div>
+										<div class="home_items">
+											<div class="row">
+												<div class="col-sm-3 offset-lg-1">
+													<div class="home_item_side"><a href="product.html"><img src="assets/images/slide_cat1.jpg" alt=""></a></div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-8 offset-sm-2 offset-md-0">
+													<div class="product home_item_large">														
+														<div class="product_content">														
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="home_item_side"><a href="product.html"><img src="assets/images/slide_cat2.jpg" alt=""></a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+
+				<!-- Slide -->
+				<div class="owl-item cloned">
+					<div class="background_image" style="background-image:url(assets/images/slide_pig.jpg)"></div>
+					<div class="container fill_height">
+						<div class="row fill_height">
+							<div class="col fill_height">
+								<div class="home_container d-flex flex-column align-items-center justify-content-start">
+									<div class="home_content">
+										<div class="home_title">Pigs</div>
+										<div class="home_items">
+											<div class="row">
+												<div class="col-sm-3 offset-lg-1">
+													<div class="home_item_side"><a href="product.html"><img src="assets/images/slide_pig1.jpg" alt=""></a></div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-8 offset-sm-2 offset-md-0">
+													<div class="product home_item_large">		
+														<div class="product_content">															
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="home_item_side"><a href="product.html"><img src="assets/images/slide_pig2.jpg" alt=""></a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+
+			</div>
+			<div class="home_slider_nav home_slider_nav_prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+			<div class="home_slider_nav home_slider_nav_next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+      
+			<!-- Home Slider Dots -->
+			
+			<div class="home_slider_dots_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_slider_dots">
+								<ul id="home_slider_custom_dots" class="home_slider_custom_dots d-flex flex-row align-items-center justify-content-center">
+									<li class="home_slider_custom_dot active">01</li>
+									<li class="home_slider_custom_dot">02</li>
+									<li class="home_slider_custom_dot">03</li>
+									<li class="home_slider_custom_dot">04</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Products -->
+
+	<div class="products">
+		<div class="container">
+
+			<!-- Products DOGS -->
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="section_title text-center">DOGS</div>
+				</div>
+			</div>
+			<div class="row products_row">
+
+				<!-- Product -->
+				<div class="col-xl-4 col-md-6" *ngFor= "let dataDogHome of dataDogHome | slice:0:3">
+					<div class="product">
+						<div class="product_image"><img src="{{ dataDogHome.images_url }}" alt=""></div>
+						<div class="product_content">
+							<div class="product_info d-flex flex-row align-items-start justify-content-start">
+								<div>
+									<div>
+										<div class="product_name"><a href="product.html">{{ dataDogHome.title }}</a></div>
+									</div>
+								</div>
+								<div class="ml-auto text-right">
+									<div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+									<div class="product_price text-right">$ {{ dataDogHome.price }}</div>
+								</div>
+							</div>
+							<div class="product_buttons">
+								<div class="text-right d-flex flex-row align-items-start justify-content-start">
+									<div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+                    <div>
+                      <div>
+                        <a *ngIf="isLoginIn; else [disabled]=='true'" (click)="this.shareService.likeFun(dataDogHome.id)"><img src="assets/images/heart_2.svg" class="svg" alt=""></a>
+                        <!-- <a *ngIf="isLoginIn; else [disabled]=='true'" (click)="this.shareService.likeFun(dataDogHome.id)"><i [class.active]="isActive" class="fa fa-heart"></i></a> -->
+                      </div>
+                    </div>
+
+                    <!-- <div *ngFor="let dataFavoriteUser of dataFavoriteUser">
+                      <div>
+                        <ng-container *ngIf="dataFavoriteUser.id === dataDogHome.id; else notLike">
+                          <a *ngIf="isLoginIn; else [disabled]=='true'"><img src="assets/images/icon-heart-color.jpg" class="svg" alt=""></a>
+                        </ng-container>
+                        <ng-template #notLike >
+                          <a *ngIf="isLoginIn; else [disabled]=='true'" (click)="this.shareService.likeFun(dataDogHome.id)"><img src="assets/images/heart_2.svg" class="svg" alt=""></a>
+                        </ng-template>
+                      </div>
+                    </div> -->
+
+									</div>
+									<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+										<div><div><a class="btn btn-primary" routerLink="/detail/{{ dataDogHome.id }}">Detail</a></div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>	
+
+				
+
+			<!-- Product CATS -->
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="section_title text-center">CATS</div>
+				</div>
+			</div>
+			<div class="row products_row">
+						<!-- Product -->
+						<div class="col-xl-4 col-md-6" *ngFor="let dataCatHome of dataCatHome | slice:0:3">
+							<div class="product">
+								<div class="product_image"><img src="{{ dataCatHome.images_url }}" alt=""></div>
+								<div class="product_content">
+									<div class="product_info d-flex flex-row align-items-start justify-content-start">
+										<div>
+											<div>
+												<div class="product_name"><a href="product.html">{{ dataCatHome.title }}</a></div>
+											</div>
+										</div>
+										<div class="ml-auto text-right">
+											<div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+											<div class="product_price text-right">$ {{ dataCatHome.price }}</div>
+										</div>
+									</div>
+									<div class="product_buttons">
+										<div class="text-right d-flex flex-row align-items-start justify-content-start">
+											<div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+												<div><div><a *ngIf="isLoginIn; else [disabled]=='true'" (click)="this.shareService.likeFun(dataCatHome.id)"><img src="assets/images/heart_2.svg" class="svg" alt=""></a></div></div>
+											</div>
+											<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+												<div><div><a class="btn btn-primary" routerLink="/detail/{{ dataCatHome.id }}">Detail</a></div></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+			</div>
+
+			<!-- Products PIGS -->
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="section_title text-center">PIGS</div>
+				</div>
+			</div>
+			<div class="row products_row">
+						<!-- Product -->
+						<div class="col-xl-4 col-md-6" *ngFor= "let dataPigHome of dataPigHome | slice:0:3">
+							<div class="product">
+								<div class="product_image"><img src="{{ dataPigHome.images_url }}" alt=""></div>
+								<div class="product_content">
+									<div class="product_info d-flex flex-row align-items-start justify-content-start">
+										<div>
+											<div>
+												<div class="product_name"><a href="product.html">{{ dataPigHome.title }}</a></div>
+											</div>
+										</div>
+										<div class="ml-auto text-right">
+											<div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+											<div class="product_price text-right">$ {{ dataPigHome.price }}</div>
+										</div>
+									</div>
+									<div class="product_buttons">
+										<div class="text-right d-flex flex-row align-items-start justify-content-start">
+											<div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+                        <div><div><a *ngIf="isLoginIn; else [disabled]=='true'" (click)="this.shareService.likeFun(dataPigHome.id)"><img src="assets/images/heart_2.svg" class="svg" alt=""></a></div></div>
+											</div>
+											<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+												<div><div><a class="btn btn-primary" routerLink="/detail/{{ dataPigHome.id }}">Detail</a></div></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+			</div>
+		</div>
+	</div>
+</div>

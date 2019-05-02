@@ -1,0 +1,34 @@
+<div class="modal-login">
+  <h3 class="title-login">Login</h3>
+  <ng-template [ngIf]="error">
+    <div class="alert alert-danger">{{error}}</div>
+  </ng-template>
+  <ng-template [ngIf]="checkForm">
+      <div class="alert alert-success">Login Successfull!</div>
+  </ng-template>
+  <div class="boder-login">
+    <div class="form-login"> 
+      <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+        <div class="form-group">
+          <label for="">Email</label>
+          <input class="form-control" type="email" name="email" #validateEmail="ngModel" type="email" ngModel name="email" required email>
+          <ng-container *ngIf="validateEmail?.invalid && validateEmail?.dirty || validateEmail?.touched">
+            <p class="alert alert-danger" *ngIf="validateEmail?.errors?.required"> This field is required </p>
+            <p class="alert alert-danger" *ngIf="validateEmail?.errors?.email"> This field is not email </p>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control" name="password" #validatePassword="ngModel" ngModel name="password" required>
+          <ng-container *ngIf="validatePassword?.invalid && validatePassword?.dirty || validatePassword?.touched">
+            <p class="alert alert-danger" *ngIf="validatePassword?.errors?.required"> This field is required </p>
+          </ng-container>
+        </div>
+        <button type="submit" class="btn btn-primary col-12" [disabled]="login.invalid">SUBMIT</button>
+        <div class="form-group content-login">
+            If you do not have an account, please <a routerLink="/register"> Register </a> here
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
