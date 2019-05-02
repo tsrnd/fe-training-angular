@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
@@ -8,47 +8,33 @@ import { ApiService } from 'src/app/core/services/api.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  url: any;
-  dataProducts = [];
-  dataCat = [];
-  type = [
-    {
-      id: 1,
-      name: "women",
-      url: "/women"
-    },
-    {
-      id: 2,
-      name: "men",
-      url: "/men"
-    },
-    {
-      id: 3,
-      name: "kids",
-      url: "/kids"
-    },
-  ]
+  value: any;
+  @Input() data;
+  title: string;
+  category: string;
+  products: any;
+
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private apiService: ApiService,
   ) {
 
   }
 
   ngOnInit() {
-    this.url = this.router.url;
-    if (this.url == this.type[0].url) {
-      this.apiService.get("categories/" + this.type[0].url).subscribe(datas => this.dataCat = datas);
-      this.apiService.get("categories/" + this.type[0].url + "/products").subscribe(datas => this.dataProducts = datas);
+    this.category = this.route.snapshot.routeConfig.path;
+
+    if (this.category) {
+      this.route.data
+        .subscribe(data => {
+          this.products = data.products;
+        });
+      this.data = this.products.filter(item => item.category === this.category);
+
     }
-    if (this.url == this.type[1].url) {
-      this.apiService.get("categories/" + this.type[1].url).subscribe(datas => this.dataCat = datas);
-      this.apiService.get("categories/" + this.type[1].url + "/products").subscribe(datas => this.dataProducts = datas);
-    }
-    if (this.url == this.type[2].url) {
-      this.apiService.get("categories/" + this.type[2].url).subscribe(datas => this.dataCat = datas);
-      this.apiService.get("categories/" + this.type[2].url + "/products").subscribe(datas => this.dataProducts = datas);
-    }
+
+    this.title = this.data[0].category;
   }
-  
+
 }

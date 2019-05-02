@@ -49,7 +49,7 @@ export class ApiService {
   * @param url : path from assets folder
   */
   getAssets(url: string): Observable<any> {
-    return this.http.get(url).pipe(
+    return this.http.get('assets/' + url).pipe(
       catchError(this.handleError)
     );
   }

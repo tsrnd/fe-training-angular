@@ -1,0 +1,425 @@
+[
+  {
+    "id": 1,
+    "productName": "Áo khoác kaki",
+    "description": "Áo khoác kaki 2 túi",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women1.jpg",
+    "category": "women"
+  },
+  {
+    "id": 2,
+    "productName": "Quần Jogger",
+    "description": "Quần Jogger len Gân nữ",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women2.jpg",
+    "category": "women"
+  },
+  {
+    "id": 3,
+    "productName": "Đầm Beo",
+    "description": "Đầm beo cổ v đắp chéo tùng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women3.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women4.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women5.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women6.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women7.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women8.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women9.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women10.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women11.jpg",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/women/women12.jpg",
+    "category": "women"
+  },
+  {
+    "id": 5,
+    "productName": "Áo khoác kaki",
+    "description": "Áo khoác kaki 2 túi",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men1.jpg",
+    "category": "men"
+  },
+  {
+    "id": 6,
+    "productName": "Quần Jogger",
+    "description": "Quần Jogger len Gân nữ",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men2.jpg",
+    "category": "men"
+  },
+  {
+    "id": 7,
+    "productName": "Đầm Beo",
+    "description": "Đầm beo cổ v đắp chéo tùng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men3.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men4.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men5.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men6.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men7.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men8.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men9.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men10.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men11.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men12.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men13.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men14.jpg",
+    "category": "men"
+  },
+  {
+    "id": 8,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/men/men15.jpg",
+    "category": "men"
+  },
+  {
+    "id": 9,
+    "productName": "Áo khoác kaki",
+    "description": "Áo khoác kaki 2 túi",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid1.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 10,
+    "productName": "Quần Jogger",
+    "description": "Quần Jogger len Gân nữ",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid2.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 11,
+    "productName": "Đầm Beo",
+    "description": "Đầm beo cổ v đắp chéo tùng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid3.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid4.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid5.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid6.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid7.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid8.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid9.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid10.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid11.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid12.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid13.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid14.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid15.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid16.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid17.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid18.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid19.jpg",
+    "category": "kids"
+  },
+  {
+    "id": 12,
+    "productName": "Đầm Maxi",
+    "description": "Đầm Maxi Xô Hai Dây Viền Ren VMX01 - Trắng",
+    "originalPrice": 19.95,
+    "promotionPrice": 16.75,
+    "imageUrl": "assets/images/kid/kid20.jpg",
+    "category": "kids"
+  }
+]

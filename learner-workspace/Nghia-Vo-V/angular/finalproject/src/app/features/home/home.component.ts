@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
       'originalPrice': 19.95,
       'promotionPrice': 16.75,
       'imageUrl': 'assets/images/kid/kid1.jpg',
-      'category': 'kid',
+      'category': 'kids',
     },
     {
       'id': 10,
@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
       'originalPrice': 19.95,
       'promotionPrice': 16.75,
       'imageUrl': 'assets/images/kid/kid2.jpg',
-      'category': 'kid',
+      'category': 'kids',
     },
     {
       'id': 11,
@@ -112,7 +112,7 @@ export class HomeComponent implements OnInit {
       'originalPrice': 19.95,
       'promotionPrice': 16.75,
       'imageUrl': 'assets/images/kid/kid3.jpg',
-      'category': 'kid',
+      'category': 'kids',
     },
     {
       'id': 12,
@@ -121,7 +121,7 @@ export class HomeComponent implements OnInit {
       'originalPrice': 19.95,
       'promotionPrice': 16.75,
       'imageUrl': 'assets/images/kid/kid4.jpg',
-      'category': 'kid',
+      'category': 'kids',
     }
   ]
   
