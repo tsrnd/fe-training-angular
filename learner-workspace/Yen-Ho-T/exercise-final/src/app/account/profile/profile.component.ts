@@ -77,11 +77,15 @@ export class ProfileComponent implements OnInit {
     this.err = null;
     this.success = 'Update successfull!';
     this.authService.userLogin = {...this.user};
+    const likeProducts = this.authService.userLogin ?
+        JSON.parse(this.localerService.getLocalStorage(this.userbefore.email)) : null;
+    localStorage.removeItem(this.userbefore.email);
     this.userbefore = {...this.user};
     this.formReactive.controls.password.setValue('');
     this.formReactive.controls.confirmPassword.setValue('');
     this.localerService.saveLocalStorage('users', JSON.stringify(listUser));
     this.cookieService.set('userEmail', this.user.email.toString());
+    this.localerService.saveLocalStorage(this.authService.userLogin.email, JSON.stringify(likeProducts));
   }
   hasUnsavedData() {
     return this.user ? (this.user.avatar !== this.userbefore.avatar)

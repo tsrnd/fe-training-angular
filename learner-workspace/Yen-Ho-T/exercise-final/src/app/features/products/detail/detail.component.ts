@@ -28,7 +28,7 @@ export class DetailComponent implements OnInit {
           this.route.navigate(['/not-found']);
           return;
         }
-        const likeProducts = JSON.parse(this.localerService.getLocalStorage('LIKE_PRODUCTS'));
+        const likeProducts = JSON.parse(this.localerService.getLocalStorage(this.authService.userLogin.email));
         this.product.isLiked = likeProducts ? likeProducts.includes(this.product.id) ? true : false : false;
       });
     }).catch( (err) => {
@@ -39,17 +39,17 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
   }
   removeToFavorite(id) {
-    let likeProducts = JSON.parse(this.localerService.getLocalStorage('LIKE_PRODUCTS'));
+    let likeProducts = JSON.parse(this.localerService.getLocalStorage(this.authService.userLogin.email));
     likeProducts = likeProducts.filter(item => {
       return item !== id;
     });
-    this.localerService.saveLocalStorage('LIKE_PRODUCTS', JSON.stringify(likeProducts));
+    this.localerService.saveLocalStorage(this.authService.userLogin.email, JSON.stringify(likeProducts));
     this.product.isLiked = false;
   }
   addToFavorite(id) {
-    const likeProducts = JSON.parse(this.localerService.getLocalStorage('LIKE_PRODUCTS')) || [];
+    const likeProducts = JSON.parse(this.localerService.getLocalStorage(this.authService.userLogin.email)) || [];
     likeProducts.push(id);
-    this.localerService.saveLocalStorage('LIKE_PRODUCTS', JSON.stringify(likeProducts));
+    this.localerService.saveLocalStorage(this.authService.userLogin.email, JSON.stringify(likeProducts));
     this.product.isLiked = true;
   }
 }

@@ -25,13 +25,13 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     private router: Router,
     public authService: AuthService
   ) {
-    console.log('kkk');
     // reload when access same route
     this.router.routeReuseStrategy.shouldReuseRoute = () => {
       return false;
     };
     apiService.getAssets('data/products.json').then( ob => {
-      const likeProducts = JSON.parse(this.localerService.getLocalStorage('LIKE_PRODUCTS'));
+      const likeProducts = this.authService.userLogin ?
+        JSON.parse(this.localerService.getLocalStorage(this.authService.userLogin.email)) : null;
       if (this.category) {
         this.products = getProducts(ob, likeProducts, this.category, this.limit, this.page, this.exceptProductID);
         return;
@@ -59,7 +59,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     e.preventDefault();
   }
   likeOrUnLike(index) {
-    let likeProducts = JSON.parse(this.localerService.getLocalStorage('LIKE_PRODUCTS')) || [];
+    let likeProducts = JSON.parse(this.localerService.getLocalStorage(this.authService.userLogin.email)) || [];
     this.products[index].isLiked = !this.products[index].isLiked;
     if (this.products[index].isLiked) {
       likeProducts.push(this.products[index].id);
@@ -68,7 +68,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
         return productId !== this.products[index].id;
       });
     }
-    this.localerService.saveLocalStorage('LIKE_PRODUCTS', JSON.stringify(likeProducts));
+    this.localerService.saveLocalStorage(this.authService.userLogin.email, JSON.stringify(likeProducts));
   }
   addListenerProduct() {
     $(document).ready(() => {

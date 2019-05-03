@@ -4,8 +4,8 @@
     <div class="card font-weight-lighter" *ngFor="let product of products | slice: (page-1) * perPage : (page-1) * perPage + perPage; let i = index">
         <a routerLink="/products/{{product.id}}" class="add-cart-image">
           <img class="card-img-top" src="{{product.imageLink}}" alt="Card image cap">
-          <p class="remove-like font-weight-lighter" id="{{(page-1) * perPage + i}}">X</p>
         </a>
+        <span data-toggle="modal" data-target="#deleteModal"class="remove-like font-weight-lighter" id="{{(page-1) * perPage + i}}">X</span>
         <div class="card-title">{{product.name | limitText : 30}}</div>
         <div class="card-price">
           <a>${{product.price}}</a>
@@ -20,7 +20,7 @@
     [collectionSize]="products.length"></ngb-pagination>
   </div>
 </ng-container>
-
 <ng-template #showNotthing>
   <h3 [ngStyle]="{'color': 'green', 'text-align': 'center'}">Not thing to show</h3>
 </ng-template>
+<app-modal (positionDeleted)="deleteItemFromModal($event)"></app-modal>
