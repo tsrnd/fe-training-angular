@@ -1,0 +1,6 @@
+<div [ngSwitch]="currentTab" [ngStyle]="{'border-style': 'solid', 'border-width': '0px 0.5px 0.5px 0.5px', 'border-color': '#E2EAEA', 'height': '270px'}">
+    <div *ngSwitchCase="1" class="col-md-10" [ngStyle]="{'padding-top': '20px'}" [innerHTML]="contents[0]"></div>
+    <div *ngSwitchCase="2" class="col-md-10" [ngStyle]="{'padding-top': '20px'}" [innerHTML]="contents[1]"></div>
+    <div *ngSwitchCase="3" class="col-md-10" [ngStyle]="{'padding-top': '20px'}" [innerHTML]="contents[2]"></div>
+    <div *ngSwitchDefault [ngStyle]="{'padding-top': '20px'}" [innerHTML]="contents[0]">No content</div>
+</div>

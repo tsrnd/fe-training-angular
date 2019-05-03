@@ -1,0 +1,17 @@
+<div class="header white-text">
+  <a class="nav-link home">
+    <a class="nav-item"></a><img alt="Home" height="50" src="assets/images/icon-logo.png" title="Home" class="ng-star-inserted">
+    <div class="nav-item font-weight-lighter text-uppercase align-middle"><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">home</a></div>
+    <div class="nav-item font-weight-lighter text-uppercase align-middle"><a routerLinkActive="active" routerLink="/woman" [queryParams]="{'limit': 12}" >woman</a></div>
+    <div class="nav-item font-weight-lighter text-uppercase align-middle"><a routerLinkActive="active" routerLink="/man" [queryParams]="{'limit': 12}">man</a></div>
+    <div class="nav-item font-weight-lighter text-uppercase align-middle"><a routerLinkActive="active" routerLink="/children" [queryParams]="{'limit': 12}">children</a></div>
+    <ng-container *ngIf="authService.isLoggedIn; else loginLink">
+      <a [ngStyle]="{'padding-top': '10px', 'position': 'absolute', 'right': '100px', 'color': '#888888', 'font-size': 'large'}" routerLinkActive="active" class="nav-item font-weight-lighter" routerLink="/dashboard">Dashboard</a>
+      <a routerLinkActive="active" class="nav-item font-weight-lighter" [ngStyle]="{'padding-top': '10px', 'color': '#888888', 'font-size': 'large', 'position': 'absolute', 'right': '20px'}" (click)="logout()">Logout</a>
+    </ng-container>
+    <ng-template #loginLink>
+      <a [ngStyle]="{'padding-top': '10px', 'position': 'absolute', 'right': '100px', 'color': '#888888', 'font-size': 'large'}" routerLinkActive="active" class="nav-item font-weight-lighter" routerLink="/login">Login</a>
+      <a [ngStyle]="{'padding-top': '10px', 'position': 'absolute', 'right': '20px', 'color': '#888888', 'font-size': 'large'}" routerLinkActive="active" class="nav-item font-weight-lighter" routerLink="/register">register</a>
+    </ng-template>
+  </a>
+</div>
