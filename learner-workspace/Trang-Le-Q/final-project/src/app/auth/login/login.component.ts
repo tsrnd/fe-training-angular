@@ -31,9 +31,8 @@ export class LoginComponent implements OnInit {
     });
   }
   onSubmit() {
-    // console.log(this.formReactive.value);
     let data = this.local.getLocalStorage(REGISTER);
-    let userLogin: object;
+    let userLogin;
     if (data && data.find((user) => {
       if (user.email === this.formReactive.get('email').value && user.password === this.formReactive.get('password').value) {
         userLogin = user;

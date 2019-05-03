@@ -8,7 +8,7 @@ import { LocalerService } from 'src/app/core/service/localer.service';
 })
 export class DashboardComponent implements OnInit {
   title = 'Dashboard';
-  user: any[];
+  user;
 
   constructor(
     private local: LocalerService

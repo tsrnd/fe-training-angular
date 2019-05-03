@@ -7,10 +7,9 @@ import { CategoryComponent } from './category/category.component';
 import { DetailComponent } from './detail/detail.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { ItemComponent } from './item/item.component';
 
 @NgModule({
-  declarations: [HomeComponent, CategoryComponent, DetailComponent, ItemComponent],
+  declarations: [HomeComponent, CategoryComponent, DetailComponent],
   imports: [
     CommonModule,
     SharedModule,

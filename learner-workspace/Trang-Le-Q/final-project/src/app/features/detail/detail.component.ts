@@ -13,7 +13,7 @@ export class DetailComponent implements OnInit {
   tittle = 'Details';
   categoryID: number;
   productID: number;
-  item: object;
+  item;
   also: any[];
   category: string;
   show: boolean;
@@ -26,12 +26,12 @@ export class DetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let paramRoute: any[];
     this.show = this.auth.checkLogin();
-    this.activeRouter.paramMap.subscribe(data => paramRoute = data.params);
-    this.productID = +paramRoute.id;
-    this.category = paramRoute.category;
-    switch (paramRoute.category) {
+    this.activeRouter.paramMap.subscribe(data => {
+      this.productID = +data.get('id');
+      this.category = data.get('category');
+    });
+    switch (this.category) {
       case 'woman':
         this.categoryID = 1;
         break;

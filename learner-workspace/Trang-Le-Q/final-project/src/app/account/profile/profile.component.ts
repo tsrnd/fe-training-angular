@@ -9,7 +9,7 @@ import { LocalerService } from 'src/app/core/service/localer.service';
 })
 export class ProfileComponent implements OnInit {
   title = 'User Profile';
-  user: object;
+  user;
   formReactive: FormGroup;
   msgSuccess: string;
 
@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
     this.user = this.local.getLocalStorage('userLogin');
     this.formReactive = this.formBuild.group({
       name: ['', Validators.required],
-      email: [this.user.email],
+      email: [this.user['email']],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required]
     });
