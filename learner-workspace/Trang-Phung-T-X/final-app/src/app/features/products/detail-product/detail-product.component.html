@@ -21,6 +21,11 @@
               (click)="addFavorite(product.id)">
               <span>Favorite</span>
             </div>
+            <div *ngIf="checkFavorite(product.id)">
+              <div class="btn-voted">
+                <span>Voted</span>
+              </div>
+            </div>
           </ng-container>
         </div>
       </div>
@@ -45,6 +50,9 @@
                   </button>
                 </div>
               </ng-container>
+              <div class="card-product__imgOverlay w-100" *ngIf="checkFavorite(item.id)">
+                <span class="mess-danger">Voted</span>
+              </div>
             </div>
             <div class="card-body">
               <h3>{{ item.title | collapseText: '10' }}</h3>

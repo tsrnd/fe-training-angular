@@ -48,3 +48,6 @@
 .product-item a {
   text-decoration:none
 }
+.carousel-inner {
+  background-color: #f0d438;
+}

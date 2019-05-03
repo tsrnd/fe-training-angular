@@ -36,9 +36,8 @@ export class ProductsComponent implements OnInit {
       this.route.data
         .subscribe(data => {
           this.products = data.products;
+          this.data = this.products.filter(item => item.type === this.type);
         });
-      this.data = this.products.filter(item => item.type === this.type);
-
     }
 
     this.title = this.data[0].type; // title category(type)

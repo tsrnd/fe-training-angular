@@ -22,3 +22,7 @@ h2 {
   width: auto;
   height: 100%;
 }
+.mess-danger {
+  color: #fe4c50;
+  text-transform: uppercase;
+}

@@ -41,6 +41,7 @@ export class DetailProductComponent implements OnInit {
         }
 
         this.listSuggest = this.data.filter(item => item.type === this.product.type && item.id !== this.id).slice(0, 3);
+        window.scrollTo(0, 0);
       });
   }
 

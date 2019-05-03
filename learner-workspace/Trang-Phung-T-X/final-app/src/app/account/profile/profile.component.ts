@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
       return this.showError = true; // show error
     }
 
-
+    // allowed edit email so add id
     const newUser = Object.assign(this.formReactive.value, { id: this.currentUser.id }); // add id
     allUser.push(newUser); // add value currentUser
     this.localService.saveLocalStorage(KEY.listUser, allUser); // save local

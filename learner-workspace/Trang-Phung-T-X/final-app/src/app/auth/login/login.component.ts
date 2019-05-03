@@ -24,11 +24,6 @@ export class LoginComponent implements OnInit {
   showError = false;
 
   ngOnInit() {
-    let firstUser: any; // set default user (first user)
-    firstUser = this.localService.getLocalStorage(KEY.listUser)[0];
-    this.email = firstUser.email;
-    this.password = firstUser.password;
-
     // get data account localStorage
     this.listAccount = this.localService.getLocalStorage(KEY.listUser);
   }

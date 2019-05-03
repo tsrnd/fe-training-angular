@@ -23,12 +23,10 @@ export class CommonService {
     // favoriteLocal===[]
     if (this.favoriteList.length === 0) {
       value = Object.assign({ userId: this.currentUser.id }, { listIdProduct: [id] });
-      confirm('Add favorite Success!');
       return this.saveLocalNewFavorite(this.favoriteList, value);
     } else {  // favoriteLocal===[{favorite1},{favoriteCurrent===null}]
       if (this.favoriteCurrentUser.length === 0) {
         value = Object.assign({ userId: this.currentUser.id }, { listIdProduct: [id] });
-        confirm('Add favorite Success!');
         return this.saveLocalNewFavorite(this.favoriteOtherUser, value);
       } else { // favoriteLocal===[{favoriteOtherUser},{favoriteCurrent}]
         if (this.favoriteCurrentUser.listIdProduct.find(ele => ele === id)) {
@@ -36,7 +34,6 @@ export class CommonService {
           return this.favoriteCurrentUser;
         }
         this.favoriteCurrentUser.listIdProduct.push(id);
-        confirm('Add favorite Success!');
         return this.saveLocalNewFavorite(this.favoriteOtherUser, this.favoriteCurrentUser);
       }
     }
@@ -65,8 +62,8 @@ export class CommonService {
 
   showButtonFavorite(id) {
     this.getCurrentUserFavorite();
-    if (this.favoriteCurrentUser.listIdProduct) {
-      if (this.favoriteCurrentUser.listIdProduct.length !== 0) {
+    if (this.favoriteCurrentUser) {
+      if (this.favoriteCurrentUser.listIdProduct && this.favoriteCurrentUser.listIdProduct.length !== 0) {
         return !!this.favoriteCurrentUser.listIdProduct.find(item => item === id);
       }
     }
