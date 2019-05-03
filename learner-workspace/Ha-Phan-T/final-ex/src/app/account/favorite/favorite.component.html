@@ -11,7 +11,7 @@
             <th class="column-4">Favorite</th>
           </tr>
 
-          <tr class="table_row" *ngFor="let datafavor of dataFavors">
+          <tr class="table_row" *ngFor="let datafavor of dataFavors; index as i" id="{{i+1}}">
             <td class="column-1">
               <div class="how-itemcart1">
                 <img src="{{datafavor.image_product}}" alt="IMG">

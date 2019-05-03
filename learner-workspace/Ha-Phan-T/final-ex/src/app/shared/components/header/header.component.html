@@ -59,7 +59,9 @@
             <li routerLinkActive="active-menu" *ngIf="!authService.isLoggedIn">
               <a routerLink="/register">Register</a>
             </li>
-
+            <li routerLinkActive="active-menu" *ngIf="authService.isLoggedIn">
+              <a routerLink="/account/dashboard">Account</a>
+            </li>
             <li routerLinkActive="active-menu" *ngIf="authService.isLoggedIn">
               <a (click)="logout()" routerLink="/">Logout</a>
             </li>

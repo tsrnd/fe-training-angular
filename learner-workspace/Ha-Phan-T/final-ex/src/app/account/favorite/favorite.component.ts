@@ -18,6 +18,7 @@ export class FavoriteComponent implements OnInit {
   listFavorString;
   err;
   index;
+  hidden = false;
   constructor(
     private localerService: LocalerService,
     private cookieService: CookieService,
@@ -36,20 +37,26 @@ export class FavoriteComponent implements OnInit {
     if (this.dataFavors.length == 0) {
       this.err = "You do not like any product";
     }
+    console.log(this.dataFavors);
   }
 
   deleteFavor(id) {
-    // console.log(this.listFavor.indexOf('email: "hahaha@dddsjxn.nc", id_product: "' + id + '"'));
     this.listFavor.forEach((data, index) => {
       if (data.email == this.emailCookie && data.id_product == id) {
         this.index = index;
+        if (this.index !== -1) {
+          this.listFavor.splice(this.index, 1);
+          this.localerService.saveLocalStorage(USERS_FAVORITE, this.listFavor);
+        }
       }
     });
-    if (this.index !== -1) {
-      this.listFavor.splice(this.index, 1);
-      this.localerService.saveLocalStorage(USERS_FAVORITE, this.listFavor);
-      location.reload();
-    }
+    this.dataFavors.forEach((data, index) => {
+      if (data.id_product == id) {
+        this.index = index;
+        if (this.index !== -1) {
+          this.dataFavors.splice(this.index, 1);
+        }
+      }
+    });
   }
-
 }
