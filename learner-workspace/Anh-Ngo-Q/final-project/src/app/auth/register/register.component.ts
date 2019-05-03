@@ -38,7 +38,9 @@ export class RegisterComponent implements OnInit {
    * Handle register form value
    */
   registerSubmit() {
-    const registerFormValue = this.registerForm.value;
+    const listUser = this.localer.getLocalStorage('users');
+    const lastedID = listUser ? listUser[listUser.length - 1].id + 1 : 1;
+    const registerFormValue = {id: lastedID, ...this.registerForm.value};
     this.auth.register(registerFormValue);
     this.registerForm.reset();
     this.localer.setLocalStorage('user', registerFormValue);

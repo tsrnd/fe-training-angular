@@ -44,6 +44,7 @@ export class ProfileComponent implements OnInit {
       }
       return v;
     });
+    console.log('what', users);
     this.auth.getAuthUser().next(this.localer.getLocalStorage('user'));
     this.localer.setLocalStorage('users', users);
     this.profileForm.markAsPristine();
