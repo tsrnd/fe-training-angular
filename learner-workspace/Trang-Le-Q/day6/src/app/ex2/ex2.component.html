@@ -1,0 +1,12 @@
+<input [(ngModel)]= "inputText" type="text" >
+{{inputText}}
+
+<div class="row">
+  <button class= "btn btn-success" (click)= "saveLocalStorage()">Save Local</button>
+  <button class= "btn btn-warning" (click)= "getLocalStorage()">Get Local</button>
+  <button class= "btn btn-primary" (click)= "saveSessionStorage()">Save Session</button>
+  <button class= "btn btn-warning" (click)= "getSessionStorage()">Get Session</button>
+</div>
+
+<p>Value LocalStorage: {{local}}</p>
+<p>Value SessionStorage: {{session}}</p>

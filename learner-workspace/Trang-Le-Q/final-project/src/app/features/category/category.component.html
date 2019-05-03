@@ -1,0 +1,32 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">All products of {{ category }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 portfolio-item" *ngFor="let item of items">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+          <img routerLink="/{{ category }}/product/{{ item.id }}" class="img-fluid" src="{{ item.image }}" alt="">
+        </a>
+        <div class="portfolio-caption">
+          <a href="#" routerLink="/{{ category }}/product/{{ item.id }}">{{ item.name }}</a>
+          <ng-container *ngIf="show">
+            <div class="float-right">
+              <button [ngStyle]="{'border': 'none', 'background': 'none'}" (click)="addFavorite(item.id)">
+                <img src="../../../assets/img/heart.png" alt="" width=20px>
+              </button>
+            </div>
+          </ng-container>
+          <p class="text-muted">Price: {{ item.price }}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

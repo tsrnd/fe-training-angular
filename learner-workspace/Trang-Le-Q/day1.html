@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise</title>
+</head>
+<body>
+    <input type="text" name="answer">
+    <button id="save">Save</button>
+
+    <table>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    document.getElementById("save").addEventListener("click", function(){
+        var a = document.getElementsByTagName("input")[0].value;
+        var id = Math.floor((Math.random() * 1000) + 1);
+        setTimeout(function(){
+            if (a != "") {
+                var tr = document.createElement('tr');
+                tr.append(a);
+                tr.setAttribute('id', id);
+                var btn = document.createElement('button');
+                btn.setAttribute('onclick', 'del('+ id +')');
+                btn.append('x');
+                tr.appendChild(btn);
+                document.getElementById('tbody').appendChild(tr);
+            } else {
+                alert('Please enter some words @@');
+            }
+        }, 2000);
+    });
+    setTimeout(function(){
+        
+    }, 4000);
+    function del(id){
+        var answer = confirm("Do u want to del this item?");
+        if (answer) {
+            var tr = document.getElementById(id);
+            tr.remove();
+        } else {
+            alert("Why don't delete me");
+        }
+    }
+    // var aPromise = new Promise((resolve, reject) => {
+    //     setTimeout({
+    //         resolve({
+
+    //         });
+    //     }, 2000);
+    //     // reject();
+    // });
+    // aPromise.then("Thuc thi promise ok", "fail");
+    
+        
+</script>

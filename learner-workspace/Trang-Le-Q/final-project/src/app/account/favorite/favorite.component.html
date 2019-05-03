@@ -1,0 +1,22 @@
+<span *ngIf=show>You don't like any product!</span>
+<div class="row">
+  <div class="col-md-4 col-sm-6 portfolio-item" *ngFor="let item of data">
+    <a class="portfolio-link">
+      <div class="portfolio-hover">
+        <div class="portfolio-hover-content">
+          <i class="fas fa-plus fa-3x"></i>
+        </div>
+      </div>
+      <img class="img-fluid" src="{{ item.image }}" alt="">
+    </a>
+    <div class="portfolio-caption">
+      <a href="#">{{ item.name }}</a>
+      <div class="float-right">
+        <button [ngStyle]="{'border': 'none', 'background': 'none'}" (click)="delFavorite(item.id)">
+          <img src="../../../assets/img/delete.png" alt="" width=20px>
+        </button>
+      </div>
+      <p class="text-muted">Price: {{ item.price }}$</p>
+    </div>
+  </div>
+</div>

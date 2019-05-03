@@ -1,0 +1,89 @@
+<div class="cotainer">
+  <div class="row justify-content-center">
+     <div class="col-md-8">
+        <div class="card">
+          <div class="card-header text-center font-weight-bold">Create an account</div>
+          <div class="card-body">
+            <form method="" [formGroup]= "formReactive" (ngSubmit)= "onSubmit()">
+              <div class="row" *ngIf= "msgErr">
+                  <span>{{msgErr}}</span>
+              </div>
+              <div class="form-group row">
+                <label for="first_name" class="col-md-4 col-form-label text-md-right">First Name</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="first_name" formControlName="firstName">
+                </div>
+              </div>
+              <div class= "row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6 alert alert-warning" *ngIf= "formReactive.controls.firstName.invalid
+                  && (formReactive.controls.firstName.dirty || formReactive.controls.firstName.touched)">
+                  <span *ngIf="formReactive.get('firstName').errors.required">This field is required</span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="last-name" class="col-md-4 col-form-label text-md-right">Last Name</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="last-name" formControlName="lastName">
+                </div>
+              </div>
+              <div class= "row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6 alert alert-warning" *ngIf= "formReactive.controls.lastName.invalid
+                  && (formReactive.controls.lastName.dirty || formReactive.controls.lastName.touched)">
+                  <span *ngIf="formReactive.get('lastName').errors.required">This field is required</span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="email" formControlName="email">
+                </div>
+              </div>
+              <div class= "row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6 alert alert-warning" *ngIf= "formReactive.controls.email.invalid
+                  && (formReactive.controls.email.dirty || formReactive.controls.email.touched)">
+                  <span *ngIf="formReactive.get('email').errors.email">This field must be an email</span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                <div class="col-md-6">
+                    <input type="password" name="password" class="form-control" formControlName="password">
+                </div>
+              </div>
+              <div class= "row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6 alert alert-warning" *ngIf= "formReactive.controls.password.invalid
+                  && (formReactive.controls.password.dirty || formReactive.controls.password.touched)">
+                  <span *ngIf="formReactive.get('password').errors.required">This field is required</span>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="confirmPassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                <div class="col-md-6">
+                    <input type="password" name="confirmPassword" class="form-control" formControlName="confirmPassword">
+                </div>
+              </div>
+              <div class= "row">
+                <div class="col-md-4">
+                    <span *ngIf= "formReactive.get('password').value !== formReactive.get('confirmPassword').value">This field must map with password field!</span>
+                </div>
+                <div class="col-md-6 alert alert-warning" *ngIf= "formReactive.controls.confirmPassword.invalid
+                  && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
+                  <span *ngIf="formReactive.get('confirmPassword').errors.required">This field is required</span>
+                </div>
+              </div>
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary" (click)= "saveLocalStorage()" [disabled]="formReactive.invalid || formReactive.controls.password.value != formReactive.controls.confirmPassword.value">
+                  CREATE
+                </button>
+              </div>
+              <a routerLink="/auth/login">Login</a>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

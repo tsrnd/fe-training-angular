@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 ">
+        <div class="list-group ">
+          <a href="#" routerLink="/dashboard" routerLinkActive="active" class="list-group-item list-group-item-action">Dashboard</a>
+          <a href="#" routerLink="/profile" routerLinkActive="active" class="list-group-item list-group-item-action">User Profile</a>
+          <a href="#" routerLink="/favorite" routerLinkActive="active" class="list-group-item list-group-item-action">My Favorite</a>
+        </div> 
+      </div>
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
