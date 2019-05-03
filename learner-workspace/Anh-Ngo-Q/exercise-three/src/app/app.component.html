@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+<body>
+  <div class="content-body col-md-10 offset-md-1">
+    <!-- <div class="bd-callout bd-callout-info">
+      <h4>{{listTab[index] | uppercase}}</h4>
+    </div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item" *ngFor="let tab of listTab; let i = index">
+        <a [class.active]="index === i" class="nav-link" id="{{tab}}" (click)="index = listTab.indexOf($event.target.id)"
+          href="#">{{tab}}</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <app-child [tabIndex]=index></app-child>
+    </div> -->
+
+    <!-- <select [(ngModel)]="color">
+      <option *ngFor="let color of listColor">
+        {{color}}
+      </option>
+    </select>
+    <button appHighligh [choosenColor]="color">Button</button>
+    <button appHighligh [choosenColor]="color">Button</button> -->
+
+    <!-- <div class="select-type">
+      <input (change)="detectChange()" type="radio" [value]="false" [(ngModel)]="forObject"> Typing
+      <input (change)="detectChange()" type="radio" [value]="true" [(ngModel)]="forObject"> Select
+    </div>
+
+    <div *ngIf="!forObject; else objOption">
+      <input [(ngModel)]="selectedValue" type="text">
+    </div>
+    <ng-template #objOption>
+      <select [(ngModel)]="selectedValue">
+        <option *ngFor="let obj of listObject" [ngValue]="obj">{{obj.name}}</option>
+      </select>
+    </ng-template>
+
+    <br>
+    <div class="button-storage">
+      <button class="btn btn-dark" (click)="saveInput(true)">Save in localstorage</button><br>
+      <button class="btn btn-dark" (click)="storageValue=localer.getLocalStorage('current-value')">Get in localstorage</button>
+    </div>
+    <br>
+    <div class="button-storage">
+      <button class="btn btn-dark" (click)="saveInput(false)">Save in session storage</button><br>
+      <button class="btn btn-dark" (click)="storageValue=localer.getSessionStorage('current-value')">Get in session storage</button>
+    </div>
+
+    <div>
+      <h3>Show value in storage</h3>
+      {{storageValue}}
+    </div> -->
+    <router-outlet></router-outlet>
+  </div>
+</body>
+
+<app-footer></app-footer>

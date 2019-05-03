@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Your Favorites</h4>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngFor="let products of favoriteList" class="row product-row">
+          <div class="col">
+            <div [ngStyle]="{'justify-content': 'space-between', 'display': 'flex'}">
+              <app-product class="product-item" *ngFor="let product of products"
+                [product]="{type: product.type, data: product}" (productEvent)="removeItem($event)"></app-product>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

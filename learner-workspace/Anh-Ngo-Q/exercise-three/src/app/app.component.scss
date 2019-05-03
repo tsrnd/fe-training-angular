@@ -1,0 +1,89 @@
+// style for master page
+footer {
+  background-image: linear-gradient(white, #d2cfcf);
+  line-height: 4em;
+  text-align: center;
+}
+
+.custom-navbar {
+  background: #1976d2;
+}
+
+#logo {
+  width: 120px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.text-body {
+  font-weight: 400;
+}
+
+.content-body {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
+}
+
+.bd-callout {
+  padding: 0.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+// styles for bd-callout title
+.bd-callout h4 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.bd-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.bd-callout code {
+  border-radius: 0.25rem;
+}
+
+.bd-callout + .bd-callout {
+  margin-top: -0.25rem;
+}
+
+.bd-callout-info {
+  border-left-color: #1976d2;
+}
+
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}
+
+.bd-callout-warning h4 {
+  color: #f0ad4e;
+}
+
+.bd-callout-danger {
+  border-left-color: #d9534f;
+}
+
+.bd-callout-danger h4 {
+  color: #d9534f;
+}
+
+// custom css for form register
+.form-user {
+  padding: 50px;
+  border: 1px solid silver;
+  border-radius: 5px;
+}

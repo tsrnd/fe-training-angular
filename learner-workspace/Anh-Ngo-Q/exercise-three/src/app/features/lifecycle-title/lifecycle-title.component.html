@@ -1,0 +1,9 @@
+<button class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#collapse-' + item.id"
+  aria-expanded="false" aria-controls="collapseExample">
+  v
+</button>
+<span>{{item.name}}</span>
+<div class="moddify-buttons">
+  <button type="button" class="btn btn-danger" data-toggle="modal" (click)="deleteItem()" data-target="#exampleModal">x</button>
+</div>
+<ng-content></ng-content>
