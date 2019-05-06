@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button type="button" class="title-show fa fa-plus-circle btn-show" data-toggle="collapse" [attr.data-target]="'#collapse' + lifeCycleHookLists.id"></button>
+        <p class="title-content">{{lifeCycleHookLists.title}}</p>
+        <button type="button" class="title-del fa fa-close btn-delete" data-toggle="modal" [attr.data-target]="'#modal' + lifeCycleHookLists.id"></button>
+      </h5>
+    </div>
+    <ng-content></ng-content>
+</div>

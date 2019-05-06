@@ -1,0 +1,10 @@
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Key Local" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="keyLocal">
+  <input type="text" class="form-control" placeholder="Value Local" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="valueLocal">
+  <div class="input-group-append">
+    <button class="savelocal btn btn-outline-primary" name="savelocal" id="savelocal" type="button" (click)="saveLocal()">Save Local</button>
+    <button class="getlocal btn btn-outline-danger" name="getlocal" id="getlocal" type="button" (click)="getLocal()">Get Local</button>
+    <button class="savesession btn btn-outline-warning" name="savesession" id="savesession" type="button" (click)="saveSession()">Save Session</button>
+    <button class="getsession btn btn-outline-success" name="getsession" id="getsession" type="button" (click)="getSession()">Get Session</button>
+  </div>
+</div>

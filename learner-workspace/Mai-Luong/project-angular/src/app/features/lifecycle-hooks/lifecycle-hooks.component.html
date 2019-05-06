@@ -1,0 +1,6 @@
+<div id="accordion" *ngFor="let lifeCycleHookLists of lifeCycleHookLists">
+    <app-lifecycle-title [lifeCycleHookLists]= "lifeCycleHookLists">
+      <app-lifecycle-content [lifeCycleHookLists]= "lifeCycleHookLists"></app-lifecycle-content>
+      <app-modal [lifeCycleHookLists]= "lifeCycleHookLists" (removeItem)="removeItem($event)"></app-modal>
+    </app-lifecycle-title>
+  </div>

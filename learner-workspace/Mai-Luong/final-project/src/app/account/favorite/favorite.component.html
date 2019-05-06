@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        My Favorite
+      </div>
+      <div class="panel-body">
+          <div class="super_container_inner">
+              <div class="super_overlay"></div>
+          
+              <!-- Cart -->
+          
+              <div class="cart_section">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="cart_container">
+                        
+                        <!-- Cart Bar -->
+                        <div class="cart_bar">
+                          <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
+                            <li class="mr-auto">Product</li>
+                            <li>Liked</li>
+                            <li>Price</li>
+                            <li>Delete</li>
+                          </ul>
+                        </div>
+          
+                        <!-- Cart Items -->
+                        <div class="cart_items">
+                          <ul class="cart_items_list">
+          
+                            <!-- Cart Item -->
+                            <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start" *ngFor="let dataFavoriteUser of dataFavoriteUser">
+                              <div class="product product-content-item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
+                                <div><div class="product_image_file"><img src="{{ dataFavoriteUser.images_url }}" alt=""></div></div>
+                                <div class="product_name_container">
+                                  <div class="product_name"><a href="">{{ dataFavoriteUser.title }}</a></div>
+                                </div>
+                              </div>
+                              <div class="product_price product_text"><a><span class="glyphicon glyphicon-heart"></span></a></div>
+                              <div class="product_price product_text"><span>Price: </span>$ {{ dataFavoriteUser.price }}</div>
+                              <div class="product_price product_text">
+                                  <div class="button button_clear"><a (click)="delLikeFun(dataFavoriteUser.id)">DELETE</a></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>

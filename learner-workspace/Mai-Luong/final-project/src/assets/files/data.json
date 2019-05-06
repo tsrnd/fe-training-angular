@@ -1,0 +1,219 @@
+[
+    {
+        "id": 1,
+        "categoryId": 1,
+        "title": "Newfoundland",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "One of the most popular web-footed dog breeds, Newfoundlands have a variety of traits that make them perfect for the water. Their evolutionary traits were even noted by the likes of Charles Darwin. They have long toes that allow them to tear through the water. Their coats are also thick and waterproof. This makes it easy for them to stay in the water without issues."
+    },
+    {
+        "id": 2,
+        "categoryId": 1,
+        "title": "Portuguese Water Dog",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "Portuguese Water Dogs have thick furry coats and webbed feet that allow them to navigate through the water with ease. These dogs were also bred to work in the water. However, they weren't used for hauling fish. They're smaller than Newfoundlands, so they weren't able to carry heavy loads. Instead, they were used for herding."
+    },
+    {
+        "id": 3,
+        "categoryId": 1,
+        "title": "American Water Spaniel",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "The American Water Spaniel originated in the United States. They were bred from a variety of different types of dogs in the 19th century. These dogs were created to help hunters. When a hunter shot a bird, these dogs would retrieve it no matter where it landed."
+    },
+    {
+        "id": 4,
+        "categoryId": 1,
+        "title": "German Wirehaired Pointer",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "Like the American Water Terrier, German Wirehaired Pointer was selectively bred to assist hunters on their journey. Over time, this breeding resulted in a thick coat, a strong sense of smell, and webbed feet. These dogs are truly made for any type of terrain. Whether they're in dry mountains or a muddy swamp, they'd have no problem retrieving game."
+    },
+    {
+        "id": 5,
+        "categoryId": 1,
+        "title": "Dachshund",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "Dachshunds are lovingly referred to as Weiner dogs because of their short and slender bodies. While the modern Dachshund is typically nothing more than a canine companion, they were originally bred for hunting. Their bodies are perfect for getting into tight spots. They can easily hunt small animals like badgers."
+    },
+    {
+        "id": 6,
+        "categoryId": 1,
+        "title": "Weirmaraner",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "Weimaraners have a history that goes all the way back to the 18th century. Originally, these large and agile dogs were bred for hunting big game like boar and deer. They were typically used by royalty. They have webbed feet and arched toes to help them get through any terrain as they retrieve a game animal."
+    },
+    {
+        "id": 7,
+        "categoryId": 1,
+        "title": "Otterhound",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "Otterhounds are a relatively rare breed that's native to the United Kingdom. They were bred in the 19th century to assist hunters. As the name implies, their prime target was otters. Otterhounds have a strong sense of smell, making it easy for them to find otters and their homes."
+    },
+    {
+        "id": 8,
+        "categoryId": 1,
+        "title": "Redbone Coonhound",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "Redbone Coonhounds were one of the many breeds that were shipped from Europe to America. They were selectively bred to deal with the new swampy terrain. These dogs are known for their courageous demeanor. They will fearlessly go into a swamp, scare off dangerous animals, and keep raccoons trapped in a tree until the hunter can go in for the kill."
+    },
+    {
+        "id": 9,
+        "categoryId": 1,
+        "title": "Nova Scotia Duck Tolling Retriever",
+        "price": "50",
+        "images_url": "assets/images/images_data/dog_1.jpg",
+        "content": "These dogs were bred back in the 19th century. They have thick coats to keep them protected from the low temperatures of Nova Scotia. As the name would suggest, they are particularly talented at taking care of ducks. They have significant webbing in their paws compared to other breeds."
+    },
+    {
+        "id": 10,
+        "categoryId": 2,
+        "title": "Scout",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "My name is Scout and I’d like to tell you that I’m a super fun loving kitty that loves to play all the time. I’m curious, rambunctious and lots of laughs. I also love to curl up and cuddle when I get tuckered out from playing. I love water. I will sit and watch it go down the drain with sheer enjoyment. As funny as I am, I make my mommy foster laugh all the time as I skid across the floor while chasing balls around the house. I’m potty trained and use the scratching posts (not furniture) to clean my claws. If you’re looking for a funny cat to entertainer, look no further."
+    },
+    {
+        "id": 11,
+        "categoryId": 2,
+        "title": "Samantha Jo",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "My name is Sam (Samantha Jo as my foster mommy calls me). I’m a very sweet docile kitty that has the spirit of an old soul. I love to nuzzle in human’s neck and will melt like butter in your arms as you stroke my silky fur. I love to play and chase the other kitties, but I also love to just curl up in a nice soft kitty bed. I’m potty trained and love to stretch using scratching posts. If you’re looking for a sweet old souls to melt your heart, look no further, cause I’m the girl for you."
+    },
+    {
+        "id": 12,
+        "categoryId": 2,
+        "title": "Eartha Kitty",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "Beautiful Eartha Kitty is a black and white female domestic short hair, who came to us from a local animal control shelter. Eartha has a cute little black mask on her face, hence is named after the supreme cat woman Eartha Kit. She has a little bit of attitude at first, until she gets to know you, which is totally fine because that means she's smart. She comes to trust you quickly, because that's her personality. She's very loving and playful. Eartha is probably best as an only cat. Who would love an Eartha Kitty in their life?"
+    },
+    {
+        "id": 13,
+        "categoryId": 2,
+        "title": "German Wirehaired Pointer",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "Like the American Water Terrier, German Wirehaired Pointer was selectively bred to assist hunters on their journey. Over time, this breeding resulted in a thick coat, a strong sense of smell, and webbed feet. These dogs are truly made for any type of terrain. Whether they're in dry mountains or a muddy swamp, they'd have no problem retrieving game."
+    },
+    {
+        "id": 14,
+        "categoryId": 2,
+        "title": "Dachshund",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "Dachshunds are lovingly referred to as Weiner dogs because of their short and slender bodies. While the modern Dachshund is typically nothing more than a canine companion, they were originally bred for hunting. Their bodies are perfect for getting into tight spots. They can easily hunt small animals like badgers."
+    },
+    {
+        "id": 15,
+        "categoryId": 2,
+        "title": "Weirmaraner",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "Weimaraners have a history that goes all the way back to the 18th century. Originally, these large and agile dogs were bred for hunting big game like boar and deer. They were typically used by royalty. They have webbed feet and arched toes to help them get through any terrain as they retrieve a game animal."
+    },
+    {
+        "id": 16,
+        "categoryId": 2,
+        "title": "Otterhound",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "Otterhounds are a relatively rare breed that's native to the United Kingdom. They were bred in the 19th century to assist hunters. As the name implies, their prime target was otters. Otterhounds have a strong sense of smell, making it easy for them to find otters and their homes."
+    },
+    {
+        "id": 17,
+        "categoryId": 2,
+        "title": "Redbone Coonhound",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "Redbone Coonhounds were one of the many breeds that were shipped from Europe to America. They were selectively bred to deal with the new swampy terrain. These dogs are known for their courageous demeanor. They will fearlessly go into a swamp, scare off dangerous animals, and keep raccoons trapped in a tree until the hunter can go in for the kill."
+    },
+    {
+        "id": 18,
+        "categoryId": 2,
+        "title": "Nova Scotia Duck Tolling Retriever",
+        "price": "50",
+        "images_url": "assets/images/images_data/cat_1.jpg",
+        "content": "These dogs were bred back in the 19th century. They have thick coats to keep them protected from the low temperatures of Nova Scotia. As the name would suggest, they are particularly talented at taking care of ducks. They have significant webbing in their paws compared to other breeds."
+    },
+    {
+        "id": 19,
+        "categoryId": 3,
+        "title": "Scout",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "My name is Scout and I’d like to tell you that I’m a super fun loving kitty that loves to play all the time. I’m curious, rambunctious and lots of laughs. I also love to curl up and cuddle when I get tuckered out from playing. I love water. I will sit and watch it go down the drain with sheer enjoyment. As funny as I am, I make my mommy foster laugh all the time as I skid across the floor while chasing balls around the house. I’m potty trained and use the scratching posts (not furniture) to clean my claws. If you’re looking for a funny cat to entertainer, look no further."
+    },
+    {
+        "id": 20,
+        "categoryId": 3,
+        "title": "Samantha Jo",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "My name is Sam (Samantha Jo as my foster mommy calls me). I’m a very sweet docile kitty that has the spirit of an old soul. I love to nuzzle in human’s neck and will melt like butter in your arms as you stroke my silky fur. I love to play and chase the other kitties, but I also love to just curl up in a nice soft kitty bed. I’m potty trained and love to stretch using scratching posts. If you’re looking for a sweet old souls to melt your heart, look no further, cause I’m the girl for you."
+    },
+    {
+        "id": 21,
+        "categoryId": 3,
+        "title": "Eartha Kitty",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "Beautiful Eartha Kitty is a black and white female domestic short hair, who came to us from a local animal control shelter. Eartha has a cute little black mask on her face, hence is named after the supreme cat woman Eartha Kit. She has a little bit of attitude at first, until she gets to know you, which is totally fine because that means she's smart. She comes to trust you quickly, because that's her personality. She's very loving and playful. Eartha is probably best as an only cat. Who would love an Eartha Kitty in their life?"
+    },
+    {
+        "id": 22,
+        "categoryId": 3,
+        "title": "German Wirehaired Pointer",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "Like the American Water Terrier, German Wirehaired Pointer was selectively bred to assist hunters on their journey. Over time, this breeding resulted in a thick coat, a strong sense of smell, and webbed feet. These dogs are truly made for any type of terrain. Whether they're in dry mountains or a muddy swamp, they'd have no problem retrieving game."
+    },
+    {
+        "id": 23,
+        "categoryId": 3,
+        "title": "Dachshund",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "Dachshunds are lovingly referred to as Weiner dogs because of their short and slender bodies. While the modern Dachshund is typically nothing more than a canine companion, they were originally bred for hunting. Their bodies are perfect for getting into tight spots. They can easily hunt small animals like badgers."
+    },
+    {
+        "id": 24,
+        "categoryId": 3,
+        "title": "Weirmaraner",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "Weimaraners have a history that goes all the way back to the 18th century. Originally, these large and agile dogs were bred for hunting big game like boar and deer. They were typically used by royalty. They have webbed feet and arched toes to help them get through any terrain as they retrieve a game animal."
+    },
+    {
+        "id": 25,
+        "categoryId": 3,
+        "title": "Otterhound",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "Otterhounds are a relatively rare breed that's native to the United Kingdom. They were bred in the 19th century to assist hunters. As the name implies, their prime target was otters. Otterhounds have a strong sense of smell, making it easy for them to find otters and their homes."
+    },
+    {
+        "id": 26,
+        "categoryId": 3,
+        "title": "Redbone Coonhound",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "Redbone Coonhounds were one of the many breeds that were shipped from Europe to America. They were selectively bred to deal with the new swampy terrain. These dogs are known for their courageous demeanor. They will fearlessly go into a swamp, scare off dangerous animals, and keep raccoons trapped in a tree until the hunter can go in for the kill."
+    },
+    {
+        "id": 27,
+        "categoryId": 3,
+        "title": "Nova Scotia Duck Tolling Retriever",
+        "price": "50",
+        "images_url": "assets/images/images_data/pig_1.jpg",
+        "content": "These dogs were bred back in the 19th century. They have thick coats to keep them protected from the low temperatures of Nova Scotia. As the name would suggest, they are particularly talented at taking care of ducks. They have significant webbing in their paws compared to other breeds."
+    }
+
+]

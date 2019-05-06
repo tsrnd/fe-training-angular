@@ -1,0 +1,135 @@
+<app-header></app-header>
+<main>
+  <div class="content offset-md-2 col-8">
+      <router-outlet></router-outlet>
+    <!-- <div id="accordion" *ngFor="let lifeCycleHookLists of lifeCycleHookLists">
+      <app-lifecycle-title [lifeCycleHookLists]= "lifeCycleHookLists">
+        <app-lifecycle-content [lifeCycleHookLists]= "lifeCycleHookLists"></app-lifecycle-content>
+        <app-modal [lifeCycleHookLists]= "lifeCycleHookLists" (removeItem)="removeItem($event)"></app-modal>
+      </app-lifecycle-title>
+    </div> -->
+    <!-- <router-outlet></router-outlet> -->
+    <!-- <button type="button" class="btn" [appHoverItem]="'red'">Success</button>
+    <button type="button" class="btn" [appHoverItem]="'blue'">Danger</button> -->
+
+    <!-- <div class="card-deck">
+      <div class="card" *ngFor = "let dataPipe of dataPipe">
+        <img class="card-img-top" src="../assets/images/dog.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ dataPipe.title | pipe: '10' }}</h5>
+          <p class="card-text">{{ dataPipe.content | pipe: '50' }}</p>
+        </div>
+      </div>
+    
+    </div> -->
+
+    <!-- <div class="card-deck">
+      <div class="card" *ngFor = "let dataPipe of dataPipes">
+        <img class="card-img-top" src="../assets/images/dog.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ dataPipe.title | pipe: '10' }}</h5>
+          <p class="card-text">{{ dataPipe.content | pipe: '50' }}</p>
+        </div>
+      </div>
+    
+    </div> -->
+
+    <!-- <div class="input-group">
+      <input type="text" class="form-control" placeholder="Key Local" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="keyLocal">
+      <input type="text" class="form-control" placeholder="Value Local" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="valueLocal">
+      <div class="input-group-append">
+        <button class="savelocal btn btn-outline-primary" name="savelocal" id="savelocal" type="button" (click)="saveLocal()">Save Local</button>
+        <button class="getlocal btn btn-outline-danger" name="getlocal" id="getlocal" type="button" (click)="getLocal()">Get Local</button>
+        <button class="savesession btn btn-outline-warning" name="savesession" id="savesession" type="button" (click)="saveSession()">Save Session</button>
+        <button class="getsession btn btn-outline-success" name="getsession" id="getsession" type="button" (click)="getSession()">Get Session</button>
+      </div>
+    </div> -->
+    
+    <!-- <ng-template [ngIf]="error">
+        <div class="alert alert-danger">{{error}}</div>
+    </ng-template>
+    <ng-template [ngIf]="checkForm">
+        <div class="alert alert-success">Successfull!</div>
+      </ng-template>
+    <h3 class="title-form">Create an account</h3>
+    <div class="modal-register">
+      <div class="boder-form-register">
+      <div class="form-register">
+      <form [formGroup]="formReactive" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" formControlName="firstName">
+          <div *ngIf="formReactive.controls.firstName.invalid && (formReactive.controls.firstName.dirty || formReactive.controls.firstName.touched)">
+            <span *ngIf="formReactive.get('firstName').errors.required">This field is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" class="form-control" formControlName="lastName">
+          <div *ngIf="formReactive.controls.lastName.invalid && (formReactive.controls.lastName.dirty || formReactive.controls.lastName.touched)">
+            <span *ngIf="formReactive.get('lastName').errors.required">This field is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" formControlName="email">
+          <div *ngIf="formReactive.controls.email.invalid && (formReactive.controls.email.dirty || formReactive.controls.email.touched)">
+            <span *ngIf="formReactive.get('email').errors.required">This field is required</span>
+            <span *ngIf="formReactive.get('email').errors.email">This field is email</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="password">
+          <div *ngIf="formReactive.controls.password.invalid && (formReactive.controls.password.dirty || formReactive.controls.password.touched)">
+            <span *ngIf="formReactive.get('password').errors.required">This field is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" class="form-control" formControlName="confirmPassword">
+          <div *ngIf="formReactive.controls.confirmPassword.invalid && (formReactive.controls.confirmPassword.dirty || formReactive.controls.confirmPassword.touched)">
+            <span *ngIf="formReactive.get('confirmPassword').errors.required">This field is required</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary col-12" [disabled]="formReactive.invalid">CREATE</button>
+      </form>
+      </div>
+      </div>
+    </div> -->
+
+    <!-- <ng-template [ngIf]="error">
+        <div class="alert alert-danger">{{error}}</div>
+    </ng-template>
+    <ng-template [ngIf]="checkForm">
+        <div class="alert alert-success">Login Successfull!</div>
+    </ng-template>
+    <h3 class="title-form">Login</h3>
+    <div class="modal-login">
+      <div class="boder-form-login">
+        <div class="form-login"> 
+          <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+            <div class="form-group">
+              <label for="">Email</label>
+              <input class="form-control" #validateEmail="ngModel" type="email" ngModel name="email" required email>
+              <ng-container *ngIf="validateEmail?.invalid && validateEmail?.dirty || validateEmail?.touched">
+                <p class="alert alert-danger" *ngIf="validateEmail?.errors?.required"> This field is required </p>
+                <p class="alert alert-danger" *ngIf="validateEmail?.errors?.email"> This field is not email </p>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" class="form-control" #validatePassword="ngModel" ngModel name="password" required>
+              <ng-container *ngIf="validatePassword?.invalid && validatePassword?.dirty || validatePassword?.touched">
+                <p class="alert alert-danger" *ngIf="validatePassword?.errors?.required"> This field is required </p>
+              </ng-container>
+            </div>
+            <button type="submit" class="btn btn-primary col-12" [disabled]="login.invalid">CREATE</button>
+          </form>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  
+</main>
+<app-footer></app-footer>
