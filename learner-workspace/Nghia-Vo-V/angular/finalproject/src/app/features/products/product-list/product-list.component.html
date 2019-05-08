@@ -1,5 +1,6 @@
 <div class="container">
-    <h3 class="h3">Product List: {{title}} </h3>
+    <h3 class="h3">{{title | uppercase}} </h3>
+    <hr>
     <div class="row">
         <div class="col-md-3 col-sm-6" *ngFor="let item of data">
             <div class="product-grid3">
@@ -21,13 +22,8 @@
                         {{item.promotionPrice}}
                         <span>{{item.originalPrice}}</span>
                     </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
+                    <app-star [rating]="item.starRating">
+                    </app-star>
                 </div>
             </div>
         </div>

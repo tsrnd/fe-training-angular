@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
-import { AuthenticationService } from 'src/app/core/services/authentication.service';
-import { AlertService } from 'src/app/core/services/alert.service';
+import { LocalerService } from 'src/app/core/services/localer.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,29 +13,22 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: string;
+  msgErr: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router,
-    private authenticationService: AuthenticationService,
-    private alertService: AlertService
+    private local: LocalerService,
+    private authSerive: AuthService,
+    private router: Router
   ) {
-    // redirect to home if already logged in
-    if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
-    }
   }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
-
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   // convenience getter for easy access to form fields
@@ -51,16 +43,20 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
-  }
 
+    let data = this.local.getLocalStorage('register');
+    let userLogin;
+    if (data && data.find((user) => {
+      if (user.email === this.loginForm.get('email').value && user.password === this.loginForm.get('password').value) {
+        userLogin = user;
+        return true;
+      }
+    })) {
+      this.local.saveLocalStorage('userLogin', userLogin);
+      this.authSerive.setCookie('isLogin', 'true', 30);
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.msgErr = "Incorrect Email or Password!";
+    }
+  }
 }

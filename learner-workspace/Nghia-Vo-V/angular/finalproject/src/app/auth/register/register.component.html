@@ -20,11 +20,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" formControlName="username" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -34,6 +35,15 @@
                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                         <div *ngIf="f.password.errors.required">Password is required</div>
                         <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="passwordconfirm">Password Confirm</label>
+                    <input type="password" formControlName="passwordconfirm" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.passwordconfirm.errors }" />
+                    <div *ngIf="submitted && f.passwordconfirm.errors" class="invalid-feedback">
+                        <div *ngIf="f.passwordconfirm.errors.required">Password Confirm is required</div>
+                        <div *ngIf="f.passwordconfirm.errors.mustMatch">Password Confirm must be same as Password</div>
                     </div>
                 </div>
                 <div class="form-group">

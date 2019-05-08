@@ -1,7 +1,4 @@
-<h2 class="h2 mb-4 text-center mt-3">HomePage</h2>
-<hr>
-
-<div class="container mb-4">
+<div class="container mb-4 mt-4">
   <div class="row">
     <div class="col-sm-12">
       <app-carousel></app-carousel>
@@ -16,13 +13,10 @@
       <div class="col-md-3 col-sm-6" *ngFor='let womenProduct of womenProducts'>
         <div class="product-grid3">
           <div class="product-image3">
-            <a href="#">
+            <a [routerLink]="['/',womenProduct.category ,'product', womenProduct.id]">
               <img class="pic-1" [src]='womenProduct.imageUrl' [title]='womenProduct.productName'>
               <img class="pic-2" [src]='womenProduct.imageUrl' [title]='womenProduct.productName'>
             </a>
-            <ul class="social">
-              <li><a href="#"><i class="fa fa-heart"></i></a></li>
-            </ul>
             <span class="product-new-label">New</span>
           </div>
           <div class="product-content">
@@ -31,13 +25,8 @@
               {{ womenProduct.promotionPrice }}
               <span>{{ womenProduct.originalPrice }}</span>
             </div>
-            <ul class="rating">
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star disable"></li>
-              <li class="fa fa-star disable"></li>
-            </ul>
+            <app-star [rating]="womenProduct.starRating">
+            </app-star>
           </div>
         </div>
       </div>
@@ -50,13 +39,10 @@
       <div class="col-md-3 col-sm-6" *ngFor='let menProduct of menProducts'>
         <div class="product-grid3">
           <div class="product-image3">
-            <a>
+            <a [routerLink]="['/',menProduct.category ,'product', menProduct.id]">
               <img class="pic-1" [src]='menProduct.imageUrl' [title]='menProduct.productName'>
               <img class="pic-2" [src]='menProduct.imageUrl' [title]='menProduct.productName'>
             </a>
-            <ul class="social">
-              <li><a><i class="fa fa-heart"></i></a></li>
-            </ul>
             <span class="product-new-label">New</span>
           </div>
           <div class="product-content">
@@ -65,13 +51,8 @@
               {{ menProduct.promotionPrice }}
               <span>{{ menProduct.originalPrice }}</span>
             </div>
-            <ul class="rating">
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star disable"></li>
-              <li class="fa fa-star disable"></li>
-            </ul>
+            <app-star [rating]="menProduct.starRating">
+            </app-star>
           </div>
         </div>
       </div>
@@ -84,13 +65,11 @@
       <div class="col-md-3 col-sm-6" *ngFor='let kidProduct of kidProducts'>
         <div class="product-grid3">
           <div class="product-image3">
-            <a>
+            <a [routerLink]="['/',kidProduct.category ,'product', kidProduct.id]">
               <img class="pic-1" [src]='kidProduct.imageUrl' [title]='kidProduct.productName'>
               <img class="pic-2" [src]='kidProduct.imageUrl' [title]='kidProduct.productName'>
             </a>
-            <ul class="social">
-              <li><a><i class="fa fa-heart"></i></a></li>
-            </ul>
+            <app-favorite></app-favorite>
             <span class="product-new-label">New</span>
           </div>
           <div class="product-content">
@@ -99,18 +78,11 @@
               {{ kidProduct.promotionPrice }}
               <span>{{ kidProduct.originalPrice }}</span>
             </div>
-            <ul class="rating">
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star"></li>
-              <li class="fa fa-star disable"></li>
-              <li class="fa fa-star disable"></li>
-            </ul>
+            <app-star [rating]="kidProduct.starRating">
+            </app-star>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <hr>
 </div>
-<hr>

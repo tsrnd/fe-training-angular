@@ -5,12 +5,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './components/alert/alert.component';
+import { StarComponent } from './components/star/star.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    AlertComponent
+    AlertComponent,
+    StarComponent,
+    FavoriteComponent
   ],
   imports: [
     CommonModule,
@@ -19,13 +23,16 @@ import { AlertComponent } from './components/alert/alert.component';
     FormsModule
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent,
-    RouterModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AlertComponent
+    RouterModule,
+    
+    HeaderComponent,
+    FooterComponent,
+    AlertComponent,
+    StarComponent,
+    FavoriteComponent
   ]
 })
 export class SharedModule { }

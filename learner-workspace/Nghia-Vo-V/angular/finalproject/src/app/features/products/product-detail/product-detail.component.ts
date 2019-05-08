@@ -26,9 +26,6 @@ export class ProductDetailComponent implements OnInit {
         this.id = +this.route.snapshot.paramMap.get('id'); 
         let category = this.route.snapshot.paramMap.get('category');
         this.product = this.data.find(item => item.id === this.id);
-        if (category !== this.product.category) {
-          return this.router.navigate(['/404']);
-        }
       });
   }
 }

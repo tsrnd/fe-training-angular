@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
-import { AuthenticationService } from 'src/app/core/services/authentication.service';
-import { UserService } from 'src/app/core/services/user.service';
-import { AlertService } from 'src/app/core/services/alert.service';
+import { MustMatch } from 'src/app/shared/validators/mustmatch';
+import { LocalerService } from 'src/app/core/services/localer.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 
 @Component({
@@ -20,23 +19,22 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authenticationService: AuthenticationService,
-    private userService: UserService,
-    private alertService: AlertService
+    private local: LocalerService,
+    private auth: AuthService
   ) {
-    // redirect to home if already logged in
-    if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
-    }
+
   }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      passwordconfirm: ['', [Validators.required]]
+    }, {
+        validator: MustMatch('password', 'passwordconfirm')
+      });
   }
 
   // convenience getter for easy access to form fields
@@ -51,16 +49,14 @@ export class RegisterComponent implements OnInit {
     }
 
     this.loading = true;
-    this.userService.register(this.registerForm.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.alertService.success('Registration successful', true);
-          this.router.navigate(['/login']);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
+
+    let data = this.local.getLocalStorage('register');
+    let arr = (data) ? data : [];
+
+    arr.push(this.registerForm.value);
+    this.local.saveLocalStorage('register', arr);
+    this.router.navigate(['/dashboard']);
+    this.local.saveLocalStorage('userLogin', this.registerForm.value);
+    this.auth.setCookie('isLogin', 'true', 30);
   }
 }

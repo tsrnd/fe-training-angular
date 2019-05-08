@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item" routerLink="/dashboard" routerLinkActive="active">My Dashboard</li>
+        <li class="list-group-item" routerLink="/profile" routerLinkActive="active">My Profile</li>
+        <li class="list-group-item" routerLink="/favorite" routerLinkActive="active">My Favorite</li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <h2>Dashboard</h2>
+      <h3>Hello, <span class="font-weight-bold">{{ user.firstName | uppercase}}</span><span class="font-weight-bold">{{ user.lastName | uppercase}}</span></h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis doloremque saepe a perferendis
+        voluptates et voluptatem quae enim nihil, officiis assumenda facere blanditiis dicta. Ut vero velit culpa cum.
+      </p>
+    </div>
+  </div>
+</div>
