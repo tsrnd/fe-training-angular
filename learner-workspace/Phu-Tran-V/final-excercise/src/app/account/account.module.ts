@@ -15,7 +15,8 @@ import { ProfileComponent } from './profile/profile.component';
     AccountRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SharedModule,
   ]
 })
 export class AccountModule { }
