@@ -5,7 +5,7 @@
       <div class="card" *ngFor="let item of woman">
         <img src="{{ item.img }}" class="image card-img-top" alt="assets/img/op1.png">
         <div class="middle">
-          <div class="text">favorite</div>
+          <button class="btn-dark">favoritte</button>
         </div>
         <div class="card-body">
           <h5 class="card-title">{{ item.name }}</h5>
@@ -20,43 +20,42 @@
 </div>
 
 <div class="container">
-    <div class="card-header">
-      <h3>Kids</h3>
-      <div class="card-deck">
-        <div class="card" *ngFor="let item of woman">
-          <img src="{{ item.img }}" class="image card-img-top" alt="assets/img/op1.png">
-          <div class="middle">
-            <div class="text">favorite</div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{ item.name }}</h5>
-  
-            <p class="card-text">
-              <small class="text-muted">Price: {{ item.price }}$</small>
-            </p>
-          </div>
+  <div class="card-header">
+    <h3>Kids</h3>
+    <div class="card-deck">
+      <div class="card" *ngFor="let item of woman">
+        <img src="{{ item.img }}" class="image card-img-top" alt="assets/img/op1.png">
+        <div class="middle">
+          <button class="btn-dark">favoritte</button>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+
+          <p class="card-text">
+            <small class="text-muted">Price: {{ item.price }}$</small>
+          </p>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
-      <div class="card-header">
-        <h3>Men</h3>
-        <div class="card-deck">
-          <div class="card" *ngFor="let item of woman">
-            <img src="{{ item.img }}" class="image card-img-top" alt="assets/img/op1.png">
-            <div class="middle">
-              <div class="text">favorite</div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{ item.name }}</h5>
-    
-              <p class="card-text">
-                <small class="text-muted">Price: {{ item.price }}$</small>
-              </p>
-            </div>
-          </div>
+</div>
+<div class="container">
+  <div class="card-header">
+    <h3>Men</h3>
+    <div class="card-deck">
+      <div class="card" *ngFor="let item of woman">
+        <img src="{{ item.img }}" class="image card-img-top" alt="assets/img/op1.png">
+        <div class="middle">
+          <button class="btn-dark">favoritte</button>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+
+          <p class="card-text">
+            <small class="text-muted">Price: {{ item.price }}$</small>
+          </p>
         </div>
       </div>
     </div>
-      
+  </div>
+</div>
