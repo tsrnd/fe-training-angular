@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgStyle } from '@angular/common';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
 export class AccountComponent implements OnInit {
 
   ngStyle: NgStyle;
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }

@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./app-modal.component.scss']
 })
 export class AppModalComponent implements OnInit {
-  @Input() elementClick: any;
+  @Input() elementClick: [];
   @Output() removeHook = new EventEmitter();
 
   constructor() { }
@@ -14,8 +14,8 @@ export class AppModalComponent implements OnInit {
   }
 
   methodRemoveHook(id: number) {
-    this.removeHook.emit(id);
-    console.log('Remove ID: ' + id);
+  this.removeHook.emit(id);
+  console.log('Remove ID: ' + id);
   }
 
 

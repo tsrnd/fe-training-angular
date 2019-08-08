@@ -4,7 +4,6 @@ import { FeaturesComponent } from './features/features.component';
 import { AuthComponent } from './auth/auth.component';
 import { AccountComponent } from './account/account.component';
 import { CanDeactivateGuard } from './auth/can-deactivate.guard';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 const routers: Routes = [
   {
@@ -14,16 +13,13 @@ const routers: Routes = [
   {
     path: 'auth',
     component: AuthComponent,
+    canDeactivate: [CanDeactivateGuard]
   },
   {
     path: 'account',
     component: AccountComponent,
+    canDeactivate: [CanDeactivateGuard]
   }
-  // ,
-  // {
-  //   path: '**',
-  //   component: NotFoundComponent,
-  // }
 ];
 @NgModule({
   imports: [

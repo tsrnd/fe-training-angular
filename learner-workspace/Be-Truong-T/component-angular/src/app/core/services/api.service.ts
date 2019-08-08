@@ -4,14 +4,6 @@ import { HttpClient, HttpErrorResponse, HttpResponse, HttpHeaders } from '@angul
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-export const END_POINT = {
-  listNews: 'news',
-  newsJson: 'assets/news.json',
-  users: 'profile'
-};
-
-export const API_DOMAIN = environment.api;
-
 
 @Injectable({
   providedIn: 'root',
@@ -71,3 +63,11 @@ export class ApiService {
       'Something bad happened; please try again later.');
   }
 }
+
+export const END_POINT = {
+  listNews: 'news',
+  newsJson: 'assets/news.json',
+  users: 'profile'
+};
+
+export const API_DOMAIN = environment.api;
