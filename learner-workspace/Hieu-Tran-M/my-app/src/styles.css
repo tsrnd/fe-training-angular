@@ -1,0 +1,152 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  height: 100%!important;
+  flex-direction: column!important;
+  display: flex!important;
+}
+
+header main footer {
+  display: block;
+}
+
+.img-icon-angular {
+  height: 40px;
+  width: 150px;
+}
+
+.bg-navbar {
+  background-color: #1976d2;
+  background: linear-gradient(145deg,#0d47a1,#42a5f5);
+}
+
+.app-toolbar a {
+  font-size: 16px;
+  color: #fff;
+  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  text-transform: uppercase;
+}
+
+.main-body {
+  margin: 0% 10%;
+}
+
+/* .main-body h2 {
+  font-size: 24px;
+  padding: 1rem 0.5rem;
+  background-color: #e7eaec;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+} */
+
+.footer {
+  background-color: #e7eaec;
+  margin-top: 29.5%;
+}
+
+.text-footer {
+  padding: 1.5rem 0px;
+  background-color: #e1e7eb;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: .25rem;
+}
+
+.login {
+  float: right;
+}
+
+.color-tab-link a{
+  color: #495057;
+}
+
+#home, #contact, #profile {
+  padding: 10px 0px;
+}
+
+.bd-callout {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+  background-color: #e7eaec;
+}
+
+.bd-callout-danger {
+  border-left-color: #5f77e0;
+}
+
+.banner img{
+  height: 240px;
+  width: 1440px;
+}
+
+.plus {
+  color: rgb(177, 8, 8);
+}
+
+.delete {
+  float: right;
+}
+
+.directive {
+  text-align: center;
+  margin-top: 9.5rem;
+}
+
+.directive button {
+  border-color: #495057;
+  margin: 5px;
+}
+
+.input-color {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.input-color input {
+  margin: 5px;
+}
+
+.register {
+  float: right;
+}
+
+.form-register {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-block-end-width: .25rem;
+  border-radius: .25rem;
+}
+
+.form-register button {
+  width: 100%;
+  max-width: 420px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-block-end-width: .25rem;
+  border-radius: .25rem;
+}
+
+.title-login {
+  text-align: center;
+  line-height: 1.2;
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
